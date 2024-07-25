@@ -1,12 +1,10 @@
 
-Mathematica/locatedParastichyExample91.m
-.RData
-.Rhistory
-LaTeX/Stacked disks/StackedDisks.synctex.gz
+*.synctex.gz
 *.aux
 *.bcf
 *.blg
 *.log
-
+*.out
 *.bbl
 *.run.xml
+*.pdf
