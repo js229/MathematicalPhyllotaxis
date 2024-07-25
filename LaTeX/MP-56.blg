@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'MP-56.blg'
+[79] biber-MSWIN64:340> INFO - === 
+[112] Biber.pm:419> INFO - Reading 'MP-56.bcf'
+[220] Biber.pm:979> INFO - Found 104 citekeys in bib section 0
+[229] Biber.pm:4419> INFO - Processing section 0
+[237] Biber.pm:4610> INFO - Looking for bibtex file 'MPCite.bib' for section 0
+[297] bibtex.pm:1713> INFO - LaTeX decoding ...
+[419] bibtex.pm:1519> INFO - Found BibTeX data source 'MPCite.bib'
+[786] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[786] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[786] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-GB'
+[786] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-GB'
+[849] bbl.pm:660> INFO - Writing 'MP-56.bbl' with encoding 'UTF-8'
+[889] bbl.pm:763> INFO - Output to MP-56.bbl

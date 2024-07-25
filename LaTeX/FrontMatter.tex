@@ -1,0 +1,130 @@
+
+
+\thispagestyle{titlingpage}
+\begin{textblock*}{210mm}(-55mm,-50mm)%
+%
+%\begin{overpic}%
+%%
+%[height=330mm]%
+%{../TextbookFigures/aiko15cmflickr20364484160.jpg}
+%\put(17,90){\fontsize{40}{64}\selectfont\textbf{Mathematical Phyllotaxis}}
+%{
+%\put(17,85){\fontsize{36}{64}\selectfont Jonathan Swinton}
+%}
+
+
+%\put(17,80){\fontsize{12}{64}\selectfont \jdraftnumber}
+%\end{overpic}
+
+\end{textblock*}
+
+%
+\newpage
+
+\newlength{\titlepagespacing}
+\ifthenelse{\boolean{a5Target}}{
+\setlength{\titlepagespacing}{5ex}
+}{
+\setlength{\titlepagespacing}{10ex}
+}
+
+\ifthenelse{\boolean{a5Target}}{
+\thispagestyle{titlingpage}
+{
+	\mbox{}\vfill
+	\centering	
+	\includegraphics[width=.6\jfigwidth]{./Figures/infang.jpg}
+	\\[2 \titlepagespacing]
+	Infang Publishing is a registered trademark of Deodands Ltd, 
+	a company registered in England with company number 07589092 and
+	a registered office at
+	20-22 Wenlock Road, London N1 7GU.
+	\\[10ex] %		These ISBNs will refer to the final version of the text, not this draft\\	
+	{\textsc{ISBN}} 978-0-9931789-6-2 (softback).		\\		{\textsc{ISBN}} 978-0-9931789-7-9 (ebook)
+	\\[\titlepagespacing]
+	\copyright Deodands Ltd 2023.
+	\\[2\titlepagespacing]
+	\textbf{Book website:}
+	\\
+	\texttt{www.phyllotaxis.uk}
+	\\[\titlepagespacing]
+	%		\textbf{This is pre-publication draft \jdraftnumber{} created on \today.}
+	{Released  on \today}
+	\\[\titlepagespacing]
+	Front cover image from Flickr user \texttt{aiko vanhulsen}  \copyright CC-BY 2.0.\\
+}
+\newpage
+
+\thispagestyle{titlingpage}
+{
+	\centering
+	\mbox{}
+%	{\LARGE A textbook of }	\\
+\\[	2 cm]
+	{\HUGE\jEmphasisColour
+		\textsc{Mathematical \\[5 mm] phyllotaxis}}
+	\\
+	\vfill
+	{\Huge	\scshape Jonathan Swinton}
+	\vfill
+	{\LARGE	Infang Publishing}	\\
+		{\LARGE \textsc{2023}\\}
+}
+\newpage
+
+
+}
+{ % not a5 target, a4 
+
+
+
+\thispagestyle{titlingpage}
+{
+\mbox{}\vspace{\fill}
+		\centering	
+		\includegraphics[width=.6\jfigwidth]{./Figures/infang.jpg}
+		\\[10ex]
+		Infang Publishing is a registered trademark of Deodands Ltd.
+		\\
+		Email \texttt{info@deodands.co.uk}; website \texttt{deodands.co.uk}.
+	\\[5ex]
+		Deodands Ltd is a company registered in England with company number 07589092. 
+%		\\
+		Deodands Ltd has a registered office at
+		20-22 Wenlock Road, London N1 7GU.
+		\\[10ex] %		These ISBNs will refer to the final version of the text, not this draft\\	
+		{\textsc{ISBN}} 978-0-9931789-6-2 (softback)
+%		\\		{\textsc{ISBN}} 978-0-9931789-7-9 (ebook)
+		\\[10ex]
+		\copyright Deodands Ltd 2023
+		\\[20ex]
+%	\textit{The publishers believe that Deodands Ltd believe every such image has been identified.   Deodands Ltd have  received specific license permission for each image via the Copyright Clearance Center to reproduce these images  on the basis that this text is intended to be published by Cambridge University Press. } 	\\[10ex]
+		\textbf{Book website:}
+		\\
+		\texttt{www.phyllotaxis.uk}
+		\\[10ex]
+%		\textbf{This is pre-publication draft \jdraftnumber{} created on \today.}
+		{Based on an author manuscript  \jdraftnumber{} released on \today.}
+		\\[10ex]
+The front cover image is taken from the Flickr stream of user \texttt{aiko vanhulsen} under a Creative Commons CC BY 2.0 license.\\
+}
+\newpage
+
+\thispagestyle{titlingpage}
+{
+	\centering
+	{\Huge A textbook of }
+	\\[3ex]
+	{\HUGE\jEmphasisColour	\textsc{Mathematical phyllotaxis}}\\
+	\vfill
+	{\Huge	\scshape Jonathan Swinton}
+	%\\\vfill{\jEmphasisColour This is a DRAFT version \jdraftnumber{}}
+	\vfill
+	{\Large	Infang Publishing}
+	\\[3ex]
+	{\Large \textsc{2023}
+		\\}
+}
+\newpage
+
+10}

@@ -1,0 +1,124 @@
+\babel@toc {british}{}\relax 
+\babel@toc {british}{}\relax 
+\vfill 
+\contentsline {part}{\partnumberline {I}Introduction}{11}{part.1}%
+\contentsline {chapter}{\chapternumberline {1}Motivation and outline}{13}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Joan Clarke's daisy}{13}{section.1.1}%
+\contentsline {section}{\numberline {1.2}The sunflower}{14}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Fibonacci structure across the plant kingdom}{16}{section.1.3}%
+\contentsline {section}{\numberline {1.4}The pineapple}{19}{section.1.4}%
+\contentsline {section}{\numberline {1.5}The fir cone}{19}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Monocots and dicots}{20}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.6}Stem primordia}{21}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Summary}{22}{section.1.7}%
+\contentsline {chapter}{\chapternumberline {2}Mathematical background}{23}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Fibonacci sequences}{23}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}The golden ratio}{24}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}The golden angle}{24}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Co-prime integers and the B\'ezout relation}{25}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}B\'ezout relations}{25}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}The winding-number pair}{25}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Euclid's algorithm}{26}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Matrix form of the Euclidean algorithm}{27}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Farey trees and winding-number pairs}{29}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}The Euclidean algorithm for Fibonacci structure pairs}{30}{subsection.2.3.3}%
+\contentsline {subsubsection}{Generalised Fibonacci numbers}{31}{section*.4}%
+\contentsline {section}{\numberline {2.4}Continued fractions}{32}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Continued fractions and M\"obius maps}{33}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}M\"obius functions}{34}{subsection.2.4.2}%
+\vfill \pagebreak 
+\contentsline {part}{\partnumberline {II}Mathematical theory}{37}{part.2}%
+\contentsline {chapter}{\chapternumberline {3}The geometry of cylindrical lattices}{39}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{39}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Botanical motivation}{39}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Leaf lattices on cylinders}{39}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Cylindrical and plane lattices}{42}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Labelling cylindrical vectors}{44}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Parastichies}{46}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Visible points and parastichies}{47}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Parastichy pairs}{47}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Opposed parastichy pairs}{48}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}Generating pairs}{48}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Generating pairs as basis vectors}{51}{subsection.3.6.1}%
+\contentsline {section}{\numberline {3.7}Estimating the divergence for a generating parastichy pair}{54}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Opposed intervals}{55}{section.3.8}%
+\contentsline {section}{\numberline {3.9}The Fundamental Theorem of Phyllotaxis}{56}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Principal parastichies}{59}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Spiral lattices}{60}{section.3.11}%
+\contentsline {section}{\numberline {3.12}Turing-Euclid reduction of generating pairs}{60}{section.3.12}%
+\contentsline {section}{\numberline {3.13}Orthostichies}{64}{section.3.13}%
+\contentsline {section}{\numberline {3.14}Touching-circle and hexagonal lattices}{66}{section.3.14}%
+\contentsline {section}{\numberline {3.15}Relation to \textit {Phyllotaxis: a systemic study}.}{68}{section.3.15}%
+\contentsline {section}{\numberline {3.16}Multijugate lattices}{70}{section.3.16}%
+\contentsline {section}{\numberline {3.17}Summary of parastichies}{72}{section.3.17}%
+\contentsline {chapter}{\chapternumberline {4}Classifying cylindrical lattices}{73}{chapter.4}%
+\contentsline {section}{\numberline {4.1}The van Iterson diagram}{73}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Components of the van Iterson diagram: the \textsf {m=n} branch}{75}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Triple-points}{77}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}The \textsf {m=n} branch in lattice space}{78}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Unfolding the triple-point bifurcation}{79}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Lattice renormalisation}{83}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Classification of van Iterson space by Euclidean reduction}{88}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Packing efficiencies}{88}{section.4.7}%
+\contentsline {section}{\numberline {4.8}The structure of multijugate lattice space}{92}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Notes to this Chapter}{93}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Summary}{95}{section.4.10}%
+\contentsline {chapter}{\chapternumberline {5}Transformed Lattices}{97}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Smoothly changing lattices}{97}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Lattices on disks}{100}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Exponential scaling}{100}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Quadratic scaling}{101}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Biological choices}{101}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Other arenas}{103}{section.5.3}%
+\contentsline {part}{\partnumberline {III}Mathematical modelling}{105}{part.3}%
+\contentsline {chapter}{\chapternumberline {6}Developmental biology of the plant}{107}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Stem extension and thickening}{107}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Developmental commitment of primordia}{109}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Cellular architecture of the shoot-apical meristem}{111}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Molecular phyllotaxis}{113}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Mechanical stress}{115}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Vascular bundles and leaf traces}{116}{section.6.6}%
+\contentsline {section}{\numberline {6.7}The relationship to the Standard Picture}{116}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Development of the capitulum of the sunflower}{117}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Chapter summary}{122}{section.6.9}%
+\contentsline {chapter}{\chapternumberline {7}Empirical phyllotaxis}{123}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Early idealism}{123}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Observational phyllotaxis}{124}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Statistical phyllotaxy and rare parastichy pairs}{125}{subsection.7.2.1}%
+\contentsline {section}{\numberline {7.3}Non-lattice patterns}{129}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Loss of symmetry}{129}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Dislocations}{129}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Rising and falling phyllotaxis}{132}{subsection.7.3.3}%
+\contentsline {section}{\numberline {7.4}Beyond parastichy counts}{132}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Bract and ray floret counts}{133}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Column patterns}{134}{subsection.7.4.2}%
+\contentsline {section}{\numberline {7.5}Chapter summary}{134}{section.7.5}%
+\contentsline {chapter}{\chapternumberline {8}Placement models}{137}{chapter.8}%
+\contentsline {section}{\numberline {8.1}The Douady-Couder electrostatic model}{137}{section.8.1}%
+\contentsline {section}{\numberline {8.2}The stacked-coin model}{142}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Parastichy numbers in stacked-coin models}{146}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Fibonacci transitions}{146}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Stacking fixed coins in fixed geometry}{150}{subsection.8.2.3}%
+\contentsline {subsection}{\numberline {8.2.4}Cylinder tilings and rhombic-tilings}{151}{subsection.8.2.4}%
+\contentsline {section}{\numberline {8.3}Columnar models}{154}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Summary of stacked-coin models}{156}{subsection.8.3.1}%
+\contentsline {section}{\numberline {8.4}Energy based models}{156}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Partial differential equation models}{158}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}An early reaction-diffusion approach}{158}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Auxin flow models}{159}{subsection.8.5.2}%
+\contentsline {section}{\numberline {8.6}Mechanical tension models}{159}{section.8.6}%
+\contentsline {section}{\numberline {8.7}A divergence: protractor models}{160}{section.8.7}%
+\contentsline {part}{\partnumberline {IV}Conclusions}{163}{part.4}%
+\contentsline {chapter}{\chapternumberline {9}Some future directions}{165}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Mathematical issues}{165}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Cylindrical tilings}{165}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Regular patterns as attractors}{166}{subsection.9.1.2}%
+\contentsline {section}{\numberline {9.2}Modelling challenges}{166}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}The phyllotactic jump}{166}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Macroscopic tests of the Standard Picture}{167}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}Universality across phyla}{168}{subsection.9.2.3}%
+\contentsline {section}{\numberline {9.3}Conclusion}{169}{section.9.3}%
+\contentsline {chapter}{\chapternumberline {10}Answers to Exercises}{173}{chapter.10}%
+\contentsline {chapter}{Bibliography}{187}{section*.10}%
+\babel@toc {british}{}\relax 
+\babel@toc {british}{}\relax 

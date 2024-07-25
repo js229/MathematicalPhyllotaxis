@@ -1,0 +1,152 @@
+
+
+\chapter{Test chapter}
+
+
+\label{CH:0}
+
+\section{Fibonacci sequences}
+\label{sec:fib}
+\subsection{This is a subsection in chapter~\ref{CH:0}}
+This is Chapter~\ref{CH:0} and {\jHeadingColour Chapter~\ref{CH:0}} and \arabic{chapter} and section \arabic{section} and page \arabic{page}
+This is \Sref{sec:fib} in \Cref{CH:0}.
+
+The Fibonacci sequence $F_n$ has as its first two members  $F_0=0$, $F_1=1$ and every subsequent member is the sum of the previous two:  $F_{n+2}=F_{n+1}+F_{n}$. 
+Although there is a substantial literature on Fibonacci and related sequences~\cite{vajdaFibonacciLucasNumbers2008} we really only need this simple sum property for the Standard Picture. 
+%
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ll}
+			\hline
+			Fibonacci  &  $1,1,2,3,5,8,13,21,34,55,89,144,\ldots$ \Tstrut
+			\\
+			Double Fibonacci & $2,2,4,6,10,16,26,42,68,110,\ldots$
+			\\
+			\hline
+		\end{tabular}
+		\caption{Various sequences with Fibonacci structure}
+		\label{tab:sequences}
+	\end{center}
+\end{table}
+%
+
+We might note that from Table~\ref{tab:sequences} that the Fibonacci, double Fibonacci and Lucas sequences together include all  of the first eleven integers except 9, so there is little remarkable about the observation that a particular system exhibits a structure including a low member of one of the sequences~\cite{cookeFibonacciNumbersReveal2006}. 
+
+
+
+\subsection{The golden ratio}
+Starting the sequence with $F_0=0$, $F_1=1$, the general Fibonacci term is\jNote{The golden angle was so-named around 1900, and supposedly given the greek letter $\Phi$ in reference to the Greek architect Phidias~\cite{cookCurvesLifeBeing1914}.}
+\begin{eqnarray}
+F_n &=& \frac{\tau^n - (1-\tau)^n}{\sqrt{5}}
+\end{eqnarray}
+where $\tau$ is the golden ratio%
+\jNote{It is not uncommon to define the golden ratio as $\tau-1=0.618\ldots$ instead,  or to notate it as $\phi$ or sometimes $\omega$.  If a line  is cut at a fraction $\tau$, the fraction of the cut to the whole line is the same as that of the remainder to the cut.
+	The first robust evidence of this concept in Greek mathematics, known as  `division in extreme and mean ratio' emerges somewhere between the Pythagoreans of  around 500 BCE and Euclid around  300 BCE~\cite{herz-fischlerMathematicalHistoryGolden1987}. The Fibonacci numbers 89 and 144 are first known to appear in connection with the golden ratio in a manuscript of the early 1500s, while the epithet 'golden' is first known in the 18th century~\cite{herz-fischlerEarlyUsageExpression2019,beckerEvenEarlier17172019}.%
+}%
+satisfying
+\begin{eqnarray}
+\tau^2 &=& \tau+1
+\\
+\tau &=& \frac{1+\sqrt{5}}{2} \approx 1.618
+\\
+&=& \lim_{n\rightarrow\infty} \frac{F_{n+1}}{F_n} 
+\end{eqnarray}
+Any sequence obeying the Fibonacci rule has $\tau$  as the limit of the ratio of its terms.
+
+
+
+
+\section{Co-prime integers and the B\'ezout relation}
+
+\label{sec:coprime}
+Two integers $(m,n)$ are co-prime iff their greatest common divisor is equal to 1. We need to be explicit about some edge cases, by noticing that every integer is a divisor of $0$, but the only divisors of $1$ are $1$ and $-1$. Specifically we recognise both of the pairs $(0,1)$ and $(1,n)$ as co-prime, and note that $1$ is co-prime to itself, but $0$ is not, and $(0,n)$ is not co-prime for $n>1$.%
+%\footnote{We don't require the integers to be non-negative for this co-primality to make sense, but we avoid situations where this matters.}
+
+\subsection{B\'ezout relations}
+The integer pair $(u,v)$ satisfies the B\'ezout relation for the non-negative integer pair $(m,n)$ iff
+\begin{align}
+	|n  u-mv| = 1.
+\end{align}
+If $u$ and $v$ exist then they are a proof of co-primality: we will see below that $(m,n)$ can satisfy  $ n  u - m v= k$ iff $|k|$ is the greatest common factor of $m$ and $n$. They are not unique because if $(u,v)$ satisfies the B\'ezout relation then so does $(u+km,v+kn)$ for any integer $k$. We can introduce a range condition by picking a particular $k$ which can be used to enforce $0\leq v< n$, but there is still a further ambiguity because if
+\jNote{In other texts, sometimes $nu-mv= 1$ is required by the  B\'ezout eponym, and sometimes not. Only this book names as the  winding-number pair the unique pair defined in this range-restricted way. This is for reasons which will appear later in Chapter XX. }
+
+
+
+\begin{jExercise}
+	Compute the winding number pair for $(m,n)$ equal to  $(1,n)$, $(n,1)$, and $(F_j,F_{j+1})$.
+\end{jExercise}
+\begin{jAnswer} 
+	\label{ex:wnp}
+	Some winding number pairs are given in Table~\ref{tab:wnp2}.
+	\begin{table}
+		\begin{equation*}
+			\begin{array}{lllll}
+				\hline
+				\text{} & 0\times 0-1\times (-1) & \text{} & \text{} & \text{} \\
+				1\times 1-0\times 0 & 1\times 1-1\times 0 & 1\times 1-2\times 0 & 1\times 1-3\times 0 & 1\times 1-4\times 0 \\
+				\text{} & 2\times 1-1\times 1 & \text{} & 2\times 2-3\times 1 & \text{} \\
+				\text{} & 3\times 1-1\times 2 & 3\times 1-2\times 1 & \text{} & 3\times 3-4\times 2 \\
+				\hline
+			\end{array}
+		\end{equation*}
+		\caption{Winding number pairs $m\times v-n\times u=1$ for small co-prime integers $(m,n)$}
+		\label{tab:wnp2}
+	\end{table}
+	
+\end{jAnswer}
+
+For the integers in this book, with $n\lesssim 500$ it is perfectly feasible to compute highest common factors and winding-number pairs by exhaustive search. But nevertheless the rest of this Chapter shows how an algorithmic approach sheds a light on the structure of co-prime pairs and their winding-numbers in a way that has been helpful in the past to mathematicians puzzling over Fibonacci structure. 
+
+\begin{theorem}
+	Euclid's algorithm terminates with the greatest common factor $GCF(m,n)$:
+	\begin{eqnarray}
+		r_N =  
+		GCF(m,n) 
+	\end{eqnarray}
+\end{theorem}
+\begin{proof}
+	The $r_i$ are a strictly decreasing sequence of positive integers and so the algorithm always terminates. Suppose the $GCF$ is $k$. Now $k$ divides $r_0$, $k|r_0$, and the $i$-th step the iteration preserves the fact that  $k|r_i$,  and so in particular $k|r_N$. Now $r_N|r_{N-1}$ and the iteration step also shows that if $r_N|r_i$ and $r_N|r_{i-1}$ then $r_N|r_{i-2}$, and so following the $r_i$s in reverse order we see $r_N$ divides all of them and divides both $m$ and $n$.  So $r_N$ is a common divisor and so $r_N\leq k$ but since $k|r_N$, $r_N=k$. 
+\end{proof}
+As an example, consider calculating the highest common factor of $4$ and $11$:
+\begin{align}
+	11 - {\jHeadingColour 2}\times 4 & = 3 
+	\\
+	4 - {\jHeadingColour 1}\times 3 & = 1\label{eq:411}
+	\\
+	3 - {\jHeadingColour 3}\times 1 & = 0 
+\end{align}
+Thus the particular sequence of $\jqi={\jHeadingColour 2, 1, 3}$ shows the co-primality of 4 and 11, and it is possible to use this decomposition to compute the winding-number pair. To see this we rewrite the algorithm in matrix form. 
+
+\subsection{Matrix form of the Euclidean algorithm}
+\vnmafig{Ch2EuclideanTree}{Computing the highest common factor of 4 and 11 by succesive matrix reductions. The first column of each matrix contains the successive co-prime pairs through the reduction. The branch choice is defined as we traverse the tree upwards, giving the $\jqi$s as the number of $E$s between each $S$; then the B\'ezout relation $11\times1-3\times 4$ is computed by following the branch downwards from the identity matrix}{1}
+%
+See Figure~\ref{fig:Ch2EuclideanTree}. 
+We can solve the B\'ezout relation by putting  Euclid's algorithm in matrix form. For example
+the first reduction of~\eqref{eq:411} is
+\begin{align*}
+\begin{pmatrix} 11 \\ 4 \end{pmatrix}  &= \begin{pmatrix} 1 & \jqn{2} \\ 0 & 1\end{pmatrix} \begin{pmatrix} 3 \\ 4\end{pmatrix} 
+\\
+&
+= \begin{pmatrix} 1 &1 \\ 0 & 1\end{pmatrix}^{\jqn{2}}  \begin{pmatrix} 0 & 1  \\ 1 & 0  \end{pmatrix} \begin{pmatrix} 4 \\ 3 \end{pmatrix}
+\\
+&=
+E^{\jqn{2}} S \begin{pmatrix} 4 \\ 3 \end{pmatrix}
+\end{align*}
+where we have defined matrices corresponding to the successive Euclidean reductions $E$ and the swap of the integer pair $S$, making use of the fact that $E^\jq$ has a $q$ in the upper-right corner:
+
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+It's possible, but unhelpful to think of a M\"obius map $f:\jC\rightarrow\jC$ as a  map $\jR^2\rightarrow\jR^2$.  The reason this is unhelpful is that $f$ is not a linear map on these vectors, and $f(z)$ is not the vector computed as the matrix product of $P_f$ and the vector $(\Re{z},\Im{z})$. A 2x2 matrix more normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
+

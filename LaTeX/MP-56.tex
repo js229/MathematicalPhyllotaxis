@@ -1,0 +1,54 @@
+% !TeX program = lualatex
+\documentclass[a5paper,10pt,british]{memoir}
+
+\usepackage{microtype} % micro adjustments to font spacing does actually reduce overfull hboxes
+
+\usepackage{ifthen}
+\newboolean{printVersion}\setboolean{printVersion}{true}
+\newboolean{answersAtEnd}\setboolean{answersAtEnd}{true}
+\newboolean{notesAtEnd}\setboolean{notesAtEnd}{false}
+\newboolean{compressBibliography}\setboolean{compressBibliography}{false}
+\newboolean{showUnclearedCopyright}\setboolean{showUnclearedCopyright}{false}
+\newboolean{a5Target}\setboolean{a5Target}{true}
+
+% 0.6180339887498948482
+\newcommand{\jdraftnumber}{4.6}
+\input{MPPreamble.tex}
+
+
+
+%\includeonly{FrontMatterBug,Preface,Motivation,Background,Geometry,Classifying,Transformed}
+%\includeonly{Background,Classifying}
+
+\begin{document}
+\selectlanguage{british} % needed if using \usepackage[british,german]{babel}
+
+\include{FrontMatter}
+\include{Preface}
+\begin{KeepFromToc}	\tableofcontents\end{KeepFromToc} 
+\addtocontents{toc}{\vfill}
+\part{Introduction}
+\include{Motivation}
+\include{Background}
+\addtocontents{toc}{\vfill\pagebreak}
+\part{Mathematical theory}
+\include{Geometry}
+\include{Classifying}
+\include{Transformed}
+
+\part{Mathematical modelling}
+\include{Developmental}
+\include{Empirical}
+\include{Placement}
+\part{Conclusions}
+\include{Future}
+\include{Acknowledgements}
+\jBookEndSolutions % will be empty if in-text solutions
+\ifthenelse{\boolean{notesAtEnd}}{\printpagenotes}{}
+\jBibliography
+\newpage
+
+\end{document}
+
+
+
