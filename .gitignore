@@ -1,5 +1,7 @@
 
 *.synctex.gz
+*.synctex.gz(busy)
+
 *.aux
 *.bcf
 *.blg
