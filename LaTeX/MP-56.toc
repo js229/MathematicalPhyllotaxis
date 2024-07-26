@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {2.3.1}Matrix form of the Euclidean algorithm}{27}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Farey trees and winding-number pairs}{29}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}The Euclidean algorithm for Fibonacci structure pairs}{30}{subsection.2.3.3}%
-\contentsline {subsubsection}{Generalised Fibonacci numbers}{31}{section*.4}%
+\contentsline {subsubsection}{Generalised Fibonacci numbers}{31}{section*.3}%
 \contentsline {section}{\numberline {2.4}Continued fractions}{32}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Continued fractions and M\"obius maps}{33}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}M\"obius functions}{34}{subsection.2.4.2}%
@@ -119,6 +119,6 @@
 \contentsline {subsection}{\numberline {9.2.3}Universality across phyla}{168}{subsection.9.2.3}%
 \contentsline {section}{\numberline {9.3}Conclusion}{169}{section.9.3}%
 \contentsline {chapter}{\chapternumberline {10}Answers to Exercises}{173}{chapter.10}%
-\contentsline {chapter}{Bibliography}{187}{section*.10}%
+\contentsline {chapter}{Bibliography}{179}{section*.8}%
 \babel@toc {british}{}\relax 
 \babel@toc {british}{}\relax 

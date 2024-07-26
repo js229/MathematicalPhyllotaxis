@@ -1,0 +1,190 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7025,        182]
+NotebookOptionsPosition[      6012,        157]
+NotebookOutlinePosition[      6417,        173]
+CellTagsIndexPosition[      6374,        170]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"repo", " ", "=", " ", 
+   RowBox[{
+   "PersistentSymbol", "[", 
+    "\"\<persistentGitHubMathematicalPhyllotaxisRepo\>\"", "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AppendTo", "[", 
+    RowBox[{"$Path", ",", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"repo", ",", "\"\<Mathematica\>\"", ",", "\"\<Packages\>\""}], 
+       "}"}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "PacletManager`PacletInstall", "[", 
+    "\"\<C:\\\\Users\\\\jonat\\\\Downloads\\\\GitLink-2018.07.20.01.paclet\>\"\
+", "]"}], "\n", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"figureDirectory", " ", "=", " ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"repo", ",", "\"\<LaTeX\>\"", ",", "\"\<Figures\>\""}], "}"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"teXDirectory", " ", "=", "  ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"repo", ",", "\"\<LaTeX\>\""}], "}"}], "]"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.9309128009761524`*^9, 3.9309128620030937`*^9}, 
+   3.930913019235405*^9, 3.930913120870573*^9, {3.930913241475622*^9, 
+   3.9309132424766693`*^9}, {3.9309186611628284`*^9, 3.9309187199815083`*^9}},
+ CellLabel->"In[65]:=",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f49d2e6f0815"],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<GitLink`\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"gitProperties", "[", "repo_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "main", ",", "c"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"r", "=", 
+       RowBox[{"GitOpen", "[", "repo", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"main", " ", "=", " ", 
+       RowBox[{"GitProperties", "[", 
+        RowBox[{"r", ",", "\"\<HeadBranch\>\""}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"c", "=", 
+       RowBox[{"ToGitObject", "[", 
+        RowBox[{"r", ",", "main"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Append", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"GitProperties", "[", "c", "]"}], "[", "\"\<Author\>\"", 
+         "]"}], ",", 
+        RowBox[{"KeyTake", "[", 
+         RowBox[{
+          RowBox[{"GitProperties", "[", "c", "]"}], ",", "\"\<SHA\>\""}], 
+         "]"}]}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"writeGitProperties", "[", "repo_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"repoProperties", " ", "=", " ", 
+       RowBox[{"gitProperties", "[", "repo", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"repoTeXString", "=", " ", 
+       RowBox[{
+        RowBox[{
+        "StringTemplate", "[", 
+         "\"\<\\\\renewcommand{\\\\jGithubRepoSHA}{`SHA`}\>\"", "]"}], "[", 
+        "repoProperties", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"SetDirectory", "[", "teXDirectory", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Export", "[", 
+       RowBox[{
+       "\"\<githubRepoSHA.tex\>\"", ",", "repoTeXString", ",", 
+        "\"\<Text\>\""}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"ResetDirectory", "[", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";", 
+  RowBox[{"writeGitProperties", "[", "repo", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.9309132186271477`*^9, 3.9309132566180515`*^9}, {
+  3.9309133505964375`*^9, 3.930913583753212*^9}, {3.9309136226347485`*^9, 
+  3.9309137050060863`*^9}, {3.9309186438162823`*^9, 3.930918650060461*^9}, {
+  3.9309190645885086`*^9, 3.9309192059639816`*^9}, {3.930919245508196*^9, 
+  3.9309192512564697`*^9}, {3.930919359262308*^9, 3.930919361552887*^9}},
+ CellLabel->"In[88]:=",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
+
+Cell[BoxData["repoTeXString"], "Input",ExpressionUUID->"1227984e-6213-0940-a95e-3b01bfb69afa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"repoSHA", " ", "=", " ", 
+     RowBox[{"repoProperties", "[", "\"\<SHA\>\"", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"ExportString", "[", 
+    RowBox[{"repoTeXString", ",", "\"\<Text\>\""}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.9309189021151447`*^9, 3.930918911798258*^9}, {
+  3.9309192883725433`*^9, 3.9309193112898674`*^9}, {3.9309193487351074`*^9, 
+  3.930919349648485*^9}},
+ CellLabel->"In[86]:=",ExpressionUUID->"c8aae800-ef9f-df4b-8db7-7f22dbb2c5db"],
+
+Cell[BoxData["\<\"\\\\renewcommand{\\\\jGithubRepoSHA}{\
+ba98cf4b8c5cb3c839db3d880ec194a2e3f84087}\"\>"], "Output",
+ CellChangeTimes->{3.9309193116513157`*^9, 3.93091935037154*^9},
+ CellLabel->"Out[87]=",ExpressionUUID->"9e0c50b7-58f7-8441-933c-bc8a1a209c05"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.930918886382618*^9, 3.930918928664263*^9}, {
+  3.9309189659652576`*^9, 
+  3.930919074262501*^9}},ExpressionUUID->"be1faea8-5f80-1243-96d7-\
+3139847f3b23"],
+
+Cell[BoxData["\<\"\\\\renewcommand{\\\\jGithubRepoSHA}{\
+ba98cf4b8c5cb3c839db3d880ec194a2e3f84087}\"\>"], "Output",
+ CellChangeTimes->{{3.930918918338974*^9, 3.930918930014086*^9}, 
+   3.9309190517120056`*^9},
+ CellLabel->"Out[72]=",ExpressionUUID->"3e7e0559-ffa3-3341-a749-02adc32766ff"]
+}, Open  ]]
+},
+WindowSize->{951, 524},
+WindowMargins->{{469, Automatic}, {Automatic, 82.5}},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"473bde1f-56b0-314b-b222-16036ef714cc"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1396, 35, 140, "Input",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f49d2e6f0815",
+ InitializationCell->True],
+Cell[1957, 57, 2564, 59, 295, "Input",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
+Cell[4524, 118, 94, 0, 28, "Input",ExpressionUUID->"1227984e-6213-0940-a95e-3b01bfb69afa"],
+Cell[CellGroupData[{
+Cell[4643, 122, 560, 12, 67, "Input",ExpressionUUID->"c8aae800-ef9f-df4b-8db7-7f22dbb2c5db"],
+Cell[5206, 136, 259, 3, 32, "Output",ExpressionUUID->"9e0c50b7-58f7-8441-933c-bc8a1a209c05"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5502, 144, 203, 4, 28, "Input",ExpressionUUID->"be1faea8-5f80-1243-96d7-3139847f3b23"],
+Cell[5708, 150, 288, 4, 32, "Output",ExpressionUUID->"3e7e0559-ffa3-3341-a749-02adc32766ff"]
+}, Open  ]]
+}
+]
+*)
+
