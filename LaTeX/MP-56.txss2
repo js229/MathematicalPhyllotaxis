@@ -1,0 +1,72 @@
+{
+    "InternalPDFViewer": {
+        "Embedded": true,
+        "File": "MP-56.pdf"
+    },
+    "Session": {
+        "Bookmarks": [
+        ],
+        "CurrentFile": "Placement.tex",
+        "FileVersion": 1,
+        "Files": [
+            {
+                "Col": 242,
+                "EditorGroup": 0,
+                "FileName": "../../GeometricalPhyllotaxis/LaTeX/Stacked disks/StackedDisks.tex",
+                "FirstLine": 196,
+                "FoldedLines": "",
+                "Line": 230
+            },
+            {
+                "Col": 2,
+                "EditorGroup": 0,
+                "FileName": "CoverImagePage.tex",
+                "FirstLine": 3,
+                "FoldedLines": "",
+                "Line": 9
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "MP-56.tex",
+                "FirstLine": 19,
+                "FoldedLines": "",
+                "Line": 34
+            },
+            {
+                "Col": 47,
+                "EditorGroup": 0,
+                "FileName": "FrontMatter.tex",
+                "FirstLine": 12,
+                "FoldedLines": "",
+                "Line": 19
+            },
+            {
+                "Col": 27,
+                "EditorGroup": 0,
+                "FileName": "MPPreamble.tex",
+                "FirstLine": 28,
+                "FoldedLines": "",
+                "Line": 34
+            },
+            {
+                "Col": 192,
+                "EditorGroup": 0,
+                "FileName": "Background.tex",
+                "FirstLine": 469,
+                "FoldedLines": "",
+                "Line": 471
+            },
+            {
+                "Col": 486,
+                "EditorGroup": 0,
+                "FileName": "Placement.tex",
+                "FirstLine": 28,
+                "FoldedLines": "",
+                "Line": 50
+            }
+        ],
+        "MasterFile": "",
+        "VerticalSplit": false
+    }
+}
