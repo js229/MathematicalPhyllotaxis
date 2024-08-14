@@ -20,13 +20,14 @@
 
 
 %\includeonly{Background}
-%\includeonly{CoverImagePage,FrontMatter}
+%\includeonly{LandscapeCoverImagePage,LandscapeTitlePage,LandscapeCopyright}
 
 \usepackage{overpic}
 \begin{document}
 \selectlanguage{british} % needed if using \usepackage[british,german]{babel}
-\include{CoverImagePage}
-\include{FrontMatter}
+\include{LandscapeCoverImagePage}
+\include{LandscapeTitlePage}
+\include{LandscapCopyright}
 \include{Preface}
 \begin{KeepFromToc}	\tableofcontents\end{KeepFromToc} 
 \addtocontents{toc}{\vfill}
