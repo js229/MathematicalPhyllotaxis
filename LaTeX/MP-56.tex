@@ -1,5 +1,5 @@
 % !TeX program = lualatex
-\documentclass[a5paper,10pt,british]{memoir}
+\documentclass[a4paper,12pt,landscape,british,oneside]{memoir}
 
 \usepackage{microtype} % micro adjustments to font spacing does actually reduce overfull hboxes
 
@@ -9,7 +9,7 @@
 \newboolean{notesAtEnd}\setboolean{notesAtEnd}{false}
 \newboolean{compressBibliography}\setboolean{compressBibliography}{false}
 \newboolean{showUnclearedCopyright}\setboolean{showUnclearedCopyright}{false}
-\newboolean{a5Target}\setboolean{a5Target}{true}
+\newboolean{a5Target}\setboolean{a5Target}{false}
 
 % 0.6180339887498948482
 \newcommand{\jdraftnumber}{5.6}
@@ -19,7 +19,7 @@
 
 
 
-%\includeonly{FrontMatterBug,Preface,Motivation,Background,Geometry,Classifying,Transformed}
+%\includeonly{Background}
 %\includeonly{CoverImagePage,FrontMatter}
 
 \usepackage{overpic}
