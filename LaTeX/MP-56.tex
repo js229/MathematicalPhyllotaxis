@@ -12,7 +12,9 @@
 \newboolean{a5Target}\setboolean{a5Target}{false}
 
 % 0.6180339887498948482
-\newcommand{\jdraftnumber}{5.6}
+\newcommand{\jdraftnumber}{6.6}
+\newcommand{\jPublicationYear}{2024}
+
 \input{MPPreamble.tex}
 \newcommand{\jGithubRepoSHA}{Unset}
 \input{githubRepoSHA.tex}
@@ -20,14 +22,13 @@
 
 
 %\includeonly{Background}
-%\includeonly{LandscapeCoverImagePage,LandscapeTitlePage,LandscapeCopyright}
+%\includeonly{LandscapeCopyright,LandscapeTitlePage,LandscapeCoverImagePage}
 
 \usepackage{overpic}
 \begin{document}
 \selectlanguage{british} % needed if using \usepackage[british,german]{babel}
-\include{LandscapeCoverImagePage}
 \include{LandscapeTitlePage}
-\include{LandscapCopyright}
+\include{LandscapeCopyright}
 \include{Preface}
 \begin{KeepFromToc}	\tableofcontents\end{KeepFromToc} 
 \addtocontents{toc}{\vfill}
