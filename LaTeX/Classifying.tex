@@ -5,15 +5,16 @@
 
 \chapter{Classifying cylindrical lattices}
 \label{ch:classifying}
+
+
+\vnmafig{Ch4VanItersonMain}{Lattice space classified by principal parastichy numbers \gp{m,n}. The previous chapter's distinction between parastichy vectors and complementary vectors is dropped so that eg the \gp{1,2} region includes lattices where the principal parastichy pair is \gp{1,2} but also lattices where it is \gphat{1}{2}. 
+}{0.8}
 \section{The van Iterson diagram}
 The previous chapter made precise the ideas  of a lattice space $\mathcal{L}(d,h)$, where we take the divergence $d$ and the rise $h$ as parameters, and the principal parastichy pair as the pair of integers corresponding to the two shortest informative vectors in the lattice. In this chapter  we solve the problem of classifying every lattice by its principal parastichy pair.
 The answer is given in the van Iterson diagram of Figure~\ref{fig:Ch4VanItersonMain} and the rest of the chapter explains how this Figure is constructed and its implications. 
  Since the classification changes at the points of lattice space where either the first and second, or the second and third, parastichy vectors are equal in length, we need to find the $d$ and $h$ at which this occurs. This requires us to identify \emph{touching-circle lattices}, and we will first construct Figure~\ref{fig:Ch4VanItersonMain} by algebraically finding touching-circle lattices, and then see how a more powerful and more abstract approach based on lattice re-normalisation gives the same answer and explains much of the geometric structure of the diagram. 
  
  
-
-\vnmafig{Ch4VanItersonMain}{Lattice space classified by principal parastichy numbers \gp{m,n}. The previous chapter's distinction between parastichy vectors and complementary vectors is dropped so that eg the \gp{1,2} region includes lattices where the principal parastichy pair is \gp{1,2} but also lattices where it is \gphat{1}{2}. 
- }{0.99}
 \clearpage
 
 \section{Components of the van Iterson diagram: the \branch{m=n} branch}
@@ -192,6 +193,7 @@ We have established algebraically the structural properties of lattice space so 
 In particular, we will show that one of the branches downward from the triple-point corresponds to a non-opposed principal parastichy pair. We have not yet classified lattice space by whether pairs are opposed or not, so it is important to note that van Iterson lattices can sometimes have non-opposed principal parastichy vectors as shown in  Figure~\ref{fig:Ch4NonOpposed}. 
 
 \vnmafig{Ch4NonOpposed}{Even when close to a hexagonal lattice, a van Iterson lattices can be non-opposed. This example has $d = 0.397397\ldots$, $h=0.0446895\ldots$, and the two shortest vectors $\pvec{2}$ and $\pvec{5}$ with $|\pvec{2}|=|\pvec{5}|$, both wind in the same direction.}{1.0}%
+\clearpage
 \vnmafig{Ch4Unfolding}{Lattice deformations near a triple-point classified by Theorem~\ref{thm:tp}. \branch{m=n} branches are drawn as in Figure~\ref{fig:Ch4VanItersonZoom}. As in that Figure, the unfolding is true for general $m,n$ but is labelled for clarity with $m=3$ and $n=5$. Red arrows: primary parastichies; blue arrows secondary parastichies. Grey arrows show the direction in which the hexagonal lattice is stretched so as to preserve two vectors of equal length.  In particular note that the \branch{m,n+m} van Iterson branch below the triple point is nonopposed  but the \branch{n,n+m} branch is opposed.}{1}%
 %
 To classify the branches as they leave the triple-point, we need to know about small changes in the lattice away from that triple-point. That can be done algebraically by using the results of Section~\ref{sec:mequalsn} or graphically by consideration of Figure~\ref{fig:Ch4Unfolding}. Either of these show the following properties of a triple-point:
@@ -237,8 +239,15 @@ We have shown that packing efficiency remains close to the hexagonal optimum on 
 
 
 
-
+\clearpage
 \section{Lattice renormalisation}
+\vnmafig{Ch4Renormalisation}{ A lattice with arbitrary parastichy numbers can be 
+	constructed from a $(0,1)$ lattice by a carefully chosen scaling and rotation that preserves the cylindrical periodicity. Theorem~\ref{thm:renormalization} shows how to compute the necessary complex number $z_m$ of the scaled rotation.
+	The $(0,1)$ lattice has $d=7/72$ and $h=1$ and is shown as the
+	large coloured principal parallelogram with vertical dashed periodicity lines. Rotating that lattice by
+	$(15048+5184 i)/48865$ yields a $(1,3)$ lattice, shown left with white dots on its green periodic cylinder,
+	but rotation by $(9864+ 5184 i)/23953$ yields a $(1,2)$ lattice shown right. 
+}{1}
 The algebra of the Chapter so far is straightforward, if a little tedious, but it doesn't give any insight into the remarkable self-similarity of the van Iterson diagram. The technique of lattice renormalisation uses the observation that one lattice can be mapped to another by scaling and rotating to give a powerful way of mapping from one part of lattice space to another. Lattice renormalisation gives considerably more insight into the structure of the van Iterson diagram than the results so far, at the cost of introducing the technology of M{\"obius} functions, and although in my view it adds little to a scientific understanding of the appearance of Fibonacci numbers it does provide an   description of lattice space.
 \label{sec:levitov}
 
@@ -246,13 +255,7 @@ We saw in the previous chapter that every cylindrical lattice unrolls to a plane
 Now suppose we have a cylindrical lattice with principal parastichy numbers \gp{m,n}. We can subject the corresponding plane lattice to a rotation, but in general the rotated lattice will not be $1$-periodic. Suppose though that we choose the rotation that maps the principal parastichy vector $\pvec{m}$ down onto the $x$-axis, followed by a uniform scaling that maps it onto the point $(1,0)$: then by construction the transformed plane lattice is $1$-periodic and there is a corresponding cylindrical lattice. At this point it's useful to represent lattice parastichy vectors by complex numbers $z_k=(kd-[kd])+i kh$, because the transformation we have just described is exactly division of every lattice point by $z_m$; $z$ here is a complex coordinate and not the real vertical coordinate of previous chapters. 
  An example is given in Figure~\ref{fig:Ch4Renormalisation}. By a weak analogy with theoretical physics this rotate-and-scale process is called lattice renormalisation, and we call the corresponding parastichy vectors of the renormalised lattice $w_m$.
 
-\vnmafig{Ch4Renormalisation}{ A lattice with arbitrary parastichy numbers can be 
-constructed from a $(0,1)$ lattice by a carefully chosen scaling and rotation that preserves the cylindrical periodicity. Theorem~\ref{thm:renormalization} shows how to compute the necessary complex number $z_m$ of the scaled rotation.
-The $(0,1)$ lattice has $d=7/72$ and $h=1$ and is shown as the
-  large coloured principal parallelogram with vertical dashed periodicity lines. Rotating that lattice by
-  $(15048+5184 i)/48865$ yields a $(1,3)$ lattice, shown left with white dots on its green periodic cylinder,
-  but rotation by $(9864+ 5184 i)/23953$ yields a $(1,2)$ lattice shown right. 
-  }{1}
+
 
 The original and the renormalised lattice are represented by two different points $(d,h)$ in lattice space, and each point in that space has co-ordinates which are those of the parastichy vector of smallest positive rise of the corresponding lattice. So renormalisation corresponds to a map $w_1=f(z_1)$; we will compute it, or rather its inverse $g$ such that $g(w_1)=z_1$. This gives a way of constructing a lattice with any desired principal parastichy numbers $m$ and $n$ by multiplying a normalised one by a particular complex number $z_m$. Moreover, since the angle between the parastichy vectors is not changed by the renormalisation, a lattice with any desired such angle, such as a hexagonal lattice, can be found by starting from an lattice with the same angle in $\gp{0,1}$ space. 
 
@@ -526,7 +529,7 @@ Show that the packing efficiency of a van Iterson lattice is locally maximised a
 \end{jAnswer}
 We can calculate the packing efficiency $\beta$ across van Iterson space by using the classification of this chapter to find $\mvec$.  Within the $(0,1)$ region, the primary parastichy vector is $(1,0)$ of length 1, and $\beta$ is simply $\pi/ {4 h }$.  Since $\beta$ is not changed by a rigid rotation and scaling of a lattice, we could also simply map this function  $\pi/ {4 h }$ using the M{\"o}bius transforms into each region. Figure~\ref{fig:Ch4PackingTreePlot} shows a contour plot of the packing efficiency $\beta$ along with a graph of $\beta$ along a horizonatal transect of lattice space.
 \vnmafig{Ch4PackingTreePlot}{Top: packing efficiency $\beta$ across van Iterson space (Close to hexagonal: $\beta>0.8$, Tight: $\beta>0.7$, Loose: $\beta>0.6$, Looser $\beta<0.6$). Bottom graph: $\beta$ as a function of $d$ across the line $h=0.005$. Note that while the divergence $\tau/2\pi$ corresponding to the golden angle is a local maximum of $\beta$, it is not a global maximum.
-}{1.0}%
+}{0.9}%
 Since packing efficiency scales like $1/h$ in the $(0,1)$ region, its contour lines there are horizontal, and so the contour lines of packing efficiency in each other, M{\"o}bius transformed region, become arcs of circles. 
 \clearpage
 \section{The structure of multijugate lattice space}

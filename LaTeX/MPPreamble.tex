@@ -267,13 +267,20 @@ bibencoding=utf8,articlein=false]{biblatex}
 \newcommand{\pdffig}[3]{\jdofig{#1}{#2}{#3}{./Figures}{.pdf}}
 
 \newcommand{\jdofig}[5]{
-	\begin{marginfigure}\centering\includegraphics[width=#3\jfigwidth]{#4/#1#5} \caption{#2}\label{fig:#1}\end{marginfigure}
+	\begin{marginfigure}
+
+		\centering
+		\captionsetup{width=10cm}
+		\includegraphics[width=#3\jfigwidth]{#4/#1#5}
+		 \caption{#2}\label{fig:#1}
+	 \end{marginfigure}
 }
 %\newcommand{\jdofig}[5]{
 %	\begin{figure}\centering\includegraphics[width=#3\jfigwidth]{#4/#1#5} \caption{#2}\label{fig:#1}\end{figure}
 %}
 
 \usepackage{wrapfig}
+\usepackage{caption}
 \newcommand{\jwrapfig}[4]{
 \begin{wrapfigure}{r}{#3}
 	\includegraphics[width=#3]{./Figures/#4.jpg}

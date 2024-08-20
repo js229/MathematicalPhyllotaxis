@@ -5,7 +5,7 @@
 \section{Introduction}
 The goal of this chapter is to characterise the shortest vectors in a lattice. This will allow us, in the next chapter, to classify lattices by their shortest vectors in a way that has biological relevance. Here we will first define the basic lattice parameters, then introduce a labelling of particular vectors, the parastichy vectors. Then we will consider generating pairs of vectors,  the building blocks of the lattice, and show how to deduce from a generating pair  what the shortest vectors are. We begin by exploring why lattices have any biological relevance at all for phyllotaxis.
 
-
+\clearpage
 \section{Botanical motivation}
 \subsection{Leaf lattices on cylinders}
 
@@ -30,7 +30,7 @@ These leaf-on-stem examples are naturally modelled in cylindrical coordinates on
 
 \section{Cylindrical and plane lattices}
 Table~\ref{tab:notation} summarises the notation used in this Chapter. 
-\begin{table}
+\begin{margintable}
 	\begin{tabular}{lL{7cm}}
 		\hline
 		$[x]$ & The nearest integer to $x$. 
@@ -63,7 +63,8 @@ Table~\ref{tab:notation} summarises the notation used in this Chapter.
 	\end{tabular}
 	\caption{Notation used in this Chapter.}
 	\label{tab:notation}
-\end{table}
+\end{margintable}
+\clearpage
 \label{sec:latticedef}
 We use surface coordinates $(x,z)$ on a cylinder, of fixed circumference 1, that extends infinitely in the vertical direction $z$.  At the origin we place a point of the lattice. By rotating an angle $2\pi d$ around the cylinder from the origin and rising by $z=h$
 we place a second point. Repetitions of this translation will define the whole lattice,  and we will call  
@@ -179,7 +180,7 @@ We now concentrate on pairs of parastichies, as it is these pairs we will use to
 
 \vnmafig{Ch3Parastichy45}{
 Some parastichies and their parastichy vectors in a lattice with $d=17/72$ and $h=0.03$. The blue lines highlight the family of 4-parastichies,  the red lines the family of 5-parastichies, and the green ones the family of 1-parastichies. There are four members of the 4-parastichies, and the member that passes through the point 0 also passes through the point 4. For this lattice, $\gp{1,4}$ and $\gp{4,5}$ are each  examples of a generating and opposed pair: in each case the two parastichies wind in opposite directions, the parallelogram defined by the pair tiles the lattice and every lattice point is at a vertex of one of the parallelograms; the edges of the parallelograms form the parastichy lines. 
-  }{0.99}
+  }{0.7}
 
 \begin{definition}
 The $\gp{m,n}$-parastichy pair is the pair of parastichy vectors $\mvec$ and $\nvec$.
@@ -626,7 +627,7 @@ $\rpvec{n+1}$  when $\nu=n+\jhalf$ which can be rewritten as
 Note that for the initial case $n=0$ we recover $h^2+d^2=2d$ as the $0=\hat{1}$ boundary where a $(1,0)$ lattice became a $(1,\hat 1)$ lattice. For each of $n=1,\ldots,k$ this gives the point at which a  $(1,\hat n)$ becomes a  $(1,\widehat {n+1})$ lattice, and then for $n=k+1$ the lattice transitions from a  $(1,\hat {k})$ to a $(1, {k+1})$ lattice.  From this point on the principal pair are both parastichy vectors, though at some yet smaller $h$.  $\pvec{1}$ will cease to be the principal vector and we are back in the full complexity of Figure~\ref{fig:Ch4VanItersonMain}.
 
 The region of lattice space in which lattices are of the form $(1,\hat{n})$ are shown in Figure~\ref{fig:Ch3SpiralExample}.
-\nmafig{Ch3SpiralExample}{Structure of lattices space near $(d,h)=(0,0)$ where lattices are frequently spiral lattices. Shaded in light and dark yellow are regions where the principal parastichy pair are $(1,\hat{n})$ for $n=1$ to $n=7$. At the light-dark boundary the lattice is square. The principal pair transitions from $(1,\hat{n})$ to  $(1,{n})$ at the vertical line $d=\jfrac{1}{2n}$. }
+\vnmafig{Ch3SpiralExample}{Structure of lattices space near $(d,h)=(0,0)$ where lattices are frequently spiral lattices. Shaded in light and dark yellow are regions where the principal parastichy pair are $(1,\hat{n})$ for $n=1$ to $n=7$. At the light-dark boundary the lattice is square. The principal pair transitions from $(1,\hat{n})$ to  $(1,{n})$ at the vertical line $d=\jfrac{1}{2n}$. }{.5}
 
 \end{jAnswer}
  
@@ -707,9 +708,9 @@ Because the first and second parastichy vectors $\fvec$ and $\svec$ are of the f
 	The third parastichy number is the sum or difference of the first two.%
 	\end{theorem}
 See Figure~\ref{fig:Ch3SumDifference}.	This form of the Theorem neglects the hats, so requires us to interpret $1+\hat{1}$ as $2$ or $\hat{2}$ as necessary. We will see in the next Chapter how Turing sought to use this theorem as part of his explanation of Fibonacci structure.
-\vnmafig{Ch3SumDifference}{The third parastichy vector in a lattice is always the sum or difference of the first two.}{1.0}
+\vnmafig{Ch3SumDifference}{Turing's theorem: the third parastichy vector in a lattice is always the sum or difference of the first two.}{1.0}
 
-
+\clearpage
 
 
 \section{Orthostichies}
@@ -721,7 +722,7 @@ and as the rise continues to decrease the principal parastichy counts will move 
 {1.0}
 
 The Standard Picture models have the divergence as an outcome, not an input. So under the Standard Picture, this observation explains why, if we see some Fibonacci structure, we see a lot, not why we see it in the first place. 
-
+\clearpage
 
 
 \section{Touching-circle and hexagonal lattices}
@@ -746,6 +747,7 @@ Square and hexagonal lattices are special cases of van Iterson lattices:
 \begin{definition}
 	A van Iterson, or touching circle, lattice, is one in which the first and second parastichy vectors have the same length.
 \end{definition}
+\clearpage
 The van Iterson connection will appear in the next chapter; the reason for the name `touching circle' is that disks of diameter equal to the first principal parastichy vector can be placed at each point of a van Iterson lattice without overlapping, and will touch at a point halfway along that vector. 
 
 
@@ -781,16 +783,16 @@ Another area where this text differs from Jean's synthesis is the \emph{conspicu
 I prefer here to use the principal parastichy pair as the most natural model of `obvious'. 
 The concept of the principal parastichy pair, central to this book, was first made explicit by Turing~\autocite{turingMorphogenTheoryPhyllotaxis2013} in the 1950s: Theorems~\ref{thm:third} and~\ref{thm:Turing} are based on his ideas. Adler was well aware of Turing's notes on phyllotaxis and cited them in his 1974 literature survey~\cite{adlerModelContactPressure1974}. Adler's perspective was that the central mathematical problem was the relationship between the divergence and the set of possible generating pairs. It was from this perspective that he wrote that Turing had been `prevented' from using this `fundamental' concept because of Turing's focus on the principal parastichy pair, which is in fact more fundamental to the modern Standard Picture. For some reason, perhaps the very long delay in publishing Turing's notes, even this dismissal was removed from Jean's book, even though the notes had by then been published. As a consequence Jean's book contains no explicit equivalent of Turing's Theorem. 
 
- 
+ \clearpage
  \section{Multijugate lattices}
-
+\vnmafig{Ch4JugacyCompare}{Left: A monojugate lattice with divergence $d=0.02$,  rise $h=0.075$, and $J=1$, which has principal parastichy numbers \gp{1,4,5}. Right a bijugate lattice with $J=2$, divergence $d/J$, rise $h/J$,  whose principal parastichy numbers are \gp{2,8,10}.}
+{1.0}
  The jugacy of a cylindrical lattice is the number of points in the lattice at each rise. The assumption that the rise per node was nonzero, made at the beginning of this chapter, enforced that we have only classified monojugate lattices with a jugacy $J=1$. More generally, a multijugate lattice $\mathcal{L}(d,h,J)$ can be defined as the set of points 
  $ (kd+ l/J - [kd+ l/J],kh)$ with $ k\in\jZ$ and $l\in  0,\ldots,J$,
  and can be constructed by placing $J$ copies of the primary cylinder next to each other and then reducing the divergence by a factor of $J$ so the multijugate lattice is still on a cylinder of circumference 1: see Figure~\ref{fig:Ch4JugacyCompare}. If we then also reduce the rise by a factor of $J$ we will produce a lattice in which the parastichy vectors have the same proportions  as in the original. Instead of numbering the points $0$, $1$, \ldots, at each succesive rise, we can number them around the cylinder first and then increase with the rise. 
  With this natural numbering of points in the multijugate lattice, the points numbered $0$ and $k$ in the monojugate lattice become the points $0$ and $kJ$, so the principal parastichy numbers of a the lattice $\mathcal{L}(d,h,J)$ are $J$ times the principal parastichy numbers of $\mathcal{L}(Jd,Jh,1)$. 
  %
- \vnmafig{Ch4JugacyCompare}{Left: A monojugate lattice with divergence $d=0.02$,  rise $h=0.075$, and $J=1$, which has principal parastichy numbers \gp{1,4,5}. Right a bijugate lattice with $J=2$, divergence $d/J$, rise $h/J$,  whose principal parastichy numbers are \gp{2,8,10}.}
- {1.0}
+ 
  %
  If needed, the apparatus of hats and complementary vectors goes over to multijugate lattices, so that for instance the bijugate version of a \gphat{1}{1} lattice is a \gphat{2}{2} lattice as in Figure~\ref{fig:Ch4JugacyHat}. \vnmafig{Ch4JugacyHat}{The multijugate version of lattices with complementary vectors as principal vectors have the same property, although perhaps easier to visualise. Left: A monojugate lattice with divergence $d=0.245$,  rise $h=0.45$, and $J=1$, with  principal parastichy numbers are \gphatnothat{1}{1}{0}. Right the corresponding bijugate lattice with  $J=2$, divergence $d/J$, rise $h/J$,  whose principal parastichy numbers are \gphatnothat{2}{2}{0}}{1.0}
  %
