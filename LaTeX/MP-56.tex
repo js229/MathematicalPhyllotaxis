@@ -5,7 +5,7 @@
 
 \usepackage{ifthen}
 \newboolean{printVersion}\setboolean{printVersion}{true}
-\newboolean{answersAtEnd}\setboolean{answersAtEnd}{true}
+\newboolean{answersAtEnd}\setboolean{answersAtEnd}{false}
 \newboolean{notesAtEnd}\setboolean{notesAtEnd}{false}
 \newboolean{compressBibliography}\setboolean{compressBibliography}{false}
 \newboolean{showUnclearedCopyright}\setboolean{showUnclearedCopyright}{false}
@@ -23,7 +23,7 @@
 
 
 
-%\includeonly{Transformed}
+%\includeonly{Placement,StackedDisksChapter}
 %\includeonly{LandscapeCopyright,LandscapeTitlePage,LandscapeCoverImagePage}
 
 \usepackage{overpic}
@@ -47,6 +47,7 @@
 \include{Developmental}
 \include{Empirical}
 \include{Placement}
+\include{StackedDisksChapter}
 \part{Conclusions}
 \include{Future}
 \include{Acknowledgements}

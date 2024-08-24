@@ -10,28 +10,12 @@
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 242,
-                "EditorGroup": 0,
-                "FileName": "../../GeometricalPhyllotaxis/LaTeX/Stacked disks/StackedDisks.tex",
-                "FirstLine": 196,
-                "FoldedLines": "",
-                "Line": 230
-            },
-            {
-                "Col": 2,
-                "EditorGroup": 0,
-                "FileName": "CoverImagePage.tex",
-                "FirstLine": 3,
-                "FoldedLines": "",
-                "Line": 9
-            },
-            {
                 "Col": 0,
                 "EditorGroup": 0,
                 "FileName": "MP-56.tex",
-                "FirstLine": 19,
+                "FirstLine": 39,
                 "FoldedLines": "",
-                "Line": 34
+                "Line": 55
             },
             {
                 "Col": 47,
@@ -42,28 +26,44 @@
                 "Line": 19
             },
             {
-                "Col": 27,
+                "Col": 0,
                 "EditorGroup": 0,
                 "FileName": "MPPreamble.tex",
-                "FirstLine": 28,
+                "FirstLine": 261,
                 "FoldedLines": "",
-                "Line": 34
+                "Line": 270
             },
             {
-                "Col": 192,
-                "EditorGroup": 0,
-                "FileName": "Background.tex",
-                "FirstLine": 469,
-                "FoldedLines": "",
-                "Line": 471
-            },
-            {
-                "Col": 486,
+                "Col": 0,
                 "EditorGroup": 0,
                 "FileName": "Placement.tex",
-                "FirstLine": 28,
+                "FirstLine": 7,
                 "FoldedLines": "",
-                "Line": 50
+                "Line": 15
+            },
+            {
+                "Col": 602,
+                "EditorGroup": 0,
+                "FileName": "Classifying.tex",
+                "FirstLine": 555,
+                "FoldedLines": "",
+                "Line": 559
+            },
+            {
+                "Col": 123,
+                "EditorGroup": 0,
+                "FileName": "Geometry.tex",
+                "FirstLine": 624,
+                "FoldedLines": "",
+                "Line": 628
+            },
+            {
+                "Col": 251,
+                "EditorGroup": 0,
+                "FileName": "Future.tex",
+                "FirstLine": 23,
+                "FoldedLines": "",
+                "Line": 31
             }
         ],
         "MasterFile": "",

@@ -415,9 +415,9 @@ There are two hexagonal lattice points in \gp{0,1} at $e^{i\pi/3}$ and $e^{2i\pi
 \end{jAnswer}
 
 \begin{jExercise}
+\label{ex:calcprinciplay}
 	Find the magnitude of the principal parastichy vector in an \gp{m,n}  lattice with angle $\theta$ between its principal parastichy vectors.
 	Find the radius of the disks in a touching circle lattice as a function of $\theta$, and the divergence $d$ as a function of $r$.
-	\label{ex:calcprinciplay}. Find an approximate expression for the range the disk radius takes in a touching circle Fibonacci lattice. 
 \end{jExercise}
 \begin{jAnswer}
 The angle  $\theta$ between the principal parastichy vectors is the same in the $\gp{0,1}$ lattice and in the rotated and scaled lattice, and  $w=|w_0|e^{i\theta}$.  Inserting this into in~\eqref{eq:gReImA} and taking real and imaginary parts allows the calculation of $\pvec{m}=m z_1 -u$ and $|\pvec{m}|^2$: 
@@ -440,15 +440,22 @@ d&=		\jhalf
 \end{align}
 
 As $w_1$ rotates around the unit circle from $e^{2i\pi/3}$ to $e^{i\pi/2}$ to $e^{i\pi/3}$, the inverse square diameter of the transformed lattice increases from $m^2-mn+n^2$at the top triple point on the $m=n$ branch, through  $m^2+n^2$ at the square lattice point, down to $m^2+mn+n^2$  at the lower triple point.
+\end{jAnswer}
 
-
+\begin{jExercise}
+	\label{ex:fibthresholds}
+Suppose that the Fibonacci branch of the van Iterson tree is followed as $r$ is decreased.
+Show that the larger parastichy number becomes $F_{k+1}$ at approximately  $r^{-1}={\sqrt{2}F_k}$.
+\end{jExercise}
+\begin{jAnswer}
 
 If $m$ and $n$ are adjacent Fibonacci numbers $F_{k}$ and $F_{k+1}$, then using $F_k\approx \tau^k/\sqrt{5}
 $ we find the value of $r$ on the branch is approximately
 	\begin{align}
   F_k \sqrt{2} &\leq	2 r^{-1}  \leq F_k \sqrt{2(1+\tau)}.
 \end{align}
-So on the Fibonacci branch of the van Iterson diagram, the larger Fibonacci number becomes $F_{k+1}$ at approximately $r=\sqrt{5/2}\tau^{-k}\approx \frac{1}{\sqrt{2}F_k}$.
+So on the Fibonacci branch of the van Iterson diagram, 
+the larger Fibonacci number becomes $F_{k+1}$ at approximately $r=\sqrt{5/2}\tau^{-k}\approx \frac{1}{\sqrt{2}F_k}$.
 \end{jAnswer}
 
 
@@ -529,7 +536,7 @@ Show that the packing efficiency of a van Iterson lattice is locally maximised a
 \end{jAnswer}
 We can calculate the packing efficiency $\beta$ across van Iterson space by using the classification of this chapter to find $\mvec$.  Within the $(0,1)$ region, the primary parastichy vector is $(1,0)$ of length 1, and $\beta$ is simply $\pi/ {4 h }$.  Since $\beta$ is not changed by a rigid rotation and scaling of a lattice, we could also simply map this function  $\pi/ {4 h }$ using the M{\"o}bius transforms into each region. Figure~\ref{fig:Ch4PackingTreePlot} shows a contour plot of the packing efficiency $\beta$ along with a graph of $\beta$ along a horizonatal transect of lattice space.
 \vnmafig{Ch4PackingTreePlot}{Top: packing efficiency $\beta$ across van Iterson space (Close to hexagonal: $\beta>0.8$, Tight: $\beta>0.7$, Loose: $\beta>0.6$, Looser $\beta<0.6$). Bottom graph: $\beta$ as a function of $d$ across the line $h=0.005$. Note that while the divergence $\tau/2\pi$ corresponding to the golden angle is a local maximum of $\beta$, it is not a global maximum.
-}{0.9}%
+}{0.8}%
 Since packing efficiency scales like $1/h$ in the $(0,1)$ region, its contour lines there are horizontal, and so the contour lines of packing efficiency in each other, M{\"o}bius transformed region, become arcs of circles. 
 \clearpage
 \section{The structure of multijugate lattice space}

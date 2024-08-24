@@ -1,0 +1,72 @@
+{
+    "InternalPDFViewer": {
+        "Embedded": true,
+        "File": "MP-56.pdf"
+    },
+    "Session": {
+        "Bookmarks": [
+        ],
+        "CurrentFile": "Placement.tex",
+        "FileVersion": 1,
+        "Files": [
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "MP-56.tex",
+                "FirstLine": 39,
+                "FoldedLines": "",
+                "Line": 55
+            },
+            {
+                "Col": 47,
+                "EditorGroup": 0,
+                "FileName": "FrontMatter.tex",
+                "FirstLine": 12,
+                "FoldedLines": "",
+                "Line": 19
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "MPPreamble.tex",
+                "FirstLine": 261,
+                "FoldedLines": "",
+                "Line": 270
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "Placement.tex",
+                "FirstLine": 7,
+                "FoldedLines": "",
+                "Line": 15
+            },
+            {
+                "Col": 602,
+                "EditorGroup": 0,
+                "FileName": "Classifying.tex",
+                "FirstLine": 555,
+                "FoldedLines": "",
+                "Line": 559
+            },
+            {
+                "Col": 123,
+                "EditorGroup": 0,
+                "FileName": "Geometry.tex",
+                "FirstLine": 624,
+                "FoldedLines": "",
+                "Line": 628
+            },
+            {
+                "Col": 251,
+                "EditorGroup": 0,
+                "FileName": "Future.tex",
+                "FirstLine": 23,
+                "FoldedLines": "",
+                "Line": 31
+            }
+        ],
+        "MasterFile": "",
+        "VerticalSplit": false
+    }
+}
