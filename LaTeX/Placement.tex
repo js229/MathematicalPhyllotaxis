@@ -2,7 +2,7 @@
  
 \chapter{Placement models}
 \label{ch:placement}
-Up to now we have studied only static lattices, which fix the location of every node simultaneously, and then we smoothly transformed the lattice as a whole. This approach cannot represent the one-by-one developmental choices for node commitment, so now we will consider more general node-placement models. This Chapter reviews a range of models that have usefully been deployed to understand Fibonacci phyllotaxis in this way. A modern book-length survey of such models with a rather different perspective is ~\autocite{barabePhyllotacticPatternsMultidisciplinary2020}. Recent reviews mainly devoted to the biological issues include~\cite{traasPhyllotaxis2013} and~\cite{godinPhyllotaxisGeometricCanalization2020}. One survey of models in plant morphogenesis more broadly is  ~\autocite{prusinkiewiczComputationalModelsPlant2012}.
+Up to now we have studied only static lattices, which fix the location of every node simultaneously, and then we smoothly transformed the lattice as a whole. This approach cannot represent the one-by-one developmental choices for node commitment, so now we will consider more general node-placement models. This Chapter, and the next, review a range of models that have usefully been deployed to understand Fibonacci phyllotaxis in this way. A modern book-length survey of such models with a rather different perspective is ~\autocite{barabePhyllotacticPatternsMultidisciplinary2020}. Recent reviews mainly devoted to the biological issues include~\cite{traasPhyllotaxis2013} and~\cite{godinPhyllotaxisGeometricCanalization2020}. One survey of models in plant morphogenesis more broadly is  ~\autocite{prusinkiewiczComputationalModelsPlant2012}.
 
 Although we no longer require all node positions to form a lattice, we retain the cylindrical coordinates $(x,z)$ of section~\ref{sec:latticedef}, and suppose that the position of all the points $\jpoint{i} = (x_i,z_i)$ is fixed up to the $(k-1)$-th, with $z_i$ non-decreasing. The node-placement model of Chapter~\ref{sec:bio} is now expressible as a function whose output is $\jpoint{k}$ and whose input is the $\jpoint{i}$s, $i=0,\ldots, k-1$,
 although in practice the output will only depend on recent or nearby node-positions. The time at which the new node is placed might be an output of the model (as in Snows' model) but if we follow Hofmeister's model and choose to hold constant the inter-node time, or \textit{plastochrone},  then we have a discrete-time model. 
@@ -44,141 +44,6 @@ A model of this spiral generation-phenomenon  can be built by assuming that the 
 
 \clearpage
 
-\section{The stacked-coin model}
-
-One effect of the success of the Doaudy-Couder approach was to reanimate research into an older family of models based on coin-stacking.%
-
-Coin-stacking is my invented name for these models but they have been widely used under various names. In the 1870s, Schwendener published figures of similar models which may well have influenced the work of van Iterson. In the early 1990s van der Linden demonstrated the first simulations of such models showing large Fibonacci numbers~\cite{vanderlindenCreatingPhyllotaxisDislodgement1990}, and particularly since the 2000s there have been a number of  useful papers I draw on in this chapter~\autocite{atelaRhombicTilingsPrimordia2017,hottonPossibleActualPhyllotaxis2006,atelaGeometricDynamicEssence2011}. 
-
-In these models,  non-overlapping `coins' of diameter $D$ are successively placed at the lowest points possible on the cylinder,  touching two or three adjacent coins for their support. They then define node placements by their centre. The size of the $k$-th coin, $D(k)$, might be fixed or might vary with $k$, typically through the height of the stack so far.  In general we will be interested in $D(k)$ as a decreasing function of $z$, while the cylinder on which the coins are placed continues to have circumference 1. Figure~\ref{fig:SchwendenerCollectedp202} shows an example of such a model from the 1870s~\autocite{schwendenerMechanischeTheorieBlattstellungen1878}.%
-\jpgfig{SchwendenerCollectedp202}{Schwendener's stacked-coin model showing transitions from a $\pp{3,5}$ to a $\pp{5,8}$ to a $\pp{8,13}$ parastichy~\autocite{schwendenerGesammelteBotanischeMittheilungen1898}. }{.3}
-
-\clearpage 
-These disks represent the inhibition zones in the SAM that are established by patterning of auxins and other morphogens, and the `gravity constraint' of adding the new disk at the lowest possible place corresponds to Snow's empirical rule that a new node will form as soon as it has enough space. The changing disk size corresponds to the change in proportion between the sizes of the inhibition zone and that of the SAM cylinder. It seems likely that most of the this change in relative geometry in actual plant growth is due to expansion of the SAM rather than modification of the inhibition zone size. So in some ways a more accurate visual representation than stacking variable-sized coins on a cylinder is to stack fixed-size coins on a cone. Figure~\ref{fig:2pstack} gives an example of such a model. The two model classes are not quite identical because the map between cone and cylinder will distort circles, but to the extent that the results of model simulations is not strongly dependent on the shape of the inhibitor zone we can expect similar results between the two.
-  \jpgfig{2pstack}{The `stacked-coin' model, implemented with British tuppeny pieces, inspired by Atela~\autocite{atelaGeometricDynamicEssence2011}.}{0.5}
-
-\clearpage
-
-\vnmafig{Ch8InhibitionBoundary}{Finding the next location in the stacked-coin model by finding the lowest point of the boundary of the inhibition zone, itself defined by the topmost coins. The width of the inhibition zone may be variable and defines the radius of the next coin.}{1}
-But when we do not have a precise lattice we need a more general way to compute parastichy numbers for our patterns.
-
-Stacked-coin models are intuitively simple to solve computationally, as illustrated in Figure~\ref{fig:Ch8InhibitionBoundary}. We can 
- think of the existing coins creating an inhibition field, shown in grey in the Figure: no new coin can be placed below the boundary of the region formed by disks centred on all the existing coins, but with twice their radius. The new coin is placed at the minimum of this boundary.  Attractively, this placement depends only on the most recent `front' of coins around the cylinder, and is the minimum of a finite number of intersections of disks.
- 
- A version of this model in which the fronts were curves called `pseudoconchoids'  was  arrived at by Schoute at the first quarter of the 20th century~\cite{schouteUberPseudokonchoiden1913}. According to  Richards' account~\cite{richardsGeometryPhyllotaxisIts1948}  of this German-language work, a pseudoconchoid allowed phyllotactic transitions by giving the front shape 'sufficient flexibility'. 
-  
- The series of stacking positions can be thought of as the trajectory of a map on the space of (recent) positions, and locally stable trajectories correspond to observed outcomes of the model. The map's output can be written as the vector from the $k$-th to the $k+1$-th-node; if this map has a fixed point then we will have a lattice in the sense of Chapter~\ref{ch:cylinder}. 
-%
-\clearpage
-\subsection{Parastichy numbers in stacked-coin models}
-\vnmafig{Ch8ChainExample}{Computing the parastichy counts for non-lattice patterns by counting up and down links in chains around the cylinder. If the patterns is close to a lattice, these counts coincide with the parastichy numbers of the lattice.}{.5}
-As is evident from Figure~\ref{fig:Ch8NewTransitionFibonacci}, stacked-coin models frequently generate patterns which are not parts of lattices, so we can no longer use the  definitions of Chapter~\ref{ch:cylinder}
-to find a global pair of parastichy numbers for the pattern, because  parastichies are not exactly straight lines.  However, they are not so far off, and there is still a way to compute parastichy pairs locally~\autocite{goleFibonacciQuasisymmetricPhyllotaxis2016}.
-The process is shown in Figure~\ref{fig:Ch8ChainExample}. Starting from one coin, we look for a shortest chain of touching coins that encircle the cylinder and returns to the original. That chain will have a number of up-steps to higher coins and down-steps to lower coins and the total number of up-steps and down-steps is exactly what we define as the parastichy count. 
-If the pattern is exactly a lattice each such chain will give the same parastichy count. If not, then in regions of transition it is possible for there to be multiple counts associated with one coin, which is in itself a useful diagnostic of lack of regularity.
-
-%
-\clearpage
-\subsection{Fibonacci transitions}
-%
-\vnmafig{Ch8NewTransitionFibonacci}{A stacked-coin model run, showing parastichy count transitions from a distichous pattern through Fibonacci numbers when the coin radius changes slowly enough. Each coin is added in turn with radius $D(z)$ where $z$ is the highest coin centre previously added, and $D(z)$ is decreased in a piecewise linear way from 1 to 1/6.}{1}
-%
-If we take one of the opposed touching-circle lattices with disk diameter $D$ of the previous chapter, truncate all the coins above one  point, and then use that as an initial condition for a stacked-coin model with fixed disk diameter $D$ we will regenerate the lattice. But a non-opposed lattices cannot in general be generated in this way because 
- whenever a new coin is added, the contact lines through its two supports must be in opposite directions on the cylinder. So we should not expect to see non-opposed lattices generated by stacked-coin models.
- 
-Putting this avoidance of opposed lattices together with Chapter~\ref{ch:classifying}'s Hypothesis of Geometrical Phyllotaxis would seem to go a long way towards explaining Fibonacci phyllotaxis in these models, and unsurprisingly it is possible to persuade them to exhibit the desired behaviour, as in Figure~\ref{fig:Ch8NewTransitionFibonacci}.
-% 
-
-
-It is tempting to stop at this point: we have built a model of node-formation which is informed by and fairly consistent with the known molecular biology, and we have shown that as biologically relevant parameter is varied, the model outputs pass through a series of increasingly complex patterns, each transition preserving the Fibonacci property. More than that, this property is generic and does not rely on model fitting. Apart from ensuring that the change of disk radius is slow enough, we have had to specify no particular parameters to achieve this sequence of Fibonacci transitions
-
-However, quite apart from the question of biological validation, the mathematical satisfaction should be tempered by the fact that it took several attempts to generate Figure~\ref{fig:Ch8NewTransitionFibonacci}: vary the disk radius too slowly, and the model takes a biologically infeasible number of iterations to make the necessary transitions; vary it too quickly and the Fibonacci structure rapidly breaks down. As we shall shortly see, There is more going on in the dynamics of these systems than transitions between lattices, and this more mathematically complex dynamics appears also to have at least some biological relevance.  So showing the   relevance of the van Iterson classification requires overcoming  a (to me) surprising mathematical obstacle: when is a lattice  adequate to describe stacked coin dynamics?
-
-\clearpage
-
-\subsection{Stacking fixed coins in fixed geometry}
-\vnmafig{Ch8FixedRadius}{A stacked coin model with disk size fixed at that of a square $\pp{2,3}$ lattice, started from different  initial conditions with in which a single disk of the square lattice has been distorted in size. }{1}
-
- \textit{Does} a stacked-coin model reliably lead to lattices? Intriguingly, the answer is no. 
- Figure~\ref{fig:Ch8FixedRadius} shows the results of five simulations of a fixed-size stacked-coin model, of which the centre starts from an exact $\pp{2,3}$ lattice, and the neighbours start from a perturbation of that lattice.
-On the left we can see our square $\pp{2,3}$ lattice with straight line parastichies. For the other initial conditions with the same disk radius the lines joining the disk centres are now longer exactly straight, yet would still be described by eye as having 2-parastichies and 3-parastichies, although not always in the same direction.
-
- So a stacked-coin model can lead to solutions which are close to lattices, and if we start with a disk radius corresponding to a $\pp{m,n}$ lattice and an initial condition close to one, we might  hope to remain with a $\pp{m,n}$ parastichy count in our generalised sense. We can also expect that, just as the new third parastichy number at a lattice bifurcation is either $\pp{n+m}$ or $\pp{n-m}$, the same will be true for patterns near to those lattices, and indeed Golé et al~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016} give an elegant argument based on chain transitions for this. But how close to a lattice do these patterns need to be for  the  elegant bifurcation theory of Chapter~\ref{ch:classifying} still to hold? 
-
-
-\clearpage
-\subsection{Cylinder tilings and rhombic-tilings}
-\label{sec:tilings}
-\vnmafig{Ch8AreaTimeSeries}{Area of each polygon in the lattices of Figure~\ref{fig:Ch8FixedRadius}, read left to right, plotted from bottom to top.}{1}
-These seem to be periodic graphs, corresponding to periodic orbits of the stacked-coin map. 
-
-One way to quantify the way in which the runs of Figure~\ref{fig:Ch8FixedRadius} depart from lattice structure is to plot a function associated with each node, such as the area of the polygon below it,  as a function of the dropped-coin sequence. This is done in Figure~\ref{fig:Ch8AreaTimeSeries}.
-
-Just as a lattice corresponds to a fixed point of the next-node vector stacked-coin map, with a constant $(d,h)$ between nodes, a cylinder tiling corresponds to a low-order periodic solution of the map, with a sequence $((d_1,h_1),\ldots (d_k,h_k) )$. The upper parts of the tilings in Figure~\ref{fig:Ch8FixedRadius} are close approximations to cylindrical tilings.
-A consequence of the disk stacking model is that each node in Figure~\ref{fig:Ch8FixedRadius} is generically at the apex of a single polygon. (Exceptionally, if the pattern is a hexagonal lattice, there will be two such polygons.)
-More than that, in this Figure at least, all of the polygons of the tiling being approached appear to be rhombi: four-sided polygons with opposite parallel sides.%
-A cylindrical tiling in which the polygon attached to each point is one of a finite number of different rhombi is called a rhombic tiling.%
-
-
-	Rhombic tilings were introduced in this context by~\cite{atelaRhombicTilingsPrimordia2017}.
-	Tilings of the plane by low order polygons are well studied, especially after the surprising discovery of Penrose tilings: there seems no mathematical study of cylinder-periodic ones outside of phyllotaxis.
-\clearpage
-\vnmafig{Ch8Tilings}{Rhombic tilings arising from a stacked coin model.
-	Tiles are coloured to emphasise a periodicity of 6 for each tiling after the first. }{1}
-
-Figure~\ref{fig:Ch8Tilings} shows an example in which the stacked-coin map is visually close to having periodicity of 6. The map trajectory defines a series of polygons attached to the coin centre which is its lowest point. In this rhombic-tiling pattern each coin has exactly one rhombus attached to it.
-
- 
-
-
-%	\item Proof for simple case of 3 fixed-radius disks 
-
-\clearpage
- Douady and Gol\'e gave an interesting example of a cylinder tiling and a lattice separately fitted to the same observation, which is shown in Figure~\ref{fig:Douadygole2016bFig4}.
-\clearedpdffig{Douadygole2016bFig4}{Fit of a lattice and a cylinder tiling to the same unrolled birch catkin image. The cylinder tiling is a 14\% better fit to the node positions than the lattice. From~\autocite{douadyFibonacciQuasisymmetricPhyllotaxis2016}.
-\copyright CC-BY Douady and Gol\'e 2016.}{1.0} {Figure 1 of ~\autocite{atelaRhombicTilingsPrimordia2017}} 
- Since a tiling made up of $n$ different rhombi has at least $2n$ degrees of freedom, it can naturally give an better fit to an observed pattern than a lattice, which has $n=1$, and it is an open question whether empirical observations can at present reject lattice patterns in the framework of statistical hypothesis testing.%
- 
- It is striking that before these quasi-lattice patterns were seen in model outputs, there were few attempts to parameterise empirical data in any way other than as realisations of a lattice. One notable exception was Atela et al~\cite{atelaDynamicalSystemPlant2002} who suggested that a period 8 orbit they found in a placement map corresponded to a similar periodicity in divergences observed on a magnolia carpel~\cite{tuckerPhyllotaxisVascularOrganization1961}. 
- Beyond this example, shifting the unit of analysis to a cylindrical or rhombic tiling has generated an interesting new series of observational questions~\autocite{douadyFibonacciQuasisymmetricPhyllotaxis2016}.
- 
-
- Rhombic-tilings are also important mathematically because, as Figure~\ref{fig:Ch8FixedRadius} illustrates, small perturbations to initial lattice patterns typically evolve into rhombic-tilings under fixed-size coin stacking.~\autocite{atelaRhombicTilingsPrimordia2017}.
-   Golé and Douady have proved that every initial chain that has a parastichy count of $(1,2)$ will indeed evolve into a rhombic tiling in finite time or become exponentially close to one, and conjectured 
-   this is true in general.~\autocite{goleConvergenceDiskStacking2020}.
- 
-% \subsection{Butterfly effects?}
-  It has been suggested that stacked-coin models provide an explanation of a `butterfly effect' in which the phyllotaxis of, e.g., the magnolia stem sometimes changes `for no obvious reason'\autocite{zagorska-marekSignificanceGandLdislocations2016}. Numerical simulations can indeed sometimes show surprisingly long intervals of apparent equilibrium followed by a burst of changes, and even if these trajectories
-  are only transient may be of value in exploring phyllotactic transitions in species like \textit{Magnolia}.
-     
-\section{Columnar models}
-\label{sec:columns}
-
-Exploration of the dynamics of stacked-coin models has revealed another intriguing pattern formation process. If instead of very slowly changing the coin radius we very quickly reduce it and then keep it small, we are effectively starting a fixed-radius run with random initial conditions and relatively small disks compared to the cylinder circumference. Figure~\ref{fig:Ch8TransitionLattices} gives an example.
- It turns out, for reasons explored in~\autocite{goleFibonacciQuasisymmetricPhyllotaxis2016}, that
- runs often converge to a series of near horizontal sets of disk stacked on top of each other. This stacking is fairly regular so that disks in either every row or every other row are vertically above each other. In the older language of phyllotaxis, these patterns might be called whorled orthostatic, and  preferable alternative. Douady and collaborators~\cite{goleConvergenceDiskStacking2020}, who have done unparalleled work on them,  call these QSS patterns, for quasi-symmetric solutions, but here I call them \textit{columnar} patterns.
-
-This also provides a potential pattern mechanism for columnar patterns like those of the sweetcorn of Figure~\ref{fig:sweetcorn20191008} or of cacti. These models might well replace Turing Instability-based ones as a plausible pattern-formation mechanisms for such patterns. 
-
-\vnmafig{Ch8TransitionLattices}{Runs of a stacked-coin model for increasingly steep radius changes. In each case, as in Figure~\ref{fig:Ch8NewTransitionFibonacci} the disk radius is reduced from one in which a lattice can, according to the van Iterson diagram, have a \gp{2,3} parastichy through a \gp{3,5} parastichy to a \gp{5,8} parastichy and then fixed. When the transition is slow enough for the \gp{3,5} lattice to establish well before before moving into the zone where a \gp{5,8} lattice is possible, that transition is visible  is followed by an equally ordered transition to what appears to be a rhombic tiling close to a \gp{5,8} lattice. 
-	 When the disk radius is reduced more rapidly, the ordered transitions are lost. In the central run, the parastichy count at the top of the cylinder are $\gp{7,8}$ while in the right hand run with a still faster reduction of radius the parastichy count at the top is $(7,7)$. 
-	}{.8}
-	\clearpage
-\vnmafig{Ch8TransitionParastichy}{Parastichy numbers as a function of height up the cylinder for each of the three runs in Figure~\ref{fig:Ch8TransitionLattices}. 
-}{1}
-
-
-
-
-It is clear numerically that the elegance of pattern analysis as transitions through near-to-touching-circle lattices is lost if the geometric change is too fast, and this can be interpreted as being because the close-packing property is lost: the constraints of a lattice pattern cannot adapt quickly enough to stay close to being well-packed,
-and lattices as the units of analysis become unhelpful. 
-But the extra degrees of freedom of rhombic tilings might well allow them to adapt more efficiently, in terms of close-packing, to geometric change than lattices do. So it might be that Fibonacci transitions through rhombic-tiling space can be maintained at higher rates of geometric change than if lattice structure were enforced. Arguments have already been made that rhombic tilings have their own more general version of the Hypothesis of Geometrical Phyllotaxis, and so taking the rhombic tiling as the unit of analysis rather than the lattice might provide 
-a more biologically robust explanation of Fibonacci phyllotaxis than one based solely on lattices. 
-\clearpage
-\subsection{Summary of stacked-coin models}
-Stacked-coin models provide an attractive generalisation of lattice models for exploring Fibonacci phyllotaxis, although their mathematical properties are much well less worked out, even for fixed disk size.  For example,  it is unclear if every attractor of such models is a cylinder tiling, or under what circumstances
- such models can yield disk packings which are denser than those of the corresponding lattice. Nevertheless variable-size  stacked-coin models at present provide a good candidate for being able to make precise the idea of the `smoothly changing lattice' in a biologically important way and they are the subject of active research.
- 
 \section{Energy based models}
 \label{sec:energy}
 The Douady-Couder model of section~\ref{sec:DouadyCouderModel} imposed a time delay between new nodes and a centrifugal movement, which together ensured that new nodes could not be placed too closely to old ones. It then defined an energy function for the new pattern, so that minimising the energy step-by-step then placed nodes as close as possible given the first constraint.  By contrast the stacked-coin model uses a fixed disk to keep the nodes separate, whilst using 'gravity', that is the requirement that the new node is in contact with the old ones, to keep them close. Both of these models yield  a typical inter-node distance of say $D$, and can be thought of as defining a  node-node potential energy which is large before $D$, then drops off sharply to a minimum near $D$ before more smoothly re-increasing. 
@@ -239,4 +104,7 @@ The circumstances under which an asymptotic approach to a uniform distribution o
 But most fundamentally, the known biology offers no evidence for any molecular protractor in the plant delivering repeated divergence angles close to the golden angle and independently of previous primordia. Most current theorists would agree that precision in repeated instances of the divergence angle is, instead, an emergent property of pattern formation. 
 
 Okabe does makes one observation that is useful to highlight here. The so-called Fundamental Theorem of Phyllotaxis says that a $(1,2)$ system can take any divergence between 128.5$^\circ$ and 180$^\circ$, while experimental evidence is that divergence angles are in a much narrower range around the Fibonacci angle than this. Okabe's claim is perhaps that this suggests the divergence is a more fundamental property than the parastichy count, but my perspective is that this observation merely underlines how non-Fundamental the Theorem actually is for Phyllotaxis: it classifies lattices, but does not describe how they have evolved from other patterns, not even nearby lattices.
+
+\section{Summary}
+We have reviewed a range of models for node placement. Many of these models --- with the notable exception of protractor models --- are likely to continue to have a role in helping to understand the biological mechanisms of node formation. However we have not yet reviewed one of the most promising contemporary models for node-formation, the stacked-disk model. We turn to these in the next chapter.
 

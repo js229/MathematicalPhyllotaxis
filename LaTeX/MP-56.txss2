@@ -6,64 +6,40 @@
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "Placement.tex",
+        "CurrentFile": "StackedDisksChapter.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 0,
+                "Col": 13,
                 "EditorGroup": 0,
                 "FileName": "MP-56.tex",
-                "FirstLine": 39,
+                "FirstLine": 11,
                 "FoldedLines": "",
-                "Line": 55
+                "Line": 25
             },
             {
-                "Col": 47,
+                "Col": 163,
                 "EditorGroup": 0,
-                "FileName": "FrontMatter.tex",
-                "FirstLine": 12,
+                "FileName": "StackedDisksChapter.tex",
+                "FirstLine": 184,
                 "FoldedLines": "",
-                "Line": 19
+                "Line": 187
             },
             {
-                "Col": 0,
+                "Col": 22,
                 "EditorGroup": 0,
                 "FileName": "MPPreamble.tex",
-                "FirstLine": 261,
+                "FirstLine": 67,
                 "FoldedLines": "",
-                "Line": 270
+                "Line": 82
             },
             {
                 "Col": 0,
                 "EditorGroup": 0,
                 "FileName": "Placement.tex",
-                "FirstLine": 7,
+                "FirstLine": 105,
                 "FoldedLines": "",
-                "Line": 15
-            },
-            {
-                "Col": 602,
-                "EditorGroup": 0,
-                "FileName": "Classifying.tex",
-                "FirstLine": 555,
-                "FoldedLines": "",
-                "Line": 559
-            },
-            {
-                "Col": 123,
-                "EditorGroup": 0,
-                "FileName": "Geometry.tex",
-                "FirstLine": 624,
-                "FoldedLines": "",
-                "Line": 628
-            },
-            {
-                "Col": 251,
-                "EditorGroup": 0,
-                "FileName": "Future.tex",
-                "FirstLine": 23,
-                "FoldedLines": "",
-                "Line": 31
+                "Line": 110
             }
         ],
         "MasterFile": "",
