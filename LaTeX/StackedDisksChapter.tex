@@ -22,10 +22,8 @@ atelaDynamicalSystemPlant2002,
 \clearpage
 \section{Model structure}
 Schwendener-type models are conceptually simple and fairly straightforward to implement, as illustrated in Figure~\ref{fig:Ch8InhibitionBoundary}.%
-\vnmafig{Ch8InhibitionBoundary}{Finding the next location in the stacked-coin model by finding the lowest point of the boundary of the inhibition zone, itself defined by the topmost coins. The width of the inhibition zone may be variable and defines the radius of the next coin.}{1}
+\vnmafig{Ch8InhibitionBoundary}{Finding the next location in the stacked-disk model by finding the lowest point of the boundary of the inhibition zone, itself defined by the topmost coins. The width of the inhibition zone may be variable and defines the radius of the next coin.}{1}
 Non-overlapping disks of diameter $D$ are successively placed at the lowest points possible on the cylinder,  touching two or three adjacent disks for their support. They then define node placements by their centre. The size of the $k$-th disk, $D(k)$, might be fixed or might vary with $k$, typically through the height of the stack so far.  In general we will be interested in $D(k)$ as a decreasing function of the height $z$ of the most recently placed disk. 
-
-
 The series of stacking positions can be thought of as the trajectory of a map on the space of (recent) positions, and locally stable trajectories correspond to observed outcomes of the model. The map's output can be written as the vector from the $k$-th to the $k+1$-th-node; if this map has a fixed point then we will have a lattice in the sense of Chapter~\ref{ch:cylinder}. 
 %
  We can 
@@ -40,19 +38,18 @@ But when we do not have a precise lattice we need a more general way to compute 
 
 \clearpage
 \subsection{Parastichy numbers in stacked-disk models}
-\vnmafig{txbDGParastichy}{Computing the parastichy counts for non-lattice patterns by counting up and down links in chains around the cylinder. If the patterns is close to a lattice, these counts coincide with the parastichy numbers of the lattice.}{.5}
+\pdffig{txbDGParastichy}{Computing the parastichy counts for non-lattice patterns by counting up and down links in chains around the cylinder. If the patterns is close to a lattice, these counts coincide with the parastichy numbers of the lattice.}{.5}
 While stacked-disk models \textit{can} generate lattices, usually they do not. 
 So we can no longer rely on the  definitions of Chapter~\ref{ch:cylinder}
 to find a global pair of parastichy numbers for the pattern, because  parastichies are not exactly straight lines.  However, they are not so far off, and there is still a way to compute parastichy pairs locally~\autocite{goleFibonacciQuasisymmetricPhyllotaxis2016}.
-The process is shown in Figure~\ref{fig:txbDGParastichy}. Starting from one coin, we look for a shortest chain of touching coins that encircle the cylinder and returns to the original. That chain will have a number of up-steps to higher coins and down-steps to lower coins and the total number of up-steps and down-steps is exactly what we define as the parastichy count. 
+The process is shown in Figure~\ref{fig:txbDGParastichy}. Starting from one coin, we look for a shortest chain of touching coins that encircle the cylinder and returns to the original. That chain will have a number of up-steps to higher coins and down-steps to lower coins and the total number of up-steps and down-steps is exactly what we define as the parastichy count pair. 
 %
 This method coincides well with human assessment of spiral counts in relatively well ordered patterns but can still be assigned in strongly disordered patterns when the human eye is unable to identify structure. 
 	 %
 %	 
 	 If the pattern is exactly a lattice, or near to one,
-	 then other chains  through a given disk will have the same parastichy count pair, but near pattern transitions, as illustrated in Figure~\ref{fig:scpDeterministicTransition}, the presence of triangles in the pattern graph give rise to  multiple possible  counts. It is in this way that the discrete-valued parastichy counts can transition by jumps of 1 as the disk-radius changes slowly. 
-	 Each of these jumps corresponds to a `$\gamma$' dislocation (taking its name from the shape of the letter~\cite{zagorska-marekPhyllotacticPatternsTransitions1985}) of the parastichy lines,  as visible in Figure~\ref{fig:scpDeterministicTransition}(d). 
-	 Conversely, $\lambda$ dislocations correspond to a decrease in the count.
+	 then other chains  through a given disk will have the same parastichy count pair, but near pattern transitions, as illustrated in Figure~\ref{fig:txbDGParastichy}, the presence of triangles in the pattern graph give rise to  multiple possible  counts. It is in this way that the discrete-valued parastichy counts can transition by jumps of 1 as the disk-radius changes slowly. 
+	 Each of these jumps corresponds to a `$\gamma$' dislocation (taking its name from the shape of the letter~\cite{zagorska-marekPhyllotacticPatternsTransitions1985}) of the parastichy lines; conversely, $\lambda$ dislocations correspond to a decrease in the count.
 
 
 \clearpage
@@ -65,7 +62,9 @@ whenever a new coin is added, the contact lines through its two supports must be
 
 
 Because disk-stacking models cannot generically generate non-opposed lattices, they ought to display a preference for Fibonacci structure, at least as long as the rate of change of disk radius with stem height,  is not too large.
-Indeed solutions to stacked disk models showing large Fibonacci pair parastichy counts were exhibited by Bursill and colleagues in the 1980s~\cite{bursillSpiralLatticeConcepts1987,xudongPackingEqualDiscs1989} and more recently and systematically investigated by Gol\'e and colleagues~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016}. We can see that Figure~\ref{fig:scpDeterministicTransition} reproduces these results by showing a (5,8) to (8,13) transition.
+Indeed solutions to stacked disk models showing large Fibonacci pair parastichy counts were exhibited by Bursill and colleagues in the 1980s~\cite{bursillSpiralLatticeConcepts1987,xudongPackingEqualDiscs1989} and more recently and systematically investigated by Gol\'e and colleagues~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016}.
+
+ We can see that Figure~\ref{fig:scpDeterministicTransition} reproduces these results by showing a (5,8) to (8,13) transition.
 As disk radius continues to decrease, the process can be repeated, as illustrated in  Figure~\ref{fig:txbParastichyCountsTo89} which shows a series of transitions between adjacent Fibonacci pairs.  
 %
 \clearpage
