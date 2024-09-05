@@ -8,29 +8,35 @@ As we will see, disk-stacking models are capable of exhibiting further empirical
 
 \jpgfig{SchwendenerCollectedp202}{Schwendener's stacked-coin model showing transitions from a $\pp{3,5}$ to a $\pp{5,8}$ to a $\pp{8,13}$ parastichy~\autocite{schwendenerGesammelteBotanischeMittheilungen1898}. }{.2}
 
-\clearpage#
+\clearpage
 \section{Motivation}
 \jpgfig{2pstack}{A stacked-disk model, implemented with British tuppeny pieces, inspired by Atela~\autocite{atelaGeometricDynamicEssence2011}.}{0.5}
-The disks of the model represent the inhibition zones in the SAM that are established by patterning of auxins and other morphogens, and the `gravity constraint' of adding the new disk at the lowest possible place corresponds to Snow's empirical rule that a new node will form as soon as it has enough space. The changing disk size corresponds to the change in proportion between the sizes of the inhibition zone and that of the SAM cylinder. It seems likely that most of the this change in relative geometry in actual plant growth is due to expansion of the SAM rather than modification of the inhibition zone size. So in some ways a more accurate visual representation than stacking variable-sized coins on a cylinder is to stack fixed-size coins on a cone. Figure~\ref{fig:2pstack} gives an example of such a model. The two model classes are not quite identical because the map between cone and cylinder will distort circles, but to the extent that the results of model simulations is not strongly dependent on the shape of the inhibitor zone we can expect similar results between the two.
-But when we do not have a precise lattice we need a more general way to compute parastichy numbers for our patterns.
+The disks of the model represent the inhibition zones in the apical meristem that are established by patterning of auxins and other morphogens, and the `gravity constraint' of adding the new disk at the lowest possible place corresponds to Snow's empirical rule that a new node will form as soon as it has enough space. The changing disk size corresponds to the change in proportion between the sizes of the inhibition zone and that of the apical meristem diameter. It seems likely that most of the this change in relative geometry in actual plant growth is due to expansion of the apical meristem rather than modification of the inhibition zone size. Figure~\ref{fig:2pstack} gives an example of a model in which the inhibition disk size is fixed at the size of a British 2p piece, and the apical meristem is assumed to increase linearly with height, and periodicity of the pattern is judged by eye. 
 
+A closely similar model, and a more computationally convenient one, is instead to scale dimensions so that the apical meristem circumference is fixed (and moreover fixed at unity) but the inhibition disk sizes vary as in Figure~\ref{fig:Ch8InhibitionBoundary}. The two model classes are not quite identical because the map between cone and cylinder will distort circles, but to the extent that the results of model simulations is not strongly dependent on the shape of the inhibitor zone we can expect similar results between the two.
+ We can 
+think of the existing disks creating an inhibition field, shown in grey in the Figure: no new disk can be placed below the boundary of the region formed by disks centred on all the existing disks. The new disk is placed at the minimum of this boundary.  Attractively, this placement depends only on the most recent `chain' or `front' of disks around the cylinder, and is the minimum of a finite number of intersections of disks. 
 
 \clearpage
-\section{Model structure}
+\vnmafig{Ch8InhibitionBoundary}{Finding the next location in the stacked-disk model by finding the lowest point of the boundary of the inhibition zone, itself defined by the topmost coins. The width of the inhibition zone may be variable and affects the position of the next disk. Left, the lowest point not in any inhibition zone is marked with a red dot, and (right) the largest possible circle drawn around it.}{1}
 
-\vnmafig{Ch8InhibitionBoundary}{Finding the next location in the stacked-disk model by finding the lowest point of the boundary of the inhibition zone, itself defined by the topmost coins. The width of the inhibition zone may be variable and defines the radius of the next coin.}{1}
-Schwendener-type models are conceptually simple and fairly straightforward to implement, as illustrated in Figure~\ref{fig:Ch8InhibitionBoundary}. 
- Non-overlapping disks of diameter $D$ are successively placed at the lowest points possible on the cylinder,  touching two or three adjacent disks for their support. The centre of each disk then defines a node placement. The size of the $k$-th disk, $D(k)$, might be fixed or might vary with $k$, typically through the height of the stack so far.  In general we will be interested in $D(k)$ as a decreasing function of the height $z$ of the most recently placed disk, although when we look at the generation of sunflower capitulum patterns $D$ will be increasing. 
- 
-The series of stacking positions can be thought of as the trajectory of a map on the space of (recent) positions, and locally stable trajectories correspond to observed outcomes of the model. The map's output can be written as the vector from the $k$-th to the $k+1$-th-node; if this map has a fixed point then we will have a lattice in the sense of Chapter~\ref{ch:cylinder}. 
-%
- We can 
-think of the existing disks creating an inhibition field, shown in grey in the Figure: no new disk can be placed below the boundary of the region formed by disks centred on all the existing disks, but with twice their radius. The new disk is placed at the minimum of this boundary.  Attractively, this placement depends only on the most recent `chain' or `front' of disks around the cylinder, and is the minimum of a finite number of intersections of disks.
+A further modelling choice is how to choose the radius of each disk. If we have a function $D(z)$ that tells how inhibition zones vary with $z$, which $z$ should we choose when we are placing the next disk which is by definition at a yet-unknown $z$?  One method is, as in Figure~\ref{fig:Ch8InhibitionBoundary}, to first find the centre of the new disk as the lowest point not in any inhibition zone, and then to use the height of that new centre as the $z$ to define the new inhibition zone. Another is to use the height of the most-recently placed disk for $z$; in computational settings it is sometimes more convenient to use the maximum $z$ yet achieved in the simulation. For the simulations used in this book I used this last method.
 
+In general we will be interested in $D(k)=D(z_k)$ as a decreasing function of the height $z_k$ of the most recently placed disk, although when we look at the generation of sunflower capitulum patterns $D$ will be increasing. 
+
+\clearpage
+\section{Stacked-disk models can generate opposed lattices}
+If we take one of the touching-circle lattice patterns of the first half of this book, with a disk diameter $D$, and truncate it above one point, then
+we can use the disk-stacking model fith that fixed $D$ to regenerate a pattern. As Figure~\ref{fig:txbNonopposedNo} shows, if the original lattice was an opposed lattice then the first iteration of the model will exactly replace the disk where the lattice had put it, but if it was a non-opposed lattice then it will not do so.
+\begin{marginfigure}
+	\centering
+	\caption{Non-opposed lattices can't in general be generated by stacked-disk models}\label{fig:txbNonopposedNo}
+\end{marginfigure}
+The reason for the latter is that the placement mechanism guarantees the placement of a disk of a given radius at its lowest possible point, and the contact lines from a newly placed disk down onto its two supports must be in opposite directions on the cylinder. If they are not the newly placed disk could be `rolled' down to a lower placement. But in a non-opposed lattice, by definition these contact lines go in the same direction on the cylinder.
 \clearpage
 
 \subsection{Parastichy numbers in stacked-disk models}
-\pdffig{txbDGParastichy}{Computing the parastichy counts for non-lattice patterns by counting up and down links in chains around the cylinder. If the patterns is close to a lattice, these counts coincide with the parastichy numbers of the lattice.}{.5}
+\pdffig{txbDGParastichy}{Computing the parastichy counts for non-lattice patterns by counting up and down links in chains around the cylinder. If the patterns is close to a lattice, these counts coincide with the parastichy numbers of the lattice. In this example, there are 8 red parastichy lines going upwards (when looking left-to-right); correspondingly the topmost chain of connections between disks has 8 separate segments of sequences of upwards lines. At the bottom of the figure there are five blue segments of downwards lines  corresponding to a 5-parastichy, higher up there are 8 such segments, reflect a series of increases in the left parastichy number from 5 through 6 and 7 to 8. }{.5}
 While stacked-disk models \textit{can} generate lattices, usually they do not. 
 So we can no longer rely on the  definitions of Chapter~\ref{ch:cylinder}
 to find a global pair of parastichy numbers for the pattern, because  parastichies are not exactly straight lines.  However, they are not so far off, and there is still a way to compute parastichy pairs locally~\autocite{goleFibonacciQuasisymmetricPhyllotaxis2016}.
@@ -48,12 +54,7 @@ This method coincides well with human assessment of spiral counts in relatively 
 \subsection{Stacked-disk models naturally generate Fibonacci transitions}
 %
 \vnmafig{Ch8NewTransitionFibonacci}{A stacked-coin model run, showing parastichy count transitions from a distichous pattern through Fibonacci numbers when the coin radius changes slowly enough. Each coin is added in turn with radius $r(z)$ where $z$ is the highest coin centre previously added, and $r(z)$ is linearly decreased from 1/2 to 1/12.}{1}
-%
-If we take one of the opposed touching-circle lattices with disk diameter $D$ of the previous chapter, truncate all the coins above one  point, and then use that as an initial condition for a stacked-coin model with fixed disk diameter $D$ we will regenerate the lattice. But a non-opposed lattices cannot in general be generated in this way because 
-whenever a new coin is added, the contact lines through its two supports must be in opposite directions on the cylinder. 
-
-
-Because disk-stacking models cannot generically generate non-opposed lattices, they ought to display a preference for Fibonacci structure, at least as long as the rate of change of disk radius with stem height,  is not too large.
+The principal result of Chapter~\ref{ch:classifying} was that if we had a mechanism, as stacked-disk models do, that generated lattices, but rejected non-opposed lattices in favour of opposed ones, then Fibonacci structure could result.   
 Indeed solutions to stacked disk models showing large Fibonacci pair parastichy counts were exhibited by Bursill and colleagues in the 1980s~\cite{bursillSpiralLatticeConcepts1987,xudongPackingEqualDiscs1989} and more recently and systematically investigated by Gol\'e and colleagues~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016}.
 
  We can see that Figure~\ref{fig:scpDeterministicTransition} reproduces these results by showing a (5,8) to (8,13) transition.
