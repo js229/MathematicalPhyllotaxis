@@ -170,17 +170,18 @@ If a point $\jpoint{n}$ is on an $m$-parastichy then show that $\jpoint{m+n}$ is
 
 
 
-
+\clearpage
 \section{Parastichy pairs}
+\vnmafig{Ch3Parastichy45}{
+	Some parastichies and their parastichy vectors in a lattice with $d=17/72$ and $h=0.03$. The blue lines highlight the family of 4-parastichies,  the red lines the family of 5-parastichies, and the green ones the family of 1-parastichies. There are four members of the 4-parastichies, and the member that passes through the point 0 also passes through the point 4. For this lattice, $\gp{1,4}$ and $\gp{4,5}$ are each  examples of a generating and opposed pair: in each case the two parastichies wind in opposite directions, the parallelogram defined by the pair tiles the lattice and every lattice point is at a vertex of one of the parallelograms; the edges of the parallelograms form the parastichy lines. 
+}{0.7}
+
 So far we have formalised what it means to be able to `see' a straight line in the lattice as a visible parastichy. 
 We now concentrate on pairs of parastichies, as it is these pairs we will use to classify our lattices. Figure~\ref{fig:Ch3Parastichy45} shows two examples of parastichy pairs which might naturally be identified in a lattice. 
 
 
 
 
-\vnmafig{Ch3Parastichy45}{
-Some parastichies and their parastichy vectors in a lattice with $d=17/72$ and $h=0.03$. The blue lines highlight the family of 4-parastichies,  the red lines the family of 5-parastichies, and the green ones the family of 1-parastichies. There are four members of the 4-parastichies, and the member that passes through the point 0 also passes through the point 4. For this lattice, $\gp{1,4}$ and $\gp{4,5}$ are each  examples of a generating and opposed pair: in each case the two parastichies wind in opposite directions, the parallelogram defined by the pair tiles the lattice and every lattice point is at a vertex of one of the parallelograms; the edges of the parallelograms form the parastichy lines. 
-  }{0.7}
 
 \begin{definition}
 The $\gp{m,n}$-parastichy pair is the pair of parastichy vectors $\mvec$ and $\nvec$.
@@ -189,7 +190,7 @@ The \gphat{m}{n}-complementary pair is the pair of the parastichy vector $\mvec$
 \end{definition}
 Complementary pairs are only really needed for thinking about the special cases \gphat{1}{k} and do not play a role in large Fibonacci lattices. The most important of these special cases, though is frequently seen. Plants may show \textit{distichous} phyllotaxis, with successive organs  alternating in front and behind with a divergence of $180^\circ$, correspond to a lattice with a \gphat{1}{1} parastichy pair as in Figure~\ref{fig:Ch3Types}. The  hat can and will be dropped from the second \textsf{1} when it is clear which of the vectors is meant. 
 
-
+\clearpage
 \subsection{Opposed parastichy pairs}
 
 A parastichy pair $\gp{m,n}$ is \emph{opposed} if $m/\dm$ and $n/\dn$ have opposite sign, where $\dm$ and $\dn$ are the $x$-components of $\mvec$ and $\nvec$. A complementary pair \gphat{m}{m} is always opposed. 
@@ -461,8 +462,11 @@ x_n = n d - [ n d ].
 $
 For $m,n$ positive integers not both equal to one, the pair $\gp{m,n}$ is {opposed} if $x_m x_n <0$.
 We define $\gp{0,1}$  and \gphat{m}{m}  to be opposed.
-
+\clearpage
 \section{The Fundamental Theorem of Phyllotaxis}
+\vnmafig{Ch3GeneratingIntervals}{Generating intervals for a range of $\gp{m,n}$ parastichy pairs. The horizontal line represents the $d$ interval $[0,\jhalf]$ . It is drawn dashed if it is the $\Delta_{mn}=+1$ generating interval which falls into $[0,\jhalf]$ and dotted if it is the $\Delta_{mn}=-1$ interval. 
+	Red bars show the subinterval on which the $\gp{m,n}$ pair is generating and opposed; grey bars show the subinterval on which it is generating and unopposed.
+}{.5}
 \label{sec:ftp}
 Finally, we can take the intersection of the generating interval and the opposed interval to find the generating and opposed interval. This is the $d-$interval on which the pair of vectors $\gp{m,n}$ is both generating and opposed in the lattice $\mathcal{L}(d,h)$.
 When we calculate this we get what Jean called the `Fundamental Theorem' of Phyllotaxis~\autocite{jeanPhyllotaxisSystemicStudy1994}:
@@ -523,9 +527,7 @@ My statement of the theorem, unlike Jean's~\autocite{jeanPhyllotaxisSystemicStud
 % exercise
 
 Like Theorem~\ref{thm:glattice}, this Theorem~\ref{thm:fundamentalcorresponding} is independent of the rise, and does not claim that the generating and opposed pair is unique for $d$. Figure~\ref{fig:Ch3GeneratingIntervals} gives examples of generating opposed intervals. %
-\vnmafig{Ch3GeneratingIntervals}{Generating intervals for a range of $\gp{m,n}$ parastichy pairs. The horizontal line represents the $d$ interval $[0,\jhalf]$ . It is drawn dashed if it is the $\Delta_{mn}=+1$ generating interval which falls into $[0,\jhalf]$ and dotted if it is the $\Delta_{mn}=-1$ interval. 
-	  Red bars show the subinterval on which the $\gp{m,n}$ pair is generating and opposed; grey bars show the subinterval on which it is generating and unopposed.
-}{.5}
+
 \clearpage
 %
 As its name suggests, this Theorem has historically been given some prominence. One reason is the following special case of adjacent Fibonacci numbers:
@@ -631,7 +633,7 @@ The region of lattice space in which lattices are of the form $(1,\hat{n})$ are 
 
 \end{jAnswer}
  
-
+\clearpage
 \section{Turing-Euclid reduction of generating pairs}
 \label{sec:TEreduction}
 The examples of the previous section explicitly computed the principal vector pairs for the special case of spiral lattices, and now we turn to calculating them in 
@@ -666,9 +668,6 @@ As before $|\rpvec{i}|$ is strictly decreasing over a finite set of vectors shor
 \begin{jAnswer}
 	The pair $\gp{73,103}$ is successively reduced to $\gp{30,73}$, $\gp{13,30}$, and terminates at $\gp{4,13}$ which  is the principal pair for the lattice. 
 \end{jAnswer}
-
-
-
 
 Turing-Euclid reduction certainly terminates with a pair of vectors no longer than the pair that it started with. To show that it actually terminates at the shortest pair of vectors in the lattice we will use
 \begin{theorem}
