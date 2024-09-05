@@ -5,38 +5,30 @@
 Disk-stacking models for stem development have recently emerged as an excellent compromise between mathematical simplicity and biological relevance. 
 Because disk-stacking models allow lattice solutions,  the van Iterson paradigm remains a powerful organising principle for their dynamics, and it is by now well established that disk-stacking models can indeed demonstrate Fibonacci structure~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016}. Moreover, as the van Iterson paradigm suggests, there are parameter regions in which strict Fibonacci patterns are lost but patterns remain closely ordered with either Lucas numbers or double-Fibonacci pair counts occurring~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016,yonekuraMathematicalModelStudies2019}.
 As we will see, disk-stacking models are capable of exhibiting further empirical phenomena in ways no other published models can~\cite{swintonDiskstackingModelsAre2024}. However there remain many open questions about the dynamics of this important class of models.
-\clearpage
-\section{Schwendener and after}
-\jpgfig{SchwendenerCollectedp202}{Schwendener's stacked-coin model showing transitions from a $\pp{3,5}$ to a $\pp{5,8}$ to a $\pp{8,13}$ parastichy~\autocite{schwendenerGesammelteBotanischeMittheilungen1898}. }{.3}
-Disk-stacking models were first introduced by Schwendener in the 1870s as an exploration of organ placement in plants~\cite{schwendenerMechanischeTheorieBlattstellungen1878}.  Schwendener sketched the patterns seen when disks of decreasing size were stacked, one after the other, around a cylinder (Figure~\ref{fig:SchwendenerCollectedp202}).
-Although Schwendener's work was not influential on mainstream plant morphology, it seems to have influenced the better known 1907 PhD thesis of van Iterson. van Iterson  who explored the possible patterns arising from arrangements of fixed-size disks as a function of disk size and first drew a version of the van Iterson diagram~\cite{vanitersonjrMathematischeUndMikroscopischAnatomische1907}. 
-A version of this model in which the fronts were curves called `pseudoconchoids'  was  arrived at by Schoute at the first quarter of the 20th century~\cite{schouteUberPseudokonchoiden1913}. According to  Richards' account~\cite{richardsGeometryPhyllotaxisIts1948}  of this German-language work, a pseudoconchoid allowed phyllotactic transitions by giving the front shape 'sufficient flexibility'. But 
-the attention of mathematicians in the twentieth-century was almost entirely restricted to elaborating the van Iterson lattice theory described in the first half of this book.  It was not until the  1990s that van der Linden demonstrated the first simulations of a Schwendener-type model showing large Fibonacci numbers~\cite{vanderlindenCreatingPhyllotaxisDislodgement1990}.
 
-The 21st century has seen a  revival of interest in the dynamics of these stacked-disk models~\cite{
-atelaDynamicalSystemPlant2002,
-	atelaRhombicTilingsPrimordia2017,
-	hottonPossibleActualPhyllotaxis2006,
-	atelaGeometricDynamicEssence2011,adlerConsequencesContactPressure1977,godinPhyllotaxisGeometricCanalization2020};  I have been particularly strongly influenced by~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016} and~\cite{goleConvergenceDiskStacking2020}. 	
-	
+\jpgfig{SchwendenerCollectedp202}{Schwendener's stacked-coin model showing transitions from a $\pp{3,5}$ to a $\pp{5,8}$ to a $\pp{8,13}$ parastichy~\autocite{schwendenerGesammelteBotanischeMittheilungen1898}. }{.2}
+
+\clearpage#
+\section{Motivation}
+\jpgfig{2pstack}{A stacked-disk model, implemented with British tuppeny pieces, inspired by Atela~\autocite{atelaGeometricDynamicEssence2011}.}{0.5}
+The disks of the model represent the inhibition zones in the SAM that are established by patterning of auxins and other morphogens, and the `gravity constraint' of adding the new disk at the lowest possible place corresponds to Snow's empirical rule that a new node will form as soon as it has enough space. The changing disk size corresponds to the change in proportion between the sizes of the inhibition zone and that of the SAM cylinder. It seems likely that most of the this change in relative geometry in actual plant growth is due to expansion of the SAM rather than modification of the inhibition zone size. So in some ways a more accurate visual representation than stacking variable-sized coins on a cylinder is to stack fixed-size coins on a cone. Figure~\ref{fig:2pstack} gives an example of such a model. The two model classes are not quite identical because the map between cone and cylinder will distort circles, but to the extent that the results of model simulations is not strongly dependent on the shape of the inhibitor zone we can expect similar results between the two.
+But when we do not have a precise lattice we need a more general way to compute parastichy numbers for our patterns.
+
+
 \clearpage
 \section{Model structure}
-Schwendener-type models are conceptually simple and fairly straightforward to implement, as illustrated in Figure~\ref{fig:Ch8InhibitionBoundary}.%
+
 \vnmafig{Ch8InhibitionBoundary}{Finding the next location in the stacked-disk model by finding the lowest point of the boundary of the inhibition zone, itself defined by the topmost coins. The width of the inhibition zone may be variable and defines the radius of the next coin.}{1}
-Non-overlapping disks of diameter $D$ are successively placed at the lowest points possible on the cylinder,  touching two or three adjacent disks for their support. They then define node placements by their centre. The size of the $k$-th disk, $D(k)$, might be fixed or might vary with $k$, typically through the height of the stack so far.  In general we will be interested in $D(k)$ as a decreasing function of the height $z$ of the most recently placed disk. 
+Schwendener-type models are conceptually simple and fairly straightforward to implement, as illustrated in Figure~\ref{fig:Ch8InhibitionBoundary}. 
+ Non-overlapping disks of diameter $D$ are successively placed at the lowest points possible on the cylinder,  touching two or three adjacent disks for their support. The centre of each disk then defines a node placement. The size of the $k$-th disk, $D(k)$, might be fixed or might vary with $k$, typically through the height of the stack so far.  In general we will be interested in $D(k)$ as a decreasing function of the height $z$ of the most recently placed disk, although when we look at the generation of sunflower capitulum patterns $D$ will be increasing. 
+ 
 The series of stacking positions can be thought of as the trajectory of a map on the space of (recent) positions, and locally stable trajectories correspond to observed outcomes of the model. The map's output can be written as the vector from the $k$-th to the $k+1$-th-node; if this map has a fixed point then we will have a lattice in the sense of Chapter~\ref{ch:cylinder}. 
 %
  We can 
 think of the existing disks creating an inhibition field, shown in grey in the Figure: no new disk can be placed below the boundary of the region formed by disks centred on all the existing disks, but with twice their radius. The new disk is placed at the minimum of this boundary.  Attractively, this placement depends only on the most recent `chain' or `front' of disks around the cylinder, and is the minimum of a finite number of intersections of disks.
 
 \clearpage
-\subsection{Model interpretation}
-\jpgfig{2pstack}{A stacked-disk model, implemented with British tuppeny pieces, inspired by Atela~\autocite{atelaGeometricDynamicEssence2011}.}{0.5}
-These disks represent the inhibition zones in the SAM that are established by patterning of auxins and other morphogens, and the `gravity constraint' of adding the new disk at the lowest possible place corresponds to Snow's empirical rule that a new node will form as soon as it has enough space. The changing disk size corresponds to the change in proportion between the sizes of the inhibition zone and that of the SAM cylinder. It seems likely that most of the this change in relative geometry in actual plant growth is due to expansion of the SAM rather than modification of the inhibition zone size. So in some ways a more accurate visual representation than stacking variable-sized coins on a cylinder is to stack fixed-size coins on a cone. Figure~\ref{fig:2pstack} gives an example of such a model. The two model classes are not quite identical because the map between cone and cylinder will distort circles, but to the extent that the results of model simulations is not strongly dependent on the shape of the inhibitor zone we can expect similar results between the two.
-But when we do not have a precise lattice we need a more general way to compute parastichy numbers for our patterns.
 
-
-\clearpage
 \subsection{Parastichy numbers in stacked-disk models}
 \pdffig{txbDGParastichy}{Computing the parastichy counts for non-lattice patterns by counting up and down links in chains around the cylinder. If the patterns is close to a lattice, these counts coincide with the parastichy numbers of the lattice.}{.5}
 While stacked-disk models \textit{can} generate lattices, usually they do not. 
@@ -55,7 +47,7 @@ This method coincides well with human assessment of spiral counts in relatively 
 \clearpage
 \subsection{Stacked-disk models naturally generate Fibonacci transitions}
 %
-\vnmafig{Ch8NewTransitionFibonacci}{A stacked-coin model run, showing parastichy count transitions from a distichous pattern through Fibonacci numbers when the coin radius changes slowly enough. Each coin is added in turn with radius $D(z)$ where $z$ is the highest coin centre previously added, and $D(z)$ is decreased in a piecewise linear way from 1 to 1/6.}{1}
+\vnmafig{Ch8NewTransitionFibonacci}{A stacked-coin model run, showing parastichy count transitions from a distichous pattern through Fibonacci numbers when the coin radius changes slowly enough. Each coin is added in turn with radius $r(z)$ where $z$ is the highest coin centre previously added, and $r(z)$ is linearly decreased from 1/2 to 1/12.}{1}
 %
 If we take one of the opposed touching-circle lattices with disk diameter $D$ of the previous chapter, truncate all the coins above one  point, and then use that as an initial condition for a stacked-coin model with fixed disk diameter $D$ we will regenerate the lattice. But a non-opposed lattices cannot in general be generated in this way because 
 whenever a new coin is added, the contact lines through its two supports must be in opposite directions on the cylinder. 
@@ -263,3 +255,14 @@ For rising phyllotaxis, the transition zones where parastichy number change are 
 
 
 variable-size  stacked-coin models at present provide a good candidate for being able to make precise the idea of the `smoothly changing lattice' in a biologically important way and they are the subject of active research.
+
+\section{Further reading}Disk-stacking models were first introduced by Schwendener in the 1870s as an exploration of organ placement in plants~\cite{schwendenerMechanischeTheorieBlattstellungen1878}.  Schwendener sketched the patterns seen when disks of decreasing size were stacked, one after the other, around a cylinder (Figure~\ref{fig:SchwendenerCollectedp202}).
+Although Schwendener's work was not influential on mainstream plant morphology, it seems to have influenced the better known 1907 PhD thesis of van Iterson. van Iterson  who explored the possible patterns arising from arrangements of fixed-size disks as a function of disk size and first drew a version of the van Iterson diagram~\cite{vanitersonjrMathematischeUndMikroscopischAnatomische1907}. 
+A version of this model in which the fronts were curves called `pseudoconchoids'  was  arrived at by Schoute at the first quarter of the 20th century~\cite{schouteUberPseudokonchoiden1913}. According to  Richards' account~\cite{richardsGeometryPhyllotaxisIts1948}  of this German-language work, a pseudoconchoid allowed phyllotactic transitions by giving the front shape `sufficient flexibility'. But 
+the attention of mathematicians in the twentieth-century was almost entirely restricted to elaborating the van Iterson lattice theory described in the first half of this book.  It was not until the  1990s that van der Linden demonstrated the first simulations of a Schwendener-type model showing large Fibonacci numbers~\cite{vanderlindenCreatingPhyllotaxisDislodgement1990}.
+
+The 21st century has seen a  revival of interest in the dynamics of these stacked-disk models~\cite{
+	atelaDynamicalSystemPlant2002,
+	atelaRhombicTilingsPrimordia2017,
+	hottonPossibleActualPhyllotaxis2006,
+	atelaGeometricDynamicEssence2011,adlerConsequencesContactPressure1977,godinPhyllotaxisGeometricCanalization2020};  I have been particularly strongly influenced by~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016} and~\cite{goleConvergenceDiskStacking2020}. 	
