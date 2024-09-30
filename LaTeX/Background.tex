@@ -45,7 +45,7 @@ Starting the sequence with $F_0=0$, $F_1=1$, the general Fibonacci term is
 \begin{eqnarray}
 F_n &=& \frac{\tau^n - (1-\tau)^n}{\sqrt{5}}
 \end{eqnarray}
-where $\tau$ is the golden ratio%
+where $\tau$ is the golden ratio 
 satisfying
 \begin{eqnarray}
 \tau^2 &=& \tau+1
@@ -90,7 +90,7 @@ $n u- m v  =+1$ provides one solution, then $n(m-u)-m(n-v)=-1$ provides another:
 \label{sec:wnp}
 There are different ways to cope with the non-uniqueness of  B\'ezout pairs.
 Here we pick out a particular pair, the \textit{winding-number pair}. 
-For co-prime integers  $(m,n)$, the winding-number pair is the unique pair  $(u,v)$ which satisfies the B\'ezout relation and also
+For co-prime integers  $(m,n)$, the winding-number pair is the unique pair  $(u,v)$ which satisfies the B\'ezout relation $|n  u-mv| = 1$ and also
 \begin{align}
 	0\leq \frac{u+v}{m+n}\leq \frac{1}{2}. \label{eq:wnpFarey}
 \end{align}
@@ -279,34 +279,57 @@ If a matrix has a Farey interval of  $[u/m,v/n]$, then multiplication by $E$ giv
 
 \subsection{The Euclidean algorithm for Fibonacci structure pairs}
 \label{sec:euclidean}
-It is easy to verify that, say,
+Figure~\ref{fig:Ch2EuclideanTree} shows that, for example,
 \begin{align*}
 	\begin{pmatrix} 
-	13 & 8 
+	13 & 5 
 		\\
-		8 & 5
-	\end{pmatrix} &= 	(E\cdot  S)^{\jqn{6}};
+		8 & 3
+	\end{pmatrix} &= 	(E S)^{{4}} \cdot E^2 S ;
 \end{align*}
-and more generally that successive pairs of Fibonacci numbers appear in
+and, recalling that $F_{7}=13$, we can generalise this to
 \begin{align}
 	\begin{pmatrix} 
-		F_{j+1} & F_j 
+		F_{j+1} & F_{j-1} 
 		\\
-		F _j & F_{j-1}
-	\end{pmatrix} &= 	(E\cdot  S)^{\jqn{j}};
+		F _j & F_{j-2}
+	\end{pmatrix} &= 	(E S)^{{j-4}} \cdot E^2 S.
 \label{eq:FibonacciMatrix}
 \end{align}
-by comparison with the preceding section this shows that the $\jq$s of the Euclidean algorithm for adjacent Fibonacci numbers $(F_{j+1},F_j)$ are a sequence of $\jqn{1}$s of length $j$; alternatively this can be read off from Figure~\ref{fig:Ch2EuclideanTree}.
 
 \begin{jExercise}
-	Show that  the winding-number pair for the Fibonacci pair $(m,n)= (F_j,F_{j+1})$ is the previous Fibonacci pair $(u,v)=(F_{j-1},F_j)$.
+	Prove this.
 \end{jExercise}
 \begin{jAnswer}  
-The determinant of~\eqref{eq:FibonacciMatrix} shows
-	\begin{align}
-			n F_{j-1} - m F_{j} = (-1)^{\jqn{j}}
+\begin{align}
+E S \begin{pmatrix} 	F_{j+1} & F_{j-1} 	\\	F _j & F_{j-2}\end{pmatrix}
+  &= 	\begin{pmatrix} 1 & 1\\1 & 0 \end{pmatrix}
+\begin{pmatrix} F_{j+1} & F_{j-1} \\F _j & F_{j-2}\end{pmatrix}
+&= 
+\begin{pmatrix} 	F_{j+2} & F_{j+1} 	\\	F _{j+2} & F_{j-1}
+\end{pmatrix}
+\end{align}
+\end{jAnswer}
+By comparison with the preceding section this shows that the $\jq$s of the Euclidean algorithm for adjacent Fibonacci numbers $(F_{j+1},F_j)$ are a sequence of $\jqn{1}$s of length $j$; alternatively this can be read off from Figure~\ref{fig:Ch2EuclideanTree}.
+
+\begin{jExercise}
+	Show that  the winding-number pair for the Fibonacci pair $(m,n)= (F_j,F_{j+1})$ is the pair formed by the two preceding Fibonacci numbers $(u,v)=(F_{j-2},F_{j-1})$.
+\end{jExercise}
+\begin{jAnswer}  
+From \eqref{eq:FibonacciMatrix},
+	\begin{align}		 
+		\begin{vmatrix} 
+		n  & v
+			\\
+			m & u
+			\end{vmatrix}
+			= (-1)^{j-1} 
 	\end{align}
-so $(u,v)=(F_{j-1},F_j)$ satisfy the B\'ezout relation, and $(u+v)/(m+n)=F_j/F_{j+2}$ so they are the winding numbers of equation~\ref{eq:wnpFarey}.
+so $(u,v)$ are a B\'ezout pair for $(m,n)$. Moreover
+	\begin{align}		 
+(u+v)/(m+n)&= F_j/F_{j+2}
+	\end{align}
+	which is in $[0,\jhalf]$ and so $(u,v)$ are the winding numbers of equation~\ref{eq:wnpFarey}.
 \end{jAnswer}
 
 \subsubsection{Generalised Fibonacci numbers}
