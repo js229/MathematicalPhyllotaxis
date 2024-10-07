@@ -236,7 +236,24 @@ The second column is the corresponding B\'ezout pair, as can be checked:
 \begin{jAnswer}
 	Multiply~\eqref{eq:EuclideanMatrixq} by $k$
 \end{jAnswer}
- Moreover the second column of each matrix is in fact the corresponding winding-number pair as we will see in the next section.
+As we will see in the next section, this B\'ezout pair is in fact the winding-number pair.
+
+\begin{jExercise}
+	Show that for $j>1$ the  $\jqi$ for the Fibonacci pair $F_{j+1}$ and $F_j$ are a sequence of 1s of length $j$ and 
+	the pair have a B\'ezout pair, but not a winding-number pair,  $F_j$ and $F_{j-1}$.
+\end{jExercise}
+\begin{jAnswer}
+		It is easy to show by induction that 
+\begin{align}
+	\begin{pmatrix} 
+		F_{j+1} & F_{j} 
+		\\
+		F _j & F_{j-1}
+	\end{pmatrix} &= 	(E^\jqn{1} S)^{j}.
+	\label{eq:FibonacciMatrixB}
+\end{align}
+So the  $\jqi$'s are all \jqn{1} and the determinant shows that $(F_{j},F_{j-1})$ is a B\'ezout pair. It is not a winding-number pair because $F_{j-1}/F_j>\jhalf$. Note these are not the matrices that appear in Figure~\ref{fig:Ch2EuclideanTree}.
+\end{jAnswer}
 
 Any integer can be represented as a sum of two multiples of basis integers, and looking at the Euclidean algorithm from a broader perspective, it can  be seen as a series of changes of these bases.  The individual $E^{\jqi}$ matrices correspond to  M\"obius transforms that change base at each step, the product matrix is the change of basis between $m,n$ and $k,1$, and the $ |mv - nu|=k$ relationship tells us about how areas are scaled in the different bases. 
 
@@ -254,7 +271,7 @@ Each matrix in the tree of Figure~\ref{fig:Ch2EuclideanTree} is of the form
 \end{align*}
 with $nu-mv=\Delta$ and $|\Delta|=1$. For each matrix below the root, we can form two rationals $u/m$ and $v/n$; for  $\Delta=1$, $u/m>v/n$ while for $\Delta=-1$, $u/m<v/n$ but in either case they form the endpoints of a real interval we will call the Farey interval for the matrix. 
 The Farey interval of the integers $m, n, u, v$ is $[u/m,v/n]$ although the endpoints may not be in order. 
-The Farey sum of these two rational endpoints, or the Farey sum of the matrix, is $(u+v)/(m+n)$ which is always contained in the Farey interval.
+The Farey sum of these two rational endpoints, or the Farey mediant of the matrix, is $(u+v)/(m+n)$ which is always contained in the Farey interval.
 \begin{jExercise}
 	Show this.
 \end{jExercise}
@@ -262,19 +279,19 @@ The Farey sum of these two rational endpoints, or the Farey sum of the matrix, i
 	Compute the difference between the Farey sum and the endpoints: the signs of these and the difference between the endpoints are all controlled by the sign of~$\Delta$. 
 \end{jAnswer}
 
-Farey intervals for the first few matrices in the tree are shown in Figure~\ref{fig:Ch2GeneratingIntervals}.
+Farey intervals for the first few matrices in the tree are shown in Figure~\ref{fig:Ch2GeneratingIntervals}.%
 \vnmafig{Ch2GeneratingIntervals}{Farey intervals $[u/m,v/n]$ for matrices $\begin{pmatrix}
 		n & v\\ u & m
 \end{pmatrix}
 $ coloured blue if the determinant of the matrix is $+1$ and left white it is $-1$.
-}{1}
+}{1}%
 %
-If a matrix has a Farey interval of  $[u/m,v/n]$, then multiplication by $E$ gives a new matrix with a Farey interval of $[u/m,(u+m)/(v+n)]$ and multiplication by $ES$ gives one of  $[v/n,(u+m)/(v+n)]$: the interval splits at the Farey point at each bifurcation. Since the matrix one down from the root has a Farey interval of $[0,\jhalf]$, every matrix below that has its Farey interval within this range, which means that  B\'ezout pair in the second column of each matrix is in fact a winding-number pair.
+If a matrix has a Farey interval of  $[u/m,v/n]$, then multiplication by $E$ gives a new matrix with a Farey interval of $[u/m,(u+m)/(v+n)]$ and multiplication by $ES$ gives one of  $[v/n,(u+m)/(v+n)]$: the interval splits at the Farey sum at each bifurcation. Since the matrix one down from the root has a Farey interval of $[0,\jhalf]$, every matrix below that has its Farey interval within this range, which means that  B\'ezout pair in the second column of each matrix is in fact a winding-number pair.
 
  Examining the tree also justifies our claim that $m v-nu$ is plus or minus one equally often in the tree (save for the first two nodes), since its sign changes each time there is a multiplication by $ES$ rather than $S$.
 
 
-\subsection{The Euclidean algorithm for Fibonacci structure pairs}
+\subsection{Fibonacci pairs}
 \label{sec:euclidean}
 The Fibonacci matrices in Figure~\ref{fig:Ch2EuclideanTree} are found by consistently choosing the $ES$ branch for each bifurcation from the second node so that, for example
 \begin{align*}
@@ -284,7 +301,7 @@ The Fibonacci matrices in Figure~\ref{fig:Ch2EuclideanTree} are found by consist
 		8 & 3
 	\end{pmatrix} &= 	(E S)^{{4}} \cdot E^2 S ;
 \end{align*}
-and recalling that $F_{7}=13$, more generally
+and recalling that $F_{7}=13$, this generalises easily to
 \begin{align}
 	\begin{pmatrix} 
 		F_{j+1} & F_{j-1} 
@@ -306,69 +323,35 @@ E S \begin{pmatrix} 	F_{j+1} & F_{j-1} 	\\	F _j & F_{j-2}\end{pmatrix}
 \end{pmatrix}
 \end{align}
 \end{jAnswer}
-By comparison with the preceding section this shows that the $\jq$s of the Euclidean algorithm for adjacent Fibonacci numbers $(F_{j+1},F_j)$ are a sequence of $\jqn{1}$s of length $j$; alternatively this can be read off from Figure~\ref{fig:Ch2EuclideanTree}.
+Together with the previous section this shows that the winding-numbers for a pair of adjacent Fibonacci numbers are the two previous Fibonacci numbers.
+Moreover we can calculate the associated Farey intervals for use in Chapter~\ref{ch:cylinder}.
+
 
 \begin{jExercise}
-	Show that  the winding-number pair for the Fibonacci pair $(m,n)= (F_j,F_{j+1})$ is the pair formed by the two preceding Fibonacci numbers $(u,v)=(F_{j-2},F_{j-1})$.
+	Show  the Farey interval for the Fibonacci pair $(m,n)= (F_j,F_{j+1})$ contains $1/\tau^2=1/(1+\tau)$ but that for $k>1$ the Farey interval for the generalised Fibonacci pair $(F^k_j,F^k_{j+1})$ contains $\tau/(1+ k \tau)$.
 \end{jExercise}
 \begin{jAnswer}  
-From \eqref{eq:FibonacciMatrix},
-	\begin{align}		 
-		\begin{vmatrix} 
-		n  & v
-			\\
-			m & u
-			\end{vmatrix}
-			= (-1)^{j-1} 
-	\end{align}
-so $(u,v)$ are a B\'ezout pair for $(m,n)$. Moreover the Farey interval mediant is
-	\begin{align}		 
-(u+v)/(m+n)&= F_j/F_{j+2}
-	\end{align}
-	which is in $[0,\jhalf]$ and so $(u,v)$ are the winding numbers of equation~\ref{eq:wnpFarey}.
-\end{jAnswer}
-
-\subsubsection{Generalised Fibonacci numbers}
-Most of the standard results on the algebra of Fibonacci numbers~\cite{koshyFibonacciLucasNumbers2001,dunlapGoldenRatioFibonacci1997,coxeterIntroductionGeometry1989} can be generated using this matrix multiplication formalism. For example
-generalised Fibonacci numbers are generated with the  recurrence
-\begin{align}
-	\label{eq:GeneralisedF}
-		F^k_{j+1} &=  F^k_{j-1}+  F^k_{j}, \\
-		F^k_1&=1,\\
-		F^k_2&=k.
-\end{align}
-so that Fibonacci numbers have $k=1$ and Lucas numbers $k=3$.
-By inspecting Figure~\ref{fig:Ch2EuclideanTree}, remembering that $F^3_4=7$, or by induction, we can see that for $k>1$
+For  $k=1$, the mediant of the Farey interval $(u+v)/(m+n)$ is $F_j/F_{j+2}$. 
+Generalised Fibonacci number pairs, such as the Lucas numbers $F^3_4=7$ and $F^3_5=11$, also appear in Figure~\ref{fig:Ch2EuclideanTree}. From inspection of the tree or by induction we have for $k>1$
 \begin{align}
 	\begin{pmatrix} 
 		F^k_{j+1} & F_j 
 		\\
 		F^k_j & F_{j-1}
 	\end{pmatrix} &= 	(E\cdot  S)^{j-1} \cdot  (E^k S) 
-\label{eq:GeneralizedFibonacciMatrix}
+	\label{eq:GeneralizedFibonacciMatrix}
 \end{align}
-So we see that the winding numbers for the generalised Fibonacci pair   and $F^k_{j+1}$ and $F^k_j$  are the plain Fibonacci pair $F_j$ and $F_{j+1}$, and the Farey interval of this matrix contains the Farey mediant
+(This is still true for $k=1$ but as we have seen delivers a B\'ezout pair but not the winding-number pair). For these generalised pairs the Farey mediant is 
 \begin{align}
-	\frac{	 F_j + F_{j+1}}{F^k_{j+1}+F^k_{j-1}}&=	\frac{	 F_{j+2}}{F^k_{j+1}}
-	\\
-	&= 	\frac{	 F_{j+2}}{F_{j-1} + k F_j}
-	\\&= \frac{ F_{j+2}/F_{j-1}}{1+ k F_j/F_{j-1}}
-%	\\
-%	&= \frac{	 F_{j+2}/{F_{j-1}}}{1+ k F_j/{F_{j-1}}}
-\end{align}
-making use of the well-known relation $	F^k_{j+1} =  F_{j-1} + k F_j$ and in the limit of large $j$ we find that the Farey interval for the matrix~\eqref{eq:GeneralizedFibonacciMatrix} contains the point
-\begin{align}
-\lim_{j\tends \inf}	F_j/F^k_{j+1}&= \tau/(1+k\tau)
-\end{align} 
-which we will  use later.
+	\frac{	 F_j + F_{j-1}}{F^k_{j+1}+F^k_{j}}&=	\frac{	 F_{j+1}}{F^k_{j+2}}
+\\
+	&= 	\frac{	 F_{j+1}}{F_{j} + k F_{j+1}}
+		\\&= \frac{ F_{j+1}/F_{j}}{1+ k F_{j+1}/F_{j}}
+\end{align}	
+making use of the well-known relation $	F^k_{j+1} =   k F_j+ F_{j-1}$. Finally we use $\lim_{ k\tends \infty}  F_{j+1}/F_{j}=\tau$ together with the fact that the Farey intervals are nested.
 
-
-\begin{jExercise}
-	Show that  $	F^k_{j+1} =  F_{j-1} + k F_j$
-\end{jExercise}
-\begin{jAnswer}
 \end{jAnswer}
- 
+
 \section{Continued fractions}
 
 If we divide each line of the Euclidean algorithm example above by $r_i$ we get
