@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7025,        182]
-NotebookOptionsPosition[      6012,        157]
-NotebookOutlinePosition[      6417,        173]
-CellTagsIndexPosition[      6374,        170]
+NotebookDataLength[      8603,        213]
+NotebookOptionsPosition[      7490,        187]
+NotebookOutlinePosition[      7899,        203]
+CellTagsIndexPosition[      7856,        200]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -53,7 +53,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.9309128009761524`*^9, 3.9309128620030937`*^9}, 
    3.930913019235405*^9, 3.930913120870573*^9, {3.930913241475622*^9, 
    3.9309132424766693`*^9}, {3.9309186611628284`*^9, 3.9309187199815083`*^9}},
- CellLabel->"In[65]:=",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f49d2e6f0815"],
+ CellLabel->"In[5]:=",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f49d2e6f0815"],
 
 Cell[BoxData[{
  RowBox[{"Needs", "[", "\"\<GitLink`\>\"", "]"}], "\n", 
@@ -63,10 +63,27 @@ Cell[BoxData[{
    RowBox[{"Module", "[", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"r", ",", "main", ",", "c"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"r", ",", "main", ",", "c", ",", "res"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"r", "=", 
        RowBox[{"GitOpen", "[", "repo", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"res", "=", " ", 
+       RowBox[{"KeyTake", "[", 
+        RowBox[{
+         RowBox[{"GitProperties", "[", "r", "]"}], ",", 
+         RowBox[{"{", "\"\<HeadBranch\>\"", "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"res", " ", "=", " ", 
+       RowBox[{"Append", "[", 
+        RowBox[{"res", ",", 
+         RowBox[{"KeyTake", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"GitProperties", "[", "r", "]"}], "[", "\"\<Remotes\>\"",
+              "]"}], "[", "\"\<origin\>\"", "]"}], ",", "\"\<FetchURL\>\""}], 
+          "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"main", " ", "=", " ", 
        RowBox[{"GitProperties", "[", 
         RowBox[{"r", ",", "\"\<HeadBranch\>\""}], "]"}]}], ";", 
@@ -74,16 +91,28 @@ Cell[BoxData[{
       RowBox[{"c", "=", 
        RowBox[{"ToGitObject", "[", 
         RowBox[{"r", ",", "main"}], "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Append", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"GitProperties", "[", "c", "]"}], "[", "\"\<Author\>\"", 
-         "]"}], ",", 
-        RowBox[{"KeyTake", "[", 
-         RowBox[{
-          RowBox[{"GitProperties", "[", "c", "]"}], ",", "\"\<SHA\>\""}], 
-         "]"}]}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+      RowBox[{"res", "=", " ", 
+       RowBox[{"Append", "[", 
+        RowBox[{"res", ",", 
+         RowBox[{"KeyTake", "[", 
+          RowBox[{
+           RowBox[{"GitProperties", "[", "c", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\"\<Author\>\"", ",", "\"\<SHA\>\""}], "}"}]}], "]"}]}], 
+        "]"}]}], ";", "\[IndentingNewLine]", "res"}]}], "\[IndentingNewLine]",
+     "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9309132186271477`*^9, 3.9309132566180515`*^9}, {
+   3.9309133505964375`*^9, 3.930913583753212*^9}, {3.9309136226347485`*^9, 
+   3.9309137050060863`*^9}, {3.9309186438162823`*^9, 3.930918650060461*^9}, {
+   3.9309190645885086`*^9, 3.9309192059639816`*^9}, {3.930919245508196*^9, 
+   3.9309192512564697`*^9}, {3.930919359262308*^9, 3.930919361552887*^9}, 
+   3.9384877656237526`*^9, {3.938488339015007*^9, 3.9384884120624733`*^9}, {
+   3.9384884446901627`*^9, 3.93848851857041*^9}, {3.938488563454237*^9, 
+   3.9384885763787384`*^9}, {3.938488622870865*^9, 3.9384886234678345`*^9}, {
+   3.938488805657854*^9, 3.9384889606181774`*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
+
+Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"writeGitProperties", "[", "repo_", "]"}], " ", ":=", " ", 
@@ -108,13 +137,14 @@ Cell[BoxData[{
         "\"\<Text\>\""}], "]"}], ";", "\[IndentingNewLine]", 
       RowBox[{"ResetDirectory", "[", "]"}], ";"}]}], "\[IndentingNewLine]", 
     "]"}]}], ";", 
-  RowBox[{"writeGitProperties", "[", "repo", "]"}]}]}], "Input",
+  RowBox[{"writeGitProperties", "[", "repo", "]"}]}]], "Input",
  CellChangeTimes->{{3.9309132186271477`*^9, 3.9309132566180515`*^9}, {
-  3.9309133505964375`*^9, 3.930913583753212*^9}, {3.9309136226347485`*^9, 
-  3.9309137050060863`*^9}, {3.9309186438162823`*^9, 3.930918650060461*^9}, {
-  3.9309190645885086`*^9, 3.9309192059639816`*^9}, {3.930919245508196*^9, 
-  3.9309192512564697`*^9}, {3.930919359262308*^9, 3.930919361552887*^9}},
- CellLabel->"In[88]:=",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
+   3.9309133505964375`*^9, 3.930913583753212*^9}, {3.9309136226347485`*^9, 
+   3.9309137050060863`*^9}, {3.9309186438162823`*^9, 3.930918650060461*^9}, {
+   3.9309190645885086`*^9, 3.9309192059639816`*^9}, {3.930919245508196*^9, 
+   3.9309192512564697`*^9}, {3.930919359262308*^9, 3.930919361552887*^9}, 
+   3.9384877656237526`*^9},
+ CellLabel->"In[37]:=",ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-305e897a350d"],
 
 Cell[BoxData["repoTeXString"], "Input",ExpressionUUID->"1227984e-6213-0940-a95e-3b01bfb69afa"],
 
@@ -155,9 +185,9 @@ ba98cf4b8c5cb3c839db3d880ec194a2e3f84087}\"\>"], "Output",
  CellLabel->"Out[72]=",ExpressionUUID->"3e7e0559-ffa3-3341-a749-02adc32766ff"]
 }, Open  ]]
 },
-WindowSize->{951, 524},
-WindowMargins->{{469, Automatic}, {Automatic, 82.5}},
-FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+WindowSize->{951, 524.25},
+WindowMargins->{{Automatic, -227.25}, {38.25, Automatic}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"473bde1f-56b0-314b-b222-16036ef714cc"
 ]
@@ -172,17 +202,18 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1396, 35, 140, "Input",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f49d2e6f0815",
+Cell[558, 20, 1395, 35, 139, "Input",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f49d2e6f0815",
  InitializationCell->True],
-Cell[1957, 57, 2564, 59, 295, "Input",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
-Cell[4524, 118, 94, 0, 28, "Input",ExpressionUUID->"1227984e-6213-0940-a95e-3b01bfb69afa"],
+Cell[1956, 57, 2532, 55, 199, "Input",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
+Cell[4491, 114, 1508, 32, 161, "Input",ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-305e897a350d"],
+Cell[6002, 148, 94, 0, 28, "Input",ExpressionUUID->"1227984e-6213-0940-a95e-3b01bfb69afa"],
 Cell[CellGroupData[{
-Cell[4643, 122, 560, 12, 67, "Input",ExpressionUUID->"c8aae800-ef9f-df4b-8db7-7f22dbb2c5db"],
-Cell[5206, 136, 259, 3, 32, "Output",ExpressionUUID->"9e0c50b7-58f7-8441-933c-bc8a1a209c05"]
+Cell[6121, 152, 560, 12, 66, "Input",ExpressionUUID->"c8aae800-ef9f-df4b-8db7-7f22dbb2c5db"],
+Cell[6684, 166, 259, 3, 32, "Output",ExpressionUUID->"9e0c50b7-58f7-8441-933c-bc8a1a209c05"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5502, 144, 203, 4, 28, "Input",ExpressionUUID->"be1faea8-5f80-1243-96d7-3139847f3b23"],
-Cell[5708, 150, 288, 4, 32, "Output",ExpressionUUID->"3e7e0559-ffa3-3341-a749-02adc32766ff"]
+Cell[6980, 174, 203, 4, 28, "Input",ExpressionUUID->"be1faea8-5f80-1243-96d7-3139847f3b23"],
+Cell[7186, 180, 288, 4, 32, "Output",ExpressionUUID->"3e7e0559-ffa3-3341-a749-02adc32766ff"]
 }, Open  ]]
 }
 ]
