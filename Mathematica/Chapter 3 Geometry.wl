@@ -65,6 +65,7 @@ exportFigures := Timing@{
 , {jExport@Ch3GeneratingIntervals}
 }
 shExport[x_] := x;
+(*shExport[x_] := "Not exported"*)
 
 
 (* ::Input:: *)
@@ -959,7 +960,6 @@ spiral
 
 
 (* ::Input::Initialization:: *)
-
 showLatticeParastichyLines[lattice_,showCircle_:True]  :=  Module[{latticep,pp,jpt,plines,pset,para1Set,para2Set},
 ll = latticeLabel[lattice];
 llines = Map[latticeParastichyLines[lattice,#]&,ll,{2}];
@@ -1011,7 +1011,7 @@ Ch3LatticeTypes  := GraphicsGrid[{{figShowMN25,figShowNoli25},{figShowTC25,figSh
 
 
 (* ::Input:: *)
-(*jExport[Ch3LatticeTypes]*)
+(*shExport[Ch3LatticeTypes]*)
 
 
 (* ::Input::Initialization:: *)
