@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     11510,        265]
-NotebookOptionsPosition[     10473,        240]
-NotebookOutlinePosition[     10875,        256]
-CellTagsIndexPosition[     10832,        253]
+NotebookDataLength[     11540,        264]
+NotebookOptionsPosition[     10503,        239]
+NotebookOutlinePosition[     10905,        255]
+CellTagsIndexPosition[     10862,        252]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -179,9 +179,8 @@ Cell[BoxData[
    3.943433812840372*^9, 3.9434338853129845`*^9}, {3.9434340587513657`*^9, 
    3.94343410720084*^9}, {3.943434523206253*^9, 3.943434666031477*^9}, {
    3.9434346975992146`*^9, 3.9434346981019*^9}, 3.9434347539911747`*^9, 
-   3.943434812121172*^9, {3.943434990504793*^9, 
-   3.943434995454714*^9}},ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-\
-305e897a350d"],
+   3.943434812121172*^9, {3.943434990504793*^9, 3.943434995454714*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-305e897a350d"],
 
 Cell[CellGroupData[{
 
@@ -201,17 +200,17 @@ Cell[BoxData[
    3.94343410720084*^9}, {3.943434523206253*^9, 3.943434666031477*^9}, {
    3.9434346975992146`*^9, 3.9434346981019*^9}, 3.9434347539911747`*^9, 
    3.943434812121172*^9},
- CellLabel->"In[50]:=",ExpressionUUID->"b75608cc-9ea6-a144-86b7-9998912bf55c"],
+ CellLabel->"In[52]:=",ExpressionUUID->"b75608cc-9ea6-a144-86b7-9998912bf55c"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"\\n% Generated from \
 C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\MathematicalPhyllotaxis\\\\\
-Mathematica\\\\Packages\\\\runScripts.nb\\n\\\\renewcommand{\\\\\
+Mathematica\\\\Packages\\\\runScripts.nb\\n\\\\newcommand{\\\\\
 jGithubMathematicalPhyllotaxisRepoSHA}{\
-eac9054c2311f20859a5f0753d8ef502860f3717}\\n\\\\renewcommand{\\\\\
+eac9054c2311f20859a5f0753d8ef502860f3717}\\n\\\\newcommand{\\\\\
 jGithubMathematicalPhyllotaxisRepoTimeStamp}{Sat 26 Oct 2024 \
-13:48:40}\\n\\\\renewcommand{\\\\jGithubMathematicalPhyllotaxisRepoBranch}{\
+13:48:40}\\n\\\\newcommand{\\\\jGithubMathematicalPhyllotaxisRepoBranch}{\
 Springer}\"\>", "\[InvisibleSpace]", "\<\"\\n\\n written to \"\>", 
    "\[InvisibleSpace]", \
 "\<\"GithubMathematicalPhyllotaxisRepoProperties.tex\"\>"}],
@@ -219,18 +218,18 @@ Springer}\"\>", "\[InvisibleSpace]", "\<\"\\n\\n written to \"\>",
   "\n% Generated from \
 C:\\Users\\jonat\\Documents\\GitHub\\MathematicalPhyllotaxis\\Mathematica\\\
 Packages\\runScripts.nb\n\
-\\renewcommand{\\jGithubMathematicalPhyllotaxisRepoSHA}{\
+\\newcommand{\\jGithubMathematicalPhyllotaxisRepoSHA}{\
 eac9054c2311f20859a5f0753d8ef502860f3717}\n\
-\\renewcommand{\\jGithubMathematicalPhyllotaxisRepoTimeStamp}{Sat 26 Oct 2024 \
+\\newcommand{\\jGithubMathematicalPhyllotaxisRepoTimeStamp}{Sat 26 Oct 2024 \
 13:48:40}\n\
-\\renewcommand{\\jGithubMathematicalPhyllotaxisRepoBranch}{Springer}", 
+\\newcommand{\\jGithubMathematicalPhyllotaxisRepoBranch}{Springer}", 
    "\n\n written to ", "GithubMathematicalPhyllotaxisRepoProperties.tex"],
   Editable->False]], "Print",
  CellChangeTimes->{{3.943434654985058*^9, 3.943434666764839*^9}, 
-   3.943434758544222*^9, 3.9434350003181324`*^9},
+   3.943434758544222*^9, 3.9434350003181324`*^9, 3.9434350352591305`*^9},
  CellLabel->
   "During evaluation of \
-In[50]:=",ExpressionUUID->"abda619c-3556-f44c-943d-f0c2a45b0f10"]
+In[52]:=",ExpressionUUID->"80ad338f-718a-b642-985a-67e197b415c4"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -260,13 +259,13 @@ Cell[558, 20, 1395, 35, 139, "Input",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f4
 Cell[1956, 57, 790, 11, 28, "Input",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
 Cell[2749, 70, 2627, 59, 215, "Input",ExpressionUUID->"ea6b1b0e-09ce-9440-b08f-6c66a5cd9a09",
  InitializationCell->True],
-Cell[5379, 131, 2514, 52, 272, "Input",ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-305e897a350d",
+Cell[5379, 131, 2532, 51, 272, "Input",ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-305e897a350d",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[7918, 187, 958, 16, 28, "Input",ExpressionUUID->"b75608cc-9ea6-a144-86b7-9998912bf55c"],
-Cell[8879, 205, 1353, 27, 127, "Print",ExpressionUUID->"abda619c-3556-f44c-943d-f0c2a45b0f10"]
+Cell[7936, 186, 958, 16, 28, "Input",ExpressionUUID->"b75608cc-9ea6-a144-86b7-9998912bf55c"],
+Cell[8897, 204, 1365, 27, 127, "Print",ExpressionUUID->"80ad338f-718a-b642-985a-67e197b415c4"]
 }, Open  ]],
-Cell[10247, 235, 222, 3, 28, "Input",ExpressionUUID->"be1faea8-5f80-1243-96d7-3139847f3b23"]
+Cell[10277, 234, 222, 3, 28, "Input",ExpressionUUID->"be1faea8-5f80-1243-96d7-3139847f3b23"]
 }
 ]
 *)
