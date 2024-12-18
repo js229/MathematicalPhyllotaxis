@@ -1,8 +1,6 @@
 
 
-\chapter{Mathematical background}
-
- It would be wise to skip, or read very glancingly, this chapter on a first reading. It covers the mathematical background the book relies on, and not every reader will want to read it in detail. The sections up to and including the golden angle are straightforward for anyone likely to get anything out of this book; co-prime integers and B\'ezout relations are only needed for those who want to closely follow the proofs that follow, and the details of the matrix form of the Euclidean algorithm may only matter to those curious about the relationships between Fibonacci phyllotaxis and Escher prints.
+\chapter{Fibonacci and the golden ratio}
 
 \label{CH:0}
 \label{ch:0}
@@ -70,20 +68,25 @@ As we'll see, the angular rotation between successive leaf structures is often v
 
 
 
-\section{Co-prime integers and the B\'ezout relation}
+\section{Co-prime integers}
 
 \label{sec:coprime}
-Two integers $(m,n)$ are co-prime iff their greatest common divisor is equal to 1, so that for example 4 and 11 are co-prime. We need to be explicit about some edge cases, by noticing that every integer is a divisor of $0$, but the only divisors of $1$ are $1$ and $-1$. Specifically we recognise both of the pairs $(0,1)$ and $(1,n)$ as co-prime, and note that $1$ is co-prime to itself, but $0$ is not, and $(0,n)$ is not co-prime for $n>1$.%
+Two integers $(m,n)$ are co-prime iff\jNote{The word `iff' is not a typo. It means if and only if, and is also a shibboleth.
+	If it is bewildering to you that `iff' means logical equivalence and not just implication then you have not been inducted into the kind of mathematical exposition, roughly first-year undergraduate, we use until around section~\ref{sec:ClassifyingSummary}, so you will want to skip to there. On the other hand you can read all of the rest of the book without knowing what a shibboleth is.} their greatest common divisor is equal to 1, so that for example 4 and 11 are co-prime. We need to be explicit about some edge cases, by noticing that every integer is a divisor of $0$, but the only divisors of $1$ are $1$ and $-1$. Specifically we recognise both of the pairs $(0,1)$ and $(1,n)$ as co-prime, and note that $1$ is co-prime to itself, but $0$ is not, and $(0,n)$ is not co-prime for $n>1$.%
 %\footnote{We don't require the integers to be non-negative for this co-primality to make sense, but we avoid situations where this matters.}
 
+\chapter{Co-primality, continued fractions, and M\"obius maps}
+It would be wise to skip, or read very glancingly, this chapter on a first reading. 
+The material on co-prime integers and B\'ezout relations are only needed for those who want to closely follow the proofs of Chapter~\ref{ch:cylinder}. M\"obius maps are the main language of  the renormalisation approach to the van Iterson diagram discussed at the end of Chapter~\ref{ch:classifying}, but are not at all essential to understand the biological implications of the mathematics.  The details of the matrix form of the Euclidean algorithm may only matter to those curious about the relationships between Fibonacci phyllotaxis and Escher prints.
+
+
 \subsection{B\'ezout relations}
-The integer pair $(u,v)$ satisfies the B\'ezout relation for the non-negative integer pair $(m,n)$ iff\jNote{The word `iff' is not a typo. It means if and only if, and is also a shibboleth.
-If it is bewildering to you that `iff' means logical equivalence and not just implication then you have not been inducted into the kind of mathematical exposition, roughly first-year undergraduate, we use until around section~\ref{sec:ClassifyingSummary}, so you will want to skip to there. On the other hand you can read all of the rest of the book without knowing what a shibboleth is.}
+The previous chapter defined co-primality for a pair of integers. An equivalent condition is the existence of a  B\'ezout relation: the integer pair $(u,v)$ satisfies the B\'ezout relation for the non-negative integer pair $(m,n)$ iff
 \begin{align}
 	|n  u-mv| = 1.
 \end{align}
 So $(3,4)$ are a B\'ezout pair for $(8,11)$. 
-If $u$ and $v$ exist then they are a proof of co-primality: we will see below that $(m,n)$ can satisfy  $ n  u - m v= k$ iff $|k|$ is the greatest common factor of $m$ and $n$. They are not unique because if $(u,v)$ satisfies the B\'ezout relation then so does $(u+km,v+kn)$ for any integer $k$: $(11,15)$ is also a B\'ezout pair for $(8,11)$. We can introduce a range condition by picking a particular $k$ which can be used to enforce $0\leq v< n$, but there is still a further ambiguity because if
+If $u$ and $v$ exist then they are a certificate of co-primality: we will see below that $(m,n)$ can satisfy  $ n  u - m v= k$ iff $|k|$ is the greatest common factor of $m$ and $n$. They are not unique because if $(u,v)$ satisfies the B\'ezout relation then so does $(u+km,v+kn)$ for any integer $k$: $(11,15)$ is also a B\'ezout pair for $(8,11)$. We can introduce a range condition by picking a particular $k$ which can be used to enforce $0\leq v< n$, but there is still a further ambiguity because if
 $n u- m v  =+1$ provides one solution, then $n(m-u)-m(n-v)=-1$ provides another: because $11\times3-4\times8 =+1$ we can find $11\times 1-4\times 3=-1$. 
 
 \subsection{The winding-number pair}
@@ -94,7 +97,7 @@ For co-prime integers  $(m,n)$, the winding-number pair is the unique pair  $(u,
 \begin{align}
 	0\leq \frac{u+v}{m+n}\leq \frac{1}{2}. \label{eq:wnpFarey}
 \end{align}
-There are a handful of special cases: the winding-number pair for  $(0,1)$ is by definition $(1,0)$, for $(1,0)$ is $(0,1)$, and for $(1,1)$ is $(1,0)$. 
+There are a handful of special cases: in this book the winding-number pair for  $(0,1)$ is by definition $(1,0)$, for $(1,0)$ is $(0,1)$, and for $(1,1)$ is $(1,0)$. 
 As we will see below, half of the time the winding-number pair will yield $nu-mv=+1$ and half the time $n u-m v=-1$. We could alternatively have found a unique pair by insisting on a particular choice of sign $nu-mv=+1$, but in this way there is a clear connection to the signs of the $\Delta$s that will pepper Chapter~\ref{ch:cylinder}. Chapter~\ref{ch:cylinder} will also reveal the reason for the name `winding-number pair'. 
 
 
@@ -166,7 +169,7 @@ Given integers $n\geq m>0$  we set $r_{-1}=n$, $r_0=m$ and $i=0$:
 \end{proof}
 
 \subsection{Matrix form of the Euclidean algorithm}
-\vnmafig{Ch2EuclideanTree}{Computing the highest common factor of 4 and 11 by successive matrix reductions upwards to the identity matrix. Conversely, the extended tree downwards from the identity matrix, branching by an $E$ or an $ES$ matrix-multiplication at each node after the second, will contain every pair of co-prime integers, in the first column of each matrix, with the corresponding winding-number pair in the second column. 
+\mmafig{Ch2EuclideanTree}{Computing the highest common factor of 4 and 11 by successive matrix reductions upwards to the identity matrix. Conversely, the extended tree downwards from the identity matrix, branching by an $E$ or an $ES$ matrix-multiplication at each node after the second, will contain every pair of co-prime integers, in the first column of each matrix, with the corresponding winding-number pair in the second column. 
 The $\jqi$s of the Euclidean reduction emerge as the number of $E$s between each $S$.}{1}
 %
 We can solve the B\'ezout relation by putting  Euclid's algorithm in matrix form. For example
@@ -229,7 +232,7 @@ For a general $m$ and $n$, using the $\jqi$ values from the Euclidean algorithm 
 %\end{align}
 
 Because every pair of co-prime integers has a unique $\jqi$ sequence, every pair such pair will appear exactly once in the first column of a matrix in the tree generated by continuing Figure~\ref{fig:Ch2EuclideanTree} downwards.
-The second column is the corresponding B\'ezout pair, as can be checked:
+The second column is the corresponding B\'ezout pair. The same algorithm also works when $m$ and $n$ are not co-prime:
 \begin{jExercise}
 	Show that if $m$ and $n$ have highest common factor $k$ then $u,v$ found in this way give $|nu-mv|=k$.
 \end{jExercise}
@@ -280,7 +283,7 @@ The Farey sum of these two rational endpoints, or the Farey mediant of the matri
 \end{jAnswer}
 
 Farey intervals for the first few matrices in the tree are shown in Figure~\ref{fig:Ch2GeneratingIntervals}.%
-\vnmafig{Ch2GeneratingIntervals}{Farey intervals $[u/m,v/n]$ for matrices $\begin{pmatrix}
+\mmafig{Ch2GeneratingIntervals}{Farey intervals $[u/m,v/n]$ for matrices $\begin{pmatrix}
 		n & v\\ u & m
 \end{pmatrix}
 $ coloured blue if the determinant of the matrix is $+1$ and left white it is $-1$.
@@ -396,25 +399,28 @@ This is  the same as Euclid's algorithm but for the scaled sequence member $\rho
 There is a large literature on continued fractions. Fowler~\cite{fowlerMathematicsPlatoAcademy1999} combines the basic results with a relevant historical perspective while Berger~\cite{bergerGeometryRevealedJacob2010} adds an informative geometric view. 
 
 \subsection{Continued fractions and M\"obius maps}
-Using the continued-fraction representation, given a set of $q$s we can define a function of $z$ as
+\newcommand{\wC}{w}%late relabel
+Using the continued-fraction representation, given a set of $\jqix{i}$s we can define a function of $\wC$ as
 \begin{align}
-	f_{\jqix{0}\ldots \jqix{i}}(z) &= [\jqix{0}\ldots \jqix{i}  , z] 
+	f_{\jqix{0}\ldots \jqix{i}}(\wC) &= [\jqix{0}\ldots \jqix{i}  , \wC] 
 \end{align}
 Taking coefficients from in our running example we  have 
 \begin{align}
-f_{\jqn{3}}&=  \jqn{3} + \frac{1}{z} = \frac{3 z+1}{z+0} 
+	\begin{split}
+f_{\jqn{3}}&=  \jqn{3} + \frac{1}{\wC} = \frac{3 \wC+1}{\wC+0} 
 \\
-f_{\jqn{1},\jqn{3}}  &=  \jqn{1} + \frac{1}{\jqn{3}+1/z} = \frac{4 z+1}{3z+1} \label{eq:fq}
+f_{\jqn{1},\jqn{3}}  &=  \jqn{1} + \frac{1}{\jqn{3}+1/\wC} = \frac{4 \wC+1}{3\wC+1} 
 \\ 
 f_{\jqn{2},\jqn{1},\jqn{3}}  &=  \jqn{2} + \frac{1}{\jqn{1}+\frac{1}{
-		\jqn{3}+1/z}} = \frac{11 z+3}{4z+1} \label{eq:frac411}.
+		\jqn{3}+1/\wC}} = \frac{11 \wC+3}{4\wC+1} %\label{eq:frac411}.
+	\end{split}\label{eq:fq}
 \end{align}
 where we recognise the coefficients of the matrix $M_{\jqn{2},\jqn{1},\jqn{3}}$ of equation~\ref{eq:M213} arising from the Euclidean algorithm for 11 and 4. Clearly this is not a co-incidence, and by analogy with the previous sections we can expect that $f$ can be constructed by repeated function compositions moving us down the tree of Figure~\ref{fig:Ch2EuclideanTree}. 
-Indeed since $	f_{\jqix{i}}  =  \jqix{i} +1/{z}  $, the last two can be written as
+Indeed since $	f_{\jqix{i}}  =  \jqix{i} +1/{\wC}  $, the last two can be written as
 \begin{align}	
-	f_{\jqn{1},\jqn{3}}  &=  	f_{\jqn{1}}(	f_{\jqn{3}}(z)) = 	f_{\jqn{1}}\circ 	f_{\jqn{3}}
+	f_{\jqn{1},\jqn{3}}  &=  	f_{\jqn{1}}(	f_{\jqn{3}}(\wC)) = 	f_{\jqn{1}}\circ 	f_{\jqn{3}}
 	\\	f_{\jqn{2},\jqn{1},\jqn{3}}  &=
-	%  	f_{\jqn{2}}(	f_{\jqn{1}}(		f_{\jqn{3}}(z)))) =
+	%  	f_{\jqn{2}}(	f_{\jqn{1}}(		f_{\jqn{3}}(\wC)))) =
 	 f_{\jqn{2}}\circ 	f_{\jqn{1}} \circ 	f_{\jqn{3}}
 \end{align}
 and in general
@@ -425,8 +431,9 @@ Each of the $f$ constructed in this way is a \textit{M\"obius map}.
 
 \subsection{M\"obius functions}
 \label{sec:moebiusdef}
-M\"obius maps have the form\jNote{Poincar\'e called these Fuchsian functions and they have variously been called automorphic or Hilbert modular functions, affine transforms or fractional linear transformations.  I follow the authority of Wikipedia, partly because as a native English reader I see an umlaut as conferring scientific respectability.}
-\begin{align}	f(z) &=  \frac{a z +b}{c z+ d},
+M\"obius maps have the form\jNote{Poincar\'e called these Fuchsian functions; they have variously been called automorphic functions, Hilbert modular functions, affine transforms or fractional linear transformations.  I follow the authority of Wikipedia, partly because as a native English reader I see an umlaut as conferring scientific respectability.}
+
+\begin{align}	f(\wC) &=  \frac{a \wC +b}{c \wC+ d},
 \end{align}
 and are associated with a coefficient matrix
 \begin{align}
@@ -434,50 +441,54 @@ and are associated with a coefficient matrix
 	\begin{bmatrix}
 		a & b \\ c & d	\end{bmatrix}.
 \end{align}
-It can be verified directly that the composition of two M\"obius maps is a M\"obius map, and that the coefficient matrix of the composition is the product of the coefficient matrices:
+It can be verified directly that the composition of two M\"obius maps is a M\"obius map, and that the coefficient matrix of the composition is the conventional matrix product of the coefficient matrices:
 \begin{align}
 	M(f_1 \circ f_2) &= M(f_1 ) \cdot M( f_2)
 \end{align}
 One way to see this is to note that 
 \begin{equation}
-	f\left(\frac{z_1}{z_2}\right) =\frac{w_1}{w_2}  \mbox{ where } 	\begin{pmatrix}
+	f\left(\frac{\wC_1}{\wC_2}\right) =\frac{w_1}{w_2}  \mbox{ where } 	\begin{pmatrix}
 		w_1 \\ w_2 
 	\end{pmatrix} = 
 	\begin{pmatrix}
 		a & b \\ c & d
 	\end{pmatrix} 
 	\begin{pmatrix}
-		z_1 \\ z_2
-	\end{pmatrix}
-\end{equation}.
+		\wC_1 \\ \wC_2
+	\end{pmatrix}.
+\end{equation}
+Although we do conventional matrix multiplication to compute the function composition, the functions being composed are not the conventional linear transformations of the real plane  $\jR^2\rightarrow\jR^2$ allowing rotation, scaling and shear. M\"obius maps are better thought of as functions on the complex plane  $f:\jC\rightarrow\jC$.  
+If $\wC$ is a complex variable, then because $f(\wC)=\wC+b$, $f(\wC)=a \wC$, and $f(\wC)=1/\wC$  represent translation, scaling, and inversion in the unit circle,  M\"obius maps correspond to transformations of the complex plane generated by these geometric tranformations. 
 
-Since the coefficient matrices of the individual  functions in~\eqref{eq:fq} are
-\begin{align}
-	M(f_\jqix{i})  &= M\left(\frac{q z+1}{z+0}\right)= \begin{pmatrix}
-		q & 1 \\ 1 & 0
-	\end{pmatrix}=  E^{\jqix{i}}\cdot S,
-\end{align}
-then the continued fraction function $	f_{\jqix{1}\jqix{2}\cdots\jqix{N}}$ is a M\"obius function with coefficient matrix 
-\begin{align}
-	M(f_{\jqix{1}\jqix{2}\cdots\jqix{N}})  &=	\begin{pmatrix} 
-		n & v
-		\\
-		m & u
-	\end{pmatrix}
-\end{align}
-exactly as in~\eqref{eq:EuclideanMatrixq}. This allows us to convert between a continued fraction formulation and M\"obius one:
-\begin{align}
-	f_{\jqix{0}\ldots \jqix{N}}(z) &=  [\jqix{0},\ldots ,\jqix{N}  , z]
-	= \frac{nz+v}{mz+u} 
-\end{align}
-showing that~\eqref{eq:frac411} holds true in general. 
-
-If $z$ is a complex variable, then because $f(z)=z+b$, $f(z)=a z$, and $f(z)=1/z$  represent translation, scaling, and inversion in the unit circle,  M\"obius maps correspond to transformations of the complex plane generated by these geometric tranformations.  In  our applications of M\"obius maps the coefficient matrix will always have integer entries and moreover have determinant $mv-nu=\pm 1$. Because every such matrix is invertible in integers the maps form a group which I call the modular group.%
+In our applications of M\"obius maps the coefficient matrix will always have integer entries and moreover have determinant $mv-nu=\pm 1$. Because every such matrix is invertible in integers the maps form a group which I call the modular group.%
 \footnote{If Wikipedia remains the authority, then the modular group is instead the group of matrices with integer entries and determinant $+1$, and the group with determinants $\pm 1$ is  $PSL(2,\jZ)$; but the same authority also says this is called $SL(2,\jZ)$ by some authors.}
-	 A comprehensive treatment of M\"obius transformations is Ford's \textit{Automorphic Functions}~\cite{fordAutomorphicFunctions1951}, but they reappear in many branches of modern mathematics. 
+A comprehensive treatment of M\"obius transformations is Ford's \textit{Automorphic Functions}~\cite{fordAutomorphicFunctions1951}, but they reappear in many branches of modern mathematics. We don't rely on, but later Chapters will partially rediscover, some well known properties of the modular group. In the language of hyperbolic geometry, when the upper complex half-plane is given the hyperbolic metric, its geodesics are semi-circles (including vertical lines) on the horizontal axis, and the modular group is the symmetry group of these geodesics: $f$ will map axis semi-circles to axis semi-circles. 
 
-We don't rely on, but later Chapters will partially rediscover, some well known properties of the modular group. In the language of hyperbolic geometry, when the upper complex half-plane is given the hyperbolic metric, its geodesics are semi-circles (including vertical lines) on the horizontal axis, and the modular group is the symmetry group of these geodesics: $f$ will map axis semi-circles to axis semi-circles. 
+More practically, we can re-cast the computation of~\ref{eq:fq} as a matrix multiplication. Since 
+\begin{align}
+		f_\jqix{i}(\wC)  &=\frac{\jqix{i} \wC+1}{\wC+0}
+\end{align}
+the corresponding coefficient matrix is 
+\begin{align}
+	\begin{bmatrix}
+	\jqix{i} & 1 \\ 1 & 0	\end{bmatrix}
+	 &=E^{\jqix{i}}\cdot S.
+\end{align}
+Now the composition
+\begin{align}
+	f_{\jqix{0}\jqix{1}\cdots\jqix{N}} &= 	f_{\jqix{0}}\circ f_{\jqix{1}}\cdots\circ f_{\jqix{N}}
+\end{align}
+has a coefficient matrix which can be computed as a matrix product
+\begin{align}
+	M_{\jqn{q_1}\jqn{q_2}\cdots\jqn{q_N}}
+  &= 
+	(E^{\jqn{q_1}} S )\cdot( E^{\jqn{q_2}} S ) \cdots  (E^{\jqn{q_N}} S)  \begin{pmatrix} 1&0  \\ 0&1 \end{pmatrix}	=	\begin{bmatrix} n & v \\ m & u \end{bmatrix}, 
+\end{align}
+say, as in~\eqref{eq:EuclideanMatrixq}. Then 
+\begin{align}
+	f_{\jqix{0}\ldots \jqix{N}}(\wC) &= \frac{n\wC+v}{m\wC+u} 
+\end{align}
+showing that~\eqref{eq:fq} holds true in general. 
 
-A M\"obius map  $f:\jC\rightarrow\jC$ is a function on the complex plane; it's unhelpful to think of it as a map on the Euclidean plane $\jR^2\rightarrow\jR^2$.  The reason the latter is unhelpful is that, although it has a matrix representation $M(f)$,  $f$ is not a linear map on these real vectors. A 2x2 matrix normally represents such a linear transformation which allows rotation, scaling and shear; here the same number of parameters represent a transformation allowing rotation, scaling and translation. 
 
 

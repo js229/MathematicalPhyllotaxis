@@ -1,0 +1,119 @@
+% !TeX program = lualatex
+\documentclass[a4paper,12pt,landscape,british,oneside]{memoir}
+
+\usepackage{microtype} % micro adjustments to font spacing does actually reduce overfull hboxes
+
+\usepackage{ifthen}
+\newboolean{printVersion}\setboolean{printVersion}{true}
+\newboolean{answersAtEnd}\setboolean{answersAtEnd}{true}
+\newboolean{notesAtEnd}\setboolean{notesAtEnd}{false}
+\newboolean{compressBibliography}\setboolean{compressBibliography}{false}
+\newboolean{showUnclearedCopyright}\setboolean{showUnclearedCopyright}{true}
+\newboolean{a5Target}\setboolean{a5Target}{false}
+
+% 0.6180339887498948482
+\newcommand{\jdraftnumber}{7.6}
+\newcommand{\jPublicationYear}{2025}
+
+\input{MPPreamble.tex}
+
+\input{githubMathematicalPhyllotaxisRepoProperties.tex}
+
+
+
+%\includeonly{}
+%\includeonly{Background}
+%\includeonly{LandscapeCopyright,LandscapeTitlePage,LandscapeCoverImagePage}
+
+\usepackage{overpic}
+
+\begin{document}
+\selectlanguage{british} % needed if using \usepackage[british,german]{babel}
+%\include{LandscapTitlePage}
+%\include{LandscapeCopyright}
+
+\thispagestyle{titlingpage}
+{
+%	{}	\AddToShipoutPictureBG*{%
+%		\AtPageLowerLeft{%
+%			\includegraphics[width=\paperwidth,height=\paperheight]{./Figures/aikoFade.jpg}%
+%		}%
+%	}
+	\centering
+	{\Huge A textbook of }
+	\\[3ex]
+	{\HUGE\jEmphasisColour	\textsc{Mathematical phyllotaxis}}\\
+	\vfill
+	{\Huge	\scshape Jonathan Swinton}
+	\\\vfill{\jEmphasisColour This is a DRAFT version \jdraftnumber{}}
+	\vfill
+	{\Large	To appear in Springer \textit{Texts in Applied Mathematics}}
+	\\[3ex]
+	{\Large \textsc{\jPublicationYear}
+		\\}
+}
+\newpage
+\thispagestyle{titlingpage}
+
+
+\chapter*{Notes to be removed on publication}
+A small number of images are copyright by others and not yet warranted as free of copyright risk. 
+
+
+ %The front cover image is taken from the Flickr stream of user \texttt{aiko vanhulsen} under a Creative %Commons CC BY 2.0 license. 
+
+This is my draft number \jdraftnumber\  of \textit{A Textbook of Mathematical Phyllotaxis}. A first edition, privately printed in 2023 with the ISBN 978-0-9931789-6-2, is no longer available.
+
+\vfill
+\begin{tabular}{|c|}
+	\hline
+	GitHub for document source and Mathematica figure generation
+	\\
+	\url{https://github.com/js229/MathematicalPhyllotaxis}
+	\\
+	Branch
+	\\ \texttt{\jGithubMathematicalPhyllotaxisRepoBranch}
+	\\
+	Last commit 
+	\\
+	\jGithubMathematicalPhyllotaxisRepoTimeStamp
+	\\
+	SHA \\
+ \texttt{\jGithubMathematicalPhyllotaxisRepoSHA} 
+	\\ \hline
+	Compiled  \\ \today.
+	\\\hline
+\end{tabular}
+
+\newpage
+%\listoffigures
+
+\include{Preface}
+\begin{KeepFromToc}	\tableofcontents\end{KeepFromToc} 
+\addtocontents{toc}{\vfill}
+\part{Introduction}
+\include{Motivation}
+\include{Background}
+\addtocontents{toc}{\vfill\pagebreak}
+\part{Mathematical theory}
+\include{Geometry}
+\include{Classifying}
+\include{Transformed}
+
+\part{Mathematical modelling}
+\include{Developmental}
+\include{Empirical}
+\include{Placement}
+\include{StackedDisksChapter}
+\part{Conclusions}
+\include{Future}
+\include{Acknowledgements}
+\jBookEndSolutions % will be empty if in-text solutions
+\ifthenelse{\boolean{notesAtEnd}}{\printpagenotes}{}
+\jBibliography
+\newpage
+
+\end{document}
+
+
+
