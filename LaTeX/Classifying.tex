@@ -48,11 +48,11 @@ and then
   x_m&=md-u,\\ 
   x_n&=nd-v. 
   \end{align}
-\begin{jExercise}
-	\label{ex:calcr2}
+\begin{jExercise}{ex:calcr2}
+%	\label{ex:calcr2}
 	Find $r^2$ as a function of $m$, $n$, $x_n$, $x_m$ and $\Delta$.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:calcr2}
 	Note that $n x_n - m x_n=\Delta$ and use this to eliminate $x_n$ and $r^2$ from~\eqref{eq:rm} and~\eqref{eq:rn}.
 	This (or alternatively eliminating $x_m$) yields
 	\begin{align}
@@ -73,10 +73,10 @@ h^2  +  (d-\bar d)^2
 4  (n^2-m^2) r^2 &= 2  n \Delta ( m d - u)-1
 \end{align}
 where we have set  $\bar d= {(nv-mu)}/{(n^2-m^2)}$. The first of these shows that $d$ and $h>0$ lie on a semi-circle, and the second that $r^2$ changes linearly with $d$ on that semi-circle, and thus is a decreasing function of $h$.
-\begin{jExercise}
+\begin{jExercise}{ex:semi}
 	Show that~\eqref{eq:semi} and~\eqref{eq:r2def} are correct.
 \end{jExercise} 
-\begin{jAnswer}
+\begin{jAnswer}{ex:semi}
 Substituting for $x_m$ and $x_n$ into~\eqref{eq:rm} and~\eqref{eq:rn} and eliminating $r^2$ gives
 \begin{equation}
 	\label{eq:poly}
@@ -90,12 +90,12 @@ Equation \eqref{eq:r2def} follows from the answer to Exercise~\ref{ex:calcr2}, o
 
 
 
-\begin{jExercise}
+\begin{jExercise}{ex:paxis}
 	Find the values of $x_m$, $x_n$, and $r$ at the left and right
 	intersections of the \branch{m=n} branch with $h=0$.
 	
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:paxis}
 	Suppose $m<n$. The $d,h$ semi-circle intersects the $h=0$ axis 
 	at $(d_L= (v-u)/(n-m),0)$, with $x_m=x_n$, and $(d_R=(v+u)/(n+m),0)$, 
 	and $(n^2-m^2)(d_L-d_R) = 2\Delta$. 
@@ -137,11 +137,11 @@ have radius $r$ where
 \begin{align}
 	h &= 2\sqrt{3} r^2  \label{eq:hofr}
 \end{align}
-\begin{jExercise} 
+\begin{jExercise}{ex:ptriple} 
 	\label{ex:triplealgebra}
 	Find a relation between $r$, $m$ and $n$ at a hexagonal lattice, and use this to show equation~\eqref{eq:hofr}.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:ptriple}
 Consider the triangle of Figure~\ref{fig:Ch3Apextriangle} which has sides $n\mvec$, $m\nvec$ and $1$. Since the lattice is hexagonal, the top angle of the triangle there is $60^\circ$, so set $|\mvec|=|\nvec|=2r$ and use the cosine rule to find   
 \begin{align*}
 	4 r^2  &=  \frac{1}{m^2+mn + n^2} \label{eq:cosine}
@@ -178,10 +178,10 @@ It is simple to show from Exercise~\ref{ex:triplealgebra} that on the \branch{m=
 Between each triple-point, there is a point on the branch where the lattice is square. 
 As lattice parameters pass through these square points, the third and fourth parastichy numbers swap and to that extent these points also organise the lattice space. 
 Square lattices also have a role in modelling obvious parastichies as several authors have considered the `most obvious' to be those which are orthogonal. 
-\begin{jExercise}
+\begin{jExercise}{ex:ptopbranch}
 	At the top of the \branch{m=n} branch, the three principal parastichy numbers change from \gp{m=n,n-m} to \gp{m=n,n+m} at the point where the lattice is a square lattice with principal parastichy numbers \gp{m=n,n-m=n+m}. Find the values of $h$, $r$ and $d$ at which this happens and hence show this is unique on the van Iterson branch.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:ptopbranch}
 	A square lattice occurs for $\mvec.\nvec=0$; using $|n\mvec-m\nvec|=1$ we get
 	$1=n^2|\mvec|^2+m^2|\nvec|^2= 4 r^2 ( m^2+n^2)$. This is unique on the branch because  $4r^2$ is strictly decreasing.
 \end{jAnswer}
@@ -213,14 +213,16 @@ These properties taken together prove that the structure visible in the numerica
 
 
 
-\begin{jExercise}
+\begin{jExercise}{ex:pslope}
 	Show that at the triple-point  $m=n=m+n$, the \branch{m=n} branch, interpreted as a function $h(d)$, has a slope $h'$ given by 
 	\begin{align}
 		\frac{h'}{h} &= - \frac{1}{6 r^2 \Delta}
 	\end{align}
-	\label{prob:hslope}
+%	\label{prob:hslope}
 \end{jExercise}
-Exercise~\ref{prob:hslope} shows that no triple-point occurs at the maximum of a branch, so all the van Iterson sub branches can be traversed with $h$ strictly decreasing. 
+Exercise~\ref{ex:pslope} shows that no triple-point occurs at the maximum of a branch, so all the van Iterson sub branches can be traversed with $h$ strictly decreasing. 
+
+XXXX no answer
 
 We have shown that packing efficiency remains close to the hexagonal optimum on the van Iterson branch, but we also need the following:
 \begin{theorem}
@@ -316,12 +318,12 @@ So we could use $z_1$ as the $z$ of the theorem. But as we show below, the imagi
 \end{proof}
 The M\"obius map $g$ may include an odd or even number of inversions in the unit circle, and it maps the upper half complex plane to either the upper or lower half depending on the sign of $\Delta_{mn}$. 
 
-\begin{jExercise}
-	\label{ex:signz}
+\begin{jExercise}{ex:signz}
+%	\label{ex:signz}
 	Suppose that $w=d_0+ih_0$ with $h\geq 0$. Compute the real and imaginary parts of $z = \Delta_{mn}g_{mn}(w)$ and show that the imaginary part of $z$ is always non-negative.
 \end{jExercise}
 
-\begin{jAnswer}
+\begin{jAnswer}{ex:signz}
 For the original lattice in \gp{0,1}, we have $h_0\geq0$. Separation into real and imaginary parts  gives
 	\begin{align}
 		z_1 &= g_{mn}(d_0+ih_0) 
@@ -352,10 +354,10 @@ In general there are two choices for the winding-number pair for $(m,n)$ and the
 Once we have done all this work to see where the renormalisation transform comes from, there is a payoff in simple characterisations of the van Iterson diagram  as illustrated by the following exercises. Each of these results were originally found without the renormalisation transform, but now the mathematical structure becomes clearer. 
 
 
-\begin{jExercise}
+\begin{jExercise}{ex:circles}
 	Suppose that $m ,n ,u, v$ are integers satisfying  $m v - n u =\Delta $ with $|\Delta|=1$.  Find  \gp{m,n} lattices which are  orthogonal and show they lie on circles in van Iterson space.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:circles}
 	Parameterise the  $\gp{0,1}$ region of van Iterson space by setting $w=d_0+ih_0$ and choose a transformed lattice with $z=\Delta g_{mn}(w)$ in~\eqref{eq:gReImA} gives
 	\begin{align}
 		\Re z &= 
@@ -381,12 +383,12 @@ Once we have done all this work to see where the renormalisation transform comes
 	
 \end{jAnswer}
 
-\begin{jExercise}
+\begin{jExercise}{ex:shcircles}
 	Find  \gp{m,n} lattices which are touching-circle and the special touching-circle cases of square and hexagonal lattices. 
 	\label{ex:orthogonal}
 \end{jExercise}
 
-\begin{jAnswer}
+\begin{jAnswer}{ex:shcircles}
 Touching circle lattices occur in \gp{0,1} space when $w=e^{i\theta}$, for $\pi/3\leq\theta\leq2\pi/3$ and $\theta$ is the angle between the principal vectors. 
 Equations~\eqref{eq:rez} and~\eqref{eq:gReIBm} give the divergence and rise of the lattice transformed by $\Delta g_{mn}$ as 
 \begin{align}
@@ -414,12 +416,12 @@ There are two hexagonal lattice points in \gp{0,1} at $e^{i\pi/3}$ and $e^{2i\pi
 	
 \end{jAnswer}
 
-\begin{jExercise}
-\label{ex:calcprinciplay}
+\begin{jExercise}{ex:calcprinciplay}
+%\label{ex:calcprinciplay}
 	Find the magnitude of the principal parastichy vector in an \gp{m,n}  lattice with angle $\theta$ between its principal parastichy vectors.
 	Find the radius of the disks in a touching circle lattice as a function of $\theta$, and the divergence $d$ as a function of $r$.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:calcprinciplay}
 The angle  $\theta$ between the principal parastichy vectors is the same in the $\gp{0,1}$ lattice and in the rotated and scaled lattice, and  $w=|w_0|e^{i\theta}$.  Inserting this into in~\eqref{eq:gReImA} and taking real and imaginary parts allows the calculation of $\pvec{m}=m z_1 -u$ and $|\pvec{m}|^2$: 
 	\begin{align}
 	|\pvec{m}|^2 &=\frac{1}{m^2 w_0^2-2 m n w_0 \cos (\theta )+n^2}.
@@ -442,12 +444,12 @@ d&=		\jhalf
 As $w_1$ rotates around the unit circle from $e^{2i\pi/3}$ to $e^{i\pi/2}$ to $e^{i\pi/3}$, the inverse square diameter of the transformed lattice increases from $m^2-mn+n^2$at the top triple point on the $m=n$ branch, through  $m^2+n^2$ at the square lattice point, down to $m^2+mn+n^2$  at the lower triple point.
 \end{jAnswer}
 
-\begin{jExercise}
-	\label{ex:fibthresholds}
+\begin{jExercise}{ex:fibthresholds}
+%	\label{ex:fibthresholds}
 Suppose that the Fibonacci branch of the van Iterson tree is followed as $r$ is decreased.
 Show that the larger parastichy number becomes $F_{k+1}$ at approximately  $r^{-1}={\sqrt{2}F_k}$.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:fibthresholds}
 
 If $m$ and $n$ are adjacent Fibonacci numbers $F_{k}$ and $F_{k+1}$, then using $F_k\approx \tau^k/\sqrt{5}
 $ we find the value of $r$ on the branch is approximately
@@ -462,11 +464,11 @@ the larger Fibonacci number becomes $F_{k+1}$ at approximately $r=\sqrt{5/2}\tau
 
 
 
-\begin{jExercise}
+\begin{jExercise}{ex:crvani}
 		Compute the centre and the radius of the circle in van Iterson space on which the $m=n$ branch lies.
 \end{jExercise}
 
-\begin{jAnswer}
+\begin{jAnswer}{ex:crvani}
 		From~\eqref{eq:tchd}, the imaginary part of $z_1$ is zero when  $\sin\theta=0$, so the left and right intersections of the image of $w$ on the real axis are in some order $(u-v)/(m-n)$ and $(u+v)/(m+n)$ so that the radius of the van Iterson circle
 		is
 \begin{align}	
@@ -489,10 +491,10 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 
 	\end{jAnswer}
 	
-	\begin{jExercise}
+	\begin{jExercise}{ex:whenno}
 		If $m$ and $n$ are co-prime and $m<n$, when can a $\gp{m,n}$ touching-circle lattice be non-opposed?
 	\end{jExercise}
-	\begin{jAnswer}
+	\begin{jAnswer}{ex:whenno}
 		The bifurcation theory argument of this chapter or specifically examination of Figure~\ref{fig:Ch4Pruned} show we must have $n-m>m$, 
 		and the lattice is non-opposed  on the $\gp{m=n}$ branch from the triple point $\gp{m=n=n-m}$ to the point where either $\pvec{m}$ or $\pvec{n}$ vector becomes vertical.
 			Choose $u,v$ as the winding number pair so that $m v - n u=\Delta$. We need either $\Re \pvec{m}=0$, so $\Re z_1=u/m$ or $\Re \pvec{n}=0$, so $\Re z_1=v/n$. Inserting these into~\ref{eq:x} gives $\cos\theta=n/m$ or $\cos\theta=m/n$ respectively, so we need to choose $\cos\theta=m/n$,
@@ -528,22 +530,22 @@ Nevertheless, given that there clearly are molecular mechanisms that promote par
 
 For the hexagonal lattice, the previous result that $h= 2\sqrt{3} r^2$ 
 recovers the standard result that the packing efficiency of the hexagonal lattice is $\pi/2\sqrt{3}$; this implies that on every path through van Iterson lattices the packing efficiency keeps increasing and then decreasing so as to pass through this value at every triple-point.  
-\begin{jExercise}
+\begin{jExercise}{ex:localpacking}
 Show that the packing efficiency of a van Iterson lattice is locally maximised at every triple-point.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:localpacking}
 	Lagrange proved in 1773 that a hexagonal lattice is the closest possible lattice packing, and triple-points are the only points in lattice space at which the lattice is hexagonal. For more on the connection between the modular group and sphere-packings see, say, Berger~\cite{bergerGeometryRevealedJacob2010}.
 \end{jAnswer}
 We can calculate the packing efficiency $\beta$ across van Iterson space by using the classification of this chapter to find $\mvec$.  Within the $(0,1)$ region, the primary parastichy vector is $(1,0)$ of length 1, and $\beta$ is simply $\pi/ {4 h }$.  Since $\beta$ is not changed by a rigid rotation and scaling of a lattice, we could also simply map this function  $\pi/ {4 h }$ using the M{\"o}bius transforms into each region. Figure~\ref{fig:Ch4PackingTreePlot} shows a contour plot of the packing efficiency $\beta$ along with a graph of $\beta$ along a horizonatal transect of lattice space.
 \mmafig{Ch4PackingTreePlot}{Top: packing efficiency $\beta$ across van Iterson space (Close to hexagonal: $\beta>0.8$, Tight: $\beta>0.7$, Loose: $\beta>0.6$, Looser $\beta<0.6$). Bottom graph: $\beta$ as a function of $d$ across the line $h=0.005$. Note that while the divergence $\tau/2\pi$ corresponding to the golden angle is a local maximum of $\beta$, it is not a global maximum.
 }{0.8}%
 Since packing efficiency scales like $1/h$ in the $(0,1)$ region, its contour lines there are horizontal, and so the contour lines of packing efficiency in each other, M{\"o}bius transformed region, become arcs of circles. 
-\clearpage
+
 \section{The structure of multijugate lattice space}
 \label{sec:Jlattice}
 Implicit in the structure of renormalisation is the idea of a parastichy vector moving down through the axis and having rise $h=0$ at that point. This process gives us a way to navigate through a three-dimensional lattice space $(d,h,J)$ where the jugacy variable only takes integer values. We saw in the previous chapter that the principal vectors of a tree with parameters $(d/J,h/J,J)$ were $J$ times the principal vectors of a tree with $(d,h,1)$,so that the van Iterson tree of a multijugate is structurally identical to the $J=1$ version, but simply reduced in scale by a factor $J$.  Figure~\ref{fig:Ch4JugacyPage} gives one visualisation of this three dimensional parameter space, but other visualisations are possible. 
 \mmafig{Ch4JugacyPage}{The separate van-Iterson trees for lattices of jugacies 1 to 4, each drawn on their own plane so that they meet on the $h=0$ axis, with the tree for jugacy $J>1$ pinned at an angle $ 180^\circ/J$ to that for $J=1$.   Here we have placed the $J=1$ tree on the bottom of the box and $J=1/2$ on the front}{1.0}
-\clearpage
+
 \section{Notes to this Chapter}%~\ref{ch:classifying}
 
 Modelling of phyllotactic patterns as exact lattices began with Schimper~\cite{schimperBeschreibungSymphytumZeyheri1835}, Braun~\cite{braunBetrachtungenUeberErscheinung1851} and the Bravais brothers~\cite{bravaisEssaiDispositionFeuilles1837} in the 1830s; it is not a coincidence that in the following decade Auguste Bravais became a founder of crystallographic theory. But the dominant nineteenth century German botanists, Sachs and Hofmeiester, found it impossible to reconcile the crystal precision of lattice theory with actual plant forms, and it was not part of mainstream theory. An exception was Schwendener's 1878 publication~\cite{schwendenerMechanischeTheorieBlattstellungen1878} modelling organ placement as a stacking of decreasing size shapes including disks.

@@ -30,8 +30,8 @@ These leaf-on-stem examples are naturally modelled in cylindrical coordinates on
 
 \section{Cylindrical and plane lattices}
 Table~\ref{tab:notation} summarises the notation used in this Chapter. 
-\begin{margintable}
-	\begin{tabular}{lL{7cm}}
+\begin{table}
+	\begin{tabular}{ll}
 		\hline
 		$[x]$ & The nearest integer to $x$. 
 		\\
@@ -63,7 +63,7 @@ Table~\ref{tab:notation} summarises the notation used in this Chapter.
 	\end{tabular}
 	\caption{Notation used in this Chapter.}
 	\label{tab:notation}
-\end{margintable}
+\end{table}
 \clearpage
 \label{sec:latticedef}
 We use surface coordinates $(x,z)$ on a cylinder, of fixed circumference 1, that extends infinitely in the vertical direction $z$.  At the origin we place a point of the lattice. By rotating an angle $2\pi d$ around the cylinder from the origin and rising by $z=h$
@@ -102,10 +102,10 @@ For the most part we only need to be concerned with parastichy vectors, but for 
 The parastichy vector $\pvec{2}=(x_2,2h)$, in red, is the shortest vector on the cylinder to the point $\jpoint{2}$ and always has $|x_2|\leq\jhalf$. The second-shortest vector to the point will wind in the opposite direction and is called the complementary vector $\phatvec{2}$, in blue. Here $x_2>0$ so $\phatvec{2}=\pvec{2}-\pvec{0}$ where  $\pvec{0}=(1,0)$ is the horizontal vector around the circumference of the cylinder. A further, un-named vector is shown in green that winds more than a full turn about the cylinder: there are many vectors to the point $\jpoint{2}$ with non-zero winding numbers. Copies of the cylindrical lattice are shown with a gray background.
 }{0.5}
 
-\begin{jExercise}
+\begin{jExercise}{ex:phoriz}
 	Show that every parastichy vector has a horizontal component with absolute value less than or equal to $\jhalf$, and every complementary vector has a horizontal component with absolute value unstrictly between $\jhalf$ and $1$. Show that the sum of two parastichy vectors is either a parastichy vector or a complementary vector. 
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:phoriz}
 	If $\pvec{k}=(x,z)$, then $|x|\leq\jhalf$ direct from the definition of a parastichy vector.
 	If $x>0$, then $\phatvec{k}=\pvec{k}- \pvec{0}$ with 
 	horizontal component $x-1$ which is between $-1$ and $-\jhalf$, and similarly for $x<0$. 
@@ -113,19 +113,19 @@ The parastichy vector $\pvec{2}=(x_2,2h)$, in red, is the shortest vector on the
 \end{jAnswer}
 
 
-\begin{jExercise}
+\begin{jExercise}{ex:pwinding}
 	Show that it is not true in general that $\pvec{k}=k\pvec{1}$, but that $\pvec{k}=k\pvec{1}-w_k\pvec{0}$ for some integer winding number $w_k$. Find a lattice in which there are no integers $m,n$ such that $\pvec{3}=m\pvec{1}+n\pvec{2}$. 
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pwinding}
 	For $d>\jfrac{1}{4}$, $\pvec{2}= (2d-1, h)=2\pvec{1}-(1,0)\neq 2\pvec{1}$;   in general we need to set $w_k= [ kd]$. For the second counter-example, choose $d$ so that $\pvec{1}$ and $\pvec{2}$ both have a positive $x$ component and $\pvec{3}$ has a negative one.  
 \end{jAnswer}		
-\begin{jExercise}
+\begin{jExercise}{ex:pcongruent}
 		Two vectors on the cylindrical lattice are \textit{congruent} if they go to the same point: $(\jpoint{k},w)\equiv(\jpoint{l},w')$ iff $k=l$. 
 	Show that $\pvec{n}\equiv n\pvec{1}$ and more generally that $u\pvec{m}+v\pvec{n}\equiv\pvec{um+vn}$ for integer  $u, v$.
 	This book doesn't explicitly make any further use of the congruence relation. 
 	\label{ex:npm}
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pcongruent}
 	Unwind the spiral onto the lattice in the plane by setting $\Pvec{m}=\pvec{m}+([md],0)=m(d,h)$. Then $u\Pvec{m}+v\Pvec{n}=\Pvec{um+vn}$, and the result follows by taking the $x$ coordinate modulo~1. 
 		\end{jAnswer}
 	
@@ -158,12 +158,12 @@ Most of the time the (eg) 5-parastichy, the point $\jpoint{5}$, and the vector $
 In Figure~\ref{fig:Ch3Parastichy5} the point $\jpoint{10}$ is not `visible' from the origin because the point $\jpoint{5}$ can be thought of as obscuring it; the 
 origin-parastichies of order 5 and 10 are the same lines. 
 We say that $\jpoint{m}$ is a \emph{visible point}, or the $m$-parastichy is a \emph{visible parastichy}, if the latter is linearly independent of all the $n$-parastichies for all $|n|<|m|$. 
-\begin{jExercise}
+\begin{jExercise}{ex:pvisible}
 	Check  visually that in the lattice of Figure~\ref{fig:Ch3Parastichy5} the $7$- and $9$- parastichies are visible but the $2$- parastichy is not.
 If a point $\jpoint{n}$ is on an $m$-parastichy then show that $\jpoint{m+n}$ is on the same one.
 \label{ex:bb}
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pbvisible}
 	Each time we move from $\jpoint{k}$ to $\jpoint{k+1}$ we move to the next label in order of the foliation, which has $m$ members. When we have moved $m$ times we return to the original member.
 \end{jAnswer}
 
@@ -210,10 +210,10 @@ Just finding two visible parastichies is not enough to characterise our lattices
 \label{def:g}
 \end{definition}
  Most of the time the pair of vectors we see making up a generating pair will themselves each be parastichy vectors, but that is not required by the definition. If a pair is generating in the lattice $\mathcal{L}(d,h)$ it is also generating in any other lattice with the same divergence, independently of $h$. In general one lattice has infinitely many generating pairs. 
-\begin{jExercise}
+\begin{jExercise}{ex:pinfgp}
 	Show this.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pinfgp}
 	If the pair $(x_m, m h)$ and $(x_n,n h)$ is generating in the lattice $\mathcal{L}(d,h)$, then the lattice  $\mathcal{L}(d, s h )$ has a generating pair $(x_m, s m h)$ and $(x_n,s n h)$.
 	
 	If $\mvec$ and $\nvec$ are a generating pair for $\mathcal{L}$ then so is any invertible linear combination
@@ -245,28 +245,28 @@ There are some simple conditions for a pair to be generating:
 \begin{proof}
 	Co-linearity means that any vector sum of $\pvec{m}$ and $\pvec{n}$ lies on the line in the plane through $\jpoint{m}$ and $\jpoint{n}$. For some large enough $k$ this will contain a point of the plane lattice of rise $kh$ with co-ordinates outside of the cylinder. The vector to this point is therefore not a parastichy vector but is the only candidate for a vector sum with rise $kh$, and so the parastichy vector $\pvec{k}$ is not an integer sum of $\mvec$ and $\nvec$.
 \end{proof}
-\begin{jExercise}
+\begin{jExercise}{ex:p01g}
 	\label{ex:01generating}
 	Show that $\gp{0,1}$ is always generating, and that  $\gp{0,n>1}$ never is. 
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:p01g}
 	Any parastichy vector $\pvec{k}$ can be written as $k\pvec{1}-w_k \pvec{0}$, so $\gp{0,1}$ is generating. The rise of every integer sum of $\pvec{0}$ and $\pvec{n>1}$ is a multiple of $nh$ and cannot be equal to $h$ and the pair cannot generate $\pvec{1}$.
 	
 \end{jAnswer}
-\begin{jExercise}
+\begin{jExercise}{ex:pcomp}
 	Show that the complementary pair \gphat{m}{m} is generating only when $|m|=1$.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pcomp}
 	Since $\pvec{0}=\pvec{1}\pm\phatvec{1}$, every parastichy vector $\pvec{k}=k\pvec{1}-w\pvec{0}$ is an integer sum of $\pvec{1}$ and $\phatvec{1}$. However every integer sum of
 	$\pvec{m}$ and $\phatvec{m}$ has rise which is a multiple of $m$ and so the pair is not generating unless $|m|=1$. 
 \end{jAnswer}
 
 
 
-\begin{jExercise}
+\begin{jExercise}{ex:p57ng}
 	Show that in the lattice $\mathcal{L}(d=17/72)$, $\pvec{4}$ cannot be expressed as an integer sum of $\pvec{5}$ and $\pvec{7}$ and thus that $\gp{5,7}$ is not generating in this lattice.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:p57ng}
 	The only candidate vector sum with the correct rise is $2\pvec{7}-2\pvec{5}$, but by direct calculation this is $\pvec{4}-(1,0)$ and thus is not a parastichy vector. 
 \end{jAnswer}
 
@@ -351,23 +351,23 @@ The converse of the Theorem is not true; the intersections of the 3- and 8-paras
 This Theorem allows a more algebraic demonstration of the requirement that $|\Delta|=1$ for a generating pair,  by calculating the coordinates of the apex point in Figure~\ref{fig:Ch3Apextriangle}: this has rise $mnh/\Delta_{mn}$ which must be an integer multiple of $mn$ since it is a lattice point and so $|\Delta_{mn}|=1$ since $m$ and $n$ are co-prime.  
 
 	
-\begin{jExercise}
+\begin{jExercise}{ex:padajacent}
 	If $\gp{m,n}$ is generating, then $\mvec$ lies on the adjacent $n$-parastichy to $\nvec$. 
 \end{jExercise}
 
-\begin{jAnswer}
+\begin{jAnswer}{ex:padjacent}
 	$\mvec$ lies on the $m$-parastichy through the origin, and on some $n$-parastichy. If this was not the one adjacent to the $n$-parastichy through the origin, then it would intersect that $n$-parastichy and the intersection would be a lattice point since the pair is generating. But then the intersection would be a lattice point in but not at the corners of the $m,n$ parallelogram which it cannot be since the pair is generating. 
 \end{jAnswer}
 
 Theorem~\ref{thm:glattice} is not as general as it could be because not all generating pairs are pairs of parastichy vectors. We will also encounter the case of the pair of vectors 
 $\pvec{1}$ and $\phatvec{n}$ which are a parastichy vector and a complementary vector. But if need be, each part of Theorem~\ref{thm:glattice} can be translated as a statement about $\phatvec{n}=\nvec\pm\pvec{0}$ instead of $\nvec$. 
 
-\begin{jExercise}
+\begin{jExercise}{ex:pdeltacomp}
 Extend the definition of $\Delta$ to complementary vectors. 	Find   $\Delta_{1n}$ and $\Delta_{1\hat n}$. Find  $d$-intervals on which 
 $\Delta_{12}=1$ or $\Delta_{1\hat 2}=1$. Rewrite~\eqref{eq:Pmnuv1} for the case $\phatvec{n}=\pvec{n}+\sigma\pvec{1}$.
 \label{ex:calcdelta}
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pdeltacomp}
 From Theorem~\ref{thm:glattice}, $h\Delta_{1n}=\pvec{1}\times\pvec{n}=[nd]$.
 Setting $\sigma=\Sign (nd -[nd])$, $\phatvec{n}=\pvec{n}-\sigma\pvec{0}$ and so $\Delta_{1\hat n}=[nd]+\sigma$. 
 If $0<d<\jfrac{1}{4}$ then $\Delta_{12}=1$ and $\Delta_{1\hat2}=0$, while 
@@ -407,10 +407,10 @@ It's apparent from Theorem~\ref{thm:glattice} that the generating interval is ex
 
 For simple parastichy numbers we can calculate generating intervals directly, along with the 
 complementary-generating interval for the integers $m$ and $n$, which is the subset of  $[0,1]$ for which  \gphat{m}{n} is generating in  $\mathcal{L}(d,\cdot)$.
-\begin{jExercise}
+\begin{jExercise}{ex:pmn01g}
 	Find the generating and complementary-generating intervals for $m=0,n=1$ and for $m=1,n$. 
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pmn01g}
 	 By Exercise~\ref{ex:calcdelta} the generating and complementary-generating intervals for $m=0$ and $n=1$ are the whole $d$-interval  $[0,\jhalf]$.  
 	The generating interval for $1,1$ is empty, since $\gp{1,1}$ is never generating, but the complementary-generating interval is the whole $d$-interval, since \gphat{1}{1} is always generating.
 For $m=1$, $n=2$, Exercise~\ref{ex:calcdelta} shows that the generating interval is $[\jfrac{1}{4},\jhalf]$ and the complementary-generating interval is the whole $d$-interval.
@@ -421,11 +421,11 @@ so (b) requires $2nd\in[3,4]$. These two possibilities flank the generating inte
 These direct calculations become more irksome for larger numbers, but we can also calculate generating intervals using winding-number pairs. The strategy to find the generating interval for ${m,n}$ is first to find $u,v$ satisfying equation $mv-nu=\pm 1$, so we can satisfy Theorem~\ref{thm:gLattice} and then to solve the piecewise linear equations $[md]=u$ and $[nd]=v$ for $d$. For a general one of these B\'ezout pairs, the resulting interval won't be in $[0,\jhalf]$, although there will be one related by an integer difference or the mirror symmetry $d\rightarrow1-d$. In fact, the selection of the winding-number pair from the possible B\'ezout pairs in section~\ref{sec:wnp} was so as to ensure we get a generating interval in $[0,\jhalf]$, as we will see in the proof of Theorem~\ref{thm:fundamentalcorresponding}. 
 
 
-\begin{jExercise}
+\begin{jExercise}{ex:pmirror}
 	Show that the $d$-intervals on which
 	$\Delta_{mn}=\pm1$ are related by the mirror symmetry.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pmirror}
 	Write the intervals for $\Delta=-1$ as $(L_{m-},R_{m-})= (u_--\jhalf,u_-+\jhalf)/m$, $(L_{n-},R_{n-})= (v_--\jhalf,v_-+\jhalf)/n$.
 	Use $u_-=m-u$ and $v_-=n-v$. 
 \end{jAnswer}
@@ -434,11 +434,11 @@ Example~\ref{ex:fibex} shows the relationship between Fibonacci generating pairs
 
 
 
-\begin{jExercise}
+\begin{jExercise}{ex:pneartau}
 	Show that  pairs of large enough adjacent Fibonacci numbers are parastichy numbers which are generating in a lattice only if the divergence in $[0,\jhalf]$ is near to $1/\tau^2$.
 	\label{ex:fibex}
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pneartau}
 	Suppose $k$ is odd, then the winding-number pair for 
 	$m=F_k$, $n=F_{k+1}$ is $u=F_{k-1}$, $v=F_{k}$. 
 	Let $I_k$ be the interval $[F_k-\jhalf,F_k+\jhalf]/F_{k+1}$. 
@@ -508,11 +508,11 @@ This says that if we see $m$ spirals one way and $n$ the other, the divergence o
 
 My statement of the theorem, unlike Jean's~\autocite{jeanPhyllotaxisSystemicStudy1994}, explicitly excludes the case $m=1$. This is because of the complication which arises in the following exercise, but although of historical significance\footnote{Trying to understand these complications is what led me to write this book, and in particular to introduce the complementary vector.} there is little deeper importance to this edge case.
 
-\begin{jExercise}
+\begin{jExercise}{ex:pgo}
 	Calculate generating and opposed intervals for the integer pairs $m=1,n=1$ and $m=1,n>1$.
 	\label{ex:ftpfail}.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pgo}
 	
 	In Theorem~\ref{thm:fundamentalcorresponding} the vectors are restricted to be parastichy vectors, but to find two generating and opposed vectors  with $m=1$ and $n=1$ we must allow complementary vectors and take $\pvec{1}$ and $\phatvec{1}$. 
 	These are always generating and opposed and so the generating interval is $[0,1]$. 
@@ -550,10 +550,10 @@ If $F^k_m$ and $F^k_{m+1}$ are successive members of the sequence $F^k_0=1$, $F^
 	 interval in $[0,\jhalf]$ is  
 	$1-G$ containing $1/\tau^2$. 
 \end{proof}
-\begin{jExercise}
+\begin{jExercise}{ex:pdiv}
 	Compute the divergence interval in $[0,\jhalf]$ on which  $\gp{55,89}$ is a generating opposed pair.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pdiv}
 	We set $m=55=F_j$ and $89=n=F_j$ with $j=10$, and use $u=F_9=34$, $v=F_{10}=55$ to give $mv-nu=(-1)^{11}$ as expected.
 	The interval in $[0,\jhalf]$ is $1-(34/55,55/89)= 1/\tau^2+ [-0.00014\ldots, 0.0005\ldots]$.
 	Thus the divergence angle of such a lattice must be within less than 2 parts in a thousand of the golden angle. 
@@ -592,14 +592,14 @@ the genetic spiral or 1-parastichy visually dominates, and in which the idea of 
 %
 Nevertheless spiral lattices are the first initial cases that will begin
 our Fibonacci framework, and calculating principal pairs directly for such lattices can help explain the marginal structure of the diagrams in the following Chapter.
-\begin{jExercise}
+\begin{jExercise}{ex:pspiral}
 	Fix  $d<\jfrac{1}{4}$ and set  $k=\lfloor1/2d\rfloor-1$.
 	Show that as $h$ decreases, the principal parastichy pair of the lattice $\mathcal{L}(d,h)$ begins as 
 	 $\pp{0,1}$ and then passes through $\pp{1,0}$,  $\pphat{1}{1}$,
 	  $\pphat{1}{2}$,\ldots ,  $\pphat{1}{k}$, until reaching $\pp{1,k+1}$ and that  both principal vectors are parastichy vectors for all $h$ values smaller than this. 
 	 
 \end{jExercise} 
-\begin{jAnswer}
+\begin{jAnswer}{ex:pspiral}
 For $h$ large enough, 	the shortest vector in the lattice is  $\pvec{0}=(1,0)$ 
 of length 1, and the second shortest is  $\pvec{1}=(h,d)$ of length $h^2+d^2$.
 These change relative magnitude when $h^2+d^2=1$ giving us a $(1,0)$ lattice.
@@ -662,10 +662,10 @@ As before $|\rpvec{i}|$ is strictly decreasing over a finite set of vectors shor
 	|\fvec|&\leq|\svec| \leq |\svec-q\fvec| \mbox{ for any integer $q$}.
 \end{align}
 
-\begin{jExercise}
+\begin{jExercise}{ex:pte}
 	In the lattice $h=1/100$, $d=17/72$, find an example where Turing-Euclidean reduction  requires more than two steps to terminate.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:pte}
 	The pair $\gp{73,103}$ is successively reduced to $\gp{30,73}$, $\gp{13,30}$, and terminates at $\gp{4,13}$ which  is the principal pair for the lattice. 
 \end{jAnswer}
 
@@ -732,10 +732,10 @@ Equipped with the ability to find the shortest vectors in a lattice we can now c
 \begin{definition}
 	A hexagonal lattice is a lattice where the first three parastichy vectors are all the same length. 
 \end{definition}
-\begin{jExercise}
+\begin{jExercise}{ex:hexhex}
 	Show that every hexagonal lattice is hexagonal.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:hexhex}
 	If the angle between any two parastichy vectors was not 60$^\circ$, then the third of the vectors, which must be their sum or difference, would not be the third side of an equilateral triangle and would not also have the same length.
 \end{jAnswer}
 Less fundamental, but sometimes of use to identify, are square lattices:
