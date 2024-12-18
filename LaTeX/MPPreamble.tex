@@ -29,6 +29,8 @@
 
 \usepackage{todonotes} % consider fixme instead - would probably be faster but may not work out of the box
 
+%%%%%%%%%%%%%%%%% typefaces and colours
+
 \usepackage{fontspec}
 \usepackage{CormorantGaramond} % by default using lining not oldstyle numnbers; seems to get those from Latin Modern...
 \usepackage[scaled=0.9]{gillius2} % sets only sffamily; use \usepackage[sfdefault]{gillous} to set rm text too 
@@ -46,7 +48,7 @@
 \newcommand{\jBodyTextColour}{\color{black}}
 
 %\addtodef\chaptitlefont{}{\jHeadingColour}\renewcommand\colorchapnum{\color{ared}}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sectioning
 % chapter number and name
 \addtodef\chapnumfont{}{\jHeadingColour}
 \renewcommand*{\chaptitlefont}{\huge\bfseries\centering\jHeadingColour}
@@ -193,7 +195,7 @@ bibencoding=utf8,articlein=false]{biblatex}
 }
 
 %
-%%%%%%%%%%%%%
+%%%%%%%%%%%%% maths
 
 \newcommand{\pvec}[1]{{\mathbf p}_{#1}}
 \newcommand{\phatvec}[1]{\hat{\mathbf p}_{#1}}
@@ -246,23 +248,40 @@ bibencoding=utf8,articlein=false]{biblatex}
 \newcommand{\jqn}[1]{{\jHeadingColour #1}}
 \newcommand{\jqix}[1]{{\jHeadingColour q_{#1}}}
 
+\newcommand{\jFarey}[4]{\left[\displaystyle\frac{#1}{#2},\frac{#3}{#4}\right]}
+
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut for spacing in tables
+
+\usepackage{datetime}\shortdate
+
+\ifthenelse{\boolean{notesAtEnd}}{
+	\renewcommand{\notedivision}{\chapter{Notes}}
+	\makepagenote
+	\continuousnotenums
+	\newcommand{\jNote}[1]{\pagenote{#1}}
+	% or at the end of the chapter..
+	%\newcommand{\jEndChapter}{\printpagenotes*} 
+	\newcommand{\jEndChapter}{}
+}{ % not notesAtEnd
+	\newcommand{\jNote}[1]{\footnote{#1}}
+	\newcommand{\jEndChapter}{}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Figures 
 \newlength{\jfigwidth}
 \setlength{\jfigwidth}{\textwidth}
 
-\date{\today}
 
-\usepackage{pgothic}
-%\newcommand{\copynote}{{\pgothfamily C}}
-%\newcommand{\placenote}{{\pgothfamily P}}
-\newcommand{\copynote}{{ C}}
-\newcommand{\placenote}{{ P}}
-
-
-
-
-\newcommand{\nmafig}[2]{\vnmafig{#1}{#2}{1.0}}
-
-\newcommand{\vnmafig}[3]{\jdofig{#1}{#2}{#3}{./Figures}{.pdf}}
+\newcommand{\mmafig}[3]{\jdofig{#1}{#2}{#3}{./MathematicaFigures}{.pdf}}
 \newcommand{\jpgfig}[3]{\jdofig{#1}{#2}{#3}{./Figures}{.jpg}}
 \newcommand{\pdffig}[3]{\jdofig{#1}{#2}{#3}{./Figures}{.pdf}}
 
@@ -278,74 +297,48 @@ bibencoding=utf8,articlein=false]{biblatex}
 %	\begin{figure}\centering\includegraphics[width=#3\jfigwidth]{#4/#1#5} \caption{#2}\label{fig:#1}\end{figure}
 %}
 
-\usepackage{wrapfig}
+%\usepackage{wrapfig}
 \usepackage{caption}
-\newcommand{\jwrapfig}[4]{
-\begin{wrapfigure}{r}{#3}
-	\includegraphics[width=#3]{./Figures/#4.jpg}
-	\caption{#2}
-	\label{fig:#1}
-\end{wrapfigure}
-}
-\newcommand{\mmawrapfig}[3]{
-	\begin{wrapfigure}{r}{#3}
-		\includegraphics[width=#3]{./Figures/#1.pdf}
-		\caption{#2}
-		\label{fig:#1}
-	\end{wrapfigure}
-}
+%\newcommand{\jwrapfig}[4]{
+%\begin{wrapfigure}{r}{#3}
+%	\includegraphics[width=#3]{./Figures/#4.jpg}
+%	\caption{#2}
+%	\label{fig:#1}
+%\end{wrapfigure}
+%}
+%\newcommand{\xmmawrapfig}[3]{
+%	\begin{wrapfigure}{r}{#3}
+%		\includegraphics[width=#3]{./Figures/#1.pdf}
+%		\caption{#2}
+%		\label{fig:#1}
+%	\end{wrapfigure}
+%}
 
-\usepackage[most]{tcolorbox}
-\newtcolorbox{tcbdoublebox}[1][]{%
-	enhanced jigsaw,
-	sharp corners,
-	colback=CylinderColour,
-	#1
-}
-
-\newcommand{\copypdffig}[4]{
-	\begin{figure}
-		\centering
-\begin{tcbdoublebox}
-
-This figure is not included in this draft because it is copyright. It can be found at #4. 
-			 \caption{#2}\label{fig:#1}
-			 	\end{tcbdoublebox}
-	\end{figure}
-}
-\newcommand{\copyjpgfig}[4]{\copypdffig{#1}{#2}{#3}{#4}}
+%\usepackage[most]{tcolorbox}
+%\newtcolorbox{tcbdoublebox}[1][]{%
+%	enhanced jigsaw,
+%	sharp corners,
+%	colback=CylinderColour,
+%	#1
+%}
+%
+%\newcommand{\copypdffig}[4]{
+%	\begin{figure}
+%		\centering
+%\begin{tcbdoublebox}
+%
+%This figure is not included in this draft because it is copyright. It can be found at #4. 
+%			 \caption{#2}\label{fig:#1}
+%			 	\end{tcbdoublebox}
+%	\end{figure}
+%}
+%\newcommand{\copyjpgfig}[4]{\copypdffig{#1}{#2}{#3}{#4}}
 \newcommand{\clearedpdffig}[4]{\pdffig{#1}{#2}{#3}}
 \newcommand{\clearedjpgfig}[4]{\jpgfig{#1}{#2}{#3}}
-
-\ifthenelse{\boolean{showUnclearedCopyright}}{
-\renewcommand{\copypdffig}[4]{\pdffig{#1}{#2}{#3}}
-\renewcommand{\copyjpgfig}[4]{\jpgfig{#1}{#2}{#3}}
-}
-	
-
-\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut for spacing in tables
-
-\usepackage{datetime}\shortdate
-
-\ifthenelse{\boolean{notesAtEnd}}{
-\renewcommand{\notedivision}{\chapter{Notes}}
-\makepagenote
-\continuousnotenums
-\newcommand{\jNote}[1]{\pagenote{#1}}
-% or at the end of the chapter..
-%\newcommand{\jEndChapter}{\printpagenotes*} 
-\newcommand{\jEndChapter}{}
-}{ % not notesAtEnd
-\newcommand{\jNote}[1]{\footnote{#1}}
-\newcommand{\jEndChapter}{}
-}
-
-
-\newcommand{\jFarey}[4]{\left[\displaystyle\frac{#1}{#2},\frac{#3}{#4}\right]}
-
-
-\usepackage{array}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%
+%\ifthenelse{\boolean{showUnclearedCopyright}}{
+%\renewcommand{\copypdffig}[4]{\pdffig{#1}{#2}{#3}}
+%\renewcommand{\copyjpgfig}[4]{\jpgfig{#1}{#2}{#3}}
+%}
+%	
 
