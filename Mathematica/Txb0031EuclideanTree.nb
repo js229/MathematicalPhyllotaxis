@@ -1,0 +1,2751 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    120865,       2743]
+NotebookOptionsPosition[    119381,       2710]
+NotebookOutlinePosition[    119841,       2728]
+CellTagsIndexPosition[    119798,       2725]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";", 
+  RowBox[{"Get", "[", "\"\<Packages\\\\TextbookFigurePreamble.wl\>\"", "]"}], 
+  " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"loads", " ", "libraries"}], ",", " ", 
+    RowBox[{
+    "textbook", " ", "stylings", " ", "and", " ", "defines", " ", 
+     "txbExport"}]}], " ", "*)"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.943444399175892*^9, 3.943444427308735*^9}, {
+  3.9434452421537476`*^9, 3.9434452754027004`*^9}, {3.9434454063322163`*^9, 
+  3.9434454175717316`*^9}},
+ CellLabel->"In[93]:=",ExpressionUUID->"75b61511-dc7b-f943-a4cd-9c53d9c5a16d"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"jParastichyColour", "[", "n_", "]"}], " ", ":=", " ", 
+     RowBox[{
+      RowBox[{"jStyle", "[", "\"\<ParastichyColour\>\"", "]"}], "[", "n", 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"jFont", "[", "n_", "]"}], " ", ":=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "->", "  ", 
+        RowBox[{"jStyle", "[", "\"\<FontFamily\>\"", "]"}]}], ",", 
+       RowBox[{"FontSize", "->", " ", "n"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"euclidColour", " ", "=", " ", 
+     RowBox[{"jParastichyColour", "[", "1", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"otherColour", "  ", "=", " ", 
+     RowBox[{"jParastichyColour", "[", "2", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"nonEuclidColour", "  ", "=", " ", 
+     RowBox[{"jParastichyColour", "[", "2", "]"}]}], ";"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8539854088416386`*^9, 3.8539854109661303`*^9}, {
+   3.8542552750044937`*^9, 3.854255275388524*^9}, 3.9436107633998947`*^9, {
+   3.943612301840893*^9, 
+   3.943612376605011*^9}},ExpressionUUID->"0757aaef-f658-41f9-a0d8-\
+0fc85602dfdb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"binarizeFG", "[", "vtype_", "]"}], " ", ":=", "  ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"myF", ",", "myG", ",", "resb"}], "}"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"myF", "[", "w_Association", "]"}], " ", ":=", " ", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "res", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"res", "=", "w"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"w", "[", "\"\<delta\>\"", "]"}], "<", "0"}], ",", 
+            RowBox[{
+             RowBox[{"res", "[", "\"\<binary\>\"", "]"}], "=", 
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"res", "[", "\"\<binary\>\"", "]"}], ",", "0"}], 
+              "]"}]}], ",", 
+            RowBox[{
+             RowBox[{"res", "[", "\"\<binary\>\"", "]"}], "=", 
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"res", "[", "\"\<binary\>\"", "]"}], ",", "1"}], 
+              "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"res", "[", "\"\<delta\>\"", "]"}], " ", "=", " ", 
+           RowBox[{
+            RowBox[{"-", "1"}], " ", "*", " ", 
+            RowBox[{"res", "[", "\"\<delta\>\"", "]"}]}]}], ";", 
+          "\[IndentingNewLine]", "res"}]}], "\[IndentingNewLine]", "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"myG", "[", "w_Association", "]"}], " ", ":=", " ", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "res", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"res", "=", "w"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"w", "[", "\"\<delta\>\"", "]"}], "<", "0"}], ",", 
+            RowBox[{
+             RowBox[{"res", "[", "\"\<binary\>\"", "]"}], "=", 
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"res", "[", "\"\<binary\>\"", "]"}], ",", "1"}], 
+              "]"}]}], ",", 
+            RowBox[{
+             RowBox[{"res", "[", "\"\<binary\>\"", "]"}], "=", 
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"res", "[", "\"\<binary\>\"", "]"}], ",", "0"}], 
+              "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", "res"}]}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"resb", "=", " ", 
+       RowBox[{"vtype", " ", "/.", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "->", " ", 
+           RowBox[{"<|", 
+            RowBox[{
+             RowBox[{"\"\<delta\>\"", "->", 
+              RowBox[{"-", "1"}]}], ",", 
+             RowBox[{"\"\<binary\>\"", "->", 
+              RowBox[{"{", "0", "}"}]}]}], "|>"}]}], ",", 
+          RowBox[{"f", "->", "myF"}], ",", 
+          RowBox[{"g", "->", "myG"}]}], "}"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"resb", "[", "\"\<binary\>\"", "]"}]}]}], "\[IndentingNewLine]",
+     "]"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8544379978641806`*^9, 3.85443831325601*^9}, {
+  3.854438503177661*^9, 3.8544388652452817`*^9}, {3.854439174245945*^9, 
+  3.8544391786824327`*^9}, {3.8544432843270826`*^9, 3.854443328209795*^9}, {
+  3.854443789851423*^9, 3.854443811188405*^9}},
+ CellLabel->
+  "In[107]:=",ExpressionUUID->"70862fc6-4ebe-4ffa-a1e2-3a13889400cb"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"linef", "[", 
+      RowBox[{"tree_", ",", 
+       RowBox[{"name1_", " ", "\[DirectedEdge]", "name2_"}], ",", 
+       "euclideanPath_"}], "]"}], " ", ":=", " ", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "node1", ",", "node2", ",", "lr", ",", "midpoint", ",", "colour", ",",
+          "mat", ",", "matName"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"node1", "=", " ", 
+         RowBox[{"tree", "[", "name1", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"node2", " ", "=", 
+         RowBox[{"tree", "[", "name2", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"lr", " ", "=", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"node1", "[", "\"\<xy\>\"", "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], " ", ">=", "  ", 
+          RowBox[{
+           RowBox[{"node2", "[", "\"\<xy\>\"", "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"midpoint", " ", "=", " ", 
+         RowBox[{"Mean", "[", 
+          RowBox[{"{", " ", 
+           RowBox[{
+            RowBox[{"node1", "[", "\"\<xyBinary\>\"", "]"}], ",", 
+            RowBox[{"node2", "[", "\"\<xyBinary\>\"", "]"}]}], "}"}], "]"}]}],
+         ";", "\[IndentingNewLine]", 
+        RowBox[{"colour", " ", "=", " ", 
+         RowBox[{"If", "[", 
+          RowBox[{"euclideanPath", ",", 
+           RowBox[{"Directive", "[", 
+            RowBox[{"Thick", ",", "euclidColour"}], "]"}], ",", 
+           "nonEuclidColour"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"mat", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"node2", "[", "\"\<matrix\>\"", "]"}], ".", " ", 
+          RowBox[{"Inverse", "[", 
+           RowBox[{"node1", "[", "\"\<matrix\>\"", "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"matName", " ", "=", " ", 
+         RowBox[{"Switch", "[", 
+          RowBox[{
+          "mat", ",", "fMatrix", ",", "fName", ",", "gMatrix", ",", "gName", 
+           ",", "_", ",", "mat"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"colour", ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"node1", "[", "\"\<xyBinary\>\"", "]"}], ",", 
+             RowBox[{"node2", "[", "\"\<xyBinary\>\"", "]"}]}], "}"}], "]"}], 
+          "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+          RowBox[{"Inset", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"matName", ",", 
+              RowBox[{"jFont", "[", "lSize", "]"}]}], "]"}], ",", "midpoint", 
+            ",", 
+            RowBox[{"Background", "\[Rule]", "White"}]}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8535648493903785`*^9, 3.853565135244714*^9}, {
+   3.85356522417723*^9, 3.8535654295401635`*^9}, {3.8535654636540112`*^9, 
+   3.8535656476845455`*^9}, {3.853565706249625*^9, 3.853565707936738*^9}, {
+   3.853565885700119*^9, 3.8535661968041267`*^9}, {3.853566230718528*^9, 
+   3.8535663987416177`*^9}, {3.853566484712057*^9, 3.8535664861961045`*^9}, {
+   3.85356655242721*^9, 3.85356667474104*^9}, {3.8535667257921505`*^9, 
+   3.8535668883061113`*^9}, {3.853567079057434*^9, 3.853567083603524*^9}, {
+   3.8535672174024763`*^9, 3.8535672807229013`*^9}, {3.8535674211499605`*^9, 
+   3.8535674214157*^9}, {3.8535675990524855`*^9, 3.8535679591127706`*^9}, {
+   3.853568005353614*^9, 3.853568095983365*^9}, {3.8535681379457264`*^9, 
+   3.85356823747663*^9}, {3.853568452150035*^9, 3.8535684735221357`*^9}, {
+   3.8535688423117695`*^9, 3.853568905692608*^9}, 3.8535689370454035`*^9, {
+   3.853568972533891*^9, 3.853568975960247*^9}, {3.8535690350255413`*^9, 
+   3.8535690514128013`*^9}, {3.8535695134647384`*^9, 3.853569516884762*^9}, {
+   3.8535695481919937`*^9, 3.853569581561934*^9}, {3.853569611687915*^9, 
+   3.8535696671603737`*^9}, {3.8535711205152383`*^9, 
+   3.8535711208901105`*^9}, {3.8535711652210217`*^9, 
+   3.8535711677716713`*^9}, {3.85357126427512*^9, 3.853571272827812*^9}, {
+   3.8535721905138454`*^9, 3.8535722137355285`*^9}, {3.853572258287904*^9, 
+   3.8535723155225024`*^9}, {3.853604317788401*^9, 3.85360437192813*^9}, {
+   3.853604538256873*^9, 3.85360455147666*^9}, {3.8536046573878536`*^9, 
+   3.8536046754654875`*^9}, {3.853604856467361*^9, 3.853604897898002*^9}, {
+   3.8536049615266304`*^9, 3.8536051407939215`*^9}, {3.8536051912896357`*^9, 
+   3.853605282845563*^9}, {3.853605359889265*^9, 3.8536053644855433`*^9}, {
+   3.853605402324955*^9, 3.8536055273580456`*^9}, {3.853606262384177*^9, 
+   3.853606289350669*^9}, {3.85360710083727*^9, 3.8536071610256476`*^9}, {
+   3.8539176100577855`*^9, 3.853917720910884*^9}, {3.8539177600437765`*^9, 
+   3.8539178427868786`*^9}, {3.8539180204004917`*^9, 3.853918064277074*^9}, {
+   3.8539181017872972`*^9, 3.85391812498343*^9}, 3.8539222060377474`*^9, {
+   3.8539232122414274`*^9, 3.853923331681738*^9}, {3.8539846141587677`*^9, 
+   3.8539846168924866`*^9}, {3.8539864047930155`*^9, 3.853986407854748*^9}, {
+   3.8539865373633614`*^9, 3.8539865602260838`*^9}, {3.8539888706747026`*^9, 
+   3.853988901535538*^9}, {3.853988968764203*^9, 3.853988978340062*^9}, {
+   3.8540008442375555`*^9, 3.8540008667686234`*^9}, {3.8540009163305216`*^9, 
+   3.8540009214230194`*^9}, {3.854000963386937*^9, 3.8540011050020556`*^9}, {
+   3.8540015797008348`*^9, 3.85400161640862*^9}, {3.854001654734499*^9, 
+   3.8540017853294353`*^9}, {3.8540101594012656`*^9, 
+   3.8540101623104267`*^9}, {3.854010202124048*^9, 3.8540102064637337`*^9}, {
+   3.8542569436551285`*^9, 3.854256947387312*^9}, {3.8542570063254747`*^9, 
+   3.854257016205142*^9}, {3.8543433697665205`*^9, 3.854343391559924*^9}, {
+   3.8543435107439246`*^9, 3.8543437766523476`*^9}, {3.8543438453540792`*^9, 
+   3.854343969693746*^9}, {3.854344015938012*^9, 3.8543440163129263`*^9}, {
+   3.8543441173232455`*^9, 3.8543441347177315`*^9}, {3.854344176034811*^9, 
+   3.8543442228261023`*^9}, {3.85434425428367*^9, 3.8543442928710003`*^9}, {
+   3.854344534079012*^9, 3.8543445373750772`*^9}, {3.8543446110218935`*^9, 
+   3.854344615755122*^9}, {3.854344654034583*^9, 3.8543446542064533`*^9}, {
+   3.8543446848284893`*^9, 3.8543446896242027`*^9}, {3.854345468894964*^9, 
+   3.854345513337103*^9}, {3.8543455799738846`*^9, 3.8543456393211765`*^9}, {
+   3.8543459577149*^9, 3.8543459589177427`*^9}, {3.8543461572898197`*^9, 
+   3.8543463070747795`*^9}, {3.854346352331352*^9, 3.8543463860018916`*^9}, {
+   3.8543464185055757`*^9, 3.8543465653592834`*^9}, {3.8543466337303724`*^9, 
+   3.8543466393979125`*^9}, {3.854346733588623*^9, 3.854346733729183*^9}, {
+   3.8543468486583138`*^9, 3.8543468568246984`*^9}, {3.85434798478218*^9, 
+   3.8543480050518904`*^9}, {3.8543480695681105`*^9, 
+   3.8543481366112213`*^9}, {3.8543482118754253`*^9, 3.854348716964364*^9}, {
+   3.8543487486374125`*^9, 3.85434894138527*^9}, {3.85434903801642*^9, 
+   3.8543491057051215`*^9}, {3.854349164809314*^9, 3.8543493788275223`*^9}, {
+   3.8543494574494424`*^9, 3.854349503634487*^9}, {3.8543495790595903`*^9, 
+   3.854349788525528*^9}, {3.854349853038641*^9, 3.854349960612733*^9}, {
+   3.854350191210827*^9, 3.854350228835477*^9}, {3.8543502607450266`*^9, 
+   3.854350310462208*^9}, {3.854350344764784*^9, 3.8543503943189707`*^9}, {
+   3.854350427357854*^9, 3.8543504323153324`*^9}, {3.854350464170101*^9, 
+   3.8543504994586973`*^9}, 3.8543506263559527`*^9, {3.8543507214045696`*^9, 
+   3.8543507225136495`*^9}, {3.854432080187739*^9, 3.8544321045167475`*^9}, {
+   3.854432153147386*^9, 3.8544321939526615`*^9}, {3.854432259881199*^9, 
+   3.8544322907611265`*^9}, {3.8544324049159517`*^9, 
+   3.8544324688907657`*^9}, {3.8544325152285347`*^9, 3.854432529391666*^9}, {
+   3.854432572134349*^9, 3.8544326205255756`*^9}, {3.8544326564581923`*^9, 
+   3.8544326706237035`*^9}, {3.854432744630734*^9, 3.854432778067173*^9}, {
+   3.8544329870734076`*^9, 3.854432987401458*^9}, {3.854433020187114*^9, 
+   3.854433039745582*^9}, {3.8544333737290115`*^9, 3.854433417254668*^9}, {
+   3.8544334662572365`*^9, 3.8544334827953234`*^9}, {3.854433614650818*^9, 
+   3.8544336194798517`*^9}, {3.854433650588133*^9, 3.854433714626519*^9}, {
+   3.854433814108966*^9, 3.8544339076251187`*^9}, {3.854434238594843*^9, 
+   3.854434272668209*^9}, {3.8544343451811323`*^9, 3.8544343821099553`*^9}, {
+   3.8544346892976356`*^9, 3.8544346912569304`*^9}, {3.8544347641428137`*^9, 
+   3.854434800276151*^9}, {3.854434837771161*^9, 3.8544349374537163`*^9}, {
+   3.85443496761163*^9, 3.854435167578481*^9}, {3.8544352185617495`*^9, 
+   3.8544354169454155`*^9}, {3.854435454608907*^9, 3.8544355662340813`*^9}, {
+   3.8544377526502404`*^9, 3.854437844206582*^9}, {3.854443150447669*^9, 
+   3.854443174725007*^9}, {3.8544432442084613`*^9, 3.8544432453800597`*^9}, {
+   3.854443470603753*^9, 3.85444351501044*^9}, {3.854443599934179*^9, 
+   3.8544436396905527`*^9}, {3.854443988865882*^9, 3.8544440583332076`*^9}, {
+   3.8544441304932365`*^9, 3.8544442779675903`*^9}, {3.854444308841988*^9, 
+   3.854444357524465*^9}, {3.8544532234638095`*^9, 3.8544533304744587`*^9}, {
+   3.8544533657385263`*^9, 3.8544533711587553`*^9}, {3.854453445577203*^9, 
+   3.854453448295314*^9}, {3.854453528474551*^9, 3.8544535340513563`*^9}, {
+   3.8544536487981777`*^9, 3.854453714026873*^9}, {3.854453771114217*^9, 
+   3.8544537723639164`*^9}, {3.8544538698936825`*^9, 
+   3.8544539482231274`*^9}, {3.8544541258803267`*^9, 3.854454133184477*^9}, {
+   3.8544544119312735`*^9, 3.854454412196822*^9}, {3.854454944217589*^9, 
+   3.8544549850422935`*^9}, {3.854458375267706*^9, 3.8544584021180844`*^9}, {
+   3.8544584547580996`*^9, 3.8544584605273843`*^9}, {3.854458558149046*^9, 
+   3.8544585795438643`*^9}, {3.854461754418724*^9, 3.8544617615309887`*^9}, {
+   3.854521300092622*^9, 3.854521319152427*^9}, 3.8545226326857424`*^9, {
+   3.9436124694655895`*^9, 3.9436124840256805`*^9}, 3.9436125453863335`*^9},
+ CellLabel->
+  "In[269]:=",ExpressionUUID->"c5b854cb-1ca0-42ea-b28c-6ac5ec5d3f6f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"fMatrix", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gMatrix", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fName", " ", "=", 
+   StyleBox[" ",
+    FontColor->GrayLevel[0]], 
+   StyleBox[
+    "\"\<\!\(\*StyleBox[\"ES\",FontFamily->\"Gill Sans \
+MT\",FontWeight->\"Bold\",FontSlant->\"Italic\"]\)\>\"",
+    FontColor->GrayLevel[0]]}], 
+  StyleBox[";",
+   FontColor->GrayLevel[0]]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sName", " ", "=", " ", 
+   StyleBox[
+    "\"\<\!\(\*StyleBox[\"S\",FontFamily->\"Gill Sans MT\",FontWeight->\"Bold\
+\",FontSlant->\"Italic\"]\)\>\"",
+    FontColor->GrayLevel[0]]}], 
+  StyleBox[";",
+   FontColor->GrayLevel[0]]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "gName", "=", " ", 
+   "\"\<\!\(\*StyleBox[\"E\",FontFamily->\"Gill Sans \
+MT\",FontWeight->\"Bold\",FontSlant->\"Italic\"]\)\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  StyleBox[
+   RowBox[{
+    RowBox[{
+    "aName", " ", "=", " ", 
+     "\"\<\!\(\*StyleBox[\"A\",FontFamily->\"Gill Sans \
+MT\",FontWeight->\"Bold\",FontSlant->\"Italic\"]\)\>\""}], ";"}],
+   FontColor->GrayLevel[0]], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"nodeAnnotation", "[", "fNode_", "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"matrix", ",", "res", ",", "string", ",", "length"}], "}"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"matrix", " ", "=", "  ", 
+        RowBox[{"fNode", " ", "//.", " ", 
+         RowBox[{"{", " ", 
+          RowBox[{
+           RowBox[{"x", "->", "matrixRoot"}], ",", 
+           RowBox[{
+            RowBox[{"f", "[", "x_", "]"}], "->", " ", 
+            RowBox[{"fMatrix", " ", ".", " ", "x"}]}], " ", ",", " ", 
+           RowBox[{
+            RowBox[{"g", "[", "x_", "]"}], " ", "->", " ", 
+            RowBox[{"gMatrix", " ", ".", " ", "x"}]}]}], "}"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"res", "=", 
+        RowBox[{"<|", " ", 
+         RowBox[{"\"\<matrix\>\"", "->", "matrix"}], "|>"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"res", " ", "=", " ", 
+        RowBox[{"Append", "[", 
+         RowBox[{"res", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<n\>\"", "->", 
+             RowBox[{"matrix", "[", 
+              RowBox[{"[", 
+               RowBox[{"1", ",", "1"}], "]"}], "]"}]}], ",", 
+            RowBox[{"\"\<m\>\"", "->", 
+             RowBox[{"matrix", "[", 
+              RowBox[{"[", 
+               RowBox[{"2", ",", "1"}], "]"}], "]"}]}], ",", 
+            RowBox[{"\"\<v\>\"", "->", 
+             RowBox[{"matrix", "[", 
+              RowBox[{"[", 
+               RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ",", 
+            RowBox[{"\"\<u\>\"", "->", 
+             RowBox[{"matrix", "[", 
+              RowBox[{"[", 
+               RowBox[{"2", ",", "2"}], "]"}], "]"}]}]}], "|>"}]}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"res", "  ", "=", " ", 
+        RowBox[{"Append", "[", 
+         RowBox[{"res", ",", 
+          RowBox[{"<|", 
+           RowBox[{"\"\<delta\>\"", "->", " ", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"res", "[", "\"\<m\>\"", "]"}], 
+              RowBox[{"res", "[", "\"\<v\>\"", "]"}]}], "-", " ", 
+             RowBox[{
+              RowBox[{"res", "[", "\"\<n\>\"", "]"}], 
+              RowBox[{"res", "[", "\"\<u\>\"", "]"}]}]}]}], "|>"}]}], "]"}]}],
+        ";", "\[IndentingNewLine]", 
+       RowBox[{"res", " ", "=", " ", 
+        RowBox[{"Append", "[", 
+         RowBox[{"res", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<um\>\"", "->", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"res", "[", "\"\<m\>\"", "]"}], "==", "0"}], ",", "0",
+                ",", 
+               RowBox[{
+                RowBox[{"res", "[", "\"\<u\>\"", "]"}], "/", 
+                RowBox[{"res", "[", "\"\<m\>\"", "]"}]}]}], "]"}]}], ",", 
+            RowBox[{"\"\<vn\>\"", "->", 
+             RowBox[{
+              RowBox[{"res", "[", "\"\<v\>\"", "]"}], "/", 
+              RowBox[{"res", "[", "\"\<n\>\"", "]"}]}]}], ",", 
+            RowBox[{"\"\<uvmn\>\"", "->", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"res", "[", "\"\<u\>\"", "]"}], "+", 
+                RowBox[{"res", "[", "\"\<v\>\"", "]"}]}], ")"}], "/", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"res", "[", "\"\<m\>\"", "]"}], "+", 
+                RowBox[{"res", "[", "\"\<n\>\"", "]"}]}], ")"}]}]}]}], 
+           "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"string", " ", "=", " ", 
+        RowBox[{"fNode", " ", "/.", " ", 
+         RowBox[{"{", " ", 
+          RowBox[{"x", "->", "\"\<\>\""}], "}"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"string", " ", "=", " ", 
+        RowBox[{"string", " ", "/.", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"f", "->", 
+            RowBox[{"(", " ", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"fName", ",", "#"}], "]"}], "&"}], ")"}]}], " ", ",", 
+           " ", 
+           RowBox[{"g", " ", "->", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<G\>\"", ",", " ", "#"}], "]"}], "&"}], ")"}]}]}], 
+          "}"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"length", " ", "=", " ", 
+        RowBox[{"fNode", "  ", "/.", " ", 
+         RowBox[{"x", "->", "1"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"length", " ", "=", " ", 
+        RowBox[{"length", " ", "/.", "  ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"f", "->", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"#", "+", "1"}], "&"}], ")"}]}], " ", ",", " ", 
+           RowBox[{"g", " ", "->", "  ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"#", "+", "1"}], "&"}], ")"}]}]}], "}"}]}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"res", " ", "=", " ", 
+        RowBox[{"Append", "[", 
+         RowBox[{"res", ",", 
+          RowBox[{"<|", 
+           RowBox[{"\"\<euclideanPath\>\"", "->", "  ", "False"}], "|>"}]}], 
+         "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"res", " ", "=", " ", 
+        RowBox[{"Append", "[", 
+         RowBox[{"res", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<string\>\"", "->", "string"}], ",", 
+            RowBox[{"\"\<length\>\"", "->", "length"}]}], "|>"}]}], "]"}]}], 
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"res", " ", "=", " ", 
+        RowBox[{"Append", "[", 
+         RowBox[{"res", ",", 
+          RowBox[{"<|", 
+           RowBox[{"\"\<xy\>\"", "->", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"res", "[", "\"\<uvmn\>\"", "]"}], "===", 
+                 RowBox[{"Infinity", "[", "]"}]}], ",", "0", ",", 
+                RowBox[{"res", "[", "\"\<uvmn\>\"", "]"}]}], "]"}], ",", 
+              RowBox[{"-", 
+               RowBox[{"res", "[", "\"\<length\>\"", "]"}]}]}], "}"}]}], 
+           "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"res", " ", "=", " ", 
+        RowBox[{"Append", "[", 
+         RowBox[{"res", ",", 
+          RowBox[{"<|", 
+           RowBox[{"\"\<binary\>\"", "->", " ", 
+            RowBox[{"binarizeFG", " ", "[", "fNode", "]"}]}], "|>"}]}], 
+         "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"res", "=", " ", 
+        RowBox[{"Append", "[", 
+         RowBox[{"res", ",", 
+          RowBox[{"<|", 
+           RowBox[{"\"\<xyBinary\>\"", "->", " ", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"FromDigits", "[", 
+                 RowBox[{
+                  RowBox[{"res", "[", "\"\<binary\>\"", "]"}], ",", "2"}], 
+                 "]"}], "/", 
+                SuperscriptBox["2", 
+                 RowBox[{
+                  RowBox[{"Length", "[", 
+                   RowBox[{"res", "[", "\"\<binary\>\"", "]"}], "]"}], "-", 
+                  "3"}]]}], "+", 
+               SuperscriptBox["2", 
+                RowBox[{"-", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"Length", "[", 
+                    RowBox[{"res", "[", "\"\<binary\>\"", "]"}], "]"}], "-", 
+                   "2"}], ")"}]}]]}], ",", 
+              RowBox[{"-", 
+               RowBox[{"res", "[", "\"\<length\>\"", "]"}]}]}], "}"}]}], 
+           "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"res", "[", "\"\<matrix\>\"", "]"}], "==", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", "0"}], "}"}]}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"res", "[", "\"\<xy\>\"", "]"}], "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"1", "/", "3"}], ",", 
+             RowBox[{"-", 
+              RowBox[{"res", "[", "\"\<length\>\"", "]"}]}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"res", "[", "\"\<xyBinary\>\"", "]"}], "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"1", "/", "2"}], ",", 
+             RowBox[{"-", 
+              RowBox[{"res", "[", "\"\<length\>\"", "]"}]}]}], "}"}]}]}]}], 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"res", "[", "\"\<matrix\>\"", "]"}], "==", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"res", "[", "\"\<xy\>\"", "]"}], "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"1", "/", "3"}], ",", 
+             RowBox[{"-", 
+              RowBox[{"res", "[", "\"\<length\>\"", "]"}]}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"res", "[", "\"\<xyBinary\>\"", "]"}], "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"1", "/", "2"}], ",", 
+             RowBox[{"-", 
+              RowBox[{"res", "[", "\"\<length\>\"", "]"}]}]}], "}"}]}], 
+          ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"res", " ", "=", " ", 
+          RowBox[{"Append", "[", 
+           RowBox[{"res", ",", 
+            RowBox[{"<|", 
+             RowBox[{"\"\<mLabel\>\"", "->", "  ", 
+              RowBox[{"vertexf", "[", "res", "]"}]}], "|>"}]}], "]"}]}], 
+         ";"}], "\[IndentingNewLine]", "*)"}], "res"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"makeTree", "[", 
+    RowBox[{"matrixRoot_", ",", "depth_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"fgFunction", "[", "n_", "]"}], " ", ":=", " ", 
+       RowBox[{"Switch", "[", 
+        RowBox[{"n", ",", "\[IndentingNewLine]", "x", ",", 
+         RowBox[{"{", 
+          RowBox[{"f", "[", "x", "]"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"f", "[", "x", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"g", "[", 
+           RowBox[{"f", "[", "x", "]"}], "]"}], "}"}], ",", 
+         "\[IndentingNewLine]", "_", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"f", "[", "n", "]"}], ",", 
+           RowBox[{"g", "[", "n", "]"}]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"w", " ", "=", 
+       RowBox[{"NestGraph", "[", 
+        RowBox[{"fgFunction", ",", "x", ",", "depth"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"treeData", "  ", "=", " ", 
+       RowBox[{"Association", "@", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "->", " ", 
+            RowBox[{"nodeAnnotation", "[", "#", "]"}]}], "&"}], ",", 
+          RowBox[{"VertexList", "[", "w", "]"}]}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"<|", 
+       RowBox[{
+        RowBox[{"\"\<vertexData\>\"", "->", "treeData"}], ",", 
+        RowBox[{"\"\<edgeList\>\"", "->", 
+         RowBox[{"EdgeList", "[", "w", "]"}]}]}], "|>"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellLabel->
+  "In[109]:=",ExpressionUUID->"bb530cb7-9405-45fb-8da9-652a3aa58337"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"matrixFormOfNode", "[", 
+      RowBox[{"node_", ",", 
+       RowBox[{"euclideanPath_", ":", "True"}]}], "]"}], " ", ":=", " ", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"m", ",", "doFrame", ",", "bg"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"m", "=", " ", 
+         RowBox[{"node", "[", "\"\<matrix\>\"", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"doFrame", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"node", "[", "\"\<delta\>\"", "]"}], ">", "0"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{"euclideanPath", ",", "\[IndentingNewLine]", 
+          RowBox[{"bg", " ", "=", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Lighter", "@", 
+              RowBox[{"jParastichyColour", "[", "1", "]"}]}], ",", 
+             RowBox[{"Lighter", "@", 
+              RowBox[{"jParastichyColour", "[", "2", "]"}]}]}], "}"}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"bg", " ", "=", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"GrayLevel", "[", "0.8", "]"}], ",", 
+             RowBox[{"GrayLevel", "[", "0.9", "]"}]}], "}"}]}]}], 
+         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Grid", "[", 
+         RowBox[{"m", "\[IndentingNewLine]", ",", 
+          RowBox[{"ItemStyle", "\[Rule]", 
+           RowBox[{"Directive", "[", 
+            RowBox[{
+             RowBox[{"jFont", "[", "nSize", "]"}], ",", "White"}], "]"}]}], 
+          "\[IndentingNewLine]", ",", 
+          RowBox[{"Background", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", "bg", "}"}], ",", "None"}], "}"}]}], 
+          "\[IndentingNewLine]", ",", 
+          RowBox[{"Frame", "->", "True"}], "\[IndentingNewLine]", ",", 
+          RowBox[{"FrameStyle", " ", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{"If", "[", 
+             RowBox[{"doFrame", ",", 
+              RowBox[{"jParastichyColour", "[", "1", "]"}], ",", 
+              RowBox[{"jParastichyColour", "[", "2", "]"}]}], "]"}], "}"}]}], 
+          "\[IndentingNewLine]", ",", 
+          RowBox[{"Spacings", "\[Rule]", ".75"}]}], "\[IndentingNewLine]", 
+         "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"nodef", "[", 
+     RowBox[{"node_", ",", "euclideanPath_"}], "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"vector", ",", "colour"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"vector", "=", 
+        RowBox[{"matrixFormOfNode", "[", 
+         RowBox[{"node", ",", "euclideanPath"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"colour", "=", 
+        RowBox[{"Directive", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"jFont", "[", "nSize", "]"}], "\[IndentingNewLine]", ",", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"node", "[", "\"\<euclideanPath\>\"", "]"}], ",", 
+            "euclidColour", ",", "otherColour"}], "]"}], 
+          "\[IndentingNewLine]", ",", 
+          RowBox[{"Background", "\[Rule]", "White"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Inset", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"vector", ",", "colour"}], "]"}], ",", 
+         RowBox[{"node", "[", "\"\<xyBinary\>\"", "]"}], ",", "Center", ",", 
+         RowBox[{"3", " ", "0.1"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+     "]"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"fgDef", " ", "=", " ", 
+     RowBox[{"Row", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"gName", ",", "fgSize"}], "]"}], ",", "\"\< = \>\"", ",", 
+         RowBox[{"matrixFormOfNode", "[", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<matrix\>\"", "->", "gMatrix"}], ",", 
+            RowBox[{"\"\<delta\>\"", "->", 
+             RowBox[{"Det", "[", "gMatrix", "]"}]}]}], "|>"}], "]"}], ",", 
+         "\[IndentingNewLine]", "\"\< \>\"", ",", "\[IndentingNewLine]", 
+         RowBox[{"Style", "[", 
+          RowBox[{"sName", ",", "fgSize"}], "]"}], ",", "\"\< = \>\"", ",", 
+         RowBox[{"matrixFormOfNode", "[", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<matrix\>\"", "->", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", "1"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "0"}], "}"}]}], "}"}]}], ",", 
+            RowBox[{"\"\<delta\>\"", "->", 
+             RowBox[{"-", "1"}]}]}], "|>"}], "]"}]}], "\[IndentingNewLine]", 
+        "}"}], "\[IndentingNewLine]", ",", 
+       RowBox[{"Frame", "->", "True"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"fgADef", " ", "=", " ", 
+      RowBox[{"Row", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{"fName", ",", "\"\< = \>\"", ",", 
+          RowBox[{"matrixFormOfNode", "[", 
+           RowBox[{"<|", 
+            RowBox[{
+             RowBox[{"\"\<matrix\>\"", "->", "fMatrix"}], ",", 
+             RowBox[{"\"\<delta\>\"", "->", 
+              RowBox[{"Det", "[", "fMatrix", "]"}]}]}], "|>"}], "]"}], 
+          "\[IndentingNewLine]", ",", "\"\< \>\"", ",", "gName", ",", 
+          "\"\< = \>\"", ",", 
+          RowBox[{"matrixFormOfNode", "[", 
+           RowBox[{"<|", 
+            RowBox[{
+             RowBox[{"\"\<matrix\>\"", "->", "gMatrix"}], ",", 
+             RowBox[{"\"\<delta\>\"", "->", 
+              RowBox[{"Det", "[", "gMatrix", "]"}]}]}], "|>"}], "]"}], 
+          "\[IndentingNewLine]", ",", "\"\< \>\"", " ", ",", 
+          "\[IndentingNewLine]", ",", " ", 
+          RowBox[{"Subscript", "[", 
+           RowBox[{"aName", ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<q\>\"", ",", "euclidColour"}], "]"}]}], "]"}], ",", 
+          " ", "\"\< = \>\"", ",", 
+          RowBox[{"Row", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Superscript", "[", 
+              RowBox[{"gName", ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"\"\<q-1\>\"", ",", "euclidColour"}], "]"}]}], "]"}], 
+             ",", "F"}], "}"}], "]"}], " ", ",", "\"\< = \>\"", " ", ",", 
+          RowBox[{"matrixFormOfNode", "[", 
+           RowBox[{"<|", 
+            RowBox[{
+             RowBox[{"\"\<matrix\>\"", "->", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"\"\<q\>\"", ",", "1"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "0"}], "}"}]}], "}"}]}], ",", 
+             RowBox[{"\"\<delta\>\"", "->", 
+              RowBox[{"Det", "[", "gMatrix", "]"}]}]}], "|>"}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], ",", 
+        RowBox[{"Frame", "->", "False"}]}], "]"}]}], ";"}], 
+    "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"def411", " ", ":=", " ", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", "mat411", "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"mat411", " ", "=", 
+         RowBox[{"<|", 
+          RowBox[{
+           RowBox[{"\"\<matrix\>\"", "->", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"11", ",", "3"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"4", ",", "1"}], "}"}]}], "}"}]}], ",", 
+           RowBox[{"\"\<delta\>\"", "->", 
+            RowBox[{"-", "1"}]}]}], "|>"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"a_", ",", "b_"}], "]"}], ":=", " ", 
+         RowBox[{"Row", "[", 
+          RowBox[{"{", " ", 
+           RowBox[{"b", ",", "\"\<+\>\"", ",", " ", 
+            RowBox[{"FractionBox", "[", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"1", ",", 
+                RowBox[{"jFont", "[", "qSize", "]"}]}], "]"}], ",", "a"}], 
+             "]"}]}], "}"}], "]"}]}], ";", 
+        RowBox[{"cfrac", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"Fold", "[", 
+           RowBox[{"f", ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"#", ",", "euclidColour", ",", 
+                RowBox[{"jFont", "[", "iSize", "]"}]}], "]"}], "&"}], "/@", 
+             RowBox[{"(", 
+              RowBox[{"Reverse", "@", 
+               RowBox[{"Drop", "[", 
+                RowBox[{
+                 RowBox[{"ContinuedFraction", "[", 
+                  RowBox[{"4", "/", "11"}], "]"}], ",", "1"}], "]"}]}], 
+              ")"}]}]}], "]"}], " ", "//", " ", "DisplayForm"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"gBox", " ", "=", " ", 
+         RowBox[{"Row", "@", 
+          RowBox[{"Map", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Row", "[", 
+              RowBox[{"{", 
+               RowBox[{"\"\<(\>\"", ",", " ", 
+                RowBox[{"Superscript", "[", 
+                 RowBox[{
+                  RowBox[{"Style", "[", 
+                   RowBox[{"gName", ",", "iSize"}], "]"}], ",", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{"#", ",", "euclidColour", ",", 
+                    RowBox[{"jFont", "[", "qSize", "]"}]}], "]"}]}], "]"}], 
+                ",", 
+                RowBox[{"Style", "[", 
+                 RowBox[{"sName", ",", "iSize"}], "]"}], ",", "\"\<)\>\""}], 
+               "}"}], "]"}], "&"}], ",", 
+            RowBox[{"LatticePhyllotaxis`euclideanQCoefficients", "[", 
+             RowBox[{"{", 
+              RowBox[{"4", ",", "11"}], "}"}], "]"}]}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Grid", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"matrixFormOfNode", "[", "mat411", "]"}], ",", 
+              "\"\< = \>\"", ",", "gBox"}], "}"}], "\[IndentingNewLine]", ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{
+                FractionBox["11", "4"], ",", 
+                RowBox[{"jFont", "[", "iSize", "]"}]}], "]"}], ",", 
+              "\"\< = \>\"", ",", "cfrac"}], "}"}]}], "\[IndentingNewLine]", 
+           "}"}], ",", 
+          RowBox[{"Frame", "->", "False"}]}], "]"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"qmatrix", "[", "q_", "]"}], " ", ":=", " ", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"Grid", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"q", ",", "1"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0"}], "}"}]}], "}"}], "]"}], ",", 
+       RowBox[{"jFont", "[", "qSize", "]"}]}], "]"}]}], "\[IndentingNewLine]",
+     "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"showTree411", " ", ":=", " ", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"matrixRoot", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"euclideanPathRoot", " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{"4", ",", "11"}], "}"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"mTree", "=", " ", 
+         RowBox[{"makeTree", "[", 
+          RowBox[{"matrixRoot", ",", "6"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"nodes", " ", "=", " ", 
+         RowBox[{"mTree", "[", "\"\<vertexData\>\"", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"edgeList", " ", "=", " ", 
+         RowBox[{"mTree", "[", "\"\<edgeList\>\"", "]"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"nodeI", " ", "=", 
+         RowBox[{"(", 
+          RowBox[{"First", "@", 
+           RowBox[{"Keys", "@", 
+            RowBox[{"Select", "[", 
+             RowBox[{"nodes", ",", 
+              RowBox[{
+               RowBox[{"MatchQ", "[", 
+                RowBox[{"#matrix", ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"1", ",", "0"}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], "]"}], "&"}]}],
+              "]"}]}]}], ")"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"node411", " ", "=", 
+         RowBox[{"(", 
+          RowBox[{"Select", "[", 
+           RowBox[{"nodes", ",", 
+            RowBox[{
+             RowBox[{"MatchQ", "[", 
+              RowBox[{"#matrix", ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"11", ",", "_"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"4", ",", "_"}], "}"}]}], "}"}]}], "]"}], "&"}]}], 
+           "]"}], ")"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"euclideanEdges", " ", "=", "  ", 
+         RowBox[{"DirectedEdge", " ", "@@@", " ", 
+          RowBox[{"Partition", "[", 
+           RowBox[{
+            RowBox[{"First", "@", 
+             RowBox[{"FindPath", "[", 
+              RowBox[{
+               RowBox[{"Graph", "[", "edgeList", "]"}], ",", "nodeI", ",", 
+               RowBox[{"First", "@", 
+                RowBox[{"Keys", "@", "node411"}]}]}], "]"}]}], ",", "2", ",", 
+            "1"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"euclideanNodes", " ", "=", " ", 
+         RowBox[{"Flatten", "@", 
+          RowBox[{"(", 
+           RowBox[{"List", "@@@", "euclideanEdges"}], ")"}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Map", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"linef", "[", 
+                RowBox[{"nodes", ",", "#", ",", "False"}], "]"}], "&"}], ",", 
+              RowBox[{"Complement", "[", 
+               RowBox[{"edgeList", ",", "euclideanEdges"}], "]"}]}], "]"}], 
+            "\[IndentingNewLine]", ",", 
+            RowBox[{"Map", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"linef", "[", 
+                RowBox[{"nodes", ",", "#", ",", "True"}], "]"}], "&"}], ",", 
+              "euclideanEdges"}], "]"}], "\[IndentingNewLine]", ",", 
+            RowBox[{"Map", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"nodef", "[", 
+                RowBox[{"#", ",", "True"}], "]"}], "&"}], ",", 
+              RowBox[{"Values", "@", 
+               RowBox[{"KeyTake", "[", 
+                RowBox[{"nodes", ",", "euclideanNodes"}], "]"}]}]}], "]"}], 
+            "\[IndentingNewLine]", ",", 
+            RowBox[{"Map", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"nodef", "[", 
+                RowBox[{"#", ",", "False"}], "]"}], "&"}], ",", 
+              RowBox[{"Values", "@", 
+               RowBox[{"KeyDrop", "[", 
+                RowBox[{"nodes", ",", "euclideanNodes"}], "]"}]}]}], "]"}]}], 
+           "\[IndentingNewLine]", 
+           RowBox[{"(*", 
+            RowBox[{",", 
+             RowBox[{"Inset", "[", 
+              RowBox[{"fgDef", ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"1", "/", "4"}], ",", 
+                 RowBox[{"-", "2"}]}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+             ",", 
+             RowBox[{"Inset", "[", 
+              RowBox[{
+               RowBox[{"Framed", "[", "def411", "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"1", "/", "2"}], ",", 
+                 RowBox[{"-", "10"}]}], "}"}]}], "]"}]}], 
+            "\[IndentingNewLine]", "*)"}], "}"}], "\[IndentingNewLine]", ",", 
+          RowBox[{"ImageSize", "->", "400"}], "\[IndentingNewLine]", ",", 
+          RowBox[{"Axes", "->", "False"}], "\[IndentingNewLine]", ",", 
+          RowBox[{"PlotRange", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "1"}], "}"}], ",", "All"}], "}"}]}], 
+          "\[IndentingNewLine]", ",", 
+          RowBox[{"AspectRatio", "\[Rule]", 
+           RowBox[{"1", "/", "1.5"}]}]}], "]"}]}]}], "\[IndentingNewLine]", 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"qSize", " ", "=", " ", "5"}], ";", 
+    RowBox[{"nSize", "=", "qSize"}], ";", 
+    RowBox[{"lSize", "=", "qSize"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"iSize", " ", "=", " ", "10"}], ";", 
+    RowBox[{"fgSize", "=", "iSize"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"txb0031EuclideanTree", " ", ":=", " ", "showTree411"}], ";"}], 
+   "\[IndentingNewLine]", "txb0031EuclideanTree", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.9436108308705425`*^9, {3.9436108889260273`*^9, 3.943610893877409*^9}, {
+   3.9436109274846153`*^9, 3.943610941055668*^9}, {3.943611650381727*^9, 
+   3.943611650910204*^9}, {3.9436118270238953`*^9, 3.94361203471727*^9}, {
+   3.9436125036965656`*^9, 3.9436125078526745`*^9}, {3.9436126239880505`*^9, 
+   3.943612660473612*^9}, {3.943612767894432*^9, 3.9436128600183735`*^9}, {
+   3.9436130177853127`*^9, 3.943613079185749*^9}, {3.9436132012114105`*^9, 
+   3.943613208770466*^9}, {3.943613244181553*^9, 3.94361328824716*^9}, {
+   3.943613397127697*^9, 3.9436134143190594`*^9}, 3.9436134802431164`*^9},
+ CellLabel->
+  "In[482]:=",ExpressionUUID->"7f65466c-31eb-46d7-96f8-8fbbd6c789b9"],
+
+Cell[BoxData[
+ GraphicsBox[{{
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[11, 16], -6}, {Rational[21, 32], -7}}, {{
+        0.6875, -6}, {0.65625, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[43, 64], Rational[-13, 2]}, {0.671875, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[11, 16], -6}, {Rational[23, 32], -7}}, {{
+        0.6875, -6}, {0.71875, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[45, 64], Rational[-13, 2]}, {0.703125, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[5, 8], -5}, {Rational[11, 16], -6}}, {{
+        0.625, -5}, {0.6875, -6}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[21, 32], Rational[-11, 2]}, {0.65625, -5.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[5, 8], -5}, {Rational[9, 16], -6}}, {{
+        0.625, -5}, {0.5625, -6}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[19, 32], Rational[-11, 2]}, {0.59375, -5.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[5, 16], -6}, {Rational[11, 32], -7}}, {{
+        0.3125, -6}, {0.34375, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[21, 64], Rational[-13, 2]}, {0.328125, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[3, 4], -4}, {Rational[5, 8], -5}}, {{
+        0.75, -4}, {0.625, -5}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[11, 16], Rational[-9, 2]}, {0.6875, -4.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[3, 4], -4}, {Rational[7, 8], -5}}, {{
+        0.75, -4}, {0.875, -5}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[13, 16], Rational[-9, 2]}, {0.8125, -4.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[13, 16], -6}, {Rational[27, 32], -7}}, {{
+        0.8125, -6}, {0.84375, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[53, 64], Rational[-13, 2]}, {0.828125, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[13, 16], -6}, {Rational[25, 32], -7}}, {{
+        0.8125, -6}, {0.78125, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[51, 64], Rational[-13, 2]}, {0.796875, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[3, 8], -5}, {Rational[7, 16], -6}}, {{
+        0.375, -5}, {0.4375, -6}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[13, 32], Rational[-11, 2]}, {0.40625, -5.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[3, 16], -6}, {Rational[5, 32], -7}}, {{
+        0.1875, -6}, {0.15625, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[11, 64], Rational[-13, 2]}, {0.171875, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[3, 16], -6}, {Rational[7, 32], -7}}, {{
+        0.1875, -6}, {0.21875, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[13, 64], Rational[-13, 2]}, {0.203125, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[1, 2], -3}, {Rational[3, 4], -4}}, {{
+        0.5, -3}, {0.75, -4}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], NCache[{Rational[5, 8], Rational[-7, 2]}, {0.625, -3.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[9, 16], -6}, {Rational[19, 32], -7}}, {{
+        0.5625, -6}, {0.59375, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[37, 64], Rational[-13, 2]}, {0.578125, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[9, 16], -6}, {Rational[17, 32], -7}}, {{
+        0.5625, -6}, {0.53125, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[35, 64], Rational[-13, 2]}, {0.546875, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[7, 8], -5}, {Rational[13, 16], -6}}, {{
+        0.875, -5}, {0.8125, -6}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[27, 32], Rational[-11, 2]}, {0.84375, -5.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[7, 8], -5}, {Rational[15, 16], -6}}, {{
+        0.875, -5}, {0.9375, -6}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[29, 32], Rational[-11, 2]}, {0.90625, -5.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[7, 16], -6}, {Rational[13, 32], -7}}, {{
+        0.4375, -6}, {0.40625, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[27, 64], Rational[-13, 2]}, {0.421875, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[7, 16], -6}, {Rational[15, 32], -7}}, {{
+        0.4375, -6}, {0.46875, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[29, 64], Rational[-13, 2]}, {0.453125, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[1, 4], -4}, {Rational[1, 8], -5}}, {{
+        0.25, -4}, {0.125, -5}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[3, 16], Rational[-9, 2]}, {0.1875, -4.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[15, 16], -6}, {Rational[29, 32], -7}}, {{
+        0.9375, -6}, {0.90625, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[59, 64], Rational[-13, 2]}, {0.921875, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[15, 16], -6}, {Rational[31, 32], -7}}, {{
+        0.9375, -6}, {0.96875, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[61, 64], Rational[-13, 2]}, {0.953125, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[1, 8], -5}, {Rational[3, 16], -6}}, {{
+        0.125, -5}, {0.1875, -6}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[5, 32], Rational[-11, 2]}, {0.15625, -5.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[1, 8], -5}, {Rational[1, 16], -6}}, {{
+        0.125, -5}, {0.0625, -6}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[3, 32], Rational[-11, 2]}, {0.09375, -5.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[1, 16], -6}, {Rational[3, 32], -7}}, {{
+        0.0625, -6}, {0.09375, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[5, 64], Rational[-13, 2]}, {0.078125, -6.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+     LineBox[NCache[{{Rational[1, 16], -6}, {Rational[1, 32], -7}}, {{
+        0.0625, -6}, {0.03125, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[3, 64], Rational[-13, 2]}, {0.046875, -6.5}],
+      Background->GrayLevel[1]]}}, {
+    {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`],
+      Thickness[Large], 
+     LineBox[NCache[{{Rational[1, 2], -1}, {Rational[1, 2], -2}}, {{
+        0.5, -1}, {0.5, -2}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], NCache[{Rational[1, 2], Rational[-3, 2]}, {0.5, -1.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`],
+      Thickness[Large], 
+     LineBox[NCache[{{Rational[1, 2], -2}, {Rational[1, 2], -3}}, {{
+        0.5, -2}, {0.5, -3}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], NCache[{Rational[1, 2], Rational[-5, 2]}, {0.5, -2.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`],
+      Thickness[Large], 
+     LineBox[NCache[{{Rational[1, 2], -3}, {Rational[1, 4], -4}}, {{
+        0.5, -3}, {0.25, -4}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], NCache[{Rational[3, 8], Rational[-7, 2]}, {0.375, -3.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`],
+      Thickness[Large], 
+     LineBox[NCache[{{Rational[1, 4], -4}, {Rational[3, 8], -5}}, {{
+        0.25, -4}, {0.375, -5}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[5, 16], Rational[-9, 2]}, {0.3125, -4.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`],
+      Thickness[Large], 
+     LineBox[NCache[{{Rational[3, 8], -5}, {Rational[5, 16], -6}}, {{
+        0.375, -5}, {0.3125, -6}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"ES\\\",FontFamily->\\\"Gill Sans MT\
+\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[11, 32], Rational[-11, 2]}, {0.34375, -5.5}],
+      Background->GrayLevel[1]]}, 
+    {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`],
+      Thickness[Large], 
+     LineBox[NCache[{{Rational[5, 16], -6}, {Rational[9, 32], -7}}, {{
+        0.3125, -6}, {0.28125, -7}}]], InsetBox[
+      StyleBox["\<\"\\!\\(\\*StyleBox[\\\"E\\\",FontFamily->\\\"Gill Sans \
+MT\\\",FontWeight->\\\"Bold\\\",FontSlant->\\\"Italic\\\"]\\)\"\>",
+       StripOnInput->False,
+       FontFamily->"Gill Sans MT",
+       FontSize->5], 
+      NCache[{Rational[19, 64], Rational[-13, 2]}, {0.296875, -6.5}],
+      Background->GrayLevel[1]]}}, {InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"1", "0"},
+         {"0", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             RGBColor[
+             0.8129410850974895, 0.5476358981592018, 0.5139356286896681], 
+             RGBColor[
+             0.6458232365295996, 0.5298241799133253, 0.7303422103661668]}}, 
+          "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[1, 2], -1}, {0.5, -1}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"1", "1"},
+         {"1", "0"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             RGBColor[
+             0.8129410850974895, 0.5476358981592018, 0.5139356286896681], 
+             RGBColor[
+             0.6458232365295996, 0.5298241799133253, 0.7303422103661668]}}, 
+          "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[1, 2], -2}, {0.5, -2}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"2", "1"},
+         {"1", "0"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             RGBColor[
+             0.8129410850974895, 0.5476358981592018, 0.5139356286896681], 
+             RGBColor[
+             0.6458232365295996, 0.5298241799133253, 0.7303422103661668]}}, 
+          "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[1, 2], -3}, {0.5, -3}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"3", "1"},
+         {"1", "0"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             RGBColor[
+             0.8129410850974895, 0.5476358981592018, 0.5139356286896681], 
+             RGBColor[
+             0.6458232365295996, 0.5298241799133253, 0.7303422103661668]}}, 
+          "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[1, 4], -4}, {0.25, -4}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"4", "1"},
+         {"3", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             RGBColor[
+             0.8129410850974895, 0.5476358981592018, 0.5139356286896681], 
+             RGBColor[
+             0.6458232365295996, 0.5298241799133253, 0.7303422103661668]}}, 
+          "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[3, 8], -5}, {0.375, -5}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"7", "2"},
+         {"4", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             RGBColor[
+             0.8129410850974895, 0.5476358981592018, 0.5139356286896681], 
+             RGBColor[
+             0.6458232365295996, 0.5298241799133253, 0.7303422103661668]}}, 
+          "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[5, 16], -6}, {0.3125, -6}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"11", "3"},
+         {"4", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             RGBColor[
+             0.8129410850974895, 0.5476358981592018, 0.5139356286896681], 
+             RGBColor[
+             0.6458232365295996, 0.5298241799133253, 0.7303422103661668]}}, 
+          "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[9, 32], -7}, {0.28125, -7}],
+      Center, 0.30000000000000004`]}, {InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"3", "1"},
+         {"2", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[3, 4], -4}, {0.75, -4}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"5", "2"},
+         {"3", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[5, 8], -5}, {0.625, -5}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"5", "2"},
+         {"2", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[7, 8], -5}, {0.875, -5}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"4", "1"},
+         {"1", "0"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[1, 8], -5}, {0.125, -5}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"8", "3"},
+         {"5", "2"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[11, 16], -6}, {0.6875, -6}],
+      Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"8", "3"},
+         {"3", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[9, 16], -6}, {0.5625, -6}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"7", "2"},
+         {"3", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[7, 16], -6}, {0.4375, -6}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"7", "3"},
+         {"5", "2"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[13, 16], -6}, {0.8125, -6}],
+      Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"7", "3"},
+         {"2", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[15, 16], -6}, {0.9375, -6}],
+      Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"5", "1"},
+         {"4", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[3, 16], -6}, {0.1875, -6}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"5", "1"},
+         {"1", "0"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[1, 16], -6}, {0.0625, -6}], 
+     Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"13", "5"},
+         {"8", "3"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[21, 32], -7}, {0.65625, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"13", "5"},
+         {"5", "2"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[23, 32], -7}, {0.71875, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"11", "3"},
+         {"7", "2"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[11, 32], -7}, {0.34375, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"12", "5"},
+         {"7", "3"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[27, 32], -7}, {0.84375, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"12", "5"},
+         {"5", "2"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[25, 32], -7}, {0.78125, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"9", "2"},
+         {"5", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[5, 32], -7}, {0.15625, -7}],
+      Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"9", "2"},
+         {"4", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[7, 32], -7}, {0.21875, -7}],
+      Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"11", "4"},
+         {"8", "3"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[19, 32], -7}, {0.59375, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"11", "4"},
+         {"3", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[17, 32], -7}, {0.53125, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"10", "3"},
+         {"7", "2"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[13, 32], -7}, {0.40625, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"10", "3"},
+         {"3", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[15, 32], -7}, {0.46875, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"9", "4"},
+         {"7", "3"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[29, 32], -7}, {0.90625, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"9", "4"},
+         {"2", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], 
+     NCache[{Rational[31, 32], -7}, {0.96875, -7}], Center, 
+     0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"6", "1"},
+         {"5", "1"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.4687348547943994, 0.29473626986998797`, 0.5955133155492501]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[3, 32], -7}, {0.09375, -7}],
+      Center, 0.30000000000000004`], InsetBox[
+     StyleBox[
+      TagBox[GridBox[{
+         {"6", "1"},
+         {"1", "0"}
+        },
+        AutoDelete->False,
+        FrameStyle->{
+          RGBColor[
+          0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`]},
+        GridBoxBackground->{"Columns" -> {{
+             GrayLevel[0.8], 
+             GrayLevel[0.9]}}, "Rows" -> {{None}}},
+        GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxItemStyle->{"Columns" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}, "Rows" -> {{
+             Directive[{FontFamily -> "Gill Sans MT", FontSize -> 5}, 
+              GrayLevel[1]]}}},
+        GridBoxSpacings->{"Columns" -> {{0.75}}}],
+       "Grid"],
+      StripOnInput->False,
+      LineColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FrontFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      BackFaceColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      GraphicsColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      FontFamily->"Gill Sans MT",
+      FontSize->5,
+      FontColor->RGBColor[
+       0.4687348547943994, 0.29473626986998797`, 0.5955133155492501],
+      Background->GrayLevel[1]], NCache[{Rational[1, 32], -7}, {0.03125, -7}],
+      Center, 0.30000000000000004`]}},
+  AspectRatio->0.6666666666666666,
+  Axes->False,
+  ImageSize->400,
+  PlotRange->{{0, 1}, All}]], "Output",
+ CellChangeTimes->{{3.943611872992872*^9, 3.9436119134857426`*^9}, {
+   3.943611976508667*^9, 3.9436119921154537`*^9}, {3.9436120246109295`*^9, 
+   3.9436120390463657`*^9}, 3.9436124932456455`*^9, 3.943612553821106*^9, {
+   3.943612632437681*^9, 3.9436126612213097`*^9}, 3.9436127135512905`*^9, 
+   3.9436127912117977`*^9, {3.9436128520249577`*^9, 3.9436128608049927`*^9}, {
+   3.9436130185411663`*^9, 3.943613079869425*^9}, {3.943613254851753*^9, 
+   3.9436132888559895`*^9}, {3.9436133984073925`*^9, 3.943613414785654*^9}, 
+   3.9436134810687695`*^9},
+ CellLabel->
+  "Out[490]=",ExpressionUUID->"06baab7a-ec97-bf44-b64d-250c4dd7a0a7"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8545232681113014`*^9, 3.8545233321201077`*^9}, {
+   3.854524052422276*^9, 3.854524084378564*^9}, 3.854524117860478*^9, {
+   3.854524209235326*^9, 3.8545242116254454`*^9}, {3.8545242461560783`*^9, 
+   3.8545242867412834`*^9}, {3.8545243388557205`*^9, 
+   3.8545244670554276`*^9}, {3.8545288574177303`*^9, 3.854528876305298*^9}},
+ CellLabel->
+  "In[132]:=",ExpressionUUID->"44e72651-1133-4532-a352-b819fc3d01fd"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8544570800189543`*^9, 3.854457083033826*^9}, 
+   3.854458610996431*^9},
+ CellLabel->
+  "In[140]:=",ExpressionUUID->"480b2ad8-73c3-4844-9f8a-bbfa7b0bdb20"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.854458245458575*^9, 3.85445825314524*^9}},
+ CellLabel->
+  "In[144]:=",ExpressionUUID->"c212bf70-bd57-4ffe-9c50-45d183e28f53"]
+},
+AutoGeneratedPackage->None,
+WindowSize->{949.5, 474},
+WindowMargins->{{Automatic, 112}, {Automatic, 148}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"08304781-00ee-8a40-bf28-933218e5537b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 690, 16, 90, "Input",ExpressionUUID->"75b61511-dc7b-f943-a4cd-9c53d9c5a16d",
+ InitializationCell->True],
+Cell[1251, 38, 1428, 35, 257, "Input",ExpressionUUID->"0757aaef-f658-41f9-a0d8-0fc85602dfdb",
+ InitializationCell->True],
+Cell[2682, 75, 3629, 86, 425, "Input",ExpressionUUID->"70862fc6-4ebe-4ffa-a1e2-3a13889400cb",
+ InitializationCell->True],
+Cell[6314, 163, 10303, 168, 446, "Input",ExpressionUUID->"c5b854cb-1ca0-42ea-b28c-6ac5ec5d3f6f",
+ InitializationCell->True],
+Cell[16620, 333, 13621, 355, 1131, "Input",ExpressionUUID->"bb530cb7-9405-45fb-8da9-652a3aa58337",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[30266, 692, 18323, 436, 2052, "Input",ExpressionUUID->"7f65466c-31eb-46d7-96f8-8fbbd6c789b9",
+ InitializationCell->True],
+Cell[48592, 1130, 69928, 1557, 361, "Output",ExpressionUUID->"06baab7a-ec97-bf44-b64d-250c4dd7a0a7"]
+}, Open  ]],
+Cell[118535, 2690, 459, 7, 31, "Input",ExpressionUUID->"44e72651-1133-4532-a352-b819fc3d01fd"],
+Cell[118997, 2699, 203, 4, 31, "Input",ExpressionUUID->"480b2ad8-73c3-4844-9f8a-bbfa7b0bdb20"],
+Cell[119203, 2705, 174, 3, 31, "Input",ExpressionUUID->"c212bf70-bd57-4ffe-9c50-45d183e28f53"]
+}
+]
+*)
+
