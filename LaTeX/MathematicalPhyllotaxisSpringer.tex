@@ -1,5 +1,7 @@
-% !TeX program = lualatex
-\documentclass[]{svmono}
+%% !TeX program = lualatex
+\documentclass[graybox,envcountchap,sectrefs]{svmono}
+
+
 
 
 % 0.6180339887498948482
@@ -18,12 +20,26 @@
 
 
 \begin{document}
+	
 
 \include{CopyNotes}
 
+\author{Jonathan Swinton}
+\title{Mathematical Phyllotaxis}
+\subtitle{-- Monograph --}
+\maketitle
 
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\include{dedication}
+%\include{foreword}
 \include{Preface}
+\include{Acknowledgements}
+%\include{ethics}
+
+\tableofcontents
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \part{Introduction}
@@ -45,6 +61,10 @@
 \include{Future}
 \include{Acknowledgements}
 
+\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{glossary}
+\include{solutions}
+%\printindex
 
 \end{document}
 
