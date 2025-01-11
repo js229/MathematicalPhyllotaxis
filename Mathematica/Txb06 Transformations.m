@@ -20,16 +20,13 @@
 
 
 (* ::Input::Initialization:: *)
-
-Get["LatticePhyllotaxis.m",Path->{PersistentSymbol["persistentGitHubPath","Local"]}];
-
-
-
 SetDirectory[NotebookDirectory[]];
-Get["TextbookStylings.m"];
-textbookGeneratedAssetLocation = ExpandFileName["../Video"]
+Get["Packages\\TextbookFigurePreamble.wl"] ;
+Get["LatticePhyllotaxis`",Path->FileNameJoin[PersistentSymbol["persistentGitHubPath"],"GeometricalPhyllotaxis\\Mathematica\\Packages"]];
 
-SetDirectory["Draft Figures"];
+
+
+(* ::Input::Initialization:: *)
 
 figureStyle = jStyle
 jParastichyColour[n_] := figureStyle["ParastichyColour"][n];
