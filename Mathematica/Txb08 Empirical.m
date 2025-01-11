@@ -78,15 +78,7 @@ ImageSize->imageSize,
 PlotRange->{{20,94},{0,25}}];
 
 
-Txb0082MOSIplines := Grid[{{Legended[g1,Placed[legend,{0.8,Center}]]},{g2}}]
-
-
-(* ::Input::Initialization:: *)
-fierz = <| "8:13" -> 5838,"10:16"->69,"7:11"-> 20,"9:15"-> 9,"9:14"-> 3,"7:12"-> 3,"8:12"->5,"6:11"->1,"9:13"->2,"7:10"->1,"Irregular"->49|>
-
-
-(* ::Input::Initialization:: *)
-dsJean = Dataset@{<|"Observer"->"MOSI","Ftype"->"Fibonacci","Observed"->565|>,<|"Observer"->"MOSI","Ftype"->"Fibonacci x2","Observed"->25|>,<|"Observer"->"MOSI","Ftype"->"Lucas","Observed"->41|>,<|"Observer"->"MOSI","Ftype"->"F4","Observed"->1|>,<|"Observer"->"MOSI","Ftype"->"Fibonacci -1","Observed"->49|>,<|"Observer"->"MOSI","Ftype"->"Fibonacci +1","Observed"->17|>,<|"Observer"->"MOSI","Ftype"->"Other","Observed"->70|>,<|"Observer"->"Schoute","Ftype"->"Fibonacci","Observed"->262|>,<|"Observer"->"Schoute","Ftype"->"Fibonacci -1","Observed"->0|>,<|"Observer"->"Schoute","Ftype"->"Lucas","Observed"->46|>,<|"Observer"->"Schoute","Ftype"->"F4","Observed"->2|>,<|"Observer"->"Schoute","Ftype"->"Fibonacci x2","Observed"->9|>,<|"Observer"->"Schoute","Ftype"->"Other","Observed"->0|>,<|"Observer"->"Schoute","Ftype"->"Fibonacci +1","Observed"->0|>,<|"Observer"->"Weisse","Ftype"->"Other","Observed"->0|>,<|"Observer"->"Weisse","Ftype"->"Fibonacci +1","Observed"->0|>,<|"Observer"->"Weisse","Ftype"->"Fibonacci","Observed"->133|>,<|"Observer"->"Weisse","Ftype"->"F4","Observed"->0|>,<|"Observer"->"Weisse","Ftype"->"Fibonacci x2","Observed"->1|>,<|"Observer"->"Weisse","Ftype"->"Lucas","Observed"->6|>,<|"Observer"->"Weisse","Ftype"->"Fibonacci -1","Observed"->0|>}
+Txb0802MOSIplines := Grid[{{Legended[g1,Placed[legend,{0.8,Center}]]},{g2}}]
 
 
 (* ::Input::Initialization:: *)
@@ -102,7 +94,7 @@ counts6 = KeyTake[counts,fClass6];
 fractions6 = Reverse@Map[#/Total[counts6]&,counts6];
 fractions6
 ];
-sbd =Map[Values@*fData,authors]
+sbd =Map[Values@*fData,authors];
 
 
 (* ::Input::Initialization:: *)
@@ -122,10 +114,8 @@ Placed[barlegend,{{1.4,1/2},{1,1/2}}]]
 
 
 (* ::Input::Initialization:: *)
-bractWorksheet = Import["../..\\R\\Worksheet.csv","Dataset",HeaderLines->1];
-bractCount = Normal@bractWorksheet[All,"Bract.count"] /. "NA"->Nothing[]
-
-Ch7BractCount := Show[
+showBractCount[bractCount_] := Module[{},
+Show[
 Histogram[bractCount,{1},
 LabelStyle->Directive[FontFamily-> jStyle["FontFamily"],FontSize->Scaled[0.05]],
 AxesLabel->Map[Style[#,Directive[FontFamily-> jStyle["FontFamily"],FontSize->Scaled[0.05]]]&,
@@ -137,7 +127,14 @@ AxesLabel->Map[Style[#,Directive[FontFamily-> jStyle["FontFamily"],FontSize->Sca
 
 ,AxesOrigin->{0,0}
 ]
+];
 
 
 
-
+(* ::Input::Initialization:: *)
+dsJean = Dataset@{<|"Observer"->"MOSI","Ftype"->"Fibonacci","Observed"->565|>,<|"Observer"->"MOSI","Ftype"->"Fibonacci x2","Observed"->25|>,<|"Observer"->"MOSI","Ftype"->"Lucas","Observed"->41|>,<|"Observer"->"MOSI","Ftype"->"F4","Observed"->1|>,<|"Observer"->"MOSI","Ftype"->"Fibonacci -1","Observed"->49|>,<|"Observer"->"MOSI","Ftype"->"Fibonacci +1","Observed"->17|>,<|"Observer"->"MOSI","Ftype"->"Other","Observed"->70|>,<|"Observer"->"Schoute","Ftype"->"Fibonacci","Observed"->262|>,<|"Observer"->"Schoute","Ftype"->"Fibonacci -1","Observed"->0|>,<|"Observer"->"Schoute","Ftype"->"Lucas","Observed"->46|>,<|"Observer"->"Schoute","Ftype"->"F4","Observed"->2|>,<|"Observer"->"Schoute","Ftype"->"Fibonacci x2","Observed"->9|>,<|"Observer"->"Schoute","Ftype"->"Other","Observed"->0|>,<|"Observer"->"Schoute","Ftype"->"Fibonacci +1","Observed"->0|>,<|"Observer"->"Weisse","Ftype"->"Other","Observed"->0|>,<|"Observer"->"Weisse","Ftype"->"Fibonacci +1","Observed"->0|>,<|"Observer"->"Weisse","Ftype"->"Fibonacci","Observed"->133|>,<|"Observer"->"Weisse","Ftype"->"F4","Observed"->0|>,<|"Observer"->"Weisse","Ftype"->"Fibonacci x2","Observed"->1|>,<|"Observer"->"Weisse","Ftype"->"Lucas","Observed"->6|>,<|"Observer"->"Weisse","Ftype"->"Fibonacci -1","Observed"->0|>};
+fierz = <| "8:13" -> 5838,"10:16"->69,"7:11"-> 20,"9:15"-> 9,"9:14"-> 3,"7:12"-> 3,"8:12"->5,"6:11"->1,"9:13"->2,"7:10"->1,"Irregular"->49|>;
+(*
+bractWorksheet = Import["../..\\R\\Worksheet.csv","Dataset",HeaderLines->1];
+bractCount = Normal@bractWorksheet[All,"Bract.count"] /. "NA"->Nothing[]
+*)

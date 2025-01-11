@@ -13,63 +13,63 @@ As we will see, disk-stacking models are capable of exhibiting further empirical
 \jpgfig{2pstack}{A stacked-disk model, implemented with British tuppeny pieces, inspired by Atela~\autocite{atelaGeometricDynamicEssence2011}.}{0.5}
 The disks of the model represent the inhibition zones in the apical meristem that are established by patterning of auxins and other morphogens, and the `gravity constraint' of adding the new disk at the lowest possible place corresponds to Snow's empirical rule that a new node will form as soon as it has enough space. The changing disk size corresponds to the change in proportion between the sizes of the inhibition zone and that of the apical meristem diameter. It seems likely that most of the this change in relative geometry in actual plant growth is due to expansion of the apical meristem rather than modification of the inhibition zone size. Figure~\ref{fig:2pstack} gives an example of a model in which the inhibition disk size is fixed at the size of a British 2p piece, and the apical meristem is assumed to increase linearly with height, and periodicity of the pattern is judged by eye. 
 
-A closely similar model, and a more computationally convenient one, is instead to scale dimensions so that the apical meristem circumference is fixed (and moreover fixed at unity) but the inhibition disk sizes vary as in Figure~\ref{fig:Ch8InhibitionBoundary}. The two model classes are not quite identical because the map between cone and cylinder will distort circles, but to the extent that the results of model simulations is not strongly dependent on the shape of the inhibitor zone we can expect similar results between the two.
+A closely similar model, and a more computationally convenient one, is instead to scale dimensions so that the apical meristem circumference is fixed (and moreover fixed at unity) but the inhibition disk sizes vary as in Figure~\ref{fig:Txb1003InhibitionBoundary}. The two model classes are not quite identical because the map between cone and cylinder will distort circles, but to the extent that the results of model simulations is not strongly dependent on the shape of the inhibitor zone we can expect similar results between the two.
  We can 
 think of the existing disks creating an inhibition field, shown in grey in the Figure: no new disk can be placed below the boundary of the region formed by disks centred on all the existing disks. The new disk is placed at the minimum of this boundary.  Attractively, this placement depends only on the most recent `chain' or `front' of disks around the cylinder, and is the minimum of a finite number of intersections of disks. 
 
 \clearpage
-\mmafig{Ch8InhibitionBoundary}{Finding the next location in the stacked-disk model by finding the lowest point of the boundary of the inhibition zone, itself defined by the topmost coins. The width of the inhibition zone may be variable and affects the position of the next disk. Left, the lowest point not in any inhibition zone is marked with a red dot, and (right) the largest possible circle drawn around it.}{1}
+\mmafig{Txb1003InhibitionBoundary}{Finding the next location in the stacked-disk model by finding the lowest point of the boundary of the inhibition zone, itself defined by the topmost coins. The width of the inhibition zone may be variable and affects the position of the next disk. Left, the lowest point not in any inhibition zone is marked with a red dot, and (right) the largest possible circle drawn around it.}{1}
 
-A further modelling choice is how to choose the radius of each disk. If we have a function $D(z)$ that tells how inhibition zones vary with $z$, which $z$ should we choose when we are placing the next disk which is by definition at a yet-unknown $z$?  One method is, as in Figure~\ref{fig:Ch8InhibitionBoundary}, to first find the centre of the new disk as the lowest point not in any inhibition zone, and then to use the height of that new centre as the $z$ to define the new inhibition zone. Another is to use the height of the most-recently placed disk for $z$; in computational settings it is sometimes more convenient to use the maximum $z$ yet achieved in the simulation. For the simulations used in this book I used this last method.
+A further modelling choice is how to choose the radius of each disk. If we have a function $D(z)$ that tells how inhibition zones vary with $z$, which $z$ should we choose when we are placing the next disk which is by definition at a yet-unknown $z$?  One method is, as in Figure~\ref{fig:Txb1003InhibitionBoundary}, to first find the centre of the new disk as the lowest point not in any inhibition zone, and then to use the height of that new centre as the $z$ to define the new inhibition zone. Another is to use the height of the most-recently placed disk for $z$; in computational settings it is sometimes more convenient to use the maximum $z$ yet achieved in the simulation. For the simulations used in this book I used this last method.
 
 In general we will be interested in $D(k)=D(z_k)$ as a decreasing function of the height $z_k$ of the most recently placed disk, although when we look at the generation of sunflower capitulum patterns $D$ will be first decreasing until the capitulum rim is reached and then increasing as seeds are placed towards the centre. 
 
 \clearpage
 \section{Stacked-disk models can generate opposed lattices}
 If we take one of the touching-circle lattice patterns of the first half of this book, with a disk diameter $D$, and truncate it above one point, then
-we can use the disk-stacking model fith that fixed $D$ to regenerate a pattern. As Figure~\ref{fig:txbNonopposedNo} shows, if the original lattice was an opposed lattice then the first iteration of the model will exactly replace the disk where the lattice had put it, but if it was a non-opposed lattice then it will not do so.
+we can use the disk-stacking model fith that fixed $D$ to regenerate a pattern. As Figure~\ref{fig:Txb1004NonopposedNo} shows, if the original lattice was an opposed lattice then the first iteration of the model will exactly replace the disk where the lattice had put it, but if it was a non-opposed lattice then it will not do so.
 
-\mmafig{txbNonopposedNo}{Non-opposed lattices cannot in general be generated by stacked-disk models. }{1}
+\mmafig{Txb1004NonopposedNo}{Non-opposed lattices cannot in general be generated by stacked-disk models. }{1}
 
 The reason for the latter is that the placement mechanism guarantees the placement of a disk of a given radius at its lowest possible point, and the contact lines from a newly placed disk down onto its two supports must be in opposite directions on the cylinder. If they are not the newly placed disk could be `rolled' down to a lower placement. But in a non-opposed lattice, by definition these contact lines go in the same direction on the cylinder.
-\clearpage
+
 
 \subsection{Parastichy numbers in stacked-disk models}
-\mmafig{txbDGParastichy}{Computing the parastichy counts for non-lattice patterns by counting up and down links in chains around the cylinder. If the patterns is close to a lattice, these counts coincide with the parastichy numbers of the lattice. In this example, there are 8 red parastichy lines going upwards (when looking left-to-right); correspondingly the topmost chain of connections between disks has 8 separate segments of sequences of upwards lines. At the bottom of the figure there are five blue segments of downwards lines  corresponding to a 5-parastichy, higher up there are 8 such segments, reflect a series of increases in the left parastichy number from 5 through 6 and 7 to 8. }{.5}
+\mmafig{Txb1005DGParastichy}{Computing the parastichy counts for non-lattice patterns by counting up and down links in chains around the cylinder. If the patterns is close to a lattice, these counts coincide with the parastichy numbers of the lattice. In this example, there are 8 red parastichy lines going upwards (when looking left-to-right); correspondingly the topmost chain of connections between disks has 8 separate segments of sequences of upwards lines. At the bottom of the figure there are five blue segments of downwards lines  corresponding to a 5-parastichy, higher up there are 8 such segments, reflect a series of increases in the left parastichy number from 5 through 6 and 7 to 8. }{.5}
 While stacked-disk models \textit{can} generate lattices, usually they do not. 
 So we can no longer rely on the  definitions of Chapter~\ref{ch:cylinder}
 to find a global pair of parastichy numbers for the pattern, because  parastichies are not exactly straight lines.  However, they are not so far off, and there is still a way to compute parastichy pairs locally~\autocite{goleFibonacciQuasisymmetricPhyllotaxis2016}.
-The process is shown in Figure~\ref{fig:txbDGParastichy}. Starting from one coin, we look for a shortest chain of touching coins that encircle the cylinder and returns to the original. That chain will have a number of up-steps to higher coins and down-steps to lower coins and the total number of up-steps and down-steps is exactly what we define as the parastichy count pair. 
+The process is shown in Figure~\ref{fig:Txb1005DGParastichy}. Starting from one coin, we look for a shortest chain of touching coins that encircle the cylinder and returns to the original. That chain will have a number of up-steps to higher coins and down-steps to lower coins and the total number of up-steps and down-steps is exactly what we define as the parastichy count pair. 
 %
 This method coincides well with human assessment of spiral counts in relatively well ordered patterns but can still be assigned in strongly disordered patterns when the human eye is unable to identify structure. 
 	 %
 %	 
 	 If the pattern is exactly a lattice, or near to one,
-	 then other chains  through a given disk will have the same parastichy count pair, but near pattern transitions, as illustrated in Figure~\ref{fig:txbDGParastichy}, the presence of triangles in the pattern graph give rise to  multiple possible  counts. It is in this way that the discrete-valued parastichy counts can transition by jumps of 1 as the disk-radius changes slowly. 
+	 then other chains  through a given disk will have the same parastichy count pair, but near pattern transitions, as illustrated in Figure~\ref{fig:Txb1005DGParastichy}, the presence of triangles in the pattern graph give rise to  multiple possible  counts. It is in this way that the discrete-valued parastichy counts can transition by jumps of 1 as the disk-radius changes slowly. 
 	 Each of these jumps corresponds to a `$\gamma$' dislocation (taking its name from the shape of the letter~\cite{zagorska-marekPhyllotacticPatternsTransitions1985}) of the parastichy lines; conversely, $\lambda$ dislocations correspond to a decrease in the count.
 
 
 \clearpage
 \subsection{Stacked-disk models naturally generate Fibonacci transitions}
 %
- \mmafig{txbDeterministicTransition}{Transitions between a (5,8) parastichy pair and an (8,13) pair as disk radius is slowly decreased. At the bottom of the figure the disk pattern is close to a square (5,8) lattice. During the transition region the disk arrangement is close to a hexagonal lattice, and then after the transition the internal lattice angle widens from $60^\circ$ as the pattern becomes close to a  (8,13) square lattice.
+ \mmafig{Txb1006DeterministicTransition}{Transitions between a (5,8) parastichy pair and an (8,13) pair as disk radius is slowly decreased. At the bottom of the figure the disk pattern is close to a square (5,8) lattice. During the transition region the disk arrangement is close to a hexagonal lattice, and then after the transition the internal lattice angle widens from $60^\circ$ as the pattern becomes close to a  (8,13) square lattice.
 }{1}
 
 The principal result of Chapter~\ref{ch:classifying} was that if we had a mechanism, as stacked-disk models do, that generated lattices, but rejected non-opposed lattices in favour of opposed ones, then Fibonacci structure could result.   
 Indeed solutions to stacked disk models showing large Fibonacci pair parastichy counts were exhibited by Bursill and colleagues in the 1980s~\cite{bursillSpiralLatticeConcepts1987,xudongPackingEqualDiscs1989} and more recently and systematically investigated by Gol\'e and colleagues~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016}.
- As an example, Figure~\ref{fig:txbDeterministicTransition} shows a (5,8) to (8,13) transition, and in general numerical observation supports the principle that patterns with parastichy pairs $(m,n)$ with $m<n$ do indeed typically transition to ones with $(n,n+m)$ parastichy pairs provided that the dimensionless number $D'=dD(z)/dz$ is small enough. It would be surprising if this was not in general true, at least near Fibonacci structure, but there is currently no analytic proof of this.
+ As an example, Figure~\ref{fig:Txb1006DeterministicTransition} shows a (5,8) to (8,13) transition, and in general numerical observation supports the principle that patterns with parastichy pairs $(m,n)$ with $m<n$ do indeed typically transition to ones with $(n,n+m)$ parastichy pairs provided that the dimensionless number $D'=dD(z)/dz$ is small enough. It would be surprising if this was not in general true, at least near Fibonacci structure, but there is currently no analytic proof of this.
  
  An understanding of the van Iterson tree adds further insight to these smooth, deterministic, transitions. In van Iterson parameter space, lattices change their parastichy numbers exactly when they are hexagonal lattices, then widen in internal angle into square lattices before narrowing again into hexagonal lattices at the next lower transition.  For slow rates of disk radius change, the disk pattern at the transition is very close to a hexagonal lattice, and the transition is able to occur smoothly. In particular, the positions of lattice points above and below the transition are strongly correlated: the change of parastichy number occurs by a smooth changeover between which of these points are closest to each other. 
  
 \clearpage
-\mmafig{txbParastichyCountsTo89}{Transitions between parastichy counts as a function of the slowly changing inverse radius of the disks. $y$ axis: Local chain parastichy counts for the topmost chain through each successive disk in a single
+\mmafig{Txb1007ParastichyCountsTo89}{Transitions between parastichy counts as a function of the slowly changing inverse radius of the disks. $y$ axis: Local chain parastichy counts for the topmost chain through each successive disk in a single
 	deterministic run with a  $r'=0.03$ started from a single disk of radius 1/2. $x$ axis: inverse radius of the disk at the highest point of that chain.
 	The thin grey vertical lines display the theoretical prediction that the transition from a parastichy number of $F{k-2}$ to $F_{k}$ should occur at $r{-1}=\sqrt{2}F_{k+2}$. 
 }{1}
-So in general, it seems to be the case that for small enough $D'$, stacked-disk models satisfy Turing's hypothesis of geometrical phyllotaxis. To generate Fibonacci, rather than say Lucas numbers, we need to look at the ways in which the $(1,1)$ patterns corresponding to stacked disks of diameter $D=1$ change as $D$ is slightly decreased and it is not difficult to see that for small enough $D'$ the next parastichy pair must be $(1,2)$. In general, then, there are strong intuitive and numerical grounds for expecting that stacked-disk models with small $D'$, starting from $D=1$, will always generate Fibonacci parastichy pairs, as indeed occurs in Figure~\ref{fig:txbParastichyCountsTo89}.
-So this disk-stacking model can account for the dominance of Fibonacci counts in the empirical data of Figure~\ref{fig:txbMOSIplines}.  What it does not by itself account for is the other peaks in that data: we explore that later in this Chapter.
+So in general, it seems to be the case that for small enough $D'$, stacked-disk models satisfy Turing's hypothesis of geometrical phyllotaxis. To generate Fibonacci, rather than say Lucas numbers, we need to look at the ways in which the $(1,1)$ patterns corresponding to stacked disks of diameter $D=1$ change as $D$ is slightly decreased and it is not difficult to see that for small enough $D'$ the next parastichy pair must be $(1,2)$. In general, then, there are strong intuitive and numerical grounds for expecting that stacked-disk models with small $D'$, starting from $D=1$, will always generate Fibonacci parastichy pairs, as indeed occurs in Figure~\ref{fig:Txb1007ParastichyCountsTo89}.
+So this disk-stacking model can account for the dominance of Fibonacci counts in the empirical data of Figure~\ref{fig:Txb0802MOSIplines}.  What it does not by itself account for is the other peaks in that data: we explore that later in this Chapter.
 
-\clearpage
+
 \section{Outstanding questions} 
 
 
@@ -77,51 +77,42 @@ It is tempting to stop at this point: we have built a model of node-formation wh
 
 
 \section{Coherent structures in stacked-disk models}
-\mmafig{Ch8FixedRadius}{A stacked coin model with disk size fixed at that of a square $\pp{2,3}$ lattice, started from different  initial conditions with in which a single disk of the square lattice has been distorted in size. }{1}
+\mmafig{Txb1008FixedRadius}{A stacked coin model with disk size fixed at that of a square $\pp{2,3}$ lattice, started from different  initial conditions with in which a single disk of the square lattice has been distorted in size. }{1}
 
 \textit{Does} a stacked-disk model reliably lead to lattices? Intriguingly, the answer is no. 
-Figure~\ref{fig:Ch8FixedRadius} shows the results of five simulations of a fixed-size stacked-coin model, of which the centre starts from an exact $\pp{2,3}$ lattice, and the neighbours start from a perturbation of that lattice.
+Figure~\ref{fig:Txb1008FixedRadius} shows the results of five simulations of a fixed-size stacked-coin model, of which the centre starts from an exact $\pp{2,3}$ lattice, and the neighbours start from a perturbation of that lattice.
 On the left we can see our square $\pp{2,3}$ lattice with straight line parastichies. For the other initial conditions with the same disk radius the lines joining the disk centres are now longer exactly straight, yet would still be described by eye as having 2-parastichies and 3-parastichies, although not always in the same direction.
 
 So a stacked-coin model can lead to solutions which are close to lattices, and if we start with a disk radius corresponding to a $\pp{m,n}$ lattice and an initial condition close to one, we might  hope to remain with a $\pp{m,n}$ parastichy count in our generalised sense. We can also hope that, just as the new third parastichy number at a lattice bifurcation is either $\pp{n+m}$ or $\pp{n-m}$, the same will be true for patterns near to those lattices, and indeed Golé et al~\cite{goleFibonacciQuasisymmetricPhyllotaxis2016} give an elegant argument based on chain transitions for this. But how close to a lattice do these patterns need to be for  the  elegant bifurcation theory of Chapter~\ref{ch:classifying} still to hold? 
 
 
-\clearpage
 \subsection{Cylinder tilings and rhombic tilings}
 \label{sec:tilings}
-\mmafig{Ch8AreaTimeSeries}{Area of each polygon in the lattices of Figure~\ref{fig:Ch8FixedRadius}, read left to right, plotted from bottom to top.}{1}
+\mmafig{Txb1009AreaTimeSeries}{Area of each polygon in the lattices of Figure~\ref{fig:Txb1008FixedRadius}, read left to right, plotted from bottom to top.}{1}
 
-One way to quantify the way in which the runs of Figure~\ref{fig:Ch8FixedRadius} depart from lattice structure is to plot a function associated with each node, such as the area of the polygon below it,  as a function of the dropped-coin sequence. This is done in Figure~\ref{fig:Ch8AreaTimeSeries}. These seem to be periodic graphs, corresponding to periodic orbits of the stacked-coin map. 
+One way to quantify the way in which the runs of Figure~\ref{fig:Txb1008FixedRadius} depart from lattice structure is to plot a function associated with each node, such as the area of the polygon below it,  as a function of the dropped-coin sequence. This is done in Figure~\ref{fig:Txb1009AreaTimeSeries}. These seem to be periodic graphs, corresponding to periodic orbits of the stacked-coin map. 
 
 
-Just as a lattice corresponds to a fixed point of the next-node vector stacked-coin map, with a constant $(d,h)$ between nodes, a cylinder tiling corresponds to a low-order periodic solution of the map, with a sequence $((d_1,h_1),\ldots (d_k,h_k) )$. The upper parts of the tilings in Figure~\ref{fig:Ch8FixedRadius} are close approximations to cylindrical tilings.
-A consequence of the disk stacking model is that each node in Figure~\ref{fig:Ch8FixedRadius} is generically at the apex of a single polygon. (Exceptionally, if the pattern is a hexagonal lattice, there will be two such polygons.)
+Just as a lattice corresponds to a fixed point of the next-node vector stacked-coin map, with a constant $(d,h)$ between nodes, a cylinder tiling corresponds to a low-order periodic solution of the map, with a sequence $((d_1,h_1),\ldots (d_k,h_k) )$. The upper parts of the tilings in Figure~\ref{fig:Txb1008FixedRadius} are close approximations to cylindrical tilings.
+A consequence of the disk stacking model is that each node in Figure~\ref{fig:Txb1008FixedRadius} is generically at the apex of a single polygon. (Exceptionally, if the pattern is a hexagonal lattice, there will be two such polygons.)
 More than that, in this Figure at least, all of the polygons of the tiling being approached appear to be rhombi: four-sided polygons with opposite parallel sides.%
 A cylindrical tiling in which the polygon attached to each point is one of a finite number of different rhombi was called a rhombic tiling by~\cite{atelaRhombicTilingsPrimordia2017} who introduced them in this context.
 
-Figure~\ref{fig:Ch8Tilings} shows an example in which the stacked-coin map is visually close to having periodicity of 6. The map trajectory defines a series of polygons attached to the coin centre which is its lowest point. In this rhombic-tiling pattern each coin has exactly one rhombus attached to it.
+Figure~\ref{fig:Txb1010Tilings} shows an example in which the stacked-coin map is visually close to having periodicity of 6. The map trajectory defines a series of polygons attached to the coin centre which is its lowest point. In this rhombic-tiling pattern each coin has exactly one rhombus attached to it.
 
-\clearpage
-\mmafig{Ch8Tilings}{Rhombic tilings arising from a stacked coin model.
+
+\mmafig{Txb1010Tilings}{Rhombic tilings arising from a stacked coin model.
 	Tiles are coloured to emphasise a periodicity of 6 for each tiling after the first. }{1}
-
-
-
-
-
-%	\item Proof for simple case of 3 fixed-radius disks 
-
-\clearpage
-
-\clearedpdffig{Douadygole2016bFig4}{Fit of a lattice and a cylinder tiling to the same unrolled birch catkin image. The cylinder tiling is a 14\% better fit to the node positions than the lattice. From~\autocite{douadyFibonacciQuasisymmetricPhyllotaxis2016}.
-	\copyright CC-BY Douady and Gol\'e 2016.}{1.0} {Figure 1 of ~\autocite{atelaRhombicTilingsPrimordia2017}} 
-Douady and Gol\'e  gave an interesting example of a cylinder tiling and a lattice separately fitted to the same observation, which is shown in Figure~\ref{fig:Douadygole2016bFig4}. Since a tiling made up of $n$ different rhombi has at least $2n$ degrees of freedom, it can naturally give an better fit to an observed pattern than a lattice, which has $n=1$, and it is an open question whether empirical observations can at present reject lattice patterns in the framework of statistical hypothesis testing.%
+\pdffig{F1011DouadyGole2016bFig4}{Fit of a lattice and a cylinder tiling to the same unrolled birch catkin image. The cylinder tiling is a 14\% better fit to the node positions than the lattice. From~\autocite{douadyFibonacciQuasisymmetricPhyllotaxis2016}.
+	\copyright CC-BY Douady and Gol\'e 2016.}%
+	{1.0} 
+Douady and Gol\'e  gave an interesting example of a cylinder tiling and a lattice separately fitted to the same observation, which is shown in Figure~\ref{fig:F1011DouadyGole2016bFig4}. Since a tiling made up of $n$ different rhombi has at least $2n$ degrees of freedom, it can naturally give an better fit to an observed pattern than a lattice, which has $n=1$, and it is an open question whether empirical observations can at present reject lattice patterns in the framework of statistical hypothesis testing.%
 
 It is striking that before these quasi-lattice patterns were seen in model outputs, there were few attempts to parameterise empirical data in any way other than as realisations of a lattice. One notable exception was Atela et al~\cite{atelaDynamicalSystemPlant2002} who suggested that a period 8 orbit they found in a placement map corresponded to a similar periodicity in divergences observed on a magnolia carpel~\cite{tuckerPhyllotaxisVascularOrganization1961}. 
 Beyond this example, shifting the unit of analysis to a cylindrical or rhombic tiling has generated an interesting new series of observational questions~\autocite{douadyFibonacciQuasisymmetricPhyllotaxis2016}.
 
 
-Rhombic-tilings are also important mathematically because, as Figure~\ref{fig:Ch8FixedRadius} illustrates, small perturbations to initial lattice patterns typically evolve into rhombic-tilings under fixed-size coin stacking.~\autocite{atelaRhombicTilingsPrimordia2017}.
+Rhombic-tilings are also important mathematically because, as Figure~\ref{fig:Txb1008FixedRadius} illustrates, small perturbations to initial lattice patterns typically evolve into rhombic-tilings under fixed-size coin stacking.~\autocite{atelaRhombicTilingsPrimordia2017}.
 Golé and Douady have proved that every initial chain that has a parastichy count of $(1,2)$ will indeed evolve into a rhombic tiling in finite time or become exponentially close to one, and conjectured 
 this is true in general.~\autocite{goleConvergenceDiskStacking2020}.
 
@@ -129,20 +120,19 @@ this is true in general.~\autocite{goleConvergenceDiskStacking2020}.
 It has been suggested that stacked-coin disk provide an explanation of a `butterfly effect' in which the phyllotaxis of, e.g., the magnolia stem sometimes changes `for no obvious reason'\autocite{zagorska-marekSignificanceGandLdislocations2016}. Numerical simulations can indeed sometimes show surprisingly long intervals of apparent equilibrium followed by a burst of changes, and even if these trajectories
 are only transient may be of value in exploring phyllotactic transitions in species like \textit{Magnolia}.
 
-\clearpage
 \section{Columnar models}
 \label{sec:columns}
 
-Exploration of the dynamics of stacked-coin models has revealed another intriguing pattern formation process. If instead of very slowly changing the coin radius we very quickly reduce it and then keep it small, we are effectively starting a fixed-radius run with random initial conditions and relatively small disks compared to the cylinder circumference. Figure~\ref{fig:Ch8TransitionLattices} gives an example.
+Exploration of the dynamics of stacked-coin models has revealed another intriguing pattern formation process. If instead of very slowly changing the coin radius we very quickly reduce it and then keep it small, we are effectively starting a fixed-radius run with random initial conditions and relatively small disks compared to the cylinder circumference. Figure~\ref{fig:Txb1012TransitionLattices} gives an example.
 It turns out, for reasons explored in~\autocite{goleFibonacciQuasisymmetricPhyllotaxis2016}, that
 runs often converge to a series of near horizontal sets of disk stacked on top of each other. This stacking is fairly regular so that disks in either every row or every other row are vertically above each other. In the older language of phyllotaxis, these patterns might be called whorled orthostatic.  Douady and collaborators~\cite{goleConvergenceDiskStacking2020}, who have done unparalleled work on them,  call these QSS patterns, for quasi-symmetric solutions, but here I call them \textit{columnar} patterns.
 
-This also provides a potential pattern mechanism for columnar patterns like those of the sweetcorn of Figure~\ref{fig:sweetcorn20191008} or of cacti. These models might well replace Turing Instability-based ones as a plausible pattern-formation mechanisms for such patterns. 
+This also provides a potential pattern mechanism for columnar patterns like those of the sweetcorn of Figure~\ref{fig:F0809sweetcorn20191008} or of cacti. These models might well replace Turing Instability-based ones as a plausible pattern-formation mechanisms for such patterns. 
 
-\mmafig{Ch8TransitionLattices}{Runs of a stacked-coin model for increasingly steep radius changes. In each case the disk radius is reduced from that of a  \gp{2,3} orthogonal lattices to that of a \gp{5,8} one. When the transition is slow enough for an intermediate \gp{3,5} lattice to establish well before before moving into the zone where a \gp{5,8} lattice is possible, that transition is visible  is followed by an equally ordered transition to what appears to be a rhombic tiling close to a \gp{5,8} lattice. 
+\mmafig{Txb1012TransitionLattices}{Runs of a stacked-coin model for increasingly steep radius changes. In each case the disk radius is reduced from that of a  \gp{2,3} orthogonal lattices to that of a \gp{5,8} one. When the transition is slow enough for an intermediate \gp{3,5} lattice to establish well before before moving into the zone where a \gp{5,8} lattice is possible, that transition is visible  is followed by an equally ordered transition to what appears to be a rhombic tiling close to a \gp{5,8} lattice. 
 	When the disk radius is reduced more rapidly, the ordered transitions are lost. In the central run, the parastichy count at the top of the cylinder are $\gp{7,8}$ while in the right hand run with a still faster reduction of radius the parastichy count at the top is $(7,7)$. 
 }{.8}
-\clearpage
+
 
 
 
@@ -154,7 +144,7 @@ a more biologically robust explanation of Fibonacci phyllotaxis than one based s
 \clearpage
 \section{Finite-time dynamics and sunflower data}
 
-\mmafig{txbAhaPair}{Left, empirical parastichy counts redrawn from Figure~\ref{fig:txbMOSIplines} to emphasise non-Fibonacci observations. Right,  parastichy counts in a disk stacking model with $r'=0.03$ and noise $\sigma=0.05$. In each simulation the initial condition was a single disk of radius $r(0)=1/2$, with a disk size function $r(z)=1/2- r'z$, run until $r(z)$ changed by a factor of  60, corresponding in a lattice model to a change from a (0,1) lattice to a (34,55) one. 
+\mmafig{Txb1013AhaPair}{Left, empirical parastichy counts redrawn from Figure~\ref{fig:Txb0802MOSIplines} to emphasise non-Fibonacci observations. Right,  parastichy counts in a disk stacking model with $r'=0.03$ and noise $\sigma=0.05$. In each simulation the initial condition was a single disk of radius $r(0)=1/2$, with a disk size function $r(z)=1/2- r'z$, run until $r(z)$ changed by a factor of  60, corresponding in a lattice model to a change from a (0,1) lattice to a (34,55) one. 
 	Simulated parastichy numbers were pooled over the course of each run and then further pooled over 10 replicates of the randomisation. }{1}
 
 So stacked-disk models provide an attractive generalisation of lattice models for exploring Fibonacci phyllotaxis, although their mathematical properties are much well less worked out, even for fixed disk size.  For example,  it is unclear if every attractor of such models is a cylinder tiling, or under what circumstances
@@ -169,14 +159,14 @@ We recall the following features of the MOSI dataset from Chapter~\ref{ch:empiri
 	\item In a small number of relatively small sunflower heads, pairs of nearly matching but non-Fibonacci parastichy counts like (11,11)  were seen.
 \end{enumerate}
 
-Bearing these criteria in mind, Figure~\ref{fig:txbAhaPair} gives an example of multiple replications of a stacked-disk model with a stochastic element, described further in~\cite{swintonDiskstackingModelsAre2024}. While the match between the empirical data and the simulations is far from exact, these models are the first published ones capable of generating Lucas and double Fibonacci numbers as well as the occasional non Fibonacci structure in this way, and are likely to yield further insight given more study. 
+Bearing these criteria in mind, Figure~\ref{fig:Txb1013AhaPair} gives an example of multiple replications of a stacked-disk model with a stochastic element, described further in~\cite{swintonDiskstackingModelsAre2024}. While the match between the empirical data and the simulations is far from exact, these models are the first published ones capable of generating Lucas and double Fibonacci numbers as well as the occasional non Fibonacci structure in this way, and are likely to yield further insight given more study. 
 
 
 
 \subsection{Cylinder to capitulum mappings}
 
-\mmafig{txbConeTransformation}{Mapping a disk-stacked pattern to a seedhead pattern as described in the text.}{.8}
-The output from disk-stacking models can be mapped from cylinders to any surface of revolution, as in Figure~\ref{fig:txbConeTransformation} which shows how  results of disk-stacking models can be compared with empirical data on spirals at the outer sunflower seedhead rim. 
+\mmafig{Txb1014ConeTransformation}{Mapping a disk-stacked pattern to a seedhead pattern as described in the text.}{.8}
+The output from disk-stacking models can be mapped from cylinders to any surface of revolution, as in Figure~\ref{fig:Txb1014ConeTransformation} which shows how  results of disk-stacking models can be compared with empirical data on spirals at the outer sunflower seedhead rim. 
 
 Here we have first used a disk-stacking model to simulate a rising and then falling phyllotaxis modelled using a radius function whose inverse first linearly increases then linearly decreases. Only after this have we, arbitrarily, added  functional labels and corresponding colours to each of the placed disks. After nodes labelled as uncommitted, bracts, and ray florets, and above an arbitrarily chosen point $z_S$, nodes are deemed to correspond to seed positions in the mature seed head.  Still higher node positions are deemed to correspond to a disk floret which does not proceed to set seed, as is common in the centre of large seedheads, up to the end of the run at $z=z_U$.   Right parastichy lines are shown in the region which will correspond to mature seeds in the adult seedhead. Below: the resulting placement pattern and parastichy lines mapped onto a seedhead disk. Points at coordinates $(x,z)$ on the cylinder are mapped to radial coordinates $\rho=(z_U-z)/(z_U-z_S)$, $\theta=2\pi x$. Note that occasionally some disks which are in contact in the cylinder pattern, for example in the ray florets), correspond to Voronoi cells which are not in  contact, partly because of the non-isometry of the mapping from cylinder to seedhead disk.
 %
@@ -184,12 +174,12 @@ Here we have first used a disk-stacking model to simulate a rising and then fall
  
 \clearpage
 \subsection{Falling phyllotaxis and observed asymmetry on the capitulum}
-\mmafig{txbFalling}{Stacked-disk models on the cylinder can generate radially asymmetric patterns by rising phyllotaxis to the capitulum rim followed by falling phyllotaxis on the capitulum. This simulation shows horizontal variability in the location on the cylinder of dislocations of the red right-ward leaning parastichy lines. When the cylinder is mapped to a disk, this corresponds to a visible rotational asymmetry on the simulated capitulum.    There is no satisfying way of assigning `spiral counts' on the outer rim for the red contact lines: compare Figure~\ref{fig:Ch7Sunflower667}.}{1}
+\mmafig{Txb1015Falling}{Stacked-disk models on the cylinder can generate radially asymmetric patterns by rising phyllotaxis to the capitulum rim followed by falling phyllotaxis on the capitulum. This simulation shows horizontal variability in the location on the cylinder of dislocations of the red right-ward leaning parastichy lines. When the cylinder is mapped to a disk, this corresponds to a visible rotational asymmetry on the simulated capitulum.    There is no satisfying way of assigning `spiral counts' on the outer rim for the red contact lines: compare Figure~\ref{fig:Txb0805Sunflower667}.}{1}
 We saw in Chapter~\ref{ch:empirical} that the 2016 MOSI dataset exhibited  a previously unreported departure from Fibonacci structure, in occasional specimens with a lack of rotational symmetry in the assignable parastichy lines~\cite{swintonNovelFibonacciNonFibonacci2016}. 
 
-The stacked-disk model for falling phyllotaxis is  capable of illustrating this type of pattern, as illustrated in Figure~\ref{fig:txbFalling}, which 
+The stacked-disk model for falling phyllotaxis is  capable of illustrating this type of pattern, as illustrated in Figure~\ref{fig:Txb1015Falling}, which 
 shows such a simulation, together with an arbitrary mapping of the simulation back to the capitulum. 
-For rising phyllotaxis, the transition zones where parastichy number change are very narrow and horizontal, even in the highly-disordered example of Figure~\ref{fig:Ch8TransitionLattices}. By contrast, the transition zone in this falling phyllotaxis example is not horizontal, but follows the gradient of the parastichy lines and so  there is a large region of the cylinder on which the parastichy counts are difficult and perhaps meaningless to assign, Looking at the lower right panels we can see how the uncountability manifests itself: there is a family of 21-ish red contact lines making one angle in the cylinder, and another family of 8 red-contact lines making another, but the two families coexist over an extended region of the cylinder. This is the pattern that was identified in sample 667 of the MOSI image, whose hand-assigned parastichy lines are reproduced in Figure~\ref{fig:Ch7Sunflower667}.
+For rising phyllotaxis, the transition zones where parastichy number change are very narrow and horizontal, even in the highly-disordered example of Figure~\ref{fig:Txb1012TransitionLattices}. By contrast, the transition zone in this falling phyllotaxis example is not horizontal, but follows the gradient of the parastichy lines and so  there is a large region of the cylinder on which the parastichy counts are difficult and perhaps meaningless to assign, Looking at the lower right panels we can see how the uncountability manifests itself: there is a family of 21-ish red contact lines making one angle in the cylinder, and another family of 8 red-contact lines making another, but the two families coexist over an extended region of the cylinder. This is the pattern that was identified in sample 667 of the MOSI image, whose hand-assigned parastichy lines are reproduced in Figure~\ref{fig:Txb0805Sunflower667}.
  
  
 \clearpage
