@@ -7,23 +7,21 @@
 \label{ch:classifying}
 
 
-\mmafig{Ch4VanItersonMain}{Lattice space classified by principal parastichy numbers \gp{m,n}. The previous chapter's distinction between parastichy vectors and complementary vectors is dropped so that eg the \gp{1,2} region includes lattices where the principal parastichy pair is \gp{1,2} but also lattices where it is \gphat{1}{2}. 
+\mmafig{Txb0501VanItersonMain}{Lattice space classified by principal parastichy numbers \gp{m,n}. The previous chapter's distinction between parastichy vectors and complementary vectors is dropped so that eg the \gp{1,2} region includes lattices where the principal parastichy pair is \gp{1,2} but also lattices where it is \gphat{1}{2}. 
 }{0.8}
 \section{The van Iterson diagram}
 The previous chapter made precise the ideas  of a lattice space $\mathcal{L}(d,h)$, where we take the divergence $d$ and the rise $h$ as parameters, and the principal parastichy pair as the pair of integers corresponding to the two shortest informative vectors in the lattice. In this chapter  we solve the problem of classifying every lattice by its principal parastichy pair.
-The answer is given in the van Iterson diagram of Figure~\ref{fig:Ch4VanItersonMain} and the rest of the chapter explains how this Figure is constructed and its implications. 
- Since the classification changes at the points of lattice space where either the first and second, or the second and third, parastichy vectors are equal in length, we need to find the $d$ and $h$ at which this occurs. This requires us to identify \emph{touching-circle lattices}, and we will first construct Figure~\ref{fig:Ch4VanItersonMain} by algebraically finding touching-circle lattices, and then see how a more powerful and more abstract approach based on lattice re-normalisation gives the same answer and explains much of the geometric structure of the diagram. 
+The answer is given in the van Iterson diagram of Figure~\ref{fig:Txb0501VanItersonMain} and the rest of the chapter explains how this Figure is constructed and its implications. 
+ Since the classification changes at the points of lattice space where either the first and second, or the second and third, parastichy vectors are equal in length, we need to find the $d$ and $h$ at which this occurs. This requires us to identify \emph{touching-circle lattices}, and we will first construct Figure~\ref{fig:Txb0501VanItersonMain} by algebraically finding touching-circle lattices, and then see how a more powerful and more abstract approach based on lattice re-normalisation gives the same answer and explains much of the geometric structure of the diagram. 
  
- 
-\clearpage
 
 \section{Components of the van Iterson diagram: the \branch{m=n} branch}
 \label{sec:mequalsn}
 We have not yet seen shown how to draw the van Iterson diagram nor seen a reason for its remarkable self-similarity. We will do the latter in section~\ref{sec:levitov}, and though elegant and powerful, that approach masks the structure of the crucial lattice bifurcation.  So first we take an approach using only elementary algebra, and then only afterwards see why the answers take the form they do. 
-Figure~\ref{fig:Ch4VanItersonZoom} redraws 
+Figure~\ref{fig:Txb0502VanItersonZoom} redraws 
 the van Iterson diagram in a subset of lattice space, and adds labels for the boundaries and the bifurcation points at which they meet. 
 %
-\mmafig{Ch4VanItersonZoom}{Lattice space is partitioned into regions with the same principal parastichy pair by arcs on which two parastichy vectors have the same magnitude. These \branch{m=n} branches are semicircles;  the branches meet when the lattice is hexagonal, labelled in pink. A red line shows when the \branch{m=n} branch is a van Iterson or touching circle lattice. Regions are labelled by their principal parastichy numbers $m,n$;  the topological properties of the Figure do not rely on the numbers being Fibonacci. 
+\mmafig{Txb0502VanItersonZoom}{Lattice space is partitioned into regions with the same principal parastichy pair by arcs on which two parastichy vectors have the same magnitude. These \branch{m=n} branches are semicircles;  the branches meet when the lattice is hexagonal, labelled in pink. A red line shows when the \branch{m=n} branch is a van Iterson or touching circle lattice. Regions are labelled by their principal parastichy numbers $m,n$;  the topological properties of the Figure do not rely on the numbers being Fibonacci. 
 	$d$-co-ordinates of the endpoints of the branches are calculated here in the case $m=2$, $n=3$, $u=1$, $v=1$. 
 }{1.0}
 It shows that we can construct the structure of lattice space by finding the arcs on which  the principal vectors have the same length. We call these branches: 
@@ -129,7 +127,7 @@ The crucial organising centres of lattice space are the triple-points, where two
 % \gp{0=1=\hat{1}} and \gp{1=\hat{1}=2} 
 and otherwise the  triple-point is of the form \gp{m=n=n+m} with $0\leq m<n$. 
 The semicircles defined in the previous section provide necessary but not sufficient conditions for a lattice to be a van Iterson lattice with $|\mvec|=|\nvec|$ : we also need that $\mvec$ and $\nvec$ are the principal parastichy vectors. 
-The diagram of  Figure~\ref{fig:Ch4VanItersonZoom} is organised by these triple-points  at which the lattice has hexagonal symmetry as in eg the \gp{2=3=5} lattice in Figure~\ref{fig:Ch3LowOrder}. The bifurcations at these triple-points can completely characterise transitions in lattice space.
+The diagram of  Figure~\ref{fig:Txb0502VanItersonZoom} is organised by these triple-points  at which the lattice has hexagonal symmetry as in eg the \gp{2=3=5} lattice in Figure~\ref{fig:Txb0400LowOrder}. The bifurcations at these triple-points can completely characterise transitions in lattice space.
 
 It is possible, as in Exercise~\ref{ex:triplealgebra}, to calculate the positions of the triple-points algebraically, though this does not offer much insight.
 One relation that is worth noting is about the size of the disks that fit into the hexagonal lattice: these 
@@ -142,7 +140,7 @@ have radius $r$ where
 	Find a relation between $r$, $m$ and $n$ at a hexagonal lattice, and use this to show equation~\eqref{eq:hofr}.
 \end{jExercise}
 \begin{jAnswer}{ex:ptriple}
-Consider the triangle of Figure~\ref{fig:Ch3Apextriangle} which has sides $n\mvec$, $m\nvec$ and $1$. Since the lattice is hexagonal, the top angle of the triangle there is $60^\circ$, so set $|\mvec|=|\nvec|=2r$ and use the cosine rule to find   
+Consider the triangle of Figure~\ref{fig:Txb0400Apextriangle} which has sides $n\mvec$, $m\nvec$ and $1$. Since the lattice is hexagonal, the top angle of the triangle there is $60^\circ$, so set $|\mvec|=|\nvec|=2r$ and use the cosine rule to find   
 \begin{align*}
 	4 r^2  &=  \frac{1}{m^2+mn + n^2} \label{eq:cosine}
 \end{align*}
@@ -164,7 +162,7 @@ and by using $(n^2-m^2)h^2=x^2_m-x^2_n=3\cdot 4 r^4 (n^2-m^2)$ we get equation~\
 
 
 \subsection{The \branch{m=n} branch in lattice space}
-Now we can describe the general structure of the \branch{m=n} branch and its bifurcations, as shown in Figure~\ref{fig:Ch4VanItersonZoom}.
+Now we can describe the general structure of the \branch{m=n} branch and its bifurcations, as shown in Figure~\ref{fig:Txb0502VanItersonZoom}.
 \begin{theorem}
 	For co-prime $1\leq m<n$,  (but excluding the \branch{1=2} branch) the \branch{m=n} branch has exactly two triple points on it, one which is \gp{m=n-m=n} and one which is \gp{m=n=n+m},  and the lattice is van Iterson only on the branch between these two points.
 \end{theorem}
@@ -189,13 +187,13 @@ Square lattices also have a role in modelling obvious parastichies as several au
 \section[Unfolding the triple-point bifurcation]{Nearly hexagonal lattices: unfolding the triple-point bifurcation}
 We have established algebraically the structural properties of lattice space so that we can draw it, but the key property of lattice space we need to understand for Fibonacci structure depends only on what happens at triple-points at which the lattice is a hexagonal on. In fact we can obtain the key structural information by understanding the structure of lattice space near each such bifurcation: in the language of bifurcation theory we need only consider the unfolding of the triple-point.  
 
-In particular, we will show that one of the branches downward from the triple-point corresponds to a non-opposed principal parastichy pair. We have not yet classified lattice space by whether pairs are opposed or not, so it is important to note that van Iterson lattices can sometimes have non-opposed principal parastichy vectors as shown in  Figure~\ref{fig:Ch4NonOpposed}. 
+In particular, we will show that one of the branches downward from the triple-point corresponds to a non-opposed principal parastichy pair. We have not yet classified lattice space by whether pairs are opposed or not, so it is important to note that van Iterson lattices can sometimes have non-opposed principal parastichy vectors as shown in  Figure~\ref{fig:Txb0503NonOpposed}. 
 
-\mmafig{Ch4NonOpposed}{A van Iterson lattice can be non-opposed. This example has $d = 0.397397\ldots$, $h=0.0446895\ldots$, and the two shortest vectors $\pvec{2}$ and $\pvec{5}$ with $|\pvec{2}|=|\pvec{5}|$, both wind in the same direction.}{1.0}%
+\mmafig{Txb0503NonOpposed}{A van Iterson lattice can be non-opposed. This example has $d = 0.397397\ldots$, $h=0.0446895\ldots$, and the two shortest vectors $\pvec{2}$ and $\pvec{5}$ with $|\pvec{2}|=|\pvec{5}|$, both wind in the same direction.}{1.0}%
 \clearpage
-\mmafig{Ch4Unfolding}{Lattice deformations near a triple-point classified by Theorem~\ref{thm:tp}. \branch{m=n} branches are drawn as in Figure~\ref{fig:Ch4VanItersonZoom}. As in that Figure, the unfolding is true for general $m,n$ but is labelled for clarity with $m=3$ and $n=5$. Red arrows: primary parastichies; blue arrows secondary parastichies. Grey arrows show the direction in which the hexagonal lattice is stretched so as to preserve two vectors of equal length.  In particular note that the \branch{m,n+m} van Iterson branch below the triple point is nonopposed  but the \branch{n,n+m} branch is opposed.}{1}%
+\mmafig{Txb0504Unfolding}{Lattice deformations near a triple-point classified by Theorem~\ref{thm:tp}. \branch{m=n} branches are drawn as in Figure~\ref{fig:Txb0502VanItersonZoom}. As in that Figure, the unfolding is true for general $m,n$ but is labelled for clarity with $m=3$ and $n=5$. Red arrows: primary parastichies; blue arrows secondary parastichies. Grey arrows show the direction in which the hexagonal lattice is stretched so as to preserve two vectors of equal length.  In particular note that the \branch{m,n+m} van Iterson branch below the triple point is nonopposed  but the \branch{n,n+m} branch is opposed.}{1}%
 %
-To classify the branches as they leave the triple-point, we need to know about small changes in the lattice away from that triple-point. That can be done algebraically by using the results of Section~\ref{sec:mequalsn} or graphically by consideration of Figure~\ref{fig:Ch4Unfolding}. Either of these show the following properties of a triple-point:
+To classify the branches as they leave the triple-point, we need to know about small changes in the lattice away from that triple-point. That can be done algebraically by using the results of Section~\ref{sec:mequalsn} or graphically by consideration of Figure~\ref{fig:Txb0504Unfolding}. Either of these show the following properties of a triple-point:
 \begin{theorem}
 	Suppose $m,n$ are co-prime integers with $0<m<n$ but not $m=1,n=2$. Then each of the two symmetric semicircles making up the branch \branch{m=n} have two triple-points. At the triple-point \gp{m=n=n+m}, which is the lower of the two:
 	\begin{enumerate}
@@ -207,8 +205,8 @@ To classify the branches as they leave the triple-point, we need to know about s
 This triple-point is also the higher of the two triple-points for the nonopposed branch, so this branch will remain van Iterson until it passes through its lower triple-point. But we have just seen that it must be opposed there, 
 and we know from the previous chapter that there is only one change of opposition in the $d$-generating interval, which the branch is contained in, so there is a unique point on the $m=n+m$ van Iterson sub-branch at which it ceases to be opposed. This point was exactly $d=v/n$. 
 \clearpage
-These properties taken together prove that the structure visible in the numerically calculated Figures of this chapter do indeed hold for all lattices. We can also redraw in Figure~\ref{fig:Ch4Pruned} the van Iterson tree, showing which portions are opposed and which non-opposed. This Figure illustrates an important consequence of Theorem~\ref{thm:tp}: any model whose solutions move through the van Iterson tree but always reject non-opposed solutions in favour of opposed ones will produce Fibonacci structure. 
-\mmafig{Ch4Pruned}{At every bifurcation of the van Iterson tree, one downward branch is opposed and one is non opposed. 
+These properties taken together prove that the structure visible in the numerically calculated Figures of this chapter do indeed hold for all lattices. We can also redraw in Figure~\ref{fig:Txb0505Pruned} the van Iterson tree, showing which portions are opposed and which non-opposed. This Figure illustrates an important consequence of Theorem~\ref{thm:tp}: any model whose solutions move through the van Iterson tree but always reject non-opposed solutions in favour of opposed ones will produce Fibonacci structure. 
+\mmafig{Txb0505Pruned}{At every bifurcation of the van Iterson tree, one downward branch is opposed and one is non opposed. 
 	Opposed branches are shown as red lines and non-opposed ones as yellow.  }{1}
 
 
@@ -243,7 +241,7 @@ We have shown that packing efficiency remains close to the hexagonal optimum on 
 
 \clearpage
 \section{Lattice renormalisation}
-\mmafig{Ch4Renormalisation}{ A lattice with arbitrary parastichy numbers can be 
+\mmafig{Txb0506Renormalisation}{ A lattice with arbitrary parastichy numbers can be 
 	constructed from a $(0,1)$ lattice by a carefully chosen scaling and rotation that preserves the cylindrical periodicity. Theorem~\ref{thm:renormalization} shows how to compute the necessary complex number $z_m$ of the scaled rotation.
 	The $(0,1)$ lattice has $d=7/72$ and $h=1$ and is shown as the
 	large coloured principal parallelogram with vertical dashed periodicity lines. Rotating that lattice by
@@ -255,7 +253,7 @@ The algebra of the Chapter so far is straightforward, if a little tedious, but i
 
 We saw in the previous chapter that every cylindrical lattice unrolls to a plane lattice, but not all plane lattices have the right periodicity to be mapped down onto our cylinder of circumference 1. Specifically, a plane lattice can be collapsed to a cylindrical lattice using $(x,z)\rightarrow(x-\left[x\right],z)$ exactly when it contains the vector $(1,0)$; and restricting to only monojugate lattices as we do adds the requirement that that must be the shortest vector in that direction; we called this being $1$-periodic. 
 Now suppose we have a cylindrical lattice with principal parastichy numbers \gp{m,n}. We can subject the corresponding plane lattice to a rotation, but in general the rotated lattice will not be $1$-periodic. Suppose though that we choose the rotation that maps the principal parastichy vector $\pvec{m}$ down onto the $x$-axis, followed by a uniform scaling that maps it onto the point $(1,0)$: then by construction the transformed plane lattice is $1$-periodic and there is a corresponding cylindrical lattice. At this point it's useful to represent lattice parastichy vectors by complex numbers $z_k=(kd-[kd])+i kh$, because the transformation we have just described is exactly division of every lattice point by $z_m$; $z$ here is a complex coordinate and not the real vertical coordinate of previous chapters. 
- An example is given in Figure~\ref{fig:Ch4Renormalisation}. By a weak analogy with theoretical physics this rotate-and-scale process is called lattice renormalisation, and we call the corresponding parastichy vectors of the renormalised lattice $w_m$.
+ An example is given in Figure~\ref{fig:Txb0506Renormalisation}. By a weak analogy with theoretical physics this rotate-and-scale process is called lattice renormalisation, and we call the corresponding parastichy vectors of the renormalised lattice $w_m$.
 
 
 
@@ -343,8 +341,8 @@ and then setting $h=\Im \Delta_{mn}z_1$ shows that $z$ has positive rise.
 
 
 We can use the transformation $g_{mn}$ to calculate the regions of
-lattice space as shown in more detail in Figure~\ref{fig:Ch4VIQ}.
-\mmafig{Ch4VIQ}{The  $\gp{1,3}$ region of lattice space is the image of the \gp{1,3} region under the $g_{mn}$ of equation~\eqref{eq:gDefinition} for $(m,n)=(1,3)$ .
+lattice space as shown in more detail in Figure~\ref{fig:Txb0507VIQ}.
+\mmafig{Txb0507VIQ}{The  $\gp{1,3}$ region of lattice space is the image of the \gp{1,3} region under the $g_{mn}$ of equation~\eqref{eq:gDefinition} for $(m,n)=(1,3)$ .
 	The right hand diagram is an enlargement of the left-hand one.  
 }{1.0}
 In general there are two choices for the winding-number pair for $(m,n)$ and these correspond to the two $\gp{m,n}$ regions linked by the reflection symmetry.
@@ -495,7 +493,7 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 		If $m$ and $n$ are co-prime and $m<n$, when can a $\gp{m,n}$ touching-circle lattice be non-opposed?
 	\end{jExercise}
 	\begin{jAnswer}{ex:whenno}
-		The bifurcation theory argument of this chapter or specifically examination of Figure~\ref{fig:Ch4Pruned} show we must have $n-m>m$, 
+		The bifurcation theory argument of this chapter or specifically examination of Figure~\ref{fig:Txb0505Pruned} show we must have $n-m>m$, 
 		and the lattice is non-opposed  on the $\gp{m=n}$ branch from the triple point $\gp{m=n=n-m}$ to the point where either $\pvec{m}$ or $\pvec{n}$ vector becomes vertical.
 			Choose $u,v$ as the winding number pair so that $m v - n u=\Delta$. We need either $\Re \pvec{m}=0$, so $\Re z_1=u/m$ or $\Re \pvec{n}=0$, so $\Re z_1=v/n$. Inserting these into~\ref{eq:x} gives $\cos\theta=n/m$ or $\cos\theta=m/n$ respectively, so we need to choose $\cos\theta=m/n$,
 			and since $m/n<\jhalf$, $\pi/3\leq\theta\leq 2\pi/3$ and one of the solutions of  $\cos\theta=m/n$ is indeed a point on the touching circle.
@@ -517,10 +515,10 @@ It is a matter of taste whether the structure of van Iterson space as revealed b
 
 
 \section{Packing efficiencies}
-Some of the less convincing arguments for the occurence of Fibonacci phyllotaxis have centred on analyses of packing efficiency, partly because of phenomenon like the ones illustrated in Figure~\ref{fig:Ch4SpiralPacking}.%
-\mmafig{Ch4SpiralPacking}{A golden-angle lattice packs more uniformly than nearby lattices, in the sense that the angular distribution of the angles of the nodes is most even at the golden angle. Above, nodes with polar coordinates $(r,\theta)=( nh , n\phi)$ are shown for $n=1\ldots1000$, $h=0.001$, and $\theta=\tau/1.001$, $\tau$ and $1.001\tau$. Below, the angles of each node are binned and coloured by count. 
+Some of the less convincing arguments for the occurence of Fibonacci phyllotaxis have centred on analyses of packing efficiency, partly because of phenomenon like the ones illustrated in Figure~\ref{fig:Txb0508SpiralPacking}.%
+\mmafig{Txb0508SpiralPacking}{A golden-angle lattice packs more uniformly than nearby lattices, in the sense that the angular distribution of the angles of the nodes is most even at the golden angle. Above, nodes with polar coordinates $(r,\theta)=( nh , n\phi)$ are shown for $n=1\ldots1000$, $h=0.001$, and $\theta=\tau/1.001$, $\tau$ and $1.001\tau$. Below, the angles of each node are binned and coloured by count. 
 }{1.0}%
-Each of the three node patterns in Figure~\ref{fig:Ch4SpiralPacking} contain the same number of nodes in the same sized region: in that sense mean packing is equivalent between them. What (extremely close) adherence to the Golden angle offers is a closeness to uniformity in the angle distribution of the nodes. This most-uniform packing property has been known for a long time and seems to have first been explicitly proved by Wright~\cite{wrightMostThoroughUniform1859}. It has sometimes been suggested that this kind of uniformity in the distribution of leaf positions offers a fitness advantage in that such a leaf architecture could maximise sunlight capture. There's never been any good evidence of this inherently implausible fitness effect.
+Each of the three node patterns in Figure~\ref{fig:Txb0508SpiralPacking} contain the same number of nodes in the same sized region: in that sense mean packing is equivalent between them. What (extremely close) adherence to the Golden angle offers is a closeness to uniformity in the angle distribution of the nodes. This most-uniform packing property has been known for a long time and seems to have first been explicitly proved by Wright~\cite{wrightMostThoroughUniform1859}. It has sometimes been suggested that this kind of uniformity in the distribution of leaf positions offers a fitness advantage in that such a leaf architecture could maximise sunlight capture. There's never been any good evidence of this inherently implausible fitness effect.
 
 Nevertheless, given that there clearly are molecular mechanisms that promote particular kinds of close packing in node placement, it is worth clarifying how packing closeness varies over the van Iterson diagram.  If we  draw a circle of the same radius around every point of a lattice and choose the radius as large as possible without two circles intersecting, then the radius of such a circle is $|\pvec{m}|/2$ where $m$ is the primary parastichy number. There is one such circle of area $ {\pi |\pvec{m}|^2 }/{4}$ attached to each point, but we saw in the previous Chapter that the cylinder area per point is $h$ so  the packing efficiency $\beta$ of the lattice, defined as the fraction of the cylinder covered by the circles, is
 \[
@@ -536,15 +534,15 @@ Show that the packing efficiency of a van Iterson lattice is locally maximised a
 \begin{jAnswer}{ex:localpacking}
 	Lagrange proved in 1773 that a hexagonal lattice is the closest possible lattice packing, and triple-points are the only points in lattice space at which the lattice is hexagonal. For more on the connection between the modular group and sphere-packings see, say, Berger~\cite{bergerGeometryRevealedJacob2010}.
 \end{jAnswer}
-We can calculate the packing efficiency $\beta$ across van Iterson space by using the classification of this chapter to find $\mvec$.  Within the $(0,1)$ region, the primary parastichy vector is $(1,0)$ of length 1, and $\beta$ is simply $\pi/ {4 h }$.  Since $\beta$ is not changed by a rigid rotation and scaling of a lattice, we could also simply map this function  $\pi/ {4 h }$ using the M{\"o}bius transforms into each region. Figure~\ref{fig:Ch4PackingTreePlot} shows a contour plot of the packing efficiency $\beta$ along with a graph of $\beta$ along a horizonatal transect of lattice space.
-\mmafig{Ch4PackingTreePlot}{Top: packing efficiency $\beta$ across van Iterson space (Close to hexagonal: $\beta>0.8$, Tight: $\beta>0.7$, Loose: $\beta>0.6$, Looser $\beta<0.6$). Bottom graph: $\beta$ as a function of $d$ across the line $h=0.005$. Note that while the divergence $\tau/2\pi$ corresponding to the golden angle is a local maximum of $\beta$, it is not a global maximum.
+We can calculate the packing efficiency $\beta$ across van Iterson space by using the classification of this chapter to find $\mvec$.  Within the $(0,1)$ region, the primary parastichy vector is $(1,0)$ of length 1, and $\beta$ is simply $\pi/ {4 h }$.  Since $\beta$ is not changed by a rigid rotation and scaling of a lattice, we could also simply map this function  $\pi/ {4 h }$ using the M{\"o}bius transforms into each region. Figure~\ref{fig:Txb0509PackingTreePlot} shows a contour plot of the packing efficiency $\beta$ along with a graph of $\beta$ along a horizonatal transect of lattice space.
+\mmafig{Txb0509PackingTreePlot}{Top: packing efficiency $\beta$ across van Iterson space (Close to hexagonal: $\beta>0.8$, Tight: $\beta>0.7$, Loose: $\beta>0.6$, Looser $\beta<0.6$). Bottom graph: $\beta$ as a function of $d$ across the line $h=0.005$. Note that while the divergence $\tau/2\pi$ corresponding to the golden angle is a local maximum of $\beta$, it is not a global maximum.
 }{0.8}%
 Since packing efficiency scales like $1/h$ in the $(0,1)$ region, its contour lines there are horizontal, and so the contour lines of packing efficiency in each other, M{\"o}bius transformed region, become arcs of circles. 
 
 \section{The structure of multijugate lattice space}
 \label{sec:Jlattice}
-Implicit in the structure of renormalisation is the idea of a parastichy vector moving down through the axis and having rise $h=0$ at that point. This process gives us a way to navigate through a three-dimensional lattice space $(d,h,J)$ where the jugacy variable only takes integer values. We saw in the previous chapter that the principal vectors of a tree with parameters $(d/J,h/J,J)$ were $J$ times the principal vectors of a tree with $(d,h,1)$,so that the van Iterson tree of a multijugate is structurally identical to the $J=1$ version, but simply reduced in scale by a factor $J$.  Figure~\ref{fig:Ch4JugacyPage} gives one visualisation of this three dimensional parameter space, but other visualisations are possible. 
-\mmafig{Ch4JugacyPage}{The separate van-Iterson trees for lattices of jugacies 1 to 4, each drawn on their own plane so that they meet on the $h=0$ axis, with the tree for jugacy $J>1$ pinned at an angle $ 180^\circ/J$ to that for $J=1$.   Here we have placed the $J=1$ tree on the bottom of the box and $J=1/2$ on the front}{1.0}
+Implicit in the structure of renormalisation is the idea of a parastichy vector moving down through the axis and having rise $h=0$ at that point. This process gives us a way to navigate through a three-dimensional lattice space $(d,h,J)$ where the jugacy variable only takes integer values. We saw in the previous chapter that the principal vectors of a tree with parameters $(d/J,h/J,J)$ were $J$ times the principal vectors of a tree with $(d,h,1)$,so that the van Iterson tree of a multijugate is structurally identical to the $J=1$ version, but simply reduced in scale by a factor $J$.  Figure~\ref{fig:Txb0499showJugacyTrees} gives one visualisation of this three dimensional parameter space, but other visualisations are possible. 
+\mmafig{Txb0499showJugacyTrees}{XXX to edit The separate van-Iterson trees for lattices of jugacies 1 to 4, each drawn on their own plane so that they meet on the $h=0$ axis, with the tree for jugacy $J>1$ pinned at an angle $ 180^\circ/J$ to that for $J=1$.   Here we have placed the $J=1$ tree on the bottom of the box and $J=1/2$ on the front}{1.0}
 
 \section{Notes to this Chapter}%~\ref{ch:classifying}
 
@@ -573,7 +571,7 @@ My use of the signature of the Euclidean decomposition to explain the otherwise 
 
 \section{Summary}
 \label{sec:ClassifyingSummary}
-The key result of this chapter is Figure~\ref{fig:Ch4Pruned}. In summary we have found that the space of lattice parameters $(h,d)$ contains a tree of touching circle lattices, which we called van Iterson solutions, which can be  labelled by their two shortest parastichy vectors as \branch{m=n}. This tree bifurcates at triple-points $(m,n,m+n)$ where the lattice is hexagonal. We can navigate through the tree by decreasing $h$ and we saw this was the same as decreasing the radius of the touching circle. If we navigate down the branch \branch{m=n}, then it splits at the triple-point
+The key result of this chapter is Figure~\ref{fig:Txb0505Pruned}. In summary we have found that the space of lattice parameters $(h,d)$ contains a tree of touching circle lattices, which we called van Iterson solutions, which can be  labelled by their two shortest parastichy vectors as \branch{m=n}. This tree bifurcates at triple-points $(m,n,m+n)$ where the lattice is hexagonal. We can navigate through the tree by decreasing $h$ and we saw this was the same as decreasing the radius of the touching circle. If we navigate down the branch \branch{m=n}, then it splits at the triple-point
 into one van Iterson branch $(n,m+n)$ on which the radius continues to decrease and on which the principal pair is opposed, and one other van Iterson branch on which  $h(d)$ is flatter and, although the radius also decreases, the packing efficiency at a given radius is smaller. On this branch the principal pair is not opposed, at least at first. 
 
 

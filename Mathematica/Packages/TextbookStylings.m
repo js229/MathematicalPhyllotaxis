@@ -25,7 +25,8 @@ txbExport[fig_,size_:1] := Module[{figname,imageWidth},
 	figname=SymbolName[Unevaluated[fig]];
 	imageWidth = pageWidthPT * size;
 	SetDirectory[Global`txbDraftFigurePath];
-	Export[StringJoin[figname,".jpg"],fig,ImageSize->imageWidth,ImageResolution->300];Export[StringJoin[figname,".pdf"],fig,ImageSize->imageWidth,ImageResolution->300];
+(*	Export[StringJoin[figname,".jpg"],fig,ImageSize->imageWidth,ImageResolution->300];
+*)	Export[StringJoin[figname,".pdf"],fig,ImageSize->imageWidth,ImageResolution->300];
 	ResetDirectory[];
 	fig
 ];
@@ -47,7 +48,5 @@ jStyle = Association[
 End[]
 
 EndPackage[]
-
-
 
 
