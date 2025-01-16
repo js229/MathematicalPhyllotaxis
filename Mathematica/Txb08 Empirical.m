@@ -114,6 +114,20 @@ Placed[barlegend,{{1.4,1/2},{1,1/2}}]]
 
 
 (* ::Input::Initialization:: *)
+loadHead[headID_] := Module[{file,head},
+file = FileNameJoin[PersistentSymbol["persistentGitHubPath"],"MathematicalPhyllotaxis\\Mathematica\\Data",
+StringJoin["head",ToString[headID],".mx"]];
+head= Import[file];
+If[!KeyMemberQ[head,"Image"] && KeyMemberQ[head,"ImageString"],
+head["Image"]=ImportString[head["ImageString"],"JPG"];
+head=KeyDrop[head,{"ImageString"}]
+];
+head
+];
+
+
+
+(* ::Input::Initialization:: *)
 
 threadsOfFamily[head_,family_] := Flatten[#ThreadEdges&/@Select[head["Threads"],#Family==family&]];
 

@@ -19,14 +19,17 @@ ParastichyColour = <|1->RGBColor[0.7194116276462343, 0.32145384723880266`, 0.270
 
 SetAttributes[txbExport,HoldFirst];
 
-pageWidthPT  = 341; (* from latex layout for A4 *) (* probably unneeded now *)
+pageWidthPT  = 333; (* given Springer Mono layout *) (* probably unneeded now *)
 
-txbExport[fig_,size_:1] := Module[{figname,imageWidth},
-	figname=SymbolName[Unevaluated[fig]];
-	imageWidth = pageWidthPT * size;
+txbExport[fig_,size_:1] := Module[{figname,imageWidth,scaledFig},
 	SetDirectory[Global`txbDraftFigurePath];
-(*	Export[StringJoin[figname,".jpg"],fig,ImageSize->imageWidth,ImageResolution->300];
-*)	Export[StringJoin[figname,".pdf"],fig,ImageSize->imageWidth,ImageResolution->300];
+	figname=SymbolName[Unevaluated[fig]];
+	(*scaledFig = If[Head[fig]===Graphics,
+		Show[fig,ImageSize->pageWidthPT * size],
+		Print["fig is not graphics: ",Head[fig]];fig
+	];*)
+		(* mma inappropriately rasterizes when ImageSize is set *)
+	Export[StringJoin[figname,".pdf"],fig,ImageResolution->300];
 	ResetDirectory[];
 	fig
 ];
@@ -48,5 +51,3 @@ jStyle = Association[
 End[]
 
 EndPackage[]
-
-

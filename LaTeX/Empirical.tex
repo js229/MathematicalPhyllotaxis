@@ -1,16 +1,24 @@
-
+\abstract*{Data collection on the visible patterns of Fibonacci-like phyllotaxis has continued to the present day, although there have as yet been none that combine them with molecular or genetic analyses in the same study.
+%
+As the outlines of the Standard Picture have emerged, the importance of tracking changing phyllotactic patterns as the plant develops has become clearer. Similarly, the issues discussed in this book about what we don't know, and in particular the hypothesis-testing opportunities of departures from Fibonacci structure, have made the need to identify and survey non-Fibonacci structure more important. Across the wide range of previous studies, there remain considerable data sets which may still be useful for these purposes.  One of the great strengths of Jean's \textit{Phyllotaxis} book remains its collation of parastichy count data from a wide range of plant species. Indeed \textit{Phyllotaxis} is effectively complete as a signpost to the literature prior to the 1990s, with a handful of exceptions noted by Okabe in 2016.
+%
+In the rest of this Chapter I only draw attention to older work that may still be useful for analysis, and some recent papers. 
+Systematically counting phyllotactic patterns from photographs is not that difficult, but it is tedious, and it somewhat surprising that beyond some  discrete Fourier transform approaches,  few useful image analysis tools  have been published for this task: they would be particularly useful in the analysis of noise and front dynamics. 
+}
     
-  \chapter{Empirical phyllotaxis}
+  \motto{%
+	`most [roses] have 5 petals, but some have 12 or 20, and some a great many more than these.'
+	\\[1ex]
+	\emph{Theophrastus~\autocite{theophrastusEnquiryPlantsBook1916} c300 BCE.}
+	\\[2ex]
+	{`This observation appears to be off by one. Fibonacci numbers of petals, 13 and 21, are more likely to occur than 12	and 20.'}
+	\\[1ex]
+	\emph{Prusinkiewicz and Runions \autocite{prusinkiewiczComputationalModelsPlant2012} 2012 CE.}
+}  \chapter{Empirical phyllotaxis}
   \label{ch:empirical}
-  \section{Early idealism}
-  \epigraph{`most [roses] have 5 petals, but some
-  	have 12 or 20, and some a great many more than these.'}{Theophrastus ~\autocite{theophrastusEnquiryPlantsBook1916}\\
-  	c300 BCE.}
- \epigraph{
-  	`This observation appears to be off by one. Fibonacci
-  	numbers of petals, 13 and 21, are more likely to occur than 12	and 20.' 
-  }{  	Prusinkiewicz and Runions \autocite{prusinkiewiczComputationalModelsPlant2012}
-  	\\2012 CE.}
+
+\section{Early idealism}
+
   This modern claim that the ancients were off by one may well be true, though I doubt it.  Prusinkiewicz and Runions's don't provide any data to contradict the earlier authority and I don't know of any reported studies of rose petal counts: there are none from the \emph{Rosa} family cited in Jean's wide survey~\cite{jeanPhyllotaxisSystemicStudy1994}). So this remains an unresolved, and perhaps characteristic, evidentiary dispute between idealist mathematicians, who know what the answer should be without looking, and empirical biologists who know the answer but think it irrelevant. 
   %
   Cronk has described the early history of plant morphology as dominated by such idealists, natural philosophers who believed that reason could identify a small number of ideal patterns that all plants followed. Kepler, for example, had a fascination with the number 5, not least in the structure of the solar system,  and saw great significance in its appearance in plant structure~\cite{keplerSixCorneredSnowflake16112014}. Goethe's belief in the spiral tendency of leaf placement was inextricably linked with a Romantic idea of the unity of life. This idealism was challenged during the nineteenth century by an empiricism, and a turning away from grand theory,  of whom the greatest exponents were Hofmeister and von Goebel~\autocite{cronkMolecularOrganographyPlants2009}.
@@ -63,14 +71,14 @@
 Fierz single-handedly carried out an analogous study of fircones, a  project with almost ten times as many samples as in the MOSI sunflower study~\autocite{fierzAberrantPhyllotacticPatterns2015}. She found strict Fibonacci structure more more often than in the MOSI study (97\% of a remarkable 6000 \textit{Pinus nigra} cones), and double Fibonacci were again the second-most common class. Unlike the MOSI study, she did not draw attention to the occurrence of Fibonacci plus or minus 1 counts. In the very small number of cases of non-Fibonacci counts she did see, such as five  observations of (8,12),  Fierz chose to interpret these as coming from the very weakly Fibonacci-like sequence 4,8,12. While these are small numbers, both of sample size and of parastichy counts, in the light of the MOSI data  it is tempting to reinterpret most of her non Fibonacci observations as small perturbations to Fibonacci counts rather than as the outcome of Fibonacci transitions from exotic starting points. Fierz also helpfully recorded some of unusual, and literally uncountable fir cones which made up less than 5\% of the sample.  And as the MOSI study threw up the sunflower 667 as a challenge to our pattern classifications, 
 Fierz's cone S5 of figure~\ref{fig:F0804Fierz2015S5} also poses a challenge to pattern models. Fierz believed that each of the parastichy counts 7, 8 and 9 were equally good descriptors of the clockwise parastichy counts of this sunflower, and based on the triple-point unfolding we might hope to understand this as a similar transitional pattern. But the details are still to be worked out, as is whether patterns like these will only be seen if the counter-clockwise parastichy number, here 11, is not Fibonacci.
 
-\clearpage
+
 \section{Non-lattice patterns}
 \subsection{Loss of symmetry}
 One class of patterns not previously recorded en masse were seen on seed-heads which had lost rotational symmetry. In examples like sample 667 (Figure~\ref{fig:Txb0805Sunflower667}) the parastichies are locally clear and unambiguous. However set of red parastichies, if continued clockwise, are naturally extended to the green parastichies, while if extended anti-clockwise extend to the yellow ones which have a steeper angle. The result is that it is not possible to provide a clockwise parastichy count for this sample according to the definitions of Chapter~\ref{ch:cylinder}, although the counter-clockwise pattern is unambiguous. This does not seem to be the same form of non-Fibonacci pattern as the dislocated grids discussed below, but it is highly ordered.
 For a head close to rotational symmetry, there is a relatively narrow annulus on which transitions between principal parastichy counts occurs. As the head becomes more asymmetric, the annulus becomes distorted and in this example it has left the visible seed head completely.  Presumably this can be understood as a lack of rotational symmetry in the node placement function arising during growth.
 
 \mmafig{Txb0805Sunflower667}{A set of parastichy lines which don't foliate the sunflower disk. Top image from seed-head 667 of~\autocite{swintonNovelFibonacciNonFibonacci2016}; the original seed-head is now in the collection of the Museum of Science and Industry, Manchester as entry \texttt{E2017.2100.1}.}{.3}
-\clearpage
+
 \subsection{Dislocations}
 Figure~\ref{fig:F0806Fierz2015S4} gives a number of examples from Fierz's fir cone study where she considered that parastichy numbers became un-evaluatable because of a dislocation in the parastichy lines. 
 \jpgfig{F0806Fierz2015S4}{Although over 97\% of 6000 \textit{Pinus nigra} cones showed exact Fibonacci patterns, a small number were uncountable by standard methods, because of the loss of a parastichy. \copyright CC-BY Fierz 2015~\autocite{fierzAberrantPhyllotacticPatterns2015}}{.5}
@@ -87,7 +95,7 @@ Church pointed out the relative ease of observation of rising phyllotaxis on \te
 A strong predictions of the Standard Picture is that parastichy counts should rise from low ones in the older parts of the plant, increase and then finally decrease. They imply that this holds even as the nodes which are being placed fundamentally change their ultimate functions, from eg leaf to bract to ray floret to disk floret. There have been few systematic attempts to evaluate this in any species. 
 
 When we examine the large Fibonacci patterns in {Compositae}  there is a difficult missing link in the Standard Picture. There is an observed leap, in the {Compositae} at least, between parastichy counts in the stem and in the disk floret. The common daisy has a handful of leaves, all branching at ground level, whose parastichy structure has never been systematically reported, then a stem which is completely smooth to the naked eye, before the bract, ray floret and disk floret structure appears. That the daisy usually has 13 bracts suggests a transition through 3 and 5 and 8 in the principal parastichies of the node pattern during development: at a minimum that requires 8 nodes, and probably rather more. But are they the ground level leaves, or were nodes created and then suppressed on the elongating stem above them? The situation is even more dramatic in the even more exaggerated seed disk of the sunflower. Sunflower stems do have branches which have been the object of phyllotactic study, but typically reporting $\gp{1,2}$ parastichy counts if any at all. As we have seen, bract counts in the sunflower are not tightly clustered on Fibonacci numbers, though the Standard Picture can explain this away by saying that the bract generation region is not necessarily a tight annulus representing a single front. But even so the Standard Picture does demand that node placement in the bract region relies on a pattern predisposition with at least 13 nodes if not more. Faced with the smooth underside of the disk capitulum, there is no visual evidence of the past trace of such a pattern. Okabe has paid useful  attention to the pre-patterns that are seen~\autocite{okabeBiophysicalOptimalityGolden2015}, but there is little systematic data. Of course it is common in development for early commitments to be erased later, but whether this has left more subtle anatomical traces than are visible, or whether the right molecular probe at the right stage of development can yield the missing intermediate parastichy counts, remains to be seen. 
-\clearpage
+
  \section{Beyond parastichy counts}
  
  \subsection{Bract and ray floret counts}
@@ -96,7 +104,7 @@ When we examine the large Fibonacci patterns in {Compositae}  there is a difficu
  In the MOSI dataset there was no clear clustering of either bract or ray-floret counts around Fibonacci numbers (Figure~\ref{fig:Txb0808BractCount}). The parastichy numbers were somewhat laboriously but consistently counted in a documented, reproducible manner by the project team, but the bract and ray-floret counts were as provided by members of the public and this may explain some of the spread; but equally it might well be a real phenomenon. 
   
  
- \clearpage
+ 
      \subsection{Column patterns}
 \jpgfig{F0809sweetcorn20191008}{A commercially sold sweetcorn cob, with column patterns showing parastichy lines nearly parallel to the growth axis .}{0.2}
 \pdffig{F0810PennyBackerFig15}{Phyllotactic transitions in an Argentinian saguaro, as reported in~\autocite{pennybackerPhyllotaxisProgressStory2015}. The authors detect a phyllotactic transition from $\pp{5,5}$ to $\pp{5,6}$ to $\pp{6,6}$.
@@ -111,7 +119,7 @@ Mathematical phyllotaxis has recently begun to pay attention to other classes of
   
  %{\url{10.1016/j.physd.2015.05.003}}
   
- % \clearpage
+ % 
   \section{Chapter summary}
   There is a now several centuries' worth of individual pattern descriptions as images or parastichy counts. As the Standard Picture has emerged, the questions asked of this data have changed, with more focus on the information provided by non-Fibonacci or other less structured patterns. Even quite old datasets can still be valuable, but as imaging and data handling technology improves we can expect more focus on rare, but informative patterns. 
   
