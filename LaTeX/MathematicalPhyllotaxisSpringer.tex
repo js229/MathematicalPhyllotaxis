@@ -71,23 +71,19 @@
 {
 	\usepackage{exsheets}
 	\newenvironment{jExercise}{\question}{\endquestion}
-	\newenvironment{jAnswer}{\solution}{\endsolution}
-%	\SetupExSheets{counter-format=ch.qu}
-%	\SetupExSheets{counter-within=ch}
-	\newcommand{\jBookEndSolutions}{\chapter{Answers to Exercises}\printsolutions}
+	\newenvironment{jAnswer}[1]{\solution}{\endsolution} %throw away label as exsheets is smart.
+	\SetupExSheets{counter-format=ch.qu}
+	\SetupExSheets{counter-within=ch}
 }
 {
 	\newenvironment{jExercise}{\begin{prob}}{\end{prob}}
-	\newenvironment{jAnswer}{\begin{sol}}{\end{sol}}
+	\newenvironment{jAnswer}[1]{\begin{sol}{#1}}{\end{sol}}
 	\newcommand{\jBookEndSolutions}{}
 }
 \input{MPSpringerPreamble.tex}
 \input{githubMathematicalPhyllotaxisRepoProperties.tex}
 
-
-
-\includeonly{Motivation}
-
+\newcommand{\SpringerAbstract}[1]{\abstract{#1}}
 
 \begin{document}
 

@@ -40,10 +40,9 @@ txbExport[fig_,size_:1] := Module[{figname,imageWidth,scaledFig},
 jStyle = Association[
 	"CylinderColour"-> CylinderColour,
 	"CylinderColour3D"-> CylinderColour3D,
-	"FontFamily" -> "Gill Sans MT",
+	"FontFamily" -> "Times",
+	"DisplayFontFamily" -> "Gill Sans MT",
 	"FullWidthImagePT" -> pageWidthPT,
-	"LaTeXBodyFamily" -> "EB Garamond 12", (* but gives old-style numbers *)
-	"LaTeXDefaultFamily" -> "Latin Modern Roman 12", (* gives inline numbers *)
 	"ParastichyColour" -> ParastichyColour,
 	"ArrowheadSpec" -> 0.02
 	];
@@ -51,3 +50,6 @@ jStyle = Association[
 End[]
 
 EndPackage[]
+
+
+
