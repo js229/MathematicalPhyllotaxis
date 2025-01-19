@@ -1,17 +1,17 @@
 
-\chapter{Fibonacci and the golden ratio}
-\SpringerAbstract{The Fibonacci sequence $F_n$ has as its first two members  $F_0=0$, $F_1=1$ and every subsequent member is the sum of the previous two:  $F_{n+2}=F_{n+1}+F_{n}$. 
-	Although there is a substantial literature on Fibonacci and related sequences we really only need this simple sum property, but this chapter collects some elementary related facts. }
+\chapter{Fibonacci numbers, the golden ratio, and co-prime integers}
+\SpringerAbstract{The Fibonacci sequence $F_n$ has as its first two members  $F_0=0$, $F_1=1$ and every subsequent member is the sum of the previous two:  $F_{n+2}=F_{n+1}+F_{n}$. Although there is a substantial literature on Fibonacci and related sequences we really only need this simple sum property and some elementary related facts collected here}
 
 \label{CH:0}
 \label{ch:0}
 \section{Fibonacci sequences}
 
 The Fibonacci sequence $F_n$ has as its first two members  $F_0=0$, $F_1=1$ and every subsequent member is the sum of the previous two:  $F_{n+2}=F_{n+1}+F_{n}$. 
-Although there is a substantial literature on Fibonacci and related sequences~\cite{vajdaFibonacciLucasNumbers2008} we really only need this simple sum property for much of this book. 
-A related sequence is the Lucas sequence  ($1,3,4,7,11,\ldots$) with the same rule but different initial conditions, both Fibonacci and Lucas numbers are special cases of the generalised Fibonacci numbers with starting pair $F^k_1=1$, $F^k_2=k$. We will also encounter the sequence created by doubling each Fibonacci term, for which terminology varies but I'll call a double-Fibonacci sequence. 
+A related sequence is the Lucas sequence  ($1,3,4,7,11,\ldots$) with the same rule but different initial conditions. Both Fibonacci and Lucas numbers are special cases of the generalised Fibonacci numbers with starting pair $F^k_1=1$, $F^k_2=k$. We will also encounter the sequence created by doubling each Fibonacci term, for which terminology varies but I'll call a double-Fibonacci sequence. 
 %
 \begin{table}[ht]
+	\caption{Various sequences with Fibonacci structure}
+	\label{tab:sequences}
 	\begin{center}
 		\begin{tabular}{ll}
 			\hline
@@ -31,13 +31,12 @@ A related sequence is the Lucas sequence  ($1,3,4,7,11,\ldots$) with the same ru
 			\\
 			\hline
 		\end{tabular}
-		\caption{Various sequences with Fibonacci structure}
-		\label{tab:sequences}
+	
 	\end{center}
 \end{table}
 %
 
-We might note that from Table~\ref{tab:sequences} that the Fibonacci, double Fibonacci and Lucas sequences together include all  of the first eleven integers except 9, so there is little remarkable about the observation that a particular system exhibits a structure including a low member of one of the sequences~\cite{cookeFibonacciNumbersReveal2006}. Finding pairs of adjacent members of the same series, or examples of numbers greater than ten, would be more significant.
+We might note that from Table~\ref{tab:sequences} that the Fibonacci, double Fibonacci and Lucas sequences together include all  of the first eleven integers except 9, so there is little remarkable about the observation that a particular system exhibits a structure including a low member of one of the sequences~\cite{cookeFibonacciNumbersReveal2006}. Finding \textit{pairs} of adjacent members of the same series, or examples of numbers greater than ten, might be more significant.
 
 \subsection{The golden ratio}
 Starting the sequence with $F_0=0$, $F_1=1$, the general Fibonacci term is 
@@ -47,13 +46,13 @@ F_n &=& \frac{\tau^n - (1-\tau)^n}{\sqrt{5}}
 where $\tau$ is the golden ratio 
 satisfying
 \begin{eqnarray}
-\tau^2 &=& \tau+1
+\tau^2 &=& \tau+1 \label{eq:tauQuadratic}
 \\
 \tau &=& \frac{1+\sqrt{5}}{2} \approx 1.618
 \\
 &=& \lim_{n\rightarrow\infty} \frac{F_{n+1}}{F_n} 
 \end{eqnarray}
-Any sequence obeying the Fibonacci rule has $\tau$  as the limit of the ratio of its terms.
+The sequences in Table~\ref{tab:sequences}, and indeed any sequence obeying the Fibonacci rule, all have $\tau$  as the limit of the ratio of terms. These results csn be found by trying solutions of the form $F_n=k\tau^n$ and seeing that $\tau$ must be one of the two solutions of~\eqref{eq:tauQuadratic}. This book only needs the facts in this chapter, but there is vast literature on Fibonacci and related sequences of which Vajda~\cite{vajdaFibonacciLucasNumbers2008}, say, is an  accessible example. 
 
 \subsection{The golden angle}
 The golden angle is
@@ -72,17 +71,8 @@ As we'll see, the angular rotation between successive leaf structures is often v
 \section{Co-prime integers}
 
 \label{sec:coprime}
-Two integers $(m,n)$ are co-prime iff\jNote{The word `iff' is not a typo. It means if and only if, and is also a shibboleth.
-	If it is bewildering to you that `iff' means logical equivalence and not just implication then you have not been inducted into the kind of mathematical exposition, roughly first-year undergraduate, we use until around section~\ref{sec:ClassifyingSummary}, so you will want to skip to there. On the other hand you can read all of the rest of the book without knowing what a shibboleth is.} their greatest common divisor is equal to 1, so that for example 4 and 11 are co-prime. We need to be explicit about some edge cases, by noticing that every integer is a divisor of $0$, but the only divisors of $1$ are $1$ and $-1$. Specifically we recognise both of the pairs $(0,1)$ and $(1,n)$ as co-prime, and note that $1$ is co-prime to itself, but $0$ is not, and $(0,n)$ is not co-prime for $n>1$.%
-%\footnote{We don't require the integers to be non-negative for this co-primality to make sense, but we avoid situations where this matters.}
-\section{Fibonacci in historic mathematical cultures}
-One of the reasons why the appearance of Fibonacci numbers in plant form is so compelling to some is because of their long history in mathematics. 
-In the third and second centuries BCE, the Sanskrit scholar Acharya Piṅgala recorded an algorithm for generating poetic metre in which the Fibonacci sequence could be said to be implicit, and 
-one modern scholar suggests this step was first explicitly taken by Virahāṅka in the seventh century CE~\autocite{singhSocalledFibonacciNumbers1985,velankarVrttajatisamuccayaKaviVirahanka1962}.  Writers in this algorithmic tradition over more than a millenium continued to note properties of the resulting syllabic groupings or \textit{mātrā-vṛtta}, most explicitly around 1150 when the scholar Hemacandra observed `the sum of the last and the one before the last is the number ... of the next \textit{mātrā-vṛtta}'\autocite{singhSocalledFibonacciNumbers1985}. 
-
-Beginning at around same time, the golden ratio $\tau$ can be found in the ancient Greek concept of `extreme and mean ratio' recorded in Euclid's \textit{Elements}~\autocite{herz-fischlerMathematicalHistoryDivision1987}. 
-A connection between the golden ratio and Fibonacci numbers was made in passing by Simon Jacob's 1564 \textit{Ein New und Wolgegründt Rechenbuch}~\cite{schreiberSupplementShallitsPaper1995} but not rediscovered until the nineteenth century when the sequence was well known under the name of the Lamé sequence~\autocite{lucasTheorieNombresPremiers1876}. It was Édouard Lucas who renamed the sequence as the Fibonacci sequence in the 1870s, and who in turn gave own his name to the $F^3$ sequence~\autocite{lucasTheorieNombresPremiers1876}. For this reason the `Lucas' in `Lucas numbers' should be pronounced in the same way as the French surname.  The golden angle acquired the symbol $\Phi$, from the ancient Greek sculptor Phidias, at the beginning of the twentieth century~\autocite{barrParametersBeauty1929}.
-
-Lucas's reason for choosing the name Fibonacci for the sequence was based on its appearance in a famous early modern arithmetic textbook, the \textit{Liber abbaci} of 1202, compiled by the scholar known in his lifetime as Leonardo of Pisa, and in the nineteenth century as Fibonacci~\cite{siglerFibonaccisLiberAbaci2002}. This manuscript book was one of the first to introduce long-standing Islamic traditions of computation into Christian European accountancy.  The Fibonacci numbers appear as a somewhat strained example of rabbit population dynamics intended to motivate a computational exercise~\cite{hoyrupFibonacciProtagonistWitness2014}: Fibonacci did not intend the example to be taken seriously as mathematical biology.  While it is plausible that the exercise itself also derived from the Arabic algorithmic tradition, no surviving Arabic text containing such an example has been reported.
-
-
+Two integers $(m,n)$ are co-prime iff%
+\jNote{The word `iff' is not a typo. It means if and only if, and is also a shibboleth.
+	If it is bewildering to you that `iff' means logical equivalence and not just implication then you have not been inducted into the kind of mathematical exposition, roughly first-year undergraduate, we use until around section~\ref{sec:ClassifyingSummary}, so you will want to skip to there. On the other hand you can read all of the rest of the book without knowing what a shibboleth is.}
+their greatest common divisor is equal to 1, so that for example 4 and 11 are co-prime. There are some fiddly edge cases:  $(0,1)$, $(1,1)$ and $(1,n)$ are co-prime for integer $n>1$, but $(0,0)$ and $(0,n)$ are not. These cases are consistent with the observation that  every integer is a divisor of $0$, but the only divisors of $1$ are $1$ and $-1$. S In the next chapter we will review the classic machinery for computing co-primaliy:  the B{\'e}zout relationship and the Euclidean algorithm. 
+% 

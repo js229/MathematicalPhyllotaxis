@@ -5,15 +5,13 @@
 
 \chapter{Classifying cylindrical lattices}
 \label{ch:classifying}
-
-
-\mmafig{Txb0501VanItersonMain}{Lattice space classified by principal parastichy numbers \gp{m,n}. The previous chapter's distinction between parastichy vectors and complementary vectors is dropped so that eg the \gp{1,2} region includes lattices where the principal parastichy pair is \gp{1,2} but also lattices where it is \gphat{1}{2}. 
-}{0.8}
-\section{The van Iterson diagram}
+\abstract{
 The previous chapter made precise the ideas  of a lattice space $\mathcal{L}(d,h)$, where we take the divergence $d$ and the rise $h$ as parameters, and the principal parastichy pair as the pair of integers corresponding to the two shortest informative vectors in the lattice. In this chapter  we solve the problem of classifying every lattice by its principal parastichy pair.
 The answer is given in the van Iterson diagram of Figure~\ref{fig:Txb0501VanItersonMain} and the rest of the chapter explains how this Figure is constructed and its implications. 
  Since the classification changes at the points of lattice space where either the first and second, or the second and third, parastichy vectors are equal in length, we need to find the $d$ and $h$ at which this occurs. This requires us to identify \emph{touching-circle lattices}, and we will first construct Figure~\ref{fig:Txb0501VanItersonMain} by algebraically finding touching-circle lattices, and then see how a more powerful and more abstract approach based on lattice re-normalisation gives the same answer and explains much of the geometric structure of the diagram. 
- 
+}
+ \mmafig{Txb0501VanItersonMain}{Lattice space classified by principal parastichy numbers \gp{m,n}. The previous chapter's distinction between parastichy vectors and complementary vectors is dropped so that eg the \gp{1,2} region includes lattices where the principal parastichy pair is \gp{1,2} but also lattices where it is \gphat{1}{2}. 
+ }{0.8}
 
 \section{Components of the van Iterson diagram: the \branch{m=n} branch}
 \label{sec:mequalsn}
@@ -46,11 +44,11 @@ and then
   x_m&=md-u,\\ 
   x_n&=nd-v. 
   \end{align}
-\begin{jExercise}{ex:calcr2}
+\begin{jExercise}\label{ex:calcr2}
 %	\label{ex:calcr2}
 	Find $r^2$ as a function of $m$, $n$, $x_n$, $x_m$ and $\Delta$.
 \end{jExercise}
-\begin{jAnswer}{ex:calcr2}
+\begin{jAnswer}
 	Note that $n x_n - m x_n=\Delta$ and use this to eliminate $x_n$ and $r^2$ from~\eqref{eq:rm} and~\eqref{eq:rn}.
 	This (or alternatively eliminating $x_m$) yields
 	\begin{align}
@@ -71,7 +69,7 @@ h^2  +  (d-\bar d)^2
 4  (n^2-m^2) r^2 &= 2  n \Delta ( m d - u)-1
 \end{align}
 where we have set  $\bar d= {(nv-mu)}/{(n^2-m^2)}$. The first of these shows that $d$ and $h>0$ lie on a semi-circle, and the second that $r^2$ changes linearly with $d$ on that semi-circle, and thus is a decreasing function of $h$.
-\begin{jExercise}{ex:semi}
+\begin{jExercise}\label{ex:semi}
 	Show that~\eqref{eq:semi} and~\eqref{eq:r2def} are correct.
 \end{jExercise} 
 \begin{jAnswer}{ex:semi}
@@ -88,10 +86,9 @@ Equation \eqref{eq:r2def} follows from the answer to Exercise~\ref{ex:calcr2}, o
 
 
 
-\begin{jExercise}{ex:paxis}
+\begin{jExercise}\label{ex:paxis}
 	Find the values of $x_m$, $x_n$, and $r$ at the left and right
 	intersections of the \branch{m=n} branch with $h=0$.
-	
 \end{jExercise}
 \begin{jAnswer}{ex:paxis}
 	Suppose $m<n$. The $d,h$ semi-circle intersects the $h=0$ axis 
@@ -127,7 +124,7 @@ The crucial organising centres of lattice space are the triple-points, where two
 % \gp{0=1=\hat{1}} and \gp{1=\hat{1}=2} 
 and otherwise the  triple-point is of the form \gp{m=n=n+m} with $0\leq m<n$. 
 The semicircles defined in the previous section provide necessary but not sufficient conditions for a lattice to be a van Iterson lattice with $|\mvec|=|\nvec|$ : we also need that $\mvec$ and $\nvec$ are the principal parastichy vectors. 
-The diagram of  Figure~\ref{fig:Txb0502VanItersonZoom} is organised by these triple-points  at which the lattice has hexagonal symmetry as in eg the \gp{2=3=5} lattice in Figure~\ref{fig:Txb0400LowOrder}. The bifurcations at these triple-points can completely characterise transitions in lattice space.
+The diagram of  Figure~\ref{fig:Txb0502VanItersonZoom} is organised by these triple-points  at which the lattice has hexagonal symmetry as in eg the \gp{2=3=5} lattice in Figure~\ref{fig:Txb0418LowOrder}. The bifurcations at these triple-points can completely characterise transitions in lattice space.
 
 It is possible, as in Exercise~\ref{ex:triplealgebra}, to calculate the positions of the triple-points algebraically, though this does not offer much insight.
 One relation that is worth noting is about the size of the disks that fit into the hexagonal lattice: these 
@@ -140,7 +137,7 @@ have radius $r$ where
 	Find a relation between $r$, $m$ and $n$ at a hexagonal lattice, and use this to show equation~\eqref{eq:hofr}.
 \end{jExercise}
 \begin{jAnswer}{ex:ptriple}
-Consider the triangle of Figure~\ref{fig:Txb0400Apextriangle} which has sides $n\mvec$, $m\nvec$ and $1$. Since the lattice is hexagonal, the top angle of the triangle there is $60^\circ$, so set $|\mvec|=|\nvec|=2r$ and use the cosine rule to find   
+Consider the triangle of Figure~\ref{fig:Txb0409Apextriangle} which has sides $n\mvec$, $m\nvec$ and $1$. Since the lattice is hexagonal, the top angle of the triangle there is $60^\circ$, so set $|\mvec|=|\nvec|=2r$ and use the cosine rule to find   
 \begin{align*}
 	4 r^2  &=  \frac{1}{m^2+mn + n^2} \label{eq:cosine}
 \end{align*}
@@ -176,7 +173,7 @@ It is simple to show from Exercise~\ref{ex:triplealgebra} that on the \branch{m=
 Between each triple-point, there is a point on the branch where the lattice is square. 
 As lattice parameters pass through these square points, the third and fourth parastichy numbers swap and to that extent these points also organise the lattice space. 
 Square lattices also have a role in modelling obvious parastichies as several authors have considered the `most obvious' to be those which are orthogonal. 
-\begin{jExercise}{ex:ptopbranch}
+\begin{jExercise}\label{ex:ptopbranch}
 	At the top of the \branch{m=n} branch, the three principal parastichy numbers change from \gp{m=n,n-m} to \gp{m=n,n+m} at the point where the lattice is a square lattice with principal parastichy numbers \gp{m=n,n-m=n+m}. Find the values of $h$, $r$ and $d$ at which this happens and hence show this is unique on the van Iterson branch.
 \end{jExercise}
 \begin{jAnswer}{ex:ptopbranch}
@@ -211,7 +208,7 @@ These properties taken together prove that the structure visible in the numerica
 
 
 
-\begin{jExercise}{ex:pslope}
+\begin{jExercise}\label{ex:pslope}
 	Show that at the triple-point  $m=n=m+n$, the \branch{m=n} branch, interpreted as a function $h(d)$, has a slope $h'$ given by 
 	\begin{align}
 		\frac{h'}{h} &= - \frac{1}{6 r^2 \Delta}

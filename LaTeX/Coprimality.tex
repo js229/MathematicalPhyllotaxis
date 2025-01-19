@@ -1,19 +1,20 @@
 
 		
 \chapter{Co-primality, continued fractions, and M\"obius maps}
-\SpringerAbstract{%
+\abstract{%
 	It would be wise to skip, or read very glancingly, this chapter on a first reading. 
 	The material on co-prime integers and B\'ezout relations is  only needed for those who want to closely follow the proofs of Chapter~\ref{ch:cylinder}. M\"obius maps are the main language of  the renormalisation approach to the van Iterson diagram discussed at the end of Chapter~\ref{ch:classifying}, but are not at all essential to understand the biological implications of the mathematics.  The details of the matrix form of the Euclidean algorithm may only matter to those curious about the relationships between Fibonacci phyllotaxis and Escher prints.
 }
-\section{Skim this chapter} 
-It would be wise to skip, or read very glancingly, this chapter on a first reading. 
-The material on co-prime integers and B\'ezout relations is  only needed for those who want to closely follow the proofs of Chapter~\ref{ch:cylinder}. M\"obius maps are the main language of  the renormalisation approach to the van Iterson diagram discussed at the end of Chapter~\ref{ch:classifying}, but are not at all essential to understand the biological implications of the mathematics.  The details of the matrix form of the Euclidean algorithm may only matter to those curious about the relationships between Fibonacci phyllotaxis and Escher prints.
 
 
 \section{B\'ezout relations}
 The previous chapter defined co-primality for a pair of integers. An equivalent condition is the existence of a  B\'ezout relation: the integer pair $(u,v)$ satisfies the B\'ezout relation for the non-negative integer pair $(m,n)$ iff
 \begin{align}
 	|n  u-mv| = 1.
+\end{align}
+or euqivalently as a matrix determinant:
+\begin{align}
+	\det \begin{pmatrix} n& v \\ m & u \end{pmatrix} = \pm 1.
 \end{align}
 So $(3,4)$ are a B\'ezout pair for $(8,11)$. 
 If $u$ and $v$ exist then they are a certificate of co-primality: we will see below that $(m,n)$ can satisfy  $ n  u - m v= k$ iff $|k|$ is the greatest common factor of $m$ and $n$. They are not unique because if $(u,v)$ satisfies the B\'ezout relation then so does $(u+km,v+kn)$ for any integer $k$: $(11,15)$ is also a B\'ezout pair for $(8,11)$. We can introduce a range condition by picking a particular $k$ which can be used to enforce $0\leq v< n$, but there is still a further ambiguity because if
@@ -67,7 +68,7 @@ For the small integers in plant spiral counts it is perfectly feasible to comput
 
 \section{Euclid's algorithm}
 \label{sec:euclid}
-Euclid's algorithm finds the highest common factor of two positive integers by repeatedly subtracting the smaller as many times as we can from the larger to find a new, smaller pair of integers,  stopping when one of them is zero. It is  simple to implement, and tracking the variables in the intermediate steps of the algorithm will allow us to understand connections with continued fractions and structure of the van Iterson diagram of Chapter~\ref{ch:cylinder}.
+Euclid's algorithm finds the highest common divisor of two positive integers by repeatedly subtracting the smaller as many times as we can from the larger to find a new, smaller pair of integers,  stopping when one of them is zero. It is  simple to implement, and tracking the variables in the intermediate steps of the algorithm will allow us to understand connections with continued fractions and structure of the van Iterson diagram of Chapter~\ref{ch:cylinder}.
 For example, consider calculating the highest common factor of $4$ and $11$:
 \begin{align}
 	11 - {\jHeadingColour 2}\times 4 & = 3 
@@ -98,7 +99,7 @@ Given integers $n\geq m>0$  we set $r_{-1}=n$, $r_0=m$ and $i=0$:
 \end{proof}
 
 \subsection{Matrix form of the Euclidean algorithm}
-\jpgfig{Txb0301EuclideanTree}{Computing the highest common factor of 4 and 11 by successive matrix reductions upwards to the identity matrix. Conversely, the extended tree downwards from the identity matrix, branching by an $E$ or an $ES$ matrix-multiplication at each node after the second, will contain every pair of co-prime integers, in the first column of each matrix, with the corresponding winding-number pair in the second column. 
+\mmafig{Txb0301EuclideanTree}{Computing the highest common factor of 4 and 11 by successive matrix reductions upwards to the identity matrix. Conversely, the extended tree downwards from the identity matrix, branching by an $E$ or an $ES$ matrix-multiplication at each node after the second, will contain every pair of co-prime integers, in the first column of each matrix, with the corresponding winding-number pair in the second column. 
 The $\jqi$s of the Euclidean reduction emerge as the number of $E$s between each $S$.}{1}
 %
 We can solve the B\'ezout relation by putting  Euclid's algorithm in matrix form. For example
@@ -134,7 +135,7 @@ If we apply the same series of transformations to the column vector $(0,1)$ we w
 	 \begin{pmatrix} 1&0  \\ 0&1 \end{pmatrix} 
 	 \label{eq:M213}.
 \end{align}
-This shows that  $u$ and $v$ which satisfy $|4 v-11 u|=1$ and give us a B\'ezout relation, and since $\det E=1$ but $\det S=-1$, the sign of the determinant of $M$ is determined by how many $S$ matrices appear in the product. It also provides a way to calculate $u$ and $v$:
+This shows there is a  $u$ and $v$ which satisfy $|4 v-11 u|=1$ and give us a B\'ezout relation, and since $\det E=1$ but $\det S=-1$, the sign of the determinant of $M$ is determined by how many $S$ matrices appear in the product. It also provides a way to calculate $u$ and $v$:
 \begin{align*}
 	M_{\jqn{2}\jqn{1}\jqn{3}}&=
 	 \begin{pmatrix} 2 & 1 \\ 1 & 0 \end{pmatrix}\cdot
@@ -187,7 +188,7 @@ As we will see in the next section, this B\'ezout pair is in fact the winding-nu
 So the  $\jqi$'s are all \jqn{1} and the determinant shows that $(F_{j},F_{j-1})$ is a B\'ezout pair. It is not a winding-number pair because $F_{j-1}/F_j>\jhalf$. Note these are not the matrices that appear in Figure~\ref{fig:Txb0301EuclideanTree}.
 \end{jAnswer}
 
-Any integer can be represented as a sum of two multiples of basis integers, and looking at the Euclidean algorithm from a broader perspective, it can  be seen as a series of changes of these bases.  The individual $E^{\jqi}$ matrices correspond to  M\"obius transforms that change base at each step, the product matrix is the change of basis between $m,n$ and $k,1$, and the $ |mv - nu|=k$ relationship tells us about how areas are scaled in the different bases. 
+For those comfortable thinking of vector spaces,  we might think of any pair of co-prime integers as a basis pair for the space of integers.  Given a co-prime pair $m$ and $n$, every integer can be expressed as a sum $n (k u)+ m (-k v)$.  From this perspective the Euclidean algorithm  can  be seen as a series of changes of these bases.  The individual $E^{\jqi}$ matrices correspond to the change of base at each step, the product matrix is the change of basis between $m,n$ and $k,1$, and the $ |mv - nu|=k$ relationship tells us about how areas are scaled in the different bases. 
 
 \section{Farey trees and winding-number pairs}
 
@@ -243,7 +244,7 @@ and recalling that $F_{7}=13$, this generalises easily to
 \label{eq:FibonacciMatrix}
 \end{align}
 %
-\begin{jExercise}{ex:fpairs}
+\begin{jExercise}\label{ex:fpairs}
 	Prove this.
 \end{jExercise}
 %
@@ -262,7 +263,7 @@ Together with the previous section this shows that the winding-numbers for a pai
 Moreover we can calculate the associated Farey intervals for use in Chapter~\ref{ch:cylinder}.
 
 
-\begin{jExercise}{ex:fareyFpair}
+\begin{jExercise}\label{ex:fareyFpair}
 	Show  the Farey interval for the Fibonacci pair $(m,n)= (F_j,F_{j+1})$ contains $1/\tau^2=1/(1+\tau)$ but that for $k>1$ the Farey interval for the generalised Fibonacci pair $(F^k_j,F^k_{j+1})$ contains $\tau/(1+ k \tau)$.
 \end{jExercise}
 \begin{jAnswer}{ex:fareyFpair}  
@@ -347,7 +348,7 @@ f_{\jqn{2},\jqn{1},\jqn{3}}  &=  \jqn{2} + \frac{1}{\jqn{1}+\frac{1}{
 		\jqn{3}+1/\wC}} = \frac{11 \wC+3}{4\wC+1} %\label{eq:frac411}.
 	\end{split}\label{eq:fq}
 \end{align}
-where we recognise the coefficients of the matrix $M_{\jqn{2},\jqn{1},\jqn{3}}$ of equation~\ref{eq:M213} arising from the Euclidean algorithm for 11 and 4. Clearly this is not a co-incidence, and by analogy with the previous sections we can expect that $f$ can be constructed by repeated function compositions moving us down the tree of Figure~\ref{fig:Txb0301EuclideanTree}. 
+where we recognise the coefficients of the matrix $M_{\jqn{2},\jqn{1},\jqn{3}}$ of equation~\ref{eq:M213} arising from the Euclidean algorithm for 11 and 4. Clearly this is not a co-incidence, and by analogy with the previous sections we can see that $f$ can be constructed by repeated function compositions moving us down the tree of Figure~\ref{fig:Txb0301EuclideanTree}. 
 Indeed since $	f_{\jqix{i}}  =  \jqix{i} +1/{\wC}  $, the last two can be written as
 \begin{align}	
 	f_{\jqn{1},\jqn{3}}  &=  	f_{\jqn{1}}(	f_{\jqn{3}}(\wC)) = 	f_{\jqn{1}}\circ 	f_{\jqn{3}}
@@ -361,7 +362,7 @@ and in general
 \end{align}
 Each of the $f$ constructed in this way is a \textit{M\"obius map}.
 
-\subsection{M\"obius functions}
+\subsection{M\"obius maps}
 \label{sec:moebiusdef}
 M\"obius maps have the form\jNote{Poincar\'e called these Fuchsian functions; they have variously been called automorphic functions, Hilbert modular functions, affine transforms or fractional linear transformations.  I follow the authority of Wikipedia, partly because as a native English reader I see an umlaut as conferring scientific respectability.}
 
@@ -422,5 +423,6 @@ say, as in~\eqref{eq:EuclideanMatrixq}. Then
 \end{align}
 showing that~\eqref{eq:fq} holds true in general. 
 
-
+\section{Summary}
+This excursion onto the nursery slopes of hyperbolic geometry and number theory has explored the structure of the Euclidean algorithm as illustrated in Figure~\ref{fig:Txb0301EuclideanTree}. In Chapter 4 we will see this structure reappear in the van Iterson diagram for cylindrical lattices. 
 
