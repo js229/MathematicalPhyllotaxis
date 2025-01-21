@@ -4,17 +4,22 @@
 \label{ch:transformations}
 
 
-%\section{Introduction}
-%The lines drawn on the sunflower, seen locally, join the nearest seed positions and they are by definition the shortest distances between those two points. Yet globally they are not straight lines but curved spirals. Conversely, if we take the lattices of previous chapters and project them onto two-dimensional surfaces which are neither planar nor cylindrical, then there will be metric distortions: we have to stretch the parastichy lines. As we saw by thinking about increasingly squashed lattices,  with fixed divergence $d$ but decreasing rise $h$, the definition and perception of the principal parastichy numbers depend crucially on the metric properties. The same lattice projected onto two different surfaces will typically have the same sets of generating pairs but the specific pair with the property of being the shortest can change depending on the projection. This is to some extent a mathematical artefact: there is no initial constant-curvature surface of sunflower meristem cells upon which organ commitment actually happens before being rolled into the final shape. In practice, each such 'lattice point' is a developmental commitment made at a particular times and geometry of the surrounding tissue micro-environment.
+\abstract{
+This chapter collects the mathematical tools needed to transform lattices without preserving isometry.  The lines drawn on the sunflower, seen locally, join the nearest seed positions and they are by definition the shortest distances between those two points. Yet globally they are not straight lines but curved spirals. Conversely, if we take the lattices of previous chapters and project them onto two-dimensional surfaces which are neither planar nor cylindrical, then there will be metric distortions: we have to stretch the parastichy lines. As we saw by thinking about increasingly squashed lattices,  with fixed divergence $d$ but decreasing rise $h$, the definition and perception of the principal parastichy numbers depend crucially on the metric properties. The same lattice projected onto two different surfaces will typically have the same sets of generating pairs but the specific pair with the property of being the shortest can change depending on the projection. This is to some extent a mathematical artefact: biologically there is no initial constant-curvature surface of sunflower meristem cells upon which organ commitment actually happens before being rolled into the final shape. In practice, each such 'lattice point' is a developmental commitment made at a particular times and geometry of the surrounding tissue micro-environment. 
+}
 
 
 \section{Smoothly changing lattices}
 The bifurcation theory approach of the previous chapter invites us to think about the paradoxical idea of the `smoothly changing lattice'.
-One way to think about this is illustrated in Figure~\ref{fig:Txb0601Transition} where we have applied a  variable vertical stretch to a golden lattice.
+One way to think about this is illustrated in Figure~\ref{fig:Txb0602Transition} where we have applied a  variable vertical stretch to a golden lattice.
 While we can no longer define parastichy numbers using the lattice formalism, they are still easily identifiable visually and Chapter~\ref{ch:placement} will give a natural way to formalise this. 
 %
 
-\mmafig{Txb0601Transition}{Compare with Figure~\ref{fig:ChurchEuphorbia}. Lattice-like patterns change principal parastichy numbers under smooth geometric transformations. A regular golden lattice has its $z$-coordinates smoothly transformed so that the rises between successive points become smaller. From bottom to top, the parastichy pairs $(3,5)$, $(5,8)$ and $(8,13)$ are shown. 
+\mmafig{Txb0601ScalingBar}{Compare with Figure~\ref{fig:ChurchEuphorbia}. Lattice-like patterns change principal parastichy numbers under smooth geometric transformations. A regular golden lattice has its $z$-coordinates smoothly transformed so that the rises between successive points become smaller. From bottom to top, the parastichy pairs $(3,5)$, $(5,8)$ and $(8,13)$ are shown. 
+	In addition, 
+	parastichy chains are drawn around the cylinder at various heights, joining each point to the next nearest on the right.
+}{1.0}%
+\mmafig{Txb0602Transition}{Compare with Figure~\ref{fig:ChurchEuphorbia}. Lattice-like patterns change principal parastichy numbers under smooth geometric transformations. A regular golden lattice has its $z$-coordinates smoothly transformed so that the rises between successive points become smaller. From bottom to top, the parastichy pairs $(3,5)$, $(5,8)$ and $(8,13)$ are shown. 
 	In addition, 
 	parastichy chains are drawn around the cylinder at various heights, joining each point to the next nearest on the right.
 }{1.0}%
@@ -24,7 +29,7 @@ This Figure has been chosen to illustrate a transformation similar to the
  rising phyllotaxis that Church documented in Figure~\ref{fig:ChurchEuphorbia}. It is not meant to suggest that such empirical patterns are in fact generated by smooth global stretches of an initial regular lattice: instead we will need in the next chapters to explore how local changes of geometry affect local pattern.  
 
 
-\clearpage
+
 \section{Lattices on disks}
 A related stretching of lattices comes from putting them onto disks. 
 Visualisations of phyllotaxis on a disk rely on looking down from above on either a microscopic horizonatal slice across the SAM, or on a macroscopic view  onto the head of a sunflower, but no matter the scale a crucial point is that the oldest organs placed are on the \textit{outside} of the disk. 

@@ -132,7 +132,7 @@ have radius $r$ where
 \begin{align}
 	h &= 2\sqrt{3} r^2  \label{eq:hofr}
 \end{align}
-\begin{jExercise}{ex:ptriple} 
+\begin{jExercise}\label{ex:ptriple} 
 	\label{ex:triplealgebra}
 	Find a relation between $r$, $m$ and $n$ at a hexagonal lattice, and use this to show equation~\eqref{eq:hofr}.
 \end{jExercise}
@@ -238,21 +238,17 @@ We have shown that packing efficiency remains close to the hexagonal optimum on 
 
 
 \section{Lattice renormalisation}
-\mmafig{Txb0506Renormalisation}{ A lattice with arbitrary parastichy numbers can be 
-	constructed from a $(0,1)$ lattice by a carefully chosen scaling and rotation that preserves the cylindrical periodicity. Theorem~\ref{thm:renormalization} shows how to compute the necessary complex number $z_m$ of the scaled rotation.
-	The $(0,1)$ lattice has $d=7/72$ and $h=1$ and is shown as the
-	large coloured principal parallelogram with vertical dashed periodicity lines. Rotating that lattice by
-	$(15048+5184 i)/48865$ yields a $(1,3)$ lattice, shown left with white dots on its green periodic cylinder,
-	but rotation by $(9864+ 5184 i)/23953$ yields a $(1,2)$ lattice shown right. 
-}{1}
+
 The algebra of the Chapter so far is straightforward, if a little tedious, but it doesn't give any insight into the remarkable self-similarity of the van Iterson diagram. The technique of lattice renormalisation uses the observation that one lattice can be mapped to another by scaling and rotating to give a powerful way of mapping from one part of lattice space to another. Lattice renormalisation gives considerably more insight into the structure of the van Iterson diagram than the results so far, at the cost of introducing the technology of M{\"obius} functions, and although in my view it adds little to a scientific understanding of the appearance of Fibonacci numbers it does provide an   description of lattice space.
 \label{sec:levitov}
 
 We saw in the previous chapter that every cylindrical lattice unrolls to a plane lattice, but not all plane lattices have the right periodicity to be mapped down onto our cylinder of circumference 1. Specifically, a plane lattice can be collapsed to a cylindrical lattice using $(x,z)\rightarrow(x-\left[x\right],z)$ exactly when it contains the vector $(1,0)$; and restricting to only monojugate lattices as we do adds the requirement that that must be the shortest vector in that direction; we called this being $1$-periodic. 
 Now suppose we have a cylindrical lattice with principal parastichy numbers \gp{m,n}. We can subject the corresponding plane lattice to a rotation, but in general the rotated lattice will not be $1$-periodic. Suppose though that we choose the rotation that maps the principal parastichy vector $\pvec{m}$ down onto the $x$-axis, followed by a uniform scaling that maps it onto the point $(1,0)$: then by construction the transformed plane lattice is $1$-periodic and there is a corresponding cylindrical lattice. At this point it's useful to represent lattice parastichy vectors by complex numbers $z_k=(kd-[kd])+i kh$, because the transformation we have just described is exactly division of every lattice point by $z_m$; $z$ here is a complex coordinate and not the real vertical coordinate of previous chapters. 
  An example is given in Figure~\ref{fig:Txb0506Renormalisation}. By a weak analogy with theoretical physics this rotate-and-scale process is called lattice renormalisation, and we call the corresponding parastichy vectors of the renormalised lattice $w_m$.
-
-
+\mmafig{Txb0506Renormalisation}{A lattice with arbitrary parastichy numbers can be 
+	constructed from a $(0,1)$ lattice by a carefully chosen scaling and rotation that preserves the cylindrical periodicity. From left to right, a lattice (here with principal parastichy numbers 3 and 2) is rotated so that the principal parastichy vector $\pvec{3}$ becomes horizontal, then scaled to length 1 so it is the periodicity vector of a new lattice on the gray cylinder. The second principal parastichy vector, here 2, must map to the second shortest vector in the new lattice, which has principal parastichy numbers $(0,1)$. 
+	Theorem~\ref{thm:renormalization} inverts this compound of rotation and scaling to compute the a complex number $z_m$ which can multiply the $(0,1)$ gray lattice and retrieve the desired $(m,n)$ lattice. 
+}{1}
 
 The original and the renormalised lattice are represented by two different points $(d,h)$ in lattice space, and each point in that space has co-ordinates which are those of the parastichy vector of smallest positive rise of the corresponding lattice. So renormalisation corresponds to a map $w_1=f(z_1)$; we will compute it, or rather its inverse $g$ such that $g(w_1)=z_1$. This gives a way of constructing a lattice with any desired principal parastichy numbers $m$ and $n$ by multiplying a normalised one by a particular complex number $z_m$. Moreover, since the angle between the parastichy vectors is not changed by the renormalisation, a lattice with any desired such angle, such as a hexagonal lattice, can be found by starting from an lattice with the same angle in $\gp{0,1}$ space. 
 
@@ -313,7 +309,7 @@ So we could use $z_1$ as the $z$ of the theorem. But as we show below, the imagi
 \end{proof}
 The M\"obius map $g$ may include an odd or even number of inversions in the unit circle, and it maps the upper half complex plane to either the upper or lower half depending on the sign of $\Delta_{mn}$. 
 
-\begin{jExercise}{ex:signz}
+\begin{jExercise}\label{ex:signz}
 %	\label{ex:signz}
 	Suppose that $w=d_0+ih_0$ with $h\geq 0$. Compute the real and imaginary parts of $z = \Delta_{mn}g_{mn}(w)$ and show that the imaginary part of $z$ is always non-negative.
 \end{jExercise}
@@ -340,7 +336,6 @@ and then setting $h=\Im \Delta_{mn}z_1$ shows that $z$ has positive rise.
 We can use the transformation $g_{mn}$ to calculate the regions of
 lattice space as shown in more detail in Figure~\ref{fig:Txb0507VIQ}.
 \mmafig{Txb0507VIQ}{The  $\gp{1,3}$ region of lattice space is the image of the \gp{1,3} region under the $g_{mn}$ of equation~\eqref{eq:gDefinition} for $(m,n)=(1,3)$ .
-	The right hand diagram is an enlargement of the left-hand one.  
 }{1.0}
 In general there are two choices for the winding-number pair for $(m,n)$ and these correspond to the two $\gp{m,n}$ regions linked by the reflection symmetry.
 
@@ -349,7 +344,7 @@ In general there are two choices for the winding-number pair for $(m,n)$ and the
 Once we have done all this work to see where the renormalisation transform comes from, there is a payoff in simple characterisations of the van Iterson diagram  as illustrated by the following exercises. Each of these results were originally found without the renormalisation transform, but now the mathematical structure becomes clearer. 
 
 
-\begin{jExercise}{ex:circles}
+\begin{jExercise}\label{ex:circles}
 	Suppose that $m ,n ,u, v$ are integers satisfying  $m v - n u =\Delta $ with $|\Delta|=1$.  Find  \gp{m,n} lattices which are  orthogonal and show they lie on circles in van Iterson space.
 \end{jExercise}
 \begin{jAnswer}{ex:circles}
@@ -378,7 +373,7 @@ Once we have done all this work to see where the renormalisation transform comes
 	
 \end{jAnswer}
 
-\begin{jExercise}{ex:shcircles}
+\begin{jExercise}\label{ex:shcircles}
 	Find  \gp{m,n} lattices which are touching-circle and the special touching-circle cases of square and hexagonal lattices. 
 	\label{ex:orthogonal}
 \end{jExercise}
@@ -411,7 +406,7 @@ There are two hexagonal lattice points in \gp{0,1} at $e^{i\pi/3}$ and $e^{2i\pi
 	
 \end{jAnswer}
 
-\begin{jExercise}{ex:calcprinciplay}
+\begin{jExercise}\label{ex:calcprinciplay}
 %\label{ex:calcprinciplay}
 	Find the magnitude of the principal parastichy vector in an \gp{m,n}  lattice with angle $\theta$ between its principal parastichy vectors.
 	Find the radius of the disks in a touching circle lattice as a function of $\theta$, and the divergence $d$ as a function of $r$.
@@ -439,13 +434,12 @@ d&=		\jhalf
 As $w_1$ rotates around the unit circle from $e^{2i\pi/3}$ to $e^{i\pi/2}$ to $e^{i\pi/3}$, the inverse square diameter of the transformed lattice increases from $m^2-mn+n^2$at the top triple point on the $m=n$ branch, through  $m^2+n^2$ at the square lattice point, down to $m^2+mn+n^2$  at the lower triple point.
 \end{jAnswer}
 
-\begin{jExercise}{ex:fibthresholds}
+\begin{jExercise}\label{ex:fibthresholds}
 %	\label{ex:fibthresholds}
 Suppose that the Fibonacci branch of the van Iterson tree is followed as $r$ is decreased.
 Show that the larger parastichy number becomes $F_{k+1}$ at approximately  $r^{-1}={\sqrt{2}F_k}$.
 \end{jExercise}
 \begin{jAnswer}{ex:fibthresholds}
-
 If $m$ and $n$ are adjacent Fibonacci numbers $F_{k}$ and $F_{k+1}$, then using $F_k\approx \tau^k/\sqrt{5}
 $ we find the value of $r$ on the branch is approximately
 	\begin{align}
@@ -459,7 +453,7 @@ the larger Fibonacci number becomes $F_{k+1}$ at approximately $r=\sqrt{5/2}\tau
 
 
 
-\begin{jExercise}{ex:crvani}
+\begin{jExercise}\label{ex:crvani}
 		Compute the centre and the radius of the circle in van Iterson space on which the $m=n$ branch lies.
 \end{jExercise}
 
@@ -486,7 +480,7 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 
 	\end{jAnswer}
 	
-	\begin{jExercise}{ex:whenno}
+	\begin{jExercise}\label{ex:whenno}
 		If $m$ and $n$ are co-prime and $m<n$, when can a $\gp{m,n}$ touching-circle lattice be non-opposed?
 	\end{jExercise}
 	\begin{jAnswer}{ex:whenno}
@@ -526,21 +520,21 @@ Nevertheless, given that there clearly are molecular mechanisms that promote par
 
 For the hexagonal lattice, the previous result that $h= 2\sqrt{3} r^2$ 
 recovers the standard result that the packing efficiency of the hexagonal lattice is $\pi/2\sqrt{3}$; this implies that on every path through van Iterson lattices the packing efficiency keeps increasing and then decreasing so as to pass through this value at every triple-point.  
-\begin{jExercise}{ex:localpacking}
+\begin{jExercise}\label{ex:localpacking}
 Show that the packing efficiency of a van Iterson lattice is locally maximised at every triple-point.
 \end{jExercise}
 \begin{jAnswer}{ex:localpacking}
 	Lagrange proved in 1773 that a hexagonal lattice is the closest possible lattice packing, and triple-points are the only points in lattice space at which the lattice is hexagonal. For more on the connection between the modular group and sphere-packings see, say, Berger~\cite{bergerGeometryRevealedJacob2010}.
 \end{jAnswer}
 We can calculate the packing efficiency $\beta$ across van Iterson space by using the classification of this chapter to find $\mvec$.  Within the $(0,1)$ region, the primary parastichy vector is $(1,0)$ of length 1, and $\beta$ is simply $\pi/ {4 h }$.  Since $\beta$ is not changed by a rigid rotation and scaling of a lattice, we could also simply map this function  $\pi/ {4 h }$ using the M{\"o}bius transforms into each region. Figure~\ref{fig:Txb0509PackingTreePlot} shows a contour plot of the packing efficiency $\beta$ along with a graph of $\beta$ along a horizonatal transect of lattice space.
-\mmafig{Txb0509PackingTreePlot}{Top: packing efficiency $\beta$ across van Iterson space (Close to hexagonal: $\beta>0.8$, Tight: $\beta>0.7$, Loose: $\beta>0.6$, Looser $\beta<0.6$). Bottom graph: $\beta$ as a function of $d$ across the line $h=0.005$. Note that while the divergence $\tau/2\pi$ corresponding to the golden angle is a local maximum of $\beta$, it is not a global maximum.
+\mmafig{Txb0509PackingTreePlot}{The golden angle cannot achieve for maximal packing. Top packing efficiency $\beta$ across van Iterson space (Close to hexagonal: $\beta>0.8$, Tight: $\beta>0.7$, Loose: $\beta>0.6$, Looser $\beta<0.6$). Bottom graph: $\beta$ as a function of $d$ across the line $h=0.005$. Note that while the divergence $\tau/2\pi$ corresponding to the golden angle is a local maximum of $\beta$, it is not a global maximum.
 }{0.8}%
 Since packing efficiency scales like $1/h$ in the $(0,1)$ region, its contour lines there are horizontal, and so the contour lines of packing efficiency in each other, M{\"o}bius transformed region, become arcs of circles. 
 
 \section{The structure of multijugate lattice space}
 \label{sec:Jlattice}
 Implicit in the structure of renormalisation is the idea of a parastichy vector moving down through the axis and having rise $h=0$ at that point. This process gives us a way to navigate through a three-dimensional lattice space $(d,h,J)$ where the jugacy variable only takes integer values. We saw in the previous chapter that the principal vectors of a tree with parameters $(d/J,h/J,J)$ were $J$ times the principal vectors of a tree with $(d,h,1)$,so that the van Iterson tree of a multijugate is structurally identical to the $J=1$ version, but simply reduced in scale by a factor $J$.  Figure~\ref{fig:Txb0499showJugacyTrees} gives one visualisation of this three dimensional parameter space, but other visualisations are possible. 
-\mmafig{Txb0499showJugacyTrees}{XXX to edit The separate van-Iterson trees for lattices of jugacies 1 to 4, each drawn on their own plane so that they meet on the $h=0$ axis, with the tree for jugacy $J>1$ pinned at an angle $ 180^\circ/J$ to that for $J=1$.   Here we have placed the $J=1$ tree on the bottom of the box and $J=1/2$ on the front}{1.0}
+\mmafig{Txb0510MultiJugacy}{XXX to edit The separate van-Iterson trees for lattices of jugacies 1 to 4.}{1.0}
 
 \section{Notes to this Chapter}%~\ref{ch:classifying}
 
