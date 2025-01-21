@@ -32,14 +32,14 @@ figureStyle = jStyle
 jParastichyColour[n_] := figureStyle["ParastichyColour"][n];
 jFont[n_] := {FontFamily->figureStyle["FontFamily"],FontSize->n};
 
-
+rebuildingData = True;
 getTextbookData[name_] := Module[{data=PersistentSymbol["TextbookData"] },data[name]];
 setTextbookData[name_,value_] := Module[{data},
 data=PersistentSymbol["TextbookData"] ;
 data = Append[data,name->value];
 PersistentSymbol["TextbookData"] = data;
 ];
-rebuildingData = False;
+
 If[rebuildingData,PersistentSymbol["TextbookData"] =<||>]
 
 
@@ -56,18 +56,20 @@ shExport[x_] := x;
 
 (* ::Input::Initialization:: *)
 fpair[n_] := {Fibonacci[n],Fibonacci[n+1]};
-data=Map[<|"n"->#, "pair"-> fpair[#],"pairText"->pairToText[fpair[#]], "rise"->1/(Last@vanItersonLabelPoint[fpair[#]])|>&,Table[n,{n,0,11}]] ;
+data=Map[<|"n"->#, "pair"-> fpair[#],"pairText"->pairToText[fpair[#]], "rise"->1/(Last@vanItersonLabelPoint[fpair[#]])|>&,Table[n,{n,0,12}]] ;
+touchingDiskRadius[{m_,n_}] := 1/2 Sqrt[1/(m^2+m n + n^2)]
+data= Map[Append[#,"Radius"-> touchingDiskRadius[#pair]]&,data];
 
 
 (* ::Input::Initialization:: *)
-pairToText[{m_,n_}] :=  Style[StringTemplate["(``,``)"][m,n],jFont[Scaled[0.03]]];
+pairToText[{m_,n_}] :=  Style[StringTemplate["(``,``)"][m,n],Directive[FontSize->Scaled[0.03],FontFamily->jStyle["DisplayFontFamily"]]];
 Ch5FibScalingBar := Module[{},
-Show[ListLogPlot[Map[{First[#["pair"]],#["rise"]}& ,data],BaseStyle->setGill,
+Show[ListPlot[Map[{First[#["pair"]],1/#["Radius"]}& ,data],BaseStyle->setFontFamily,
 PlotStyle->jParastichyColour[1]
-,PlotRange->{{-10,110},{0.5,10^5}}
+,PlotRange->{{-10,170},{1* 10^0, 10^3}}
 ,Frame->{{True,False},{True,False}},
-FrameLabel->{"Fibonacci count" ,"Inverse Rise"},FrameTicks->{{Automatic,None},{{0,89},None}}]
-,Graphics[Map[Text[#["pairText"],{First[#["pair"]],Log[#["rise"]]},{-1.5,0}]&,data]]
+FrameLabel->{"Parastichy count" ,"\!\(\*SubscriptBox[\(Log\), \(10\)]\) Circumference"},FrameTicks->{{{1,2,10,100,500},None},{{0,89,144},None}},ScalingFunctions->"Log10"]
+,Graphics[Map[Text[#["pairText"],{First[#["pair"]],Log10[1/#["Radius"]]},{-1.5,0}]&,data]]
 ]
 ]
 
@@ -340,7 +342,6 @@ diskSeeds[lattice_,voronoi_,central_] := Module[{g,mnList,disk,diskPoints,inner,
 disk = latticeGraphicRegion[lattice,"Disk"];
 diskPoints = latticePoints[lattice,"Disk"];
 
-
 g = Show[
 Graphics[
 {
@@ -392,6 +393,30 @@ vClipList = RegionDifference[vClipList,innerDisk];
 MeshPrimitives[vClipList,1]
 ];
 
+makeLatticeVoronoi[] :=Module[{nPoints,rise,store},
+nPoints = 1500;
+rise = 0.0001;
+goldenLattice200 = latticeCreateDH[{GoldenAngle/(2\[Pi]),rise},{0,rise*nPoints}];
+
+latticeLN =logarithmicDiskLattice[goldenLattice200];
+latticeEA =quadraticDiskLattice[goldenLattice200];
+latticeIM=intermediateDiskLattice[goldenLattice200];
+voronoiLN = makeVoronoiDiskLines[latticeLN];
+voronoiEA = makeVoronoiDiskLines[latticeEA];
+voronoiIM = makeVoronoiDiskLines[latticeIM];
+
+store =<|
+"LN"-> <|"Lattice"-> latticeLN,"Voronoi"->voronoiLN|>,
+"EA"-> <|"Lattice"-> latticeEA,"Voronoi"->voronoiEA|>,
+"IM"-> <|"Lattice"-> latticeIM,"Voronoi"->voronoiIM|>
+|>;
+store
+];
+
+
+(* ::Input::Initialization:: *)
+
+(*
 
 makedisks := If[rebuildingData, Module[{nPoints,rise},
 nPoints = 1500;
@@ -417,7 +442,7 @@ store= getTextbookData["Ch5DiskVoronoi"];
 latticeLN= store["LN"]["Lattice"];
 voronoiLN = store["LN"]["Voronoi"];
 latticeEA = store["EA"]["Lattice"];
-voronioEA=store["EA"]["Voronoi"];
+voronoiEA=store["EA"]["Voronoi"];
 ]
 ]
 
@@ -429,31 +454,34 @@ store = Append[store,"LN"-> <|"Lattice"-> latticeLN,"Voronoi"->voronoiLN|>];
 store = Append[store,"EA"-> <|"Lattice"-> latticeEA,"Voronoi"->voronoiEA|>];
 setTextbookData["Ch5DiskVoronoi",store];
 ]];
+*)
 
 diskParastichyMN =  Reverse@{21,34,55,89};
 diskParastichyColours  =   <|1->jParastichyColour[1],2->jParastichyColour[2],3->jParastichyColour[3],4->Black|>;
 
 
 (* ::Input::Initialization:: *)
-makeCh5Transforms := Module[{central},
-makedisks;
+makeCh5Transforms := Module[{central,store,showRow},
+store=makeLatticeVoronoi[] ;
+voronoiToShow=KeyTake[store,{"LN","EA"}];
 central = 1.01;
 GraphicsColumn[{
-GraphicsRow[{
-diskParastichyLine[latticeLN,central],diskParastichyLine[latticeEA,central]
-}
+GraphicsRow[
+Values@Map[diskParastichyLine[#Lattice,central]&,voronoiToShow]
 ],
 GraphicsRow[
-{diskSeeds[latticeLN,voronoiLN,central],diskSeeds[latticeEA,voronioEA,central]}]
-}]
+Values@Map[diskSeeds[#Lattice,#Voronoi,central]&,voronoiToShow]
+]
+}
+]
 ];
 
 
 (* ::Input::Initialization:: *)
-setGill = Directive[FontFamily->jStyle["FontFamily"],FontSize->14];
-setBaseGill = BaseStyle->setGill;
+setFontFamily = Directive[FontFamily->jStyle["FontFamily"],FontSize->14];
+setBaseGill = BaseStyle->setFontFamily;
 
-legendText = Map[Style[#,setGill]&,ToString/@Reverse@diskParastichyMN];
+legendText = Map[Style[#,setFontFamily]&,ToString/@Reverse@diskParastichyMN];
 gLabel = Graphics[
 {Text["Logarithmic spiral",Scaled[{0.275,1}],{0,1}],
 ,Text["Equal area",Scaled[{0.725,1}],{0,1}]
@@ -467,23 +495,13 @@ Show[Legended[
 Show[{makeCh5Transforms, gLabel}]
 ,Placed[LineLegend[Reverse@Values[diskParastichyColours],legendText],{{1/2,1/2},{1/2,1/2}}]
 ]
-,BaseStyle->setGill
+,BaseStyle->setFontFamily
 ];
 
 
 
 (* ::Input::Initialization:: *)
-Ch5Sunflower := Legended[sunflowerSeeds[latticeIM,voronoiIM,central],
-Placed[
-LineLegend[
-Map[sunParaColours[[#StyleIndex]]&,paraData]
-,Map[#Parastichy&,paraData]
-,LabelStyle->jFont[12]
-],{{1,1},{1,1}}]]
-
-
-(* ::Input::Initialization:: *)
-sunParaColours = Join[Values@diskParastichyColours,Part[ColorData[3,"ColorList"],{1,2,4}]];
+sunParaColours = Join[Values@diskParastichyColours,Part[ColorData[3,"ColorList"],{2,9,6}]];
 sunflowerParastichyPlot[lattice_,m_,kRange_,styleIndex_,tRange_] := Module[{func,plot},
 func[k_]:=  First@latticeParastichyFunctions[lattice,m,k,"Disk"];
 plot[k_]:= ParametricPlot[func[k][t],{t,tRange[[1]],tRange[[2]]}
@@ -492,16 +510,8 @@ plot[k_]:= ParametricPlot[func[k][t],{t,tRange[[1]],tRange[[2]]}
 Map[plot,kRange]
 ];
 
-paraData = {
-<|"Parastichy"->5,"k"->{70,68},"StyleIndex"->7,"tRange"->{0.985,1}|>
-,<|"Parastichy"->8,"k"->{68},"StyleIndex"->6,"tRange"->{0.95,0.999}|>
-,<|"Parastichy"->13,"k"->{50,40},"StyleIndex"->5,"tRange"->{0.88,0.99}|>
-,<|"Parastichy"->21,"k"->{70,38},"StyleIndex"->1,"tRange"->{0.6,.98}|>
-,<|"Parastichy"->34,"k"->{70,48},"StyleIndex"->2,"tRange"->{0.1,0.9}|>
-,<|"Parastichy"->55,"k"->{0,53},"StyleIndex"->3,"tRange"->{0,.8}|>
-,<|"Parastichy"->89,"k"->{0},"StyleIndex"->4,"tRange"->{0,0.25}|>
-};
 
+(* ::Input::Initialization:: *)
 
 sunflowerSeeds[lattice_,voronoi_,central_] := Module[{g,mnList,disk,diskPoints,inner,outer,v},
 disk = latticeGraphicRegion[lattice,"Disk"];
@@ -527,6 +537,34 @@ Graphics[
 ]
 ];
 g
+];
+
+
+
+(* ::Input::Initialization:: *)
+paraData = {
+<|"Parastichy"->5,"k"->{59},"StyleIndex"->7,"tRange"->{0.985,1}|>
+,<|"Parastichy"->8,"k"->{66},"StyleIndex"->6,"tRange"->{0.95,0.999}|>
+,<|"Parastichy"->13,"k"->{30},"StyleIndex"->5,"tRange"->{0.88,0.99}|>
+,<|"Parastichy"->21,"k"->{65},"StyleIndex"->1,"tRange"->{0.6,.98}|>
+,<|"Parastichy"->34,"k"->{68},"StyleIndex"->2,"tRange"->{0.0,0.9}|>
+,<|"Parastichy"->55,"k"->{55},"StyleIndex"->3,"tRange"->{0,.8}|>
+,<|"Parastichy"->89,"k"->{0},"StyleIndex"->4,"tRange"->{0,0.7}|>
+};
+
+
+
+(* ::Input::Initialization:: *)
+central=1.01;
+Ch5Sunflower :=
+Show[Graphics[{},PlotRange->{{-1,2},{-1,1}}],
+ Legended[sunflowerSeeds[latticeIM,voronoiIM,central],
+Placed[
+LineLegend[
+Reverse@Map[sunParaColours[[#StyleIndex]]&,paraData]
+,Reverse@Map[#Parastichy&,paraData]
+,LabelStyle->jFont[12]
+,LegendFunction->(Framed[#,Background->Lighter[jStyle["CylinderColour"]],FrameStyle->None]&)],{{0.9,0.5},{1,0.5}}]]
 ];
 
 
@@ -618,14 +656,6 @@ latticeCreateDH[{N@GoldenAngle/(2 \[Pi]),rise},{0,rise*nPoints}],parametricPinea
 
 
 (* ::Input::Initialization:: *)
-
-
-
-Ch5PineappleVoronoi := Show[makePineappleVoronoi[pineappleLattice,{5,8}]]
-
-
-
-(* ::Input::Initialization:: *)
 makePineappleVoronoi[lattice_,mList_] := Module[{voronoiBulge,g},
 voronoiBulge = bulgeVoronoiLines[lattice];
 
@@ -665,26 +695,10 @@ g
 
 (* ::Input::Initialization:: *)
 
-pineFrame[s_] := Show[makeGraphicPineapple[parametricPineapple[s],{5,8}],
-PlotRange->{ {-2.6,2.6},{0,7.5}},Axes->False];
-pineFrameV[s_] := Show[makePineappleVoronoi[parametricPineapple[s],{5,8}],
-PlotRange->{ {-2.6,2.6},{0,7.5}},Axes->False]
-
-pineFrameSet = {pineFrame[0],pineFrame[.2],pineFrame[1]};
 
 
-(* ::Input::Initialization:: *)
-pineFrameVSet = getTextbookData["Ch5PineFrameVSet"];
-showPineSet  :=Legended[GraphicsRow[pineFrameVSet,Frame->All,FrameStyle->LightGray],
-Placed[
-Framed[
-LineLegend[ {jParastichyColour[1],jParastichyColour[2]},{5,8},LabelStyle->setGill]
-,Background->White
-]
-,{{1/3,.9},{1/2,1}}]
-];
+Ch5PineappleVoronoi := Show[makePineappleVoronoi[pineappleLattice,{5,8}]]
 
-Ch5PineSet  := showPineSet
 
 
 (* ::Input::Initialization:: *)
