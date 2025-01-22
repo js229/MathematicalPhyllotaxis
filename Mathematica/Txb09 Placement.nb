@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      4288,        129]
-NotebookOptionsPosition[      3028,         95]
-NotebookOutlinePosition[      3493,        113]
-CellTagsIndexPosition[      3450,        110]
+NotebookDataLength[     25623,        607]
+NotebookOptionsPosition[     23685,        562]
+NotebookOutlinePosition[     24150,        580]
+CellTagsIndexPosition[     24107,        577]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -45,8 +45,17 @@ Cell[BoxData[
  CellChangeTimes->{{3.943444399175892*^9, 3.943444427308735*^9}, {
   3.9434452421537476`*^9, 3.9434452754027004`*^9}, {3.9434454063322163`*^9, 
   3.9434454175717316`*^9}},
- CellLabel->
-  "In[155]:=",ExpressionUUID->"fd735afe-78de-c745-9b72-d4836d2fc45f"]
+ CellLabel->"In[1]:=",ExpressionUUID->"fd735afe-78de-c745-9b72-d4836d2fc45f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"jParastichyColour", "[", "n_", "]"}], ":=", " ", 
+   RowBox[{
+    RowBox[{"jStyle", "[", "\"\<ParastichyColour\>\"", "]"}], "[", "n", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9465254119625645`*^9, 3.9465254366721954`*^9}},
+ CellLabel->"In[77]:=",ExpressionUUID->"1f09dbfe-53b6-5741-8ed4-d140700c80e1"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -56,18 +65,476 @@ Cell["Txb0901DCApparatus", "Section",
   3.94561039948341*^9}},ExpressionUUID->"20bf39d3-36f4-084b-b5ad-\
 2e0f2eaf9160"],
 
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"jFont", "[", "n_", "]"}], ":=", " ", 
+   RowBox[{"Directive", "[", 
+    RowBox[{
+     RowBox[{"FontSize", "->", "n"}], ",", 
+     RowBox[{"FontFamily", "->", 
+      RowBox[{"jStyle", "[", "\"\<FontFamily\>\"", "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ch8DCApparatus", " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"appcolour", " ", "=", " ", "LightGray"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"fieldColour", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"jStyle", "[", "\"\<ParastichyColour\>\"", "]"}], "[", "1", 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"dropColour", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"jStyle", "[", "\"\<ParastichyColour\>\"", "]"}], "[", "2", 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"diskThickness", " ", "=", " ", "1"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"dropRadius", " ", "=", " ", "0.4"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"disk", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FaceForm", "[", "appcolour", "]"}], ",", 
+         RowBox[{"Cylinder", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0", ",", "diskThickness"}], "}"}]}], "}"}], 
+           ",", "10"}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"dropper", "  ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FaceForm", "[", "appcolour", "]"}], ",", 
+         RowBox[{"Tube", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0", ",", "16"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0", ",", "20"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"10", ",", "10", ",", "20"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"10", ",", "10", ",", "0"}], "}"}]}], "}"}], ",", 
+           ".5"}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"airDrops", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"dropColour", ",", 
+         RowBox[{"Map", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Sphere", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0", ",", "#"}], "}"}], ",", "dropRadius"}], 
+             "]"}], "&"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"12", ",", "8", ",", "4"}], "}"}]}], "]"}]}], "}"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"airField", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"fieldColour", ",", 
+         RowBox[{"Arrow", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "0", ",", "14"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", "0", ",", "6"}], "}"}]}], "}"}], "]"}]}], 
+        "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"airTime", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Arrowheads", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "Automatic"}], ",", "Automatic"}], "}"}], "]"}], ",", 
+         RowBox[{"Arrow", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "0", ",", "12"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", "0", ",", "8"}], "}"}]}], "}"}], "]"}]}], 
+        "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"arrow", "[", "angle_", "]"}], " ", ":=", " ", 
+       RowBox[{"Module", "[", " ", 
+        RowBox[{
+         RowBox[{"{", "cs", "}"}], ",", 
+         RowBox[{
+          RowBox[{"cs", "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Cos", "[", "angle", "]"}], ",", 
+             RowBox[{"Sin", "[", "angle", "]"}]}], "}"}]}], ";", " ", 
+          RowBox[{"Arrow", "[", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"cs", " ", "*", " ", "1"}], ",", 
+               RowBox[{"diskThickness", "*", "1.5"}]}], "]"}], ",", 
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"cs", "*", "8"}], ",", 
+               RowBox[{"diskThickness", "*", "1.5"}]}], "]"}]}], "}"}], 
+           "]"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"diskarrows", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"fieldColour", ",", 
+         RowBox[{"Map", "[", 
+          RowBox[{"arrow", ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"10", "+", " ", 
+              RowBox[{"Subdivide", "[", " ", 
+               RowBox[{"0", ",", " ", "360", ",", " ", "6"}], "]"}]}], ")"}], 
+            " ", "Degree"}]}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"diskPoint", "[", 
+        RowBox[{"angle_", ",", "r_"}], "]"}], " ", ":=", " ", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "cs", "}"}], ",", 
+         RowBox[{
+          RowBox[{"cs", "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Cos", "[", "angle", "]"}], ",", 
+             RowBox[{"Sin", "[", "angle", "]"}]}], "}"}]}], ";", " ", 
+          RowBox[{"Sphere", "[", "  ", 
+           RowBox[{
+            RowBox[{"Append", "[", 
+             RowBox[{
+              RowBox[{"r", " ", "*", "cs"}], ",", 
+              RowBox[{"diskThickness", "+", 
+               RowBox[{"dropRadius", "/", "2"}]}]}], "]"}], ",", 
+            "dropRadius"}], "]"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"diskPattern", "[", 
+        RowBox[{"angle_", ",", "rise_", ",", "n_"}], "]"}], " ", ":=", " ", 
+       RowBox[{"Table", "[", "  ", 
+        RowBox[{
+         RowBox[{"diskPoint", "[", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"i", " ", "*", " ", "angle"}], "-", 
+            RowBox[{"20", "  ", "Degree"}]}], " ", ",", " ", 
+           RowBox[{"i", " ", "*", " ", "rise"}]}], " ", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "n"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"diskDrops", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"dropColour", ",", 
+         RowBox[{"diskPattern", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", "180", ")"}], " ", "Degree"}], ",", " ", "1.5", ",", 
+           "6"}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Graphics3D", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Lighter", "[", "dropColour", "]"}], ",", 
+            RowBox[{"Cuboid", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "11"}], ",", 
+                RowBox[{"-", "11"}], ",", "0"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"11", ",", "11", ",", "0.1"}], "}"}]}], "]"}]}], "}"}],
+           ",", "\[IndentingNewLine]", "disk", ",", "dropper", ",", 
+          "airDrops", ",", "airTime", ",", "diskarrows", ",", "diskDrops", 
+          ",", "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+          RowBox[{"Style", "[", 
+           RowBox[{
+            RowBox[{"Text", "[", 
+             RowBox[{"\"\<Charged ferrofluid drops\>\"", ",", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0", ",", "14"}], "}"}]}], "]"}], ",", 
+            RowBox[{"jFont", "[", "12", "]"}]}], "]"}], "\[IndentingNewLine]",
+           ",", 
+          RowBox[{"Style", "[", 
+           RowBox[{
+            RowBox[{"Text", "[", 
+             RowBox[{"\"\<Inter-drop time\>\"", ",", 
+              RowBox[{"{", 
+               RowBox[{"5", ",", "1", ",", "11"}], "}"}]}], "]"}], ",", 
+            RowBox[{"jFont", "[", "12", "]"}]}], "]"}], "\[IndentingNewLine]",
+           ",", 
+          RowBox[{"Style", "[", 
+           RowBox[{
+            RowBox[{"Text", "[", 
+             RowBox[{"\"\<Centrifugal\\nvelocity\>\"", ",", 
+              RowBox[{"{", 
+               RowBox[{"5", ",", "3", ",", 
+                RowBox[{"diskThickness", " ", "*", "2"}]}], " ", "}"}]}], 
+             "]"}], ",", 
+            RowBox[{"Directive", "[", 
+             RowBox[{"fieldColour", ",", 
+              RowBox[{"jFont", "[", "12", "]"}], ",", 
+              RowBox[{"LineSpacing", "->", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "6"}], "}"}]}]}], "]"}]}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", ",", 
+        RowBox[{"Lighting", "\[Rule]", "\"\<Neutral\>\""}], ",", 
+        RowBox[{"Boxed", "\[Rule]", "False"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.9464823357535934`*^9, 3.946482403205164*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"741e35b3-6300-114b-8279-5d0f2223d422"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Txb0901DCApparatus", "=", " ", "Ch8DCApparatus"}]], "Input",
+ CellChangeTimes->{{3.9464822620075893`*^9, 3.9464822721058903`*^9}},
+ CellLabel->"In[43]:=",ExpressionUUID->"6b754350-6c7e-ac46-a7b2-a75afae2d25f"],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[0.6458232365295996, 0.5298241799133253, 0.7303422103661668], 
+    CuboidBox[{-11, -11, 0}, {11, 11, 0.1}]}, 
+   {FaceForm[GrayLevel[0.85]], CylinderBox[{{0, 0, 0}, {0, 0, 1}}, 10]}, 
+   {FaceForm[GrayLevel[0.85]], 
+    TubeBox[{{0, 0, 16}, {0, 0, 20}, {10, 10, 20}, {10, 10, 0}}, 0.5]}, 
+   {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+    SphereBox[{0, 0, 12}, 0.4], SphereBox[{0, 0, 8}, 0.4], 
+    SphereBox[{0, 0, 4}, 0.4]}, 
+   {Arrowheads[{-Automatic, Automatic}], Arrow3DBox[{{1, 0, 12}, {1, 0, 8}}]}, 
+   {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`], 
+    Arrow3DBox[
+     NCache[{{Cos[10 Degree], Sin[10 Degree], 1.5}, {
+       8 Cos[10 Degree], 8 Sin[10 Degree], 1.5}}, {{0.984807753012208, 
+      0.17364817766693033`, 1.5}, {7.878462024097664, 1.3891854213354426`, 
+      1.5}}]], Arrow3DBox[
+     NCache[{{Sin[20 Degree], Cos[20 Degree], 1.5}, {
+       8 Sin[20 Degree], 8 Cos[20 Degree], 1.5}}, {{0.3420201433256687, 
+      0.9396926207859084, 1.5}, {2.7361611466053497`, 7.517540966287267, 
+      1.5}}]], Arrow3DBox[
+     NCache[{{-Sin[40 Degree], Cos[40 Degree], 1.5}, {(-8) Sin[40 Degree], 8 
+        Cos[40 Degree], 1.5}}, {{-0.6427876096865393, 0.766044443118978, 
+      1.5}, {-5.142300877492314, 6.128355544951824, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{-Cos[10 Degree], -Sin[10 Degree], 1.5}, {(-8) 
+        Cos[10 Degree], (-8) Sin[10 Degree], 
+        1.5}}, {{-0.984807753012208, -0.17364817766693033`, 
+      1.5}, {-7.878462024097664, -1.3891854213354426`, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{-Sin[20 Degree], -Cos[20 Degree], 1.5}, {(-8) 
+        Sin[20 Degree], (-8) Cos[20 Degree], 
+        1.5}}, {{-0.3420201433256687, -0.9396926207859084, 
+      1.5}, {-2.7361611466053497`, -7.517540966287267, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{Sin[40 Degree], -Cos[40 Degree], 1.5}, {
+       8 Sin[40 Degree], (-8) Cos[40 Degree], 1.5}}, {{
+      0.6427876096865393, -0.766044443118978, 1.5}, {
+      5.142300877492314, -6.128355544951824, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{Cos[10 Degree], Sin[10 Degree], 1.5}, {
+       8 Cos[10 Degree], 8 Sin[10 Degree], 1.5}}, {{0.984807753012208, 
+      0.17364817766693033`, 1.5}, {7.878462024097664, 1.3891854213354426`, 
+      1.5}}]]}, 
+   {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+    SphereBox[{-1.4095389311788626`, 0.5130302149885031, 1.2}, 0.4], 
+    SphereBox[{2.8190778623577253`, -1.0260604299770062`, 1.2}, 0.4], 
+    SphereBox[{-4.228616793536588, 1.5390906449655093`, 1.2}, 0.4], 
+    SphereBox[{5.638155724715451, -2.0521208599540124`, 1.2}, 0.4], 
+    SphereBox[{-7.047694655894313, 2.5651510749425155`, 1.2}, 0.4], 
+    SphereBox[{8.457233587073176, -3.0781812899310186`, 1.2}, 0.4]}, 
+   StyleBox[Text3DBox["\<\"Charged ferrofluid drops\"\>", {0, 0, 14}],
+    StripOnInput->False,
+    FontFamily->"Times",
+    FontSize->12], 
+   StyleBox[Text3DBox["\<\"Inter-drop time\"\>", {5, 1, 11}],
+    StripOnInput->False,
+    FontFamily->"Times",
+    FontSize->12], 
+   {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`], 
+    StyleBox[Text3DBox["\<\"Centrifugal\\nvelocity\"\>", {5, 3, 2}],
+     StripOnInput->False,
+     LineSpacing->{0, 6},
+     FontFamily->"Times",
+     FontSize->12]}},
+  Boxed->False,
+  Lighting->"Neutral"]], "Output",
+ CellChangeTimes->{
+  3.946482275167343*^9, {3.946482359768532*^9, 3.9464823643031845`*^9}, 
+   3.9464824077489777`*^9, 3.9465241182863255`*^9},
+ CellLabel->"Out[43]=",ExpressionUUID->"c5fab59a-6e32-8a48-b0c4-30187a5f63ea"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"Txb0901DCApparatus", ",", 
+   RowBox[{"Boxed", "\[Rule]", "True"}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[44]:=",ExpressionUUID->"d13a0fcf-390a-d94a-96df-2e79ecf7342e"],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[0.6458232365295996, 0.5298241799133253, 0.7303422103661668], 
+    CuboidBox[{-11, -11, 0}, {11, 11, 0.1}]}, 
+   {FaceForm[GrayLevel[0.85]], CylinderBox[{{0, 0, 0}, {0, 0, 1}}, 10]}, 
+   {FaceForm[GrayLevel[0.85]], 
+    TubeBox[{{0, 0, 16}, {0, 0, 20}, {10, 10, 20}, {10, 10, 0}}, 0.5]}, 
+   {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+    SphereBox[{0, 0, 12}, 0.4], SphereBox[{0, 0, 8}, 0.4], 
+    SphereBox[{0, 0, 4}, 0.4]}, 
+   {Arrowheads[{-Automatic, Automatic}], Arrow3DBox[{{1, 0, 12}, {1, 0, 8}}]}, 
+   {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`], 
+    Arrow3DBox[
+     NCache[{{Cos[10 Degree], Sin[10 Degree], 1.5}, {
+       8 Cos[10 Degree], 8 Sin[10 Degree], 1.5}}, {{0.984807753012208, 
+      0.17364817766693033`, 1.5}, {7.878462024097664, 1.3891854213354426`, 
+      1.5}}]], Arrow3DBox[
+     NCache[{{Sin[20 Degree], Cos[20 Degree], 1.5}, {
+       8 Sin[20 Degree], 8 Cos[20 Degree], 1.5}}, {{0.3420201433256687, 
+      0.9396926207859084, 1.5}, {2.7361611466053497`, 7.517540966287267, 
+      1.5}}]], Arrow3DBox[
+     NCache[{{-Sin[40 Degree], Cos[40 Degree], 1.5}, {(-8) Sin[40 Degree], 8 
+        Cos[40 Degree], 1.5}}, {{-0.6427876096865393, 0.766044443118978, 
+      1.5}, {-5.142300877492314, 6.128355544951824, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{-Cos[10 Degree], -Sin[10 Degree], 1.5}, {(-8) 
+        Cos[10 Degree], (-8) Sin[10 Degree], 
+        1.5}}, {{-0.984807753012208, -0.17364817766693033`, 
+      1.5}, {-7.878462024097664, -1.3891854213354426`, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{-Sin[20 Degree], -Cos[20 Degree], 1.5}, {(-8) 
+        Sin[20 Degree], (-8) Cos[20 Degree], 
+        1.5}}, {{-0.3420201433256687, -0.9396926207859084, 
+      1.5}, {-2.7361611466053497`, -7.517540966287267, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{Sin[40 Degree], -Cos[40 Degree], 1.5}, {
+       8 Sin[40 Degree], (-8) Cos[40 Degree], 1.5}}, {{
+      0.6427876096865393, -0.766044443118978, 1.5}, {
+      5.142300877492314, -6.128355544951824, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{Cos[10 Degree], Sin[10 Degree], 1.5}, {
+       8 Cos[10 Degree], 8 Sin[10 Degree], 1.5}}, {{0.984807753012208, 
+      0.17364817766693033`, 1.5}, {7.878462024097664, 1.3891854213354426`, 
+      1.5}}]]}, 
+   {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+    SphereBox[{-1.4095389311788626`, 0.5130302149885031, 1.2}, 0.4], 
+    SphereBox[{2.8190778623577253`, -1.0260604299770062`, 1.2}, 0.4], 
+    SphereBox[{-4.228616793536588, 1.5390906449655093`, 1.2}, 0.4], 
+    SphereBox[{5.638155724715451, -2.0521208599540124`, 1.2}, 0.4], 
+    SphereBox[{-7.047694655894313, 2.5651510749425155`, 1.2}, 0.4], 
+    SphereBox[{8.457233587073176, -3.0781812899310186`, 1.2}, 0.4]}, 
+   StyleBox[Text3DBox["\<\"Charged ferrofluid drops\"\>", {0, 0, 14}],
+    StripOnInput->False,
+    FontFamily->"Times",
+    FontSize->12], 
+   StyleBox[Text3DBox["\<\"Inter-drop time\"\>", {5, 1, 11}],
+    StripOnInput->False,
+    FontFamily->"Times",
+    FontSize->12], 
+   {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`], 
+    StyleBox[Text3DBox["\<\"Centrifugal\\nvelocity\"\>", {5, 3, 2}],
+     StripOnInput->False,
+     LineSpacing->{0, 6},
+     FontFamily->"Times",
+     FontSize->12]}},
+  Boxed->True,
+  Lighting->"Neutral"]], "Output",
+ CellChangeTimes->{3.9465241190821896`*^9},
+ CellLabel->"Out[44]=",ExpressionUUID->"8b4df96a-8335-cc47-aad2-78e11434f069"]
+}, Open  ]],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"txbExport", "@", "Txb0901DCApparatus"}]], "Input",
  CellChangeTimes->{{3.9456103960265083`*^9, 3.945610404113596*^9}},
- CellLabel->
-  "In[156]:=",ExpressionUUID->"cf30a56e-f9a8-384e-8155-f8681b31a3d4"],
+ CellLabel->"In[45]:=",ExpressionUUID->"cf30a56e-f9a8-384e-8155-f8681b31a3d4"],
 
-Cell[BoxData["Txb0901DCApparatus"], "Output",
- CellChangeTimes->{3.9456106400675983`*^9},
- CellLabel->
-  "Out[156]=",ExpressionUUID->"47230b6f-ea55-f54b-9fa3-9d2d602b9cb6"]
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[0.6458232365295996, 0.5298241799133253, 0.7303422103661668], 
+    CuboidBox[{-11, -11, 0}, {11, 11, 0.1}]}, 
+   {FaceForm[GrayLevel[0.85]], CylinderBox[{{0, 0, 0}, {0, 0, 1}}, 10]}, 
+   {FaceForm[GrayLevel[0.85]], 
+    TubeBox[{{0, 0, 16}, {0, 0, 20}, {10, 10, 20}, {10, 10, 0}}, 0.5]}, 
+   {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+    SphereBox[{0, 0, 12}, 0.4], SphereBox[{0, 0, 8}, 0.4], 
+    SphereBox[{0, 0, 4}, 0.4]}, 
+   {Arrowheads[{-Automatic, Automatic}], Arrow3DBox[{{1, 0, 12}, {1, 0, 8}}]}, 
+   {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`], 
+    Arrow3DBox[
+     NCache[{{Cos[10 Degree], Sin[10 Degree], 1.5}, {
+       8 Cos[10 Degree], 8 Sin[10 Degree], 1.5}}, {{0.984807753012208, 
+      0.17364817766693033`, 1.5}, {7.878462024097664, 1.3891854213354426`, 
+      1.5}}]], Arrow3DBox[
+     NCache[{{Sin[20 Degree], Cos[20 Degree], 1.5}, {
+       8 Sin[20 Degree], 8 Cos[20 Degree], 1.5}}, {{0.3420201433256687, 
+      0.9396926207859084, 1.5}, {2.7361611466053497`, 7.517540966287267, 
+      1.5}}]], Arrow3DBox[
+     NCache[{{-Sin[40 Degree], Cos[40 Degree], 1.5}, {(-8) Sin[40 Degree], 8 
+        Cos[40 Degree], 1.5}}, {{-0.6427876096865393, 0.766044443118978, 
+      1.5}, {-5.142300877492314, 6.128355544951824, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{-Cos[10 Degree], -Sin[10 Degree], 1.5}, {(-8) 
+        Cos[10 Degree], (-8) Sin[10 Degree], 
+        1.5}}, {{-0.984807753012208, -0.17364817766693033`, 
+      1.5}, {-7.878462024097664, -1.3891854213354426`, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{-Sin[20 Degree], -Cos[20 Degree], 1.5}, {(-8) 
+        Sin[20 Degree], (-8) Cos[20 Degree], 
+        1.5}}, {{-0.3420201433256687, -0.9396926207859084, 
+      1.5}, {-2.7361611466053497`, -7.517540966287267, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{Sin[40 Degree], -Cos[40 Degree], 1.5}, {
+       8 Sin[40 Degree], (-8) Cos[40 Degree], 1.5}}, {{
+      0.6427876096865393, -0.766044443118978, 1.5}, {
+      5.142300877492314, -6.128355544951824, 1.5}}]], 
+    Arrow3DBox[
+     NCache[{{Cos[10 Degree], Sin[10 Degree], 1.5}, {
+       8 Cos[10 Degree], 8 Sin[10 Degree], 1.5}}, {{0.984807753012208, 
+      0.17364817766693033`, 1.5}, {7.878462024097664, 1.3891854213354426`, 
+      1.5}}]]}, 
+   {RGBColor[0.4687348547943994, 0.29473626986998797`, 0.5955133155492501], 
+    SphereBox[{-1.4095389311788626`, 0.5130302149885031, 1.2}, 0.4], 
+    SphereBox[{2.8190778623577253`, -1.0260604299770062`, 1.2}, 0.4], 
+    SphereBox[{-4.228616793536588, 1.5390906449655093`, 1.2}, 0.4], 
+    SphereBox[{5.638155724715451, -2.0521208599540124`, 1.2}, 0.4], 
+    SphereBox[{-7.047694655894313, 2.5651510749425155`, 1.2}, 0.4], 
+    SphereBox[{8.457233587073176, -3.0781812899310186`, 1.2}, 0.4]}, 
+   StyleBox[Text3DBox["\<\"Charged ferrofluid drops\"\>", {0, 0, 14}],
+    StripOnInput->False,
+    FontFamily->"Times",
+    FontSize->12], 
+   StyleBox[Text3DBox["\<\"Inter-drop time\"\>", {5, 1, 11}],
+    StripOnInput->False,
+    FontFamily->"Times",
+    FontSize->12], 
+   {RGBColor[0.7194116276462343, 0.32145384723880266`, 0.27090344303450226`], 
+    StyleBox[Text3DBox["\<\"Centrifugal\\nvelocity\"\>", {5, 3, 2}],
+     StripOnInput->False,
+     LineSpacing->{0, 6},
+     FontFamily->"Times",
+     FontSize->12]}},
+  Boxed->False,
+  Lighting->"Neutral"]], "Output",
+ CellChangeTimes->{3.9456106400675983`*^9, 3.9464824136826572`*^9, 
+  3.9465241230159607`*^9},
+ CellLabel->"Out[45]=",ExpressionUUID->"529a70ca-5fb5-2d4d-8fe8-e2a8b7233e53"]
 }, Open  ]]
 }, Open  ]],
 
@@ -114,21 +581,32 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 463, 7, 59, "Section",ExpressionUUID->"e55015fc-a79b-4df9-961d-01036e6cf397"],
-Cell[1046, 31, 694, 17, 74, "Input",ExpressionUUID->"fd735afe-78de-c745-9b72-d4836d2fc45f",
- InitializationCell->True]
+Cell[1046, 31, 689, 16, 74, "Input",ExpressionUUID->"fd735afe-78de-c745-9b72-d4836d2fc45f",
+ InitializationCell->True],
+Cell[1738, 49, 360, 8, 25, "Input",ExpressionUUID->"1f09dbfe-53b6-5741-8ed4-d140700c80e1"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1777, 53, 164, 3, 59, "Section",ExpressionUUID->"20bf39d3-36f4-084b-b5ad-2e0f2eaf9160"],
+Cell[2135, 62, 164, 3, 59, "Section",ExpressionUUID->"20bf39d3-36f4-084b-b5ad-2e0f2eaf9160"],
+Cell[2302, 67, 9259, 231, 536, "Input",ExpressionUUID->"741e35b3-6300-114b-8279-5d0f2223d422",
+ InitializationCell->True],
 Cell[CellGroupData[{
-Cell[1966, 60, 225, 4, 25, "Input",ExpressionUUID->"cf30a56e-f9a8-384e-8155-f8681b31a3d4"],
-Cell[2194, 66, 172, 3, 28, "Output",ExpressionUUID->"47230b6f-ea55-f54b-9fa3-9d2d602b9cb6"]
+Cell[11586, 302, 233, 3, 25, "Input",ExpressionUUID->"6b754350-6c7e-ac46-a7b2-a75afae2d25f"],
+Cell[11822, 307, 3606, 70, 358, "Output",ExpressionUUID->"c5fab59a-6e32-8a48-b0c4-30187a5f63ea"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15465, 382, 234, 5, 25, "Input",ExpressionUUID->"d13a0fcf-390a-d94a-96df-2e79ecf7342e"],
+Cell[15702, 389, 3504, 68, 360, "Output",ExpressionUUID->"8b4df96a-8335-cc47-aad2-78e11434f069"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19243, 462, 221, 3, 25, "Input",ExpressionUUID->"cf30a56e-f9a8-384e-8155-f8681b31a3d4"],
+Cell[19467, 467, 3556, 69, 358, "Output",ExpressionUUID->"529a70ca-5fb5-2d4d-8fe8-e2a8b7233e53"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2415, 75, 164, 3, 59, "Section",ExpressionUUID->"9c63ef80-c83d-4749-8e86-0ffecc56605f"],
+Cell[23072, 542, 164, 3, 59, "Section",ExpressionUUID->"9c63ef80-c83d-4749-8e86-0ffecc56605f"],
 Cell[CellGroupData[{
-Cell[2604, 82, 224, 4, 25, "Input",ExpressionUUID->"bb827c4c-23db-1549-902f-fe71eb9d778c"],
-Cell[2831, 88, 169, 3, 49, "Output",ExpressionUUID->"c81b4251-2af6-9a4d-832c-b0e635a8350e"]
+Cell[23261, 549, 224, 4, 25, "Input",ExpressionUUID->"bb827c4c-23db-1549-902f-fe71eb9d778c"],
+Cell[23488, 555, 169, 3, 28, "Output",ExpressionUUID->"c81b4251-2af6-9a4d-832c-b0e635a8350e"]
 }, Open  ]]
 }, Open  ]]
 }
