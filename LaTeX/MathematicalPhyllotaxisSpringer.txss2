@@ -1,0 +1,102 @@
+{
+    "InternalPDFViewer": {
+        "Embedded": true,
+        "File": "MathematicalPhyllotaxisSpringer.pdf"
+    },
+    "Session": {
+        "Bookmarks": [
+            {
+                "bookmarkNumber": 1,
+                "fileName": "MathematicalPhyllotaxisSpringer.tex",
+                "lineNumber": 58,
+                "text": "MathematicalPhyllotaxisSpringer.tex\n"
+            }
+        ],
+        "CurrentFile": "StackedDisksChapter.tex",
+        "FileVersion": 1,
+        "Files": [
+            {
+                "Col": 25,
+                "EditorGroup": 0,
+                "FileName": "MathematicalPhyllotaxisSpringer.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "MPSpringerPreamble.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
+            },
+            {
+                "Col": 300,
+                "EditorGroup": 0,
+                "FileName": "Geometry.tex",
+                "FirstLine": 770,
+                "FoldedLines": "",
+                "Line": 779
+            },
+            {
+                "Col": 357,
+                "EditorGroup": 0,
+                "FileName": "Classifying.tex",
+                "FirstLine": 565,
+                "FoldedLines": "",
+                "Line": 572
+            },
+            {
+                "Col": 24,
+                "EditorGroup": 0,
+                "FileName": "Transformed.tex",
+                "FirstLine": 100,
+                "FoldedLines": "",
+                "Line": 110
+            },
+            {
+                "Col": 101,
+                "EditorGroup": 0,
+                "FileName": "Developmental.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 2
+            },
+            {
+                "Col": 309,
+                "EditorGroup": 0,
+                "FileName": "Empirical.tex",
+                "FirstLine": 76,
+                "FoldedLines": "",
+                "Line": 79
+            },
+            {
+                "Col": 16,
+                "EditorGroup": 0,
+                "FileName": "Placement.tex",
+                "FirstLine": 20,
+                "FoldedLines": "",
+                "Line": 31
+            },
+            {
+                "Col": 333,
+                "EditorGroup": 0,
+                "FileName": "StackedDisksChapter.tex",
+                "FirstLine": 13,
+                "FoldedLines": "",
+                "Line": 20
+            },
+            {
+                "Col": 22,
+                "EditorGroup": 0,
+                "FileName": "Motivation.tex",
+                "FirstLine": 71,
+                "FoldedLines": "",
+                "Line": 80
+            }
+        ],
+        "MasterFile": "",
+        "VerticalSplit": true
+    }
+}
