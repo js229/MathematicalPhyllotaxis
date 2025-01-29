@@ -7,6 +7,8 @@
 }
 
 
+
+
 \section{B\'ezout relations}
 The previous chapter defined co-primality for a pair of integers. An equivalent condition is the existence of a  B\'ezout relation: the integer pair $(u,v)$ satisfies the B\'ezout relation for the non-negative integer pair $(m,n)$ iff
 \begin{align}
@@ -29,7 +31,8 @@ For co-prime integers  $(m,n)$, the winding-number pair is the unique pair  $(u,
 	0\leq \frac{u+v}{m+n}\leq \frac{1}{2}. \label{eq:wnpFarey}
 \end{align}
 There are a handful of special cases: in this book the winding-number pair for  $(0,1)$ is by definition $(1,0)$, for $(1,0)$ is $(0,1)$, and for $(1,1)$ is $(1,0)$. 
-As we will see below, half of the time the winding-number pair will yield $nu-mv=+1$ and half the time $n u-m v=-1$. We could alternatively have found a unique pair by insisting on a particular choice of sign $nu-mv=+1$, but in this way there is a clear connection to the signs of the $\Delta$s that will pepper Chapter~\ref{ch:cylinder}. Chapter~\ref{ch:cylinder} will also reveal the reason for the name `winding-number pair'. 
+As we will see below, half of the time the winding-number pair will yield $nu-mv=+1$ and half the time $n u-m v=-1$. We could alternatively have found a unique pair by insisting on a particular choice of sign $nu-mv=+1$, but in this way there is a clear connection to the signs of the $\Delta$s that will pepper Chapter~\ref{ch:cylinder}.
+
 
 
 \begin{jExercise}\label{ex:wnp}
@@ -60,6 +63,7 @@ As we will see below, half of the time the winding-number pair will yield $nu-mv
 	\end{equation*}
 		\end{table}
 \end{jAnswer}
+Chapter~\ref{ then we know that $n- (u/v)m =ch:cylinder} will also reveal the reason for the name `winding-number pair'. 
 
 
 
@@ -100,7 +104,7 @@ Given integers $n\geq m>0$  we set $r_{-1}=n$, $r_0=m$ and $i=0$:
 
 \subsection{Matrix form of the Euclidean algorithm}
 \mmafig{Txb0301EuclideanTree}{Computing the highest common factor of 4 and 11 by successive matrix reductions upwards to the identity matrix. Conversely, the extended tree downwards from the identity matrix, branching by an $E$ or an $ES$ matrix-multiplication at each node after the second, will contain every pair of co-prime integers, in the first column of each matrix, with the corresponding winding-number pair in the second column. 
-The $\jqi$s of the Euclidean reduction emerge as the number of $E$s between each $S$.}{1}
+The $\jqi$s of the Euclidean reduction emerge as the number of $E$s between each $S$. The horizontal order of the $E$ and $ES$ branches below each matrices is chosen so that the child matrices are ordered by their Farey mediant as defined in section~\ref{sec:farey}. Chapter~\ref{ch:classifying} will reflect on the close similarity between this diagram than the van Iterson classification.}{1}
 %
 We can solve the B\'ezout relation by putting  Euclid's algorithm in matrix form. For example
 the first reduction of~\eqref{eq:411} is
@@ -191,7 +195,7 @@ So the  $\jqi$'s are all \jqn{1} and the determinant shows that $(F_{j},F_{j-1})
 For those comfortable thinking of vector spaces,  we might think of any pair of co-prime integers as a basis pair for the space of integers.  Given a co-prime pair $m$ and $n$, every integer can be expressed as a sum $n (k u)+ m (-k v)$.  From this perspective the Euclidean algorithm  can  be seen as a series of changes of these bases.  The individual $E^{\jqi}$ matrices correspond to the change of base at each step, the product matrix is the change of basis between $m,n$ and $k,1$, and the $ |mv - nu|=k$ relationship tells us about how areas are scaled in the different bases. 
 
 \section{Farey trees and winding-number pairs}
-
+\label{sec:farey}
 Thanks to a careful choice of stopping rule for the algorithm, or equivalently because of how we pruned the tree of Figure~\ref{fig:Txb0301EuclideanTree} not to bifurcate from the first two nodes, the $(u,v)$ which emerge from the Euclidean algorithm are not just a pair satisfying the B\'ezout relation but they are exactly the winding-number pair.
 %
 Each matrix in the tree of Figure~\ref{fig:Txb0301EuclideanTree} is of the form

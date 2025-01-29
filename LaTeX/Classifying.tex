@@ -182,11 +182,11 @@ Square lattices also have a role in modelling obvious parastichies as several au
 \end{jAnswer}
 \newpage
 \section[Unfolding the triple-point bifurcation]{Nearly hexagonal lattices: unfolding the triple-point bifurcation}
-We have established algebraically the structural properties of lattice space so that we can draw it, but the key property of lattice space we need to understand for Fibonacci structure depends only on what happens at triple-points at which the lattice is a hexagonal on. In fact we can obtain the key structural information by understanding the structure of lattice space near each such bifurcation: in the language of bifurcation theory we need only consider the unfolding of the triple-point.  
+We have established algebraically the structural properties of lattice space so that we can draw it, but the key property of lattice space we need to understand for Fibonacci structure depends only on what happens at triple-points at which the lattice is hexagonal. In fact we can obtain the key structural information by understanding the structure of lattice space near each such bifurcation: in the language of bifurcation theory we need only consider the unfolding of the triple-point.  
 
 In particular, we will show that one of the branches downward from the triple-point corresponds to a non-opposed principal parastichy pair. We have not yet classified lattice space by whether pairs are opposed or not, so it is important to note that van Iterson lattices can sometimes have non-opposed principal parastichy vectors as shown in  Figure~\ref{fig:Txb0503NonOpposed}. 
 
-\mmafig{Txb0503NonOpposed}{A van Iterson lattice can be non-opposed. This example has $d = 0.397397\ldots$, $h=0.0446895\ldots$, and the two shortest vectors $\pvec{2}$ and $\pvec{5}$ with $|\pvec{2}|=|\pvec{5}|$, both wind in the same direction.}{1.0}%
+\mmafig{Txb0503NonOpposed}{A van Iterson lattice can be non-opposed. The two shortest vectors $\pvec{2}$ and $\pvec{5}$ with $|\pvec{2}|=|\pvec{5}|$, both wind in the same direction. This example has $d=1/21 (8+\cos \theta)$ and $h=1/21 \sin\theta$ where $2\theta=\arctan( 21\sqrt{3}/11)+\arctan (\sqrt{21}/2) $ and has been constructed by the renormalisation technique of section~\ref{sec:renormalisation}.}{1.0}%
 
 \mmafig{Txb0504Unfolding}{Lattice deformations near a triple-point classified by Theorem~\ref{thm:tp}. \branch{m=n} branches are drawn as in Figure~\ref{fig:Txb0502VanItersonZoom}. As in that Figure, the unfolding is true for general $m,n$ but is labelled for clarity with $m=3$ and $n=5$. Red arrows: primary parastichies; blue arrows secondary parastichies. Grey arrows show the direction in which the hexagonal lattice is stretched so as to preserve two vectors of equal length.  In particular note that the \branch{m,n+m} van Iterson branch below the triple point is nonopposed  but the \branch{n,n+m} branch is opposed.}{1}%
 %
@@ -238,7 +238,7 @@ We have shown that packing efficiency remains close to the hexagonal optimum on 
 
 
 \section{Lattice renormalisation}
-
+\label{sec:renormalisation}
 The algebra of the Chapter so far is straightforward, if a little tedious, but it doesn't give any insight into the remarkable self-similarity of the van Iterson diagram. The technique of lattice renormalisation uses the observation that one lattice can be mapped to another by scaling and rotating to give a powerful way of mapping from one part of lattice space to another. Lattice renormalisation gives considerably more insight into the structure of the van Iterson diagram than the results so far, at the cost of introducing the technology of M{\"obius} functions, and although in my view it adds little to a scientific understanding of the appearance of Fibonacci numbers it does provide an   description of lattice space.
 \label{sec:levitov}
 
@@ -493,7 +493,7 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 			 and so $|\cos\psi|=m/n$ there too. 
 	\end{jAnswer}
 	
-	
+
 
 \section{Classification of van Iterson space by Euclidean reduction}
 It is no accident that there is a direct similarity between the coefficient matrix of the $g_{mn}$ and that of the solution matrix for the Euclidean algorithm of section~\ref{sec:euclid}.
@@ -501,6 +501,7 @@ Each transition from a region of the van Iterson diagram with principal pairs $\
 Each $\gp{m,n}$ region of van Iterson space corresponds to a particular sequence of  $q_1, q_2, \ldots q_N$s that take the region back to the $\gp{0,1}$ region.     Moving down the tree through the $(r_i,r_i-1)$ principal parastichy pairs, the Euclidean algorithm for $u_i$ and $v_i$ also yields  $r_{i-1} v_i- r_i u_i=1$ for each pair, and allows us to calculate the Fundamental Theorem of Phyllotaxis with ease. The Fibonacci branch, where we swap over at each transition, corresponds to all of the integer pairs whose $q$-sequence is exactly $1$, which are the convergents to the Golden Ratio. 
 
 One definite virtue of this analysis is to explain why the sign parameter $\Delta$ persistently emerges from the algebra of this Chapter. It shows that $\Delta_{mn}=(-1)^{(N-1)}$ where $N$ is the number of steps in the Euclidean reduction of $m$ and $n$. 
+
 
 It is a matter of taste whether the structure of van Iterson space as revealed by the modular group of transformations $g_{mn}$ can be said to explain the prevalence of Fibonacci numbers: to my mind it is an attractive fact that Fibonacci lattices are in a sense the most invariant under these transformations, but I have not found any way to make use of the transformations -- beyond  code to draw the diagrams in this book -- in connecting the models to biological data. 
 
@@ -526,7 +527,7 @@ Show that the packing efficiency of a van Iterson lattice is locally maximised a
 \begin{jAnswer}{ex:localpacking}
 	Lagrange proved in 1773 that a hexagonal lattice is the closest possible lattice packing, and triple-points are the only points in lattice space at which the lattice is hexagonal. For more on the connection between the modular group and sphere-packings see, say, Berger~\cite{bergerGeometryRevealedJacob2010}.
 \end{jAnswer}
-We can calculate the packing efficiency $\beta$ across van Iterson space by using the classification of this chapter to find $\mvec$.  Within the $(0,1)$ region, the primary parastichy vector is $(1,0)$ of length 1, and $\beta$ is simply $\pi/ {4 h }$.  Since $\beta$ is not changed by a rigid rotation and scaling of a lattice, we could also simply map this function  $\pi/ {4 h }$ using the M{\"o}bius transforms into each region. Figure~\ref{fig:Txb0509PackingTreePlot} shows a contour plot of the packing efficiency $\beta$ along with a graph of $\beta$ along a horizonatal transect of lattice space.
+We can calculate the packing efficiency $\beta$ across van Iterson space by using the classification of this chapter to find $\mvec$.  Within the $(0,1)$ region, the primary parastichy vector is $(1,0)$ of length 1, and $\beta$ is simply $\pi/ {4 h }$.  Since $\beta$ is not changed by a rigid rotation and scaling of a lattice, we could also simply map this function  $\pi/ {4 h }$ using the M{\"o}bius transforms into each region. Figure~\ref{fig:Txb0509PackingTreePlot} shows a contour plot of the packing efficiency $\beta$ along with a graph of $\beta$ along a horizontal transect of lattice space.
 \mmafig{Txb0509PackingTreePlot}{The golden angle cannot achieve for maximal packing. Top packing efficiency $\beta$ across van Iterson space (Close to hexagonal: $\beta>0.8$, Tight: $\beta>0.7$, Loose: $\beta>0.6$, Looser $\beta<0.6$). Bottom graph: $\beta$ as a function of $d$ across the line $h=0.005$. Note that while the divergence $\tau/2\pi$ corresponding to the golden angle is a local maximum of $\beta$, it is not a global maximum.
 }{0.8}%
 Since packing efficiency scales like $1/h$ in the $(0,1)$ region, its contour lines there are horizontal, and so the contour lines of packing efficiency in each other, M{\"o}bius transformed region, become arcs of circles. 
