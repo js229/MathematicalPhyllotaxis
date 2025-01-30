@@ -9,11 +9,11 @@
 although in practice the output will only depend on recent or nearby node-positions. The time at which the new node is placed might be an output of the model (as in Snows' model) but if we follow Hofmeister's model and choose to hold constant the inter-node time, or \textit{plastochrone},  then we have a discrete-time model. 
 
 
-\section{The Douady-Couder electrostatic model}
+\section{The Douady-Couder ferromagnetic model}
 \label{sec:DouadyCouderModel}
 
-A seminal physical model for phyllotaxis was Douady and Couder's 1992 electrostatic system, in which charged drops of oil are dropped onto a cylindrical plate in a magnetic field that causes a centrifugal motion. A caricature of this model is shown in Figure~\ref{fig:Txb0901DCApparatus}.
-\mmafig{Txb0901DCApparatus}{Simplified view of Douady and Couder's apparatus for generating phyllotactic patterns. A centrifugal electromagnetic gradient transports ferrofluid dipoles periodically dropped from the central pipette. Redrawn from~\cite{douadyPhyllotaxisDynamicalSelf1996a}.}{1}
+A seminal physical model for phyllotaxis was Douady and Couder's 1992 ferromagnetic system, in which charged drops of oil are dropped onto a cylindrical plate in a magnetic field that causes a centrifugal motion. A caricature of this model is shown in Figure~\ref{fig:Txb0901DCApparatus}.
+\mmafig{Txb0901DCApparatus}{Simplified view of Douady and Couder's apparatus for generating phyllotactic patterns. A centrifugal magnetic gradient transports ferrofluid magnetic dipoles periodically dropped from the central pipette. Redrawn from~\cite{douadyPhyllotaxisDynamicalSelf1996a}.}{1}
 If there is a very long time between successive drops, the drops will move off at random directions; if the process is speeded up slightly then mutual repulsion of the drops 
 will ensure they move in successively opposite directions  as in the spots 0, 1 and 2 in part (a) of Figure~\ref{fig:F0902Douady1996Fig3crop}. However if the process is sped up still faster, then the same mutual repulsion squeezes out the new spot to the side.  It is this symmetry breaking that has placed the spot numbered 2 away from the line between the two earlier spots in part (b) of Figure~\ref{fig:F0902Douady1996Fig3crop} and initiated a spiral form.
 
@@ -40,23 +40,20 @@ A model of this spiral generation-phenomenon  can be built by assuming that the 
   
  
 
-% However over the intervening years, the model itself has not (and presumably was never intended to be) become adopted within wider developmental biology. 
-
-
-
-\clearpage
 
 \section{Energy based models}
 \label{sec:energy}
-The Douady-Couder model of section~\ref{sec:DouadyCouderModel} imposed a time delay between new nodes and a centrifugal movement, which together ensured that new nodes could not be placed too closely to old ones. It then defined an energy function for the new pattern, so that minimising the energy step-by-step then placed nodes as close as possible given the first constraint.  By contrast the stacked-coin model uses a fixed disk to keep the nodes separate, whilst using 'gravity', that is the requirement that the new node is in contact with the old ones, to keep them close. Both of these models yield  a typical inter-node distance of say $D$, and can be thought of as defining a  node-node potential energy which is large before $D$, then drops off sharply to a minimum near $D$ before more smoothly re-increasing. 
+The Douady-Couder model of section~\ref{sec:DouadyCouderModel} imposed a time delay between new nodes and a centrifugal movement, which together ensured that new nodes could not be placed too closely to old ones. It then defined an energy function for the new pattern, so that minimising the energy step-by-step then placed nodes as close as possible given the first constraint.  By contrast the stacked-coin model uses a fixed disk to keep the nodes separate, whilst using `gravity', that is the requirement that the new node is in contact with the old ones, to keep them close. Both of these models yield  a typical inter-node distance of say $D$, and can be thought of as defining a  node-node potential energy which is large before $D$, then drops off sharply to a minimum near $D$ before more smoothly re-increasing. 
 
 Given such a potential energy representing a mixture of close-range repulsion and long-range attraction, it is possible to define an energy for cylindrical node patterns, and then to analyse the patterns which are local minima of this energy. Such an energy is of the form 
 $E=\sum U(\left|\jpoint{n}-\jpoint{m}\right|)$ as a sum of distances over node-pairs.  {A key difference between our application and most physical ones is that there is no mechanism for \textit{global} minimisation of the energy: a pattern may be built up node-by-node, locally minimising this interaction energy, but in general the final pattern is not a global minimum of all possible patterns on the same cylinder with the same mean $D$.}
 Nevertheless it was these formal similarities with theoretical physics which led Levitov and others to the renormalisation technique~\autocite{levitovFibonacciNumbersBotany1991}. If we restrict to patterns which are lattices, then the energy of a lattice can be analysed by renormalising the lattice, which simply scales all the node-pair distances by the same scalar. This analysis thus rediscovers the  lattice bifurcation structure of the van Iterson diagram.
 
  Early node placement models such as those of Adler~\autocite{adlerConsequencesContactPressure1977} were criticised by Lee and Levitov~\autocite{leeUniversalityPhyllotaxisMechanical1998}, I think unfairly, as not corresponding directly to any biological system. By contrast,
- Lee and Levitov claimed a deep universality for energy-based models as a justification for pruning the van Iterson tree to Fibonacci structure. However the energy function is defined in terms of 'distance', which has an intuitively reasonable interpretation in many field-based physical systems but is very hard to interpret here. It is an open question, though, whether the flexibility of  energy-based formalisms to include relatively soft disks and thus allow local rearrangements might remove some of the difficulties that we have seen for hard disk models in reaching local lattice solutions under slow changes. 
-\newpage
+ Lee and Levitov claimed a deep universality for energy-based models as a justification for pruning the van Iterson tree to Fibonacci structure. However the energy function is defined in terms of `distance', which has an intuitively reasonable interpretation in many field-based physical systems but is very hard to interpret here.
+ While these energy models have been relatively neglected in recent research relative to the stacked-disk models of the next chapter, their flexibility 
+ in expressing the idea of relatively soft disks and limited local rearrangements means they may well continue as a helpful tool. 
+
 \section{Partial differential equation models}
 \subsection{An early reaction-diffusion approach}
  In 1951 Alan Turing wrote to a prominent British zoologist of the time that 

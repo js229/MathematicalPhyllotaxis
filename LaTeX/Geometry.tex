@@ -224,14 +224,15 @@ There are many pairs of visible parastichies in a lattice, but Figure~\ref{fig:T
 	for integer $a,b,c,d$. Most of these will not be parastichy vector pairs.
 \end{jAnswer}
 
-There are some simple conditions for a pair to be generating:
+Since every point in our lattice has a rise which is an integer multiple of $h$, a necessary condition for a pair to be generating is that it can generate all these $h$ multiples in the vertical component of its sums:
 \begin{theorem}
 	\label{thm:coprime1}
-	If a parastichy pair $\gp{m,n}$ is generating, then $m$ and $n$ are co-prime.  
+	If a parastichy pair $\gp{m,n}$ is generating, then $m$ and $n$ are co-prime. 
 \end{theorem}
 \begin{proof}
-	Write $\pvec{1}= v\pvec{m}-u\pvec{n}$; then the rise of $\pvec{1}$ shows $mv-nu = 1$ holds and Section~\ref{sec:coprime} shows that $|m|,|n|$, and hence $m,n$, are co-prime.
+	Write $\pvec{1}= v\pvec{m}-u\pvec{n}$; then the rise of $\pvec{1}$ shows $mv-nu = 1$ holds and Section~\ref{sec:coprime} shows that $|m|,|n|$, and hence $m,n$, are co-prime. The converse is not true: see Figure~\ref{fig:Txb0407PPairs}. In particular though 1 and 1 are co-prime the parastichy pair $\gp{1,1}$ is not generating.
 \end{proof}
+This is not a sufficient condition. For example:
 \begin{theorem}
 	\label{thm:coprime}
 	If $\mvec$ and $\nvec$ are co-linear then they are not generating.
@@ -239,6 +240,8 @@ There are some simple conditions for a pair to be generating:
 \begin{proof}
 	Co-linearity means that any vector sum of $\pvec{m}$ and $\pvec{n}$ lies on the line in the plane through $\jpoint{m}$ and $\jpoint{n}$. For some large enough $k$ this will contain a point of the plane lattice of rise $kh$ with co-ordinates outside of the cylinder. The vector to this point is therefore not a parastichy vector but is the only candidate for a vector sum with rise $kh$, and so the parastichy vector $\pvec{k}$ is not an integer sum of $\mvec$ and $\nvec$.
 \end{proof}
+Excluding co-linearity is still not enough, as part (b) of Figure~\ref{fig:Txb0407PPairs} suggests. The next section finds an algebraic condition for a pair to be generating. 
+
 \begin{jExercise}\label{ex:p01g}
 	\label{ex:01generating}
 	Show that $\gp{0,1}$ is always generating, and that  $\gp{0,n>1}$ never is. 
@@ -475,7 +478,7 @@ This says that if we see $m$ spirals one way and $n$ the other, the divergence o
 		and  $N$ that where $[nd]=v$. The third part of Theorem~\ref{thm:gLattice} says that the lattice $\mathcal{L}({d,h})$ has  $\pvec{m}$ and $\pvec{n}$ as a generating pair on the interval $M\cap N $. 
 				
 
-	From $[md]=u$ etc we can calculate the endpoints $M=[L_m,R_m]$ and $N=[L_n,R_n]$ as $m L_m=u-\jhalf$, $mR_m=u+\jhalf$, $n L_n=v-\jhalf$, $n R_n=v+\jhalf$. 	Setting $\Delta=n u - mv$, noting that $\Delta=-1$ if $u/m<v/n$ and $\Delta=+1$ if $u/m>v/n$  we find 
+	From $[md]=u$ etc we can calculate the endpoints of $M=[L_m,R_m]$ and $N=[L_n,R_n]$ as $m L_m=u-\jhalf$, $mR_m=u+\jhalf$, $n L_n=v-\jhalf$, $n R_n=v+\jhalf$. 	Setting $\Delta=n u - mv$, noting that $\Delta=-1$ if $u/m<v/n$ and $\Delta=+1$ if $u/m>v/n$  we find 
 	\begin{align*}
 		 2mn (u/m-L_m)& =n 
 		 \\
@@ -500,11 +503,10 @@ This says that if we see $m$ spirals one way and $n$ the other, the divergence o
 
 Jean's statement of this theorem~\autocite{jeanPhyllotaxisSystemicStudy1994} is incorrect in the case $m=1$. This is because of the complication which arises in the following exercise, but although of historical significance\footnote{Trying to understand these complications is what led me to write this book, and in particular to introduce the complementary vector.} there is little deeper importance to this edge case and it is excluded in my version of the Theorem above.
 
-\begin{jExercise}\label{ex:pgo}
+\begin{jExercise}\label{ex:ftpfail}
 	Calculate generating and opposed intervals for the integer pairs $m=1,n=1$ and $m=1,n>1$.
-	\label{ex:ftpfail}.
 \end{jExercise}
-\begin{jAnswer}{ex:pgo}
+\begin{jAnswer}{ex:ftpfail}
 	In Theorem~\ref{thm:fundamentalcorresponding} the vectors are restricted to be parastichy vectors, but to find two generating and opposed vectors  with $m=1$ and $n=1$ we must allow complementary vectors and take $\pvec{1}$ and $\phatvec{1}$. 
 	These are always generating and opposed and so the generating interval is $[0,1]$. 
 	Either B\'ezout pair of $u=1, v=0$ or $u=0,v=1$ allows this to be written as $[u/m,v/n]$ in some order.
@@ -631,7 +633,7 @@ The examples of the previous section explicitly computed the principal vector pa
 general. 
 The principal vectors can often be found by eye --- indeed that is the point of them --- and certainly always by an exhaustive search of what is only a finite number of possibilities, since they must be at least as short as $\pvec{0}$ and $\pvec{1}$, which bounds the possible rise.
 But they can also be found by a reduction process from any vectors which generate the lattice. One reason to do this is in the proof of Turing's Theorem below. Moreover this reduction process is a version of the Euclidean algorithm, which begins to explain the connection between the continued fraction of the divergence and the principal pairs of the lattice that we will see in subsequent chapters. 
-
+\todo{xxx}
 We gave a standard version of the Euclidean algorithm back in section~\eqref{sec:euclidean} as a series of successive reductions of pairs of integers, and it can be generalised to vectors as long as we choose a norm for those vectors. Another way of viewing the first half of this chapter and Theorem~\ref{thm:glattice} in particular is that 
 if we define the size of a lattice vector as its rise, then application of the Euclidean algorithm to successively reduce the size of pairs of generating  vectors $\mvec$ and $\nvec$  terminates with a pair that have the very smallest rises, ie $\pvec{0}$ and $\pvec{1}$. If instead we define the size of a lattice vector as its length, then the same Euclidean algorithm terminates not at the vectors with shortest rise, but the vectors with shortest length: the principal vectors. One step of the algorithm is illustrated in Figure~\ref{fig:Txb0414Reduction}.
  \mmafig{Txb0414Reduction}{A pair of generating vectors reduced by a step of the Euclidean algorithm. $\pvec{4}=\pvec{14}-2\pvec{5}$
@@ -691,6 +693,7 @@ and the final bracket is nonnegative since $q,r \geq 1$.
 This shows that $\fvec$ and $\svec$ in order are the first two principal vectors and that the third is $\svec-\fvec$ if $\fvec.\svec>0$ and
 $\svec-\fvec$ otherwise. 
 \end{proof}
+The algebra of the proof could be simplified by first rotating and scaling the lattice so that $\fvec$ is horizontal and of length 1: this is  the renormalisation transform we will encounter in the next Chapter. 
 
 Because the first and second parastichy vectors $\fvec$ and $\svec$ are of the forms $\mvec$ and $\nvec$, with parastichy numbers $m$ and $n$, a simpler restatement of this result is Turing's theorem :
 \begin{theorem}
@@ -751,8 +754,10 @@ By considering these boundary cases, we will be able to  infer how principal par
 
 
 \section{Relation to \textit{Phyllotaxis: a systemic study}.}
-Versions of Theorem~\ref{thm:glattice}, and especially the integer condition $| m v - n u|=1$, appear in the early stages of many treatments of functions periodic on lattices, and date back to Bravais in 1850~\cite{bravaisSystemsFormedPoints1949}. 
-Useful contributions to the analysis of cylindrical lattices have come from many writers, most relevantly a series of papers in the 1970s by Adler. Details of these and many further references can be conveniently found in Jean's 1994 book \textit{Phyllotaxis: a systemic study in plant morphogenesis}~\cite{jeanPhyllotaxisSystemicStudy1994}.
+The relationship between continued fractions and divergence angles was worked out in some detail by Bravais as early as 1837~\cite{bravaisEssaiDispositionFeuilles1837}. Bravais also developed versions of Theorem~\ref{thm:glattice}, and especially the integer condition $| m v - n u|=1$ \cite{bravaisSystemsFormedPoints1949}.
+
+ 
+Useful contributions to the analysis of cylindrical lattices then came from many writers, most relevantly a series of papers in the 1970s by Adler. Details of these and many further references can be conveniently found in Jean's 1994 book \textit{Phyllotaxis: a systemic study in plant morphogenesis}~\cite{jeanPhyllotaxisSystemicStudy1994}.
 This section notes a few of the differences between Jean's book and the current one and can be skipped by most readers.
 Jean's book included an invaluable mathematical synthesis, predominantly but not exclusively of Adler's work, but perhaps as a consequence contains a handful of mathematical inconsistencies. It is a tribute to the centrality of Jean's textbook to the field that it is still worth untangling them; and while in general the problems are ones that do not apply to large-Fibonacci-number lattices, the viewpoint of the next chapter requires a robust foundation for simpler lattices too. 
 
@@ -762,15 +767,19 @@ One notational difference from Jean is in the idea of the generating pair which 
  %
 As a counter-example to Jean's A4.2 (p307 of~\cite{jeanPhyllotaxisSystemicStudy1994}), consider its statement for the particular case  $m=1$ and $n=2$. It becomes `the parastichy pair (1,2) is visible and opposed iff there exist unique integers $u$ and $v$ such that $0\leq u<1$, $0\leq v<2$, $|v-2u=1|$ and such that the divergence $d<\jhalf$ lies at or is between $u$ and $v/2$'. Solving the constraints unambiguously gives $u=0$ and $v=1$, and gives a generating interval of $[0,1/2]$.  However the pair $\pvec{1}$ and $\pvec{2}$ are only generating on the interval $d\in [1/4,1/2]$. 
  For any $d<1/4$ it is not true, at least in the language of this book, to say as  
- A4.2 does that the parastichy pair  \gp{1,2} is a generating pair (and also incorrectly, that the pair is opposed for all $0<d<\jhalf$).  What has happened is that Adler's proof method actually leads to the pair \gphat{1}{2}, ie the 1-parastichy vector and the 2-complementary vector, which \textit{is} generating and opposed: see Figure~\ref{fig:Txb0419JeanX}.
+ Jean's A4.2 does that the parastichy pair  \gp{1,2} is a generating pair (and also incorrectly, that the pair is opposed for all $0<d<\jhalf$).  What has happened is that Adler's proof method actually leads to the pair \gphat{1}{2}, ie the 1-parastichy vector and the 2-complementary vector, which \textit{is} generating and opposed: see Figure~\ref{fig:Txb0419JeanX}.
  \mmafig{Txb0419JeanX}{A counter-example to Jean's Proposition A4.2~\autocite{jeanPhyllotaxisSystemicStudy1994}, with $m=1$, $n=2$, $d=7/72$ and $h=0.1$; this counter-example holds for all $h$ and $0<d<\jfrac{1}{4}$. A4.2 asserts that the 1-parastichy and the 2-parastichy form what Jean calls a visible pair and we call a generating pair. For spiral lattices, in the sense of Section~\ref{sec:spiral}, Jean's A4.2 fails because the 2-parastichy is not visible: it is the pair \gphat{1}{2} which is the generating pair. }{1}
 
 
-Turing's algorithm is described in~\cite{turingMorphogenTheoryPhyllotaxis2013}. The independent Adler/Jean synthesis  makes use of `contractions' (eg A4.3 of~\cite{jeanPhyllotaxisSystemicStudy1994}) which correspond to steps in the Turing-Euclid reduction, and implicitly uses reaching the principal  vectors as a stopping point. 
 
-Another area where this text differs from Jean's synthesis is the \emph{conspicuous pair} as a model of the most obvious spirals. Adler~\cite{adlerModelContactPressure1974} defined a conspicuous visible opposed parastichy pair as identical to our principal parastichy pair (at least when opposed, and away from spiral lattices), and in 1988~\cite[p214]{jeanNumbertheoreticPropertiesTwodimensional1988} Jean followed this, but by 1994 he was differently defining the conspicuous pair as that closest to a right angle~\cite[p18]{jeanPhyllotaxisSystemicStudy1994}. But in any case 
-I prefer here to use the principal parastichy pair as the most natural model of `obvious'. 
-The concept of the principal parastichy pair, central to this book, was first made explicit by Turing~\autocite{turingMorphogenTheoryPhyllotaxis2013} in the 1950s: Theorems~\ref{thm:third} and~\ref{thm:Turing} are based on his ideas. Adler was well aware of Turing's notes on phyllotaxis and cited them in his 1974 literature survey~\cite{adlerModelContactPressure1974}. Adler's perspective was that the central mathematical problem was the relationship between the divergence and the set of possible generating pairs. It was from this perspective that he wrote that Turing had been `prevented' from using this `fundamental' concept because of Turing's focus on the principal parastichy pair, which is in fact more fundamental to the modern Standard Picture. For some reason, perhaps the very long delay in publishing Turing's notes, even this dismissal was removed from Jean's book, even though the notes had by then been published. As a consequence Jean's book contains no explicit equivalent of Turing's Theorem. 
+
+Another area where this text differs from Jean's synthesis is the \emph{conspicuous pair} as a model of the most obvious spirals. Adler~\cite{adlerModelContactPressure1974} defined a conspicuous visible opposed parastichy pair as identical to our principal parastichy pair (at least when opposed, and away from spiral lattices), and in 1988~\cite[p214]{jeanNumbertheoreticPropertiesTwodimensional1988} Jean followed this, but by 1994 he was differently defining the conspicuous pair as that closest to a right angle~\cite[p18]{jeanPhyllotaxisSystemicStudy1994}.
+
+In any case I prefer here to use the principal parastichy pair as the most natural model of `obvious'. 
+The concept of the principal parastichy pair, central to this book, was first made explicit by Turing~\autocite{turingMorphogenTheoryPhyllotaxis2013} in unpublished material in the early 1950s: Theorems~\ref{thm:third} and~\ref{thm:Turing} are based on his ideas. Turing's algorithm was eventually published in the 1990s as described in~\cite{turingMorphogenTheoryPhyllotaxis2013}.  With the aid of hindsight, the theorem I have called here Turing's Theorem is implicit in Bravais' nineteenth century work. 
+The independent Adler/Jean synthesis  makes use of `contractions' (eg A4.3 of~\cite{jeanPhyllotaxisSystemicStudy1994}) which correspond to steps in the Turing-Euclid reduction, and implicitly uses reaching the principal  vectors as a stopping point.
+
+Adler was well aware of Turing's notes on phyllotaxis and cited them in his 1974 literature survey~\cite{adlerModelContactPressure1974}. Adler's perspective was that the central mathematical problem was the relationship between the divergence and the set of possible generating pairs. It was from this perspective that he wrote that Turing had been `prevented' from using this `fundamental' concept because of Turing's focus on the principal parastichy pair, which is in fact more fundamental to the modern Standard Picture. For some reason, perhaps the very long delay in publishing Turing's notes, even this dismissal was removed from Jean's book, even though the notes had by then been published. As a consequence Jean's book contains no explicit equivalent of Turing's Theorem. 
 
  
  \section{Multijugate lattices}
