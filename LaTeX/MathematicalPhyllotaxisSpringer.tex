@@ -1,4 +1,4 @@
-% !TeX program = lualatex
+% !TeX rogram = lualatex
 \documentclass[graybox,envcountchap,sectrefs]{svmono}
 
 \usepackage[british]{babel}\usepackage{csquotes}
@@ -9,7 +9,8 @@
 % Springer recommended packages
 \usepackage{type1cm}         
 
-\usepackage{makeidx}         % allows index generation
+\usepackage{makeidx}    
+\makeindex     % allows index generation
 \usepackage{graphicx}        % standard LaTeX graphics tool
 % when including figure files
 \usepackage{multicol}        % used for the two-column index
@@ -147,6 +148,8 @@
 {
 	\bibliography{MPCite}
 }
+
+\printindex
 
 \end{document}
 
