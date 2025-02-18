@@ -208,20 +208,16 @@ These properties taken together prove that the structure visible in the numerica
 	Opposed branches are shown as red lines and non-opposed ones as yellow.  }{1}
 
 
-
+Yet more algebra can be deployed to show that no triple-point occurs at the maximum of a branch, so all the van Iterson sub branches can be traversed with $h$ strictly decreasing. 
 \begin{jExercise}\label{ex:pslope}
-	Show that at the triple-point  $m=n=m+n$, the \branch{m=n} branch, interpreted as a function $h(d)$, has a slope $h'$ given by 
-	\begin{align}
-		\frac{h'}{h} &= - \frac{1}{6 r^2 \Delta}
-	\end{align}
-%	\label{prob:hslope}
+Show this. (This is easier to do after section~\ref{sec:renormalisation})
 \end{jExercise}
-\begin{jAnswer}{ex:pslope}{}\end{jAnswer}
-	
-Exercise~\ref{ex:pslope} shows that no triple-point occurs at the maximum of a branch, so all the van Iterson sub branches can be traversed with $h$ strictly decreasing. 
-
-\todo{XXXX no answer}
-
+\begin{jAnswer}{ex:pslope}{
+		At the triple-point  $m=n=m+n$, the \branch{m=n} branch, interpreted as a function $h(d)$, has a slope $h'$ given by 
+		\begin{align}
+			\frac{h'}{h} &= - \frac{1}{6 r^2 \Delta}
+\end{align}}
+\end{jAnswer}
 We have shown that packing efficiency remains close to the hexagonal optimum on the van Iterson branch, but we also need the following:
 \begin{theorem}
 	Near but below the triple-point, the packing efficiency of the opposed branch, as a function of $r$, is higher on the opposed van Iterson than on the non-opposed van Iterson branch.
@@ -484,14 +480,15 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 	\end{jAnswer}
 	
 	\begin{jExercise}\label{ex:whenno}
-		If $m$ and $n$ are co-prime and $m<n$, when can a $\gp{m,n}$ touching-circle lattice be non-opposed?
+		If $m$ and $n$ are co-prime and $m<n$, find the region where a $\gp{m,n}$ touching-circle lattice is non-opposed.
+		
 	\end{jExercise}
 	\begin{jAnswer}{ex:whenno}{
-		The bifurcation theory argument of this chapter or specifically examination of Figure~\ref{fig:Txb0505Pruned} show we must have $n-m>m$, 
-		and the lattice is non-opposed  on the $\gp{m=n}$ branch from the triple point $\gp{m=n=n-m}$ to the point where either $\pvec{m}$ or $\pvec{n}$ vector becomes vertical.
-\todo{xxxx}
-			Choose $u,v$ as the winding number pair so that $m v - n u=\Delta$. We need either $\Re \pvec{m}=0$, so $\Re z_1=u/m$ or $\Re \pvec{n}=0$, so $\Re z_1=v/n$. Inserting these into~\ref{eq:x} gives $\cos\theta=n/m$ or $\cos\theta=m/n$ respectively, so we need to choose $\cos\theta=m/n$,
-			and since $m/n<\jhalf$, $\pi/3\leq\theta\leq 2\pi/3$ and one of the solutions of  $\cos\theta=m/n$ is indeed a point on the touching circle.
+		The bifurcation theory argument of this chapter or specifically examination of Figure~\ref{fig:Txb0505Pruned} show we must have $n-m>m$ or $ m < \jhalf n$. If this is true, 
+		the lattice is non-opposed  on the $\gp{m=n}$ branch from the triple point $\gp{m=n=n-m}$ to the point where either $\pvec{m}$ or $\pvec{n}$ vector becomes vertical.
+
+			Choose $u,v$ as the winding number pair so that $m v - n u=\Delta$. We need either $\Re \pvec{m}=0$, so $\Re z_1=u/m$ or $\Re \pvec{n}=0$, so $\Re z_1=v/n$. This gives $\cos\theta=n/m$ or $\cos\theta=m/n$ respectively, so we need to choose $\cos\theta=m/n$,
+			and since $m/n<\jhalf$, $\pi/3\leq\theta\leq 2\pi/3$ and one of the solutions of  $\cos\theta=m/n$ is indeed a point on the touching circle
 			 branch. From the previous exercise $\tan\psi=-\tan\theta$ at that point, 
 			 and so $|\cos\psi|=m/n$ there too. 
 }	\end{jAnswer}
