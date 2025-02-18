@@ -1,6 +1,11 @@
 % !TeX rogram = lualatex
 \documentclass[graybox,envcountchap,sectrefs]{svmono}
 
+%\includeonly{Classifying,Transformed,Developmental,Empirical,Placement,StackedDisksChapter}
+%\includeonly{Classifying}
+%\includeonly{Motivation,Background,Coprimality}
+
+
 \usepackage[british]{babel}\usepackage{csquotes}
 %\usepackage{mathptmx}
 %\usepackage{helvet}
@@ -77,9 +82,8 @@
 	\SetupExSheets{counter-within=ch}
 }
 {
-	\newenvironment{jExercise}{\begin{prob}}{\end{prob}}
-	\newenvironment{jAnswer}[1]{\begin{sol}{#1}}{\end{sol}}
-	\newcommand{\jBookEndSolutions}{}
+	\newenvironment{jExercise}{\prob}{\endprob}
+	\newenvironment{jAnswer}[2]{}{} %throw away label as exsheets is %	\newcommand{\jBookEndSolutions}{}
 }
 \input{MPSpringerPreamble.tex}
 \input{githubMathematicalPhyllotaxisRepoProperties.tex}
@@ -138,7 +142,7 @@
 	\chapter{Answers to Exercises}\printsolutions
 }
 {
-	{}
+	\include{Answers}
 }
 
 \ifthenelse{\boolean{useBiber}}%

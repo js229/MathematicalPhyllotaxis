@@ -6,7 +6,7 @@
 \chapter{Classifying cylindrical lattices}
 \label{ch:classifying}
 \abstract{
-The previous chapter made precise the ideas  of a lattice space $\mathcal{L}(d,h)$, where we take the divergence $d$ and the rise $h$ as parameters, and the principal parastichy pair as the pair of integers corresponding to the two shortest informative vectors in the lattice. In this chapter  we solve the problem of classifying every lattice by its principal parastichy pair.
+The previous chapter made precise the ideas  of a lattice  $\mathcal{L}(d,h)$, where we take the divergence $d$ and the rise $h$ as parameters, and the principal parastichy pair as the pair of integers corresponding to the two shortest informative vectors in the lattice. In this chapter  we solve the problem of classifying every lattice by its principal parastichy pair.
 The answer is given in the van Iterson diagram of Figure~\ref{fig:Txb0501VanItersonMain} and the rest of the chapter explains how this Figure is constructed and its implications. 
  Since the classification changes at the points of lattice space where either the first and second, or the second and third, parastichy vectors are equal in length, we need to find the $d$ and $h$ at which this occurs. This requires us to identify \emph{touching-circle lattices}, and we will first construct Figure~\ref{fig:Txb0501VanItersonMain} by algebraically finding touching-circle lattices, and then see how a more powerful and more abstract approach based on lattice re-normalisation gives the same answer and explains much of the geometric structure of the diagram. 
 }
@@ -48,7 +48,7 @@ and then
 %	\label{ex:calcr2}
 	Find $r^2$ as a function of $m$, $n$, $x_n$, $x_m$ and $\Delta$.
 \end{jExercise}
-\begin{jAnswer}
+\begin{jAnswer}{ex:calcr2}{
 	Note that $n x_n - m x_n=\Delta$ and use this to eliminate $x_n$ and $r^2$ from~\eqref{eq:rm} and~\eqref{eq:rn}.
 	This (or alternatively eliminating $x_m$) yields
 	\begin{align}
@@ -58,7 +58,7 @@ and then
 %		\\
 %		 r^2 	&=  \frac{ \Delta (n x_m+ m x_n)}{4(n^2-m^2)} = \frac{ n^2 x_m^2-  m^2 x_n^2)}{4(n^2-m^2)}
 	\end{align}
-
+}
 \end{jAnswer}
 With a little work we can find
  \begin{align}
@@ -72,7 +72,7 @@ where we have set  $\bar d= {(nv-mu)}/{(n^2-m^2)}$. The first of these shows tha
 \begin{jExercise}\label{ex:semi}
 	Show that~\eqref{eq:semi} and~\eqref{eq:r2def} are correct.
 \end{jExercise} 
-\begin{jAnswer}{ex:semi}
+\begin{jAnswer}{ex:semi}{
 Substituting for $x_m$ and $x_n$ into~\eqref{eq:rm} and~\eqref{eq:rn} and eliminating $r^2$ gives
 \begin{equation}
 	\label{eq:poly}
@@ -81,7 +81,7 @@ d^2 m^2+2 d n v+h^2 m^2+u^2=d^2 n^2+2 d m u+h^2 n^2+v^2
 Using the definition of $\bar{d}$ and $\Delta^2=1$ this gives~\eqref{eq:semi}. 
 Equation \eqref{eq:r2def} follows from the answer to Exercise~\ref{ex:calcr2}, or by 
  using $\Delta=mv-nu$ to eliminate $v$ in~\eqref{eq:poly} and then eliminating $h^2$ using~\eqref{eq:rm}.
-
+}
 \end{jAnswer}
 
 
@@ -90,13 +90,13 @@ Equation \eqref{eq:r2def} follows from the answer to Exercise~\ref{ex:calcr2}, o
 	Find the values of $x_m$, $x_n$, and $r$ at the left and right
 	intersections of the \branch{m=n} branch with $h=0$.
 \end{jExercise}
-\begin{jAnswer}{ex:paxis}
+\begin{jAnswer}{ex:paxis}{
 	Suppose $m<n$. The $d,h$ semi-circle intersects the $h=0$ axis 
 	at $(d_L= (v-u)/(n-m),0)$, with $x_m=x_n$, and $(d_R=(v+u)/(n+m),0)$, 
 	and $(n^2-m^2)(d_L-d_R) = 2\Delta$. 
 	At these points $2r(n\pm m)=1$.
 Except in the cases $(0=1)$, $(1=1)$ and $(1=2)$,  $d_L$ and $d_R$ either both lie in $[0,\jhalf]$ or or both lie in $[\jhalf,0]$.
-\end{jAnswer}
+}\end{jAnswer}
 
 
 
@@ -136,7 +136,7 @@ have radius $r$ where
 	\label{ex:triplealgebra}
 	Find a relation between $r$, $m$ and $n$ at a hexagonal lattice, and use this to show equation~\eqref{eq:hofr}.
 \end{jExercise}
-\begin{jAnswer}{ex:ptriple}
+\begin{jAnswer}{ex:ptriple}{
 Consider the triangle of Figure~\ref{fig:Txb0409Apextriangle} which has sides $n\mvec$, $m\nvec$ and $1$. Since the lattice is hexagonal, the top angle of the triangle there is $60^\circ$, so set $|\mvec|=|\nvec|=2r$ and use the cosine rule to find   
 \begin{align*}
 	4 r^2  &=  \frac{1}{m^2+mn + n^2} \label{eq:cosine}
@@ -151,7 +151,7 @@ With this form, equations~\eqref{ex:r2xm} and~\eqref{ex:r2xn} simplify to
 	x_{m+n} &=  2  \Delta(n-m) r^2
 \end{align*}
 and by using $(n^2-m^2)h^2=x^2_m-x^2_n=3\cdot 4 r^4 (n^2-m^2)$ we get equation~\eqref{eq:hofr} and could further use this to find $d-\bar{d}$ as a function of $m$ and $n$. Note this shows that $\mvec$ and $\nvec$ are opposed and that none of the principal vectors are vertical at a triple-point with $n>m$. 
-\end{jAnswer} 
+}\end{jAnswer} 
 
 
 
@@ -176,11 +176,12 @@ Square lattices also have a role in modelling obvious parastichies as several au
 \begin{jExercise}\label{ex:ptopbranch}
 	At the top of the \branch{m=n} branch, the three principal parastichy numbers change from \gp{m=n,n-m} to \gp{m=n,n+m} at the point where the lattice is a square lattice with principal parastichy numbers \gp{m=n,n-m=n+m}. Find the values of $h$, $r$ and $d$ at which this happens and hence show this is unique on the van Iterson branch.
 \end{jExercise}
-\begin{jAnswer}{ex:ptopbranch}
+\begin{jAnswer}{ex:ptopbranch}{
 	A square lattice occurs for $\mvec.\nvec=0$; using $|n\mvec-m\nvec|=1$ we get
 	$1=n^2|\mvec|^2+m^2|\nvec|^2= 4 r^2 ( m^2+n^2)$. This is unique on the branch because  $4r^2$ is strictly decreasing.
-\end{jAnswer}
-\newpage
+}\end{jAnswer}
+
+
 \section[Unfolding the triple-point bifurcation]{Nearly hexagonal lattices: unfolding the triple-point bifurcation}
 We have established algebraically the structural properties of lattice space so that we can draw it, but the key property of lattice space we need to understand for Fibonacci structure depends only on what happens at triple-points at which the lattice is hexagonal. In fact we can obtain the key structural information by understanding the structure of lattice space near each such bifurcation: in the language of bifurcation theory we need only consider the unfolding of the triple-point.  
 
@@ -215,6 +216,8 @@ These properties taken together prove that the structure visible in the numerica
 	\end{align}
 %	\label{prob:hslope}
 \end{jExercise}
+\begin{jAnswer}{ex:pslope}{}\end{jAnswer}
+	
 Exercise~\ref{ex:pslope} shows that no triple-point occurs at the maximum of a branch, so all the van Iterson sub branches can be traversed with $h$ strictly decreasing. 
 
 \todo{XXXX no answer}
@@ -314,7 +317,7 @@ The M\"obius map $g$ may include an odd or even number of inversions in the unit
 	Suppose that $w=d_0+ih_0$ with $h\geq 0$. Compute the real and imaginary parts of $z = \Delta_{mn}g_{mn}(w)$ and show that the imaginary part of $z$ is always non-negative.
 \end{jExercise}
 
-\begin{jAnswer}{ex:signz}
+\begin{jAnswer}{ex:signz}{
 For the original lattice in \gp{0,1}, we have $h_0\geq0$. Separation into real and imaginary parts  gives
 	\begin{align}
 		z_1 &= g_{mn}(d_0+ih_0) 
@@ -327,7 +330,7 @@ For the original lattice in \gp{0,1}, we have $h_0\geq0$. Separation into real a
 	\label{eq:gReImA}
 \end{align}
 and then setting $h=\Im \Delta_{mn}z_1$ shows that $z$ has positive rise.
-\end{jAnswer}
+}\end{jAnswer}
 
  So for co-prime $m$ and $n$ we can construct a rotated lattice $z_m \mathcal{L}(w_1)$  with shortest vectors $z_m$ and $z_n$. It is possible that these shortest vectors are not parastichy vectors in the sense specific to the previous chapter, but are instead complementary vectors. But the hatless parastichy counts will still be $(m,n)$. In general, any $u,v$ which satisfy the B\'ezout relation will work to construct a region of lattice space with the correct parastichy numbers although if the $(u,v)$ are not winding numbers that region is an integer horizontal translation of the basic $\gp{m,n}$ region.
  	
@@ -347,7 +350,7 @@ Once we have done all this work to see where the renormalisation transform comes
 \begin{jExercise}\label{ex:circles}
 	Suppose that $m ,n ,u, v$ are integers satisfying  $m v - n u =\Delta $ with $|\Delta|=1$.  Find  \gp{m,n} lattices which are  orthogonal and show they lie on circles in van Iterson space.
 \end{jExercise}
-\begin{jAnswer}{ex:circles}
+\begin{jAnswer}{ex:circles}{
 	Parameterise the  $\gp{0,1}$ region of van Iterson space by setting $w=d_0+ih_0$ and choose a transformed lattice with $z=\Delta g_{mn}(w)$ in~\eqref{eq:gReImA} gives
 	\begin{align}
 		\Re z &= 
@@ -370,13 +373,13 @@ Once we have done all this work to see where the renormalisation transform comes
 	\begin{align}
 		\left( d(s)- \frac{1+2nu}{2mn}\right)^2 + h(s)^2 &= \frac{1}{4 m^2 n^2}.
 	\end{align}
-	
+}
 \end{jAnswer}
 
-\begin{jExercise}\label{ex:shcircles}
+\begin{jExercise}\label{ex:shcircles}{
 	Find  \gp{m,n} lattices which are touching-circle and the special touching-circle cases of square and hexagonal lattices. 
 	\label{ex:orthogonal}
-\end{jExercise}
+}\end{jExercise}
 
 \begin{jAnswer}{ex:shcircles}
 Touching circle lattices occur in \gp{0,1} space when $w=e^{i\theta}$, for $\pi/3\leq\theta\leq2\pi/3$ and $\theta$ is the angle between the principal vectors. 
@@ -406,11 +409,11 @@ There are two hexagonal lattice points in \gp{0,1} at $e^{i\pi/3}$ and $e^{2i\pi
 	
 \end{jAnswer}
 
-\begin{jExercise}\label{ex:calcprinciplay}
+\begin{jExercise}\label{ex:calcprinciplay}{
 %\label{ex:calcprinciplay}
 	Find the magnitude of the principal parastichy vector in an \gp{m,n}  lattice with angle $\theta$ between its principal parastichy vectors.
 	Find the radius of the disks in a touching circle lattice as a function of $\theta$, and the divergence $d$ as a function of $r$.
-\end{jExercise}
+}\end{jExercise}
 \begin{jAnswer}{ex:calcprinciplay}
 The angle  $\theta$ between the principal parastichy vectors is the same in the $\gp{0,1}$ lattice and in the rotated and scaled lattice, and  $w=|w_0|e^{i\theta}$.  Inserting this into in~\eqref{eq:gReImA} and taking real and imaginary parts allows the calculation of $\pvec{m}=m z_1 -u$ and $|\pvec{m}|^2$: 
 	\begin{align}
@@ -439,7 +442,7 @@ As $w_1$ rotates around the unit circle from $e^{2i\pi/3}$ to $e^{i\pi/2}$ to $e
 Suppose that the Fibonacci branch of the van Iterson tree is followed as $r$ is decreased.
 Show that the larger parastichy number becomes $F_{k+1}$ at approximately  $r^{-1}={\sqrt{2}F_k}$.
 \end{jExercise}
-\begin{jAnswer}{ex:fibthresholds}
+\begin{jAnswer}{ex:fibthresholds}{
 If $m$ and $n$ are adjacent Fibonacci numbers $F_{k}$ and $F_{k+1}$, then using $F_k\approx \tau^k/\sqrt{5}
 $ we find the value of $r$ on the branch is approximately
 	\begin{align}
@@ -447,7 +450,7 @@ $ we find the value of $r$ on the branch is approximately
 \end{align}
 So on the Fibonacci branch of the van Iterson diagram, 
 the larger Fibonacci number becomes $F_{k+1}$ at approximately $r=\sqrt{5/2}\tau^{-k}\approx \frac{1}{\sqrt{2}F_k}$.
-\end{jAnswer}
+}\end{jAnswer}
 
 
 
@@ -457,7 +460,7 @@ the larger Fibonacci number becomes $F_{k+1}$ at approximately $r=\sqrt{5/2}\tau
 		Compute the centre and the radius of the circle in van Iterson space on which the $m=n$ branch lies.
 \end{jExercise}
 
-\begin{jAnswer}{ex:crvani}
+\begin{jAnswer}{ex:crvani}{
 		From~\eqref{eq:tchd}, the imaginary part of $z_1$ is zero when  $\sin\theta=0$, so the left and right intersections of the image of $w$ on the real axis are in some order $(u-v)/(m-n)$ and $(u+v)/(m+n)$ so that the radius of the van Iterson circle
 		is
 \begin{align}	
@@ -477,13 +480,13 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 	\tan \psi 
 	&= \frac{ (n^2-m^2)}{\pm\sqrt{3}(n^2+m^2)-mn }
 \end{align}
-
+}
 	\end{jAnswer}
 	
 	\begin{jExercise}\label{ex:whenno}
 		If $m$ and $n$ are co-prime and $m<n$, when can a $\gp{m,n}$ touching-circle lattice be non-opposed?
 	\end{jExercise}
-	\begin{jAnswer}{ex:whenno}
+	\begin{jAnswer}{ex:whenno}{
 		The bifurcation theory argument of this chapter or specifically examination of Figure~\ref{fig:Txb0505Pruned} show we must have $n-m>m$, 
 		and the lattice is non-opposed  on the $\gp{m=n}$ branch from the triple point $\gp{m=n=n-m}$ to the point where either $\pvec{m}$ or $\pvec{n}$ vector becomes vertical.
 \todo{xxxx}
@@ -491,7 +494,7 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 			and since $m/n<\jhalf$, $\pi/3\leq\theta\leq 2\pi/3$ and one of the solutions of  $\cos\theta=m/n$ is indeed a point on the touching circle.
 			 branch. From the previous exercise $\tan\psi=-\tan\theta$ at that point, 
 			 and so $|\cos\psi|=m/n$ there too. 
-	\end{jAnswer}
+}	\end{jAnswer}
 	
 
 
@@ -524,9 +527,9 @@ recovers the standard result that the packing efficiency of the hexagonal lattic
 \begin{jExercise}\label{ex:localpacking}
 Show that the packing efficiency of a van Iterson lattice is locally maximised at every triple-point.
 \end{jExercise}
-\begin{jAnswer}{ex:localpacking}
+\begin{jAnswer}{ex:localpacking}{
 	Lagrange proved in 1773 that a hexagonal lattice is the closest possible lattice packing, and triple-points are the only points in lattice space at which the lattice is hexagonal. For more on the connection between the modular group and sphere-packings see, say, Berger~\cite{bergerGeometryRevealedJacob2010}.
-\end{jAnswer}
+}\end{jAnswer}
 We can calculate the packing efficiency $\beta$ across van Iterson space by using the classification of this chapter to find $\mvec$.  Within the $(0,1)$ region, the primary parastichy vector is $(1,0)$ of length 1, and $\beta$ is simply $\pi/ {4 h }$.  Since $\beta$ is not changed by a rigid rotation and scaling of a lattice, we could also simply map this function  $\pi/ {4 h }$ using the M{\"o}bius transforms into each region. Figure~\ref{fig:Txb0509PackingTreePlot} shows a contour plot of the packing efficiency $\beta$ along with a graph of $\beta$ along a horizontal transect of lattice space.
 \mmafig{Txb0509PackingTreePlot}{The golden angle cannot achieve for maximal packing. Top packing efficiency $\beta$ across van Iterson space (Close to hexagonal: $\beta>0.8$, Tight: $\beta>0.7$, Loose: $\beta>0.6$, Looser $\beta<0.6$). Bottom graph: $\beta$ as a function of $d$ across the line $h=0.005$. Note that while the divergence $\tau/2\pi$ corresponding to the golden angle is a local maximum of $\beta$, it is not a global maximum.
 }{0.8}%
