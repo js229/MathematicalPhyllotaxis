@@ -5,8 +5,6 @@
 \abstract{Up to now we have studied only static lattices, which fix the location of every node simultaneously, and then we smoothly transformed the lattice as a whole. This approach cannot represent the one-by-one developmental choices for node commitment, so now we will consider more general node-placement models. This Chapter, and the next, review a range of models that have usefully been deployed to understand Fibonacci phyllotaxis in this way. 
 }
 
- A modern book-length survey of placement models, with a rather different perspective to this one, is~\autocite{barabePhyllotacticPatternsMultidisciplinary2020}. Recent reviews mainly devoted to the biological issues include~\cite{traasPhyllotaxis2013} and~\cite{godinPhyllotaxisGeometricCanalization2020}. One survey of models in plant morphogenesis more broadly is  ~\autocite{prusinkiewiczComputationalModelsPlant2012}.
- 
  Although we no longer require all node positions to form a lattice, we retain the cylindrical coordinates $(x,z)$ of section~\ref{sec:latticedef}, and suppose that the position of all the points $\jpoint{i} = (x_i,z_i)$ is fixed up to the $(k-1)$-th, with $z_i$ non-decreasing. The node-placement model of Chapter~\ref{sec:bio} is now expressible as a function whose output is $\jpoint{k}$ and whose input is the $\jpoint{i}$s, $i=0,\ldots, k-1$,
 although in practice the output will only depend on recent or nearby node-positions. The time at which the new node is placed might be an output of the model (as in Snows' model) but if we follow Hofmeister's model and choose to hold constant the inter-node time, or \textit{plastochrone},  then we have a discrete-time model. 
 
@@ -20,11 +18,10 @@ If there is a very long time between successive drops, the drops will move off a
 will ensure they move in successively opposite directions  as in the spots 0, 1 and 2 in part (a) of Figure~\ref{fig:F0902Douady1996Fig3crop}. However if the process is sped up still faster, then the same mutual repulsion squeezes out the new spot to the side.  It is this symmetry breaking that has placed the spot numbered 2 away from the line between the two earlier spots in part (b) of Figure~\ref{fig:F0902Douady1996Fig3crop} and initiated a spiral form.
 
 \jpgfig{F0902Douady1996Fig3crop}{
-		Different patterns of ferrofluid drops in Douady and Couder's experiment at different values of the parameter $G$ which control the rate of centrifugal movement. (a) When the time between drops is large compared to the time to be removed from the plate, each new drop is repelled only by the previous one and the node position  alternates by 180$^\circ$ each time: in the language of this book a distichous pattern $(1,1)$ is obtained with a divergence of $d=\jhalf$. (b) As the removal time decreases, a symmetry breaking bifurcation  to a  $(1,2)$ pattern appears with a divergence $d\approx 5/12$. (c) As the control parameter is further decreased higher order Fibonacci modes, here $(5,8)$, appear with divergence $d\approx{1}/{\tau^2}$.  \copyright Academic Press, 1996; from~\cite{douadyPhyllotaxisDynamicalSelf1996a}.}{0.25}
+		Different patterns of ferrofluid drops in Douady and Couder's experiment at different values of the parameter $G$ which control the rate of centrifugal movement. (a) When the time between drops is large compared to the time to be removed from the plate, each new drop is repelled only by the previous one and the node position  alternates by 180$^\circ$ each time: in the language of this book a distichous pattern $(1,1)$ is obtained with a divergence of $d=\jhalf$. (b) As the removal time decreases, a symmetry breaking bifurcation  to a  $(1,2)$ pattern appears with a divergence $d\approx 5/12$. (c) As the control parameter is further decreased higher order Fibonacci modes, here $(5,8)$, appear with divergence $d\approx{1}/{\tau^2}$.  \copyright Academic Press, 1996; from~\cite{douadyPhyllotaxisDynamicalSelf1996a}.}{0.5}
 		%{From ~\cite{douadyPhyllotaxisDynamicalSelf1996a}}
 
 
-\todo{reword}
 \jpgfig{F0903Douady}{		
 	Simulation results for a model of the Douady-Couder system,
 	showing how only the Fibonacci branch is reachable with smooth changes of the control parameter $G$ down from 1.  The graph shows  $G$, corresponding to relative magnitude of time to clear the plate to inter-drop period, against emergent divergence angle $\phi= 2\pi d$.
@@ -87,7 +84,7 @@ PDE models, or their spatially discrete analogues which represent individual cel
  At present we do not have reliable enough quantitative measurements of auxin to validate the models at a cellular scale, and 
  even recent work~\cite{pennybackerPhyllotaxisProgressStory2015} validates the model through emergent node positions, just as we might with the stacked-coin model. However emerging molecular data at cellular and subcellular scales is likely to change this in the foreseeable future.
  
-Some other researchers continue to claim simple continuum reaction diffusion models as plausible source of phyllotactic pattern \textit{de novo}. Carteni et al~\autocite{carteniModellingDevelopmentArrangement2014} published a model suggesting that the patterning of vascular bundles could arise in this way, rather than as a sequence of patterns of increasing complexity. It is far from clear that such simple reaction-diffusion models can overcome the frequent problem of the strong dependence of emergent pattern on arena geometry. 
+Some other researchers continue to claim simple continuum reaction diffusion models as plausible source of phyllotactic pattern \textit{de novo}. Carteni et al~\autocite{carteniModellingDevelopmentArrangement2014} published a model suggesting that the patterning of vascular bundles could arise in this way, rather than as a sequence of patterns of increasing complexity. Among other problems, I doubt that such simple reaction-diffusion models can overcome the frequent problem of the strong dependence of emergent pattern on arena geometry. 
 
 
 \section{Mechanical tension models}
@@ -107,6 +104,11 @@ The circumstances under which an asymptotic approach to a uniform distribution o
 But most fundamentally, the known biology offers no evidence for any molecular protractor in the plant delivering repeated divergence angles close to the golden angle and independently of previous primordia. Most current theorists would agree that precision in repeated instances of the divergence angle is, instead, an emergent property of pattern formation. 
 
 Okabe does makes one observation that is useful to highlight here. The theorem that Jean christened the `Fundamental' Theorem of Phyllotaxis says that a $(1,2)$ system can take any divergence between 128.5$^\circ$ and 180$^\circ$, while experimental evidence is that divergence angles are in a much narrower range around the Fibonacci angle than this. Okabe's claim is perhaps that this suggests the divergence is a more fundamental property than the parastichy\index{parastichy}{} count, but my perspective is that this observation merely underlines how non-Fundamental the Theorem actually is for Phyllotaxis: it classifies lattices, but does not describe how they have evolved from other patterns, not even nearby lattices. 
+
+\section{Notes}
+ A modern book-length survey of placement models, with a rather different perspective to this one, is~\autocite{barabePhyllotacticPatternsMultidisciplinary2020}. Recent reviews mainly devoted to the biological issues include~\cite{traasPhyllotaxis2013} and~\cite{godinPhyllotaxisGeometricCanalization2020}. One survey of models in plant morphogenesis more broadly is  ~\autocite{prusinkiewiczComputationalModelsPlant2012}.
+
+
 
 \section{Summary}
 We have reviewed a range of models for node placement. Many of these models --- with the notable exception of protractor models --- are likely to continue to have a role in helping to understand the biological mechanisms of node formation. However we have not yet reviewed one of the most promising contemporary models for node-formation, the stacked-disk model. We turn to this in the next chapter.
