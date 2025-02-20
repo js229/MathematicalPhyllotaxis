@@ -32,7 +32,16 @@
 
 \newcommand{\jhalf}{\textstyle{\frac{1}{2}}}
 \newcommand{\jfrac}[2]{\textstyle{\frac{#1}{#2}}}
-\newcommand{\jpoint}[1]{\ell_{{#1}}}
+
+\usepackage{tikz}
+\newcommand*\circled[1]{%
+\protect\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}%
+}
+
+\newcommand{\jpoint}[1]{\circled{{\textsf{#1}}}}
+%\newcommand{\jpoint}[1]{\whitestone{{#1}}}
+
 \newcommand{\tends}{\rightarrow}
 
 

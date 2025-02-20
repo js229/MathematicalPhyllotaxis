@@ -66,7 +66,7 @@ Indeed solutions to stacked disk models showing large Fibonacci pair parastichy 
 
 \mmafig{Txb1007ParastichyCountsTo89}{Transitions between parastichy counts as a function of the slowly changing inverse radius of the disks. $y$ axis: Local chain parastichy counts for the topmost chain through each successive disk in a single
 	deterministic run with a  $r'=0.03$ started from a single disk of radius 1/2. $x$ axis: inverse radius of the disk at the highest point of that chain.
-	The thin grey vertical lines display the theoretical prediction that the transition from a parastichy number of $F_{k-2}$ to $F_{k}$ should occur at $r{-1}=\sqrt{2}F_{k+2}$. 
+	The thin grey vertical lines at $r^{-1}=2\sqrt{2}F_{k}$ mark the start of transition from  $F_{k-2}$ to $F_{k}$. 
 }{1}
 So in general, it seems to be the case that for small enough $D'$, stacked-disk models satisfy Turing's hypothesis of geometrical phyllotaxis. To generate Fibonacci, rather than say Lucas numbers, we need to look at the ways in which the $(1,1)$ patterns corresponding to stacked disks of diameter $D=1$ change as $D$ is slightly decreased and it is not difficult to see that for small enough $D'$ the next parastichy pair must be $(1,2)$. In general, then, there are strong intuitive and numerical grounds for expecting that stacked-disk models with small $D'$, starting from $D=1$, will always generate Fibonacci parastichy pairs, as indeed occurs in Figure~\ref{fig:Txb1007ParastichyCountsTo89}.
 So this disk-stacking model can account for the dominance of Fibonacci counts in the empirical data of Figure~\ref{fig:Txb0802MOSIplines}.  What it does not by itself account for is the other peaks in that data: we explore that later in this Chapter.
@@ -154,7 +154,7 @@ So stacked-disk models provide an attractive generalisation of lattice models fo
 such models can yield disk packings which are denser than those of the corresponding lattice. Despite these uncertainties about the asymptotic dynamics of the models, they are still extremely useful as a lightly parametrised model that is capable of explaining more than Fibonacci structure in comparison with data.
 
 To do this, of course, we need some data to compare, and as we have seen there all of the possible datasets so far available have their limitations. Couder's 1998 dataset of 21 sunflowers is notable for not only containing, by design, both Fibonacci and non-Fibonacci specimens, but for recording both leaf and seed patterns on the same specimen~\cite{couderInitialTransitionsOrder1998}. Couder showed moreover how this data was compatible with an energy-based model, of which stacked-disk models are a special case. 
-
+\todo{typo}
  very few possibilities to choose 
 We recall the following features of the MOSI dataset from Chapter~\ref{ch:empirical}:
 
@@ -181,12 +181,15 @@ Here we have first used a disk-stacking model to simulate a rising and then fall
  
 
 \subsection{Falling phyllotaxis and observed asymmetry on the capitulum}
-\mmafig{Txb1015Falling}{Stacked-disk models on the cylinder can generate radially asymmetric patterns by rising phyllotaxis to the capitulum rim followed by falling phyllotaxis on the capitulum. This simulation shows horizontal variability in the location on the cylinder of dislocations of the red right-ward leaning parastichy lines. When the cylinder is mapped to a disk, this corresponds to a visible rotational asymmetry on the simulated capitulum.    There is no satisfying way of assigning `spiral counts' on the outer rim for the red contact lines: compare Figure~\ref{fig:Txb0805Sunflower667}.}{1}
+
 We saw in Chapter~\ref{ch:empirical} that the 2016 MOSI dataset exhibited  a previously unreported departure from Fibonacci structure, in occasional specimens with a lack of rotational symmetry in the assignable parastichy lines~\cite{swintonNovelFibonacciNonFibonacci2016}. 
+
+
 
 The stacked-disk model for falling phyllotaxis is  capable of illustrating this type of pattern, as illustrated in Figure~\ref{fig:Txb1015Falling}, which 
 shows such a simulation, together with an arbitrary mapping of the simulation back to the capitulum. 
 For rising phyllotaxis, the transition zones where parastichy\index{parastichy}{} number change are very narrow and horizontal, even in the highly-disordered example of Figure~\ref{fig:Txb1012TransitionLattices}. By contrast, the transition zone in this falling phyllotaxis example is not horizontal, but follows the gradient of the parastichy lines and so  there is a large region of the cylinder on which the parastichy counts are difficult and perhaps meaningless to assign. Looking at the lower right panels we can see how the uncountability manifests itself: there is a family of 21-ish red contact lines making one angle in the cylinder, and another family of 8 red-contact lines making another, but the two families coexist over an extended region of the cylinder. This is the pattern that was identified in sample 667 of the MOSI image, whose hand-assigned parastichy lines are reproduced in Figure~\ref{fig:Txb0805Sunflower667}.
+\mmafig{Txb1015Falling}{Stacked-disk models on the cylinder can generate radially asymmetric patterns by rising phyllotaxis to the capitulum rim followed by falling phyllotaxis on the capitulum. This simulation shows horizontal variability in the location on the cylinder of dislocations of the red right-ward leaning parastichy lines. When the cylinder is mapped to a disk, this corresponds to a visible rotational asymmetry on the simulated capitulum.    There is no satisfying way of assigning `spiral counts' on the outer rim for the red contact lines: compare Figure~\ref{fig:Txb0805Sunflower667}.}{1}
  
 \section{Further reading}Disk-stacking models were first introduced by Schwendener in the 1870s as an exploration of organ placement in plants~\cite{schwendenerMechanischeTheorieBlattstellungen1878}.  Schwendener sketched the patterns seen when disks of decreasing size were stacked, one after the other, around a cylinder (Figure~\ref{fig:F1001SchwendenerCollectedp202}).
 Although Schwendener's work was not influential on mainstream plant morphology, it seems to have influenced the better known 1907 PhD thesis of van Iterson. van Iterson  who explored the possible patterns arising from arrangements of fixed-size disks as a function of disk size and first drew a version of the van Iterson diagram~\cite{vanitersonjrMathematischeUndMikroscopischAnatomische1907}. 

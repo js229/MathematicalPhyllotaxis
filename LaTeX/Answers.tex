@@ -16,9 +16,9 @@ Based on the consistent jumps between adjacent numbered scales (eg in Fig 1, fro
 %%%% Coprimality.tex
 
 \begin{sol}{ex:wnp}{
-	Some winding-number pairs are given in Table~\ref{tab:wnp2} 
+	Some winding-number pairs are given in Table~\ref{tab:wnp2}.
 	\begin{table}
-	\caption{Winding number pairs to answer Exercise~\ref{ex:wnp}, given as Farey intervals $[u/m,v/n]$. For $m$ and $n$ positive and distinct these are all contained in $[0,\jhalf]$ but the natural order of the endpoints varies with the sign of $mv-nu=\pm 1$.}
+	\caption{Winding number pairs given as Farey intervals $[u/m,v/n]$. For $m$ and $n$ positive and distinct these are all contained in $[0,\jhalf]$ but the natural order of the endpoints varies with the sign of $mv-nu=\pm 1$.}
 \label{tab:wnp2}
 	\begin{equation*}
 		\begin{array}{lllll}
@@ -97,20 +97,21 @@ making use of the well-known relation $	F^k_{j+1} =   k F_j+ F_{j-1}$. Finally w
 \end{sol}
 %%%% Geometry.tex
 
-\begin{sol}{ex:phoriz}
+\begin{sol}{ex:phoriz}{
 	If $\pvec{k}=(x,z)$, then $|x|\leq\jhalf$ direct from the definition of a parastichy vector.
 	If $x>0$, then $\phatvec{k}=\pvec{k}- \pvec{0}$ with 
 	horizontal component $x-1$ which is between $-1$ and $-\jhalf$, and similarly for $x<0$. 
 	Adding $x$ components gives the final sentence. 
-\end{sol}
+}\end{sol}
 
-\begin{sol}{ex:pwinding}
+\begin{sol}{ex:pwinding}{
 	For $d>\jfrac{1}{4}$, $\pvec{2}= (2d-1, h)=2\pvec{1}-(1,0)\neq 2\pvec{1}$;   in general we need to set $w_k= [ kd]$. For the second counter-example, choose $d$ so that $\pvec{1}$ and $\pvec{2}$ both have a positive $x$ component and $\pvec{3}$ has a negative one.  
+}
 \end{sol}
 
-\begin{sol}{ex:pcongruent}
+\begin{sol}{ex:pcongruent}{
 	Unwind the spiral onto the lattice in the plane by setting $\Pvec{m}=\pvec{m}+([md],0)=m(d,h)$. Then $u\Pvec{m}+v\Pvec{n}=\Pvec{um+vn}$, and the result follows by taking the $x$ coordinate modulo~1. 
-		\end{sol}
+}		\end{sol}
 
 \begin{sol}{ex:pvisible}{
 	Each time we move from $\jpoint{k}$ to $\jpoint{k+1}$ we move to the next label in order of the foliation, which has $m$ members. When we have moved $m$ times we return to the original member.
@@ -456,7 +457,7 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 		the lattice is non-opposed  on the $\gp{m=n}$ branch from the triple point $\gp{m=n=n-m}$ to the point where either $\pvec{m}$ or $\pvec{n}$ vector becomes vertical.
 
 			Choose $u,v$ as the winding number pair so that $m v - n u=\Delta$. We need either $\Re \pvec{m}=0$, so $\Re z_1=u/m$ or $\Re \pvec{n}=0$, so $\Re z_1=v/n$. This gives $\cos\theta=n/m$ or $\cos\theta=m/n$ respectively, so we need to choose $\cos\theta=m/n$,
-			and since $m/n<\jhalf$, $\pi/3\leq\theta\leq 2\pi/3$ and one of the solutions of  $\cos\theta=m/n$ is indeed a point on the touching circle.
+			and since $m/n<\jhalf$, $\pi/3\leq\theta\leq 2\pi/3$ and one of the solutions of  $\cos\theta=m/n$ is indeed a point on the touching circle
 			 branch. From the previous exercise $\tan\psi=-\tan\theta$ at that point, 
 			 and so $|\cos\psi|=m/n$ there too. 
 }	\end{sol}
@@ -466,7 +467,7 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 }\end{sol}
 %%%% Transformed.tex
 
-\begin{sol}{ex:richards}
+\begin{sol}{ex:richards}{
 	The first result itself follows
 	from reading the rise of a lattice from~\eqref{eq:gReImA}, combined with observing that Fibonacci numbers scale like $\tau^k$
 	and so $h$ scales like $n^{-2}$. 
@@ -481,7 +482,7 @@ The exercise is to warn the reader against trying to make too much sense of the 
 	 seems to have assumed an orthogonal golden lattice transformed with logarithmic spirals, and his unfortunate idea was to use the $R$ of equation~\eqref{eq:plastoratio} to estimate $h$, which gives one $\log$ in equation~\ref{eq:richards}, and then use the knowledge of how $h$ scaled with $k$ to estimate $k$, giving another $\log$ in that equation. The specific numerical values of the coefficients in equation~\eqref{eq:plastoratio} depend on exactly what lattice is being imagined as the precursor. The argument in~	\autocite{richardsPhyllotaxisItsQuantitative1951} is not easy to follow mathematically, creating an opportunity for several subsequent papers to attempt a more rigorous formulation~\autocite{thornleyPhyllotaxisIIDescription1975,jeanBib647,jeanBib278}.
 
 Quite apart from the problems inherent in a $\log \log$, term, estimates of $R$ will be in practice very sensitive  to the estimate of position of the unknown centre of the disk. Even if the plastochrone ratio $R$ can be reliably estimated from the observed pattern then it seems much, much,  simpler to just count the $k$. But more fundamentally the Richards plastochrone index just assumes too much to discriminate between different developmental models.  
-
+}
 \end{sol}
 %%%% Developmental.tex
 
