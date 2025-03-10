@@ -4,26 +4,28 @@
 \label{ch:cylinder}
 \abstract{
 The goal of this chapter is to characterise the shortest vectors in a cylindrical lattice. This will allow us, in the next Chapter, to classify lattices by their shortest vectors in a way that has biological relevance. Cylindrical lattices have a natural representation as `unrolled' plane lattices in which the cylinder circumference corresponds to a  vector of the plane lattice encoding the periodicity; the height of a point in the cylindrical lattice is the component perpendicular to the periodicity vector. Any vector in the lattice has a parastichy number corresponding to the size of this component in units of node height. 
-The principal parastichy vectors are the two shortest vectors in the plane lattice. We show how the the cylindrical spirals formed by these vectors -- and the two corresponding parastichy numbers --  provide a natural model for  biological observations of spiral counts. In order to compute these parastichy numbers in a given lattice we will consider generating pairs of vectors as the building blocks of the lattice, and carry out the main analysis of this chapter: how to deduce from the generating pairs what the lattice parameters are and, especially, what the shortest vectors in the lattice are. The central and suggestive result of this Chapter is Turing's theorem: that the third-shortest vector in a lattice has a parastichy number which is the sum or difference of th
+The principal parastichy\index{parastichy}{} vectors are the two shortest vectors in the plane lattice. We show how the the cylindrical spirals formed by these vectors -- and the two corresponding parastichy\index{parastichy}{} numbers --  provide a natural model for  biological observations of spiral counts. In order to compute these parastichy numbers in a given lattice we will consider generating pairs of vectors as the building blocks of the lattice, and carry out the main analysis of this chapter: how to deduce from the generating pairs what the lattice parameters are and, especially, what the shortest vectors in the lattice are. The central and suggestive result of this Chapter is Turing's theorem: that the third-shortest vector in a lattice has a parastichy number which is the sum or difference of the two principal parastichy numbers.
 }
 
-\section{Botanical lattices}
-Before we study lattices, it is worth exploring their biological relevance for phyllotaxis. Leaf arrangements have long been the subject of botanical study. Figure~\ref{fig:Txb0401LeafTypes} shows a typical, and typically idealised, classification. We will call the number of leaves $J$ at each stem height where they occur the \textit{jugacy}. The first and second patterns are our primary interest in this chapter: they are \textit{monojugate} with a fixed angle between each leaf; in the special case of the alternate distichous arrangement the angle is 180\degree.
-By contrast the last three patterns in Figure~\ref{fig:Txb0401LeafTypes} are multijugate; the case when $J>2$ is botanically called a \textit{whorled} phyllotaxis.
-  
-\mmafig{Txb0401LeafTypes}{Five different types of leaf arrangements on stems, with  jugacy $J$, a classification by principal parastichy numbers which will be developed in this chapter, and a reprsentation as a lattice on a cylinder, with a point at one height joined to the two nearest points at the next height.}{1}
+\section{Connections with botanical terminology}
+Figure~\ref{fig:Txb0401LeafTypes} shows a typical, and typically idealised, botanical classification of stem architecture. 
+We will call the number of leaves $J$ at each stem height where they occur the \textit{jugacy}. The first and second patterns are our primary interest in this chapter: they are \textit{monojugate} with a fixed angle between each leaf; in the special case of the  distichous ('two-rowed') arrangement the angle is 180\degree.
+By contrast the third and fourth patterns in Figure~\ref{fig:Txb0401LeafTypes} are multijugate. The third, decussate ('crossing') pattern has each succeeding pair at right angles, and when $J>3$ the arrangement is called a whorled phyllotaxis.
 
-These patterns can be idealised into a family of points on a cylinder, each rotated by a fixed fraction of the circle or \emph{divergence} $d$ from the next and shifted vertically by the \emph{rise}. 
+
+\mmafig{Txb0401LeafTypes}{Four different types of leaf arrangements on stems, with  jugacy $J$, a classification by principal parastichy numbers which will be developed in this chapter, and a reprsentation as a lattice on a cylinder, with a point at one height joined to the two nearest points at the next height.}{1}
+
+These patterns can all be idealised into a family of points on a cylinder, each rotated by a fixed fraction of the circle or \emph{divergence} $d$ from the next and shifted vertically by the \emph{rise}. 
 In the spiral example, the third leaf is roughly vertically above the first one, and the fifth leaf even more so. 
 If there was always a $p$-th leaf directly above the first, after having gone round the stem $q$ times, then all divergences would be rational fractions $p/q$  and this would provide a system of classification of leaf patterns. At its simplest this would come from identifying which is the leaf `directly' above the first (defining a vertical line called the \emph{orthostichy}), but this is in many cases impractical or 
 prone to disagreement. An alternative would be to estimate the divergence, which has the attraction that it can be estimated locally from nearby leaf positions and can be averaged over many observations, and 
 then approximating it by a rational fraction. Of course one divergence can be approximated by many different rational fractions so the choice of approximation is another potential source of dispute.
 Nevertheless, this classification method is a natural one which works well for small denominators,  when the orthostichy leaf is not too far away, and was in successful and widespread throughout the nineteenth century and beyond. But as well as its conceptual shortcomings, it becomes practically inadequate for more complex patterns. Accordingly we will turn to a more modern idea of characterising lattice patterns by their parastichies.
-\jpgfig{F0402BravaisFig2}{Bravais and Bravais's 1837 idealisation of the pine cone as a lattice on a cylinder~\cite[p79]{bravaisEssaiDispositionFeuilles1837}. 
-	}{1}
-\todo{Expand bravais section}
+%\jpgfig{F0402BravaisFig2}{Bravais and Bravais's 1837 idealisation of the pine cone as a lattice on a cylinder~\cite[p79]{bravaisEssaiDispositionFeuilles1837}. 
+%	}{1}
 
-These leaf-on-stem examples are naturally modelled in cylindrical coordinates on a vertical cylinder of fixed radius, but other examples, notably the arrangement of seeds on the sunflower head, suggest models which take place in polar coordinates on a disk. There are simple mathematical maps between the two geometries, and we will see later that these maps do correspond to an underlying biological similarity.% Chapter~\ref{ch:transformations} gives more details of these mathematical mappings.  
+%
+%These leaf-on-stem examples are naturally modelled in cylindrical coordinates on a vertical cylinder of fixed radius, but other examples, notably the arrangement of seeds on the sunflower head, suggest models which take place in polar coordinates on a disk. There are simple mathematical maps between the two geometries, and we will see later that these maps do correspond to an underlying biological similarity.% Chapter~\ref{ch:transformations} gives more details of these mathematical mappings.  
 
 
 
@@ -37,49 +39,46 @@ Table~\ref{tab:notation} summarises the notation used in this Chapter.
 			\hline
 		$[x]$ & The nearest integer to $x$. 
 		\\
-			$l_k$ & The $k$-th lattice point, with coordinates $(dk - [dk],kh)$. 
+		$\jpoint{k}$ & The $k$-th lattice point, with coordinates $(dk - [dk],kh)$. 
 				\\
 				$(x,z)$ & Real coordinates in a vertical cylinder $[0,1]\times\jR$ or the plane $\jR^2$, or more often a vector in $\jR^2$ relative to an origin $(0,0)$. (Warning: at the end of Chapter~\ref{ch:classifying} we use a different $z=d+ih$ with $z\in\jC$.)
+%				\\		$\pvec{}$, $\fvec$, $\svec$ \ldots & Vectors with form $(x,z)$.
 				\\
-				$\pvec{}$, $\fvec$, $\svec$ \ldots & Vectors with form $(x,z)$..
+				$\pvec{0}$ & The vector $(1,0)$. We call this the \textit{periodicity} vector.\index{periodicity vector}
 				\\
-				$\pvec{0}$ & The vector $(1,0)$. We call this the \textit{periodicity} vector.
-				\\
-				$\pvec{1}$ & The vector $(d,h)$, usually with $0< d\leq \jhalf$ and $h>0$. This is the \textit{generating} vector. 
+				$\pvec{1}$ & The vector $(d,h)$, usually with $0< d\leq \jhalf$ and $h>0$. This is the \textit{generating} vector.\index{generating vector} 
 		\\
-				$\mathcal{L}(d,h)$ & The lattice on the cylinder generated by the vectors $\pvec{0}$ and $\pvec{1}$:	the set $a\pvec{0}+b\pvec{1}$ for $a,b\in \jZ$, after identifying points differing by an integer in $x$. 
+			
+				$\pvec{k}$ & The $k$-th parastichy\index{parastichy vector} vector: the vector from $\jpoint{0}$ to $\jpoint{k}$.
+			\\
+					$\phatvec{k}$ & The $k$-th complementary vector: the shorter of $\pvec{k}\pm\pvec{0}$.\index{complementary vector}
 				\\
-				$\pvec{k}$ & The $k$-th parastichy vector: the vector from $(0,0)$ to $(dk-[dk],kh)$.
+			$\mathcal{L}(d,h)$ & The lattice on the cylinder generated by the vectors $\pvec{0}$ and $\pvec{1}$:	the set $a\pvec{0}+b\pvec{1}$ for $a,b\in \jZ$, after identifying points differing by an integer in $x$. 
+\\	
+				$\gp{m,n}$ pair & The principal vectors\index{principal vector pair} of the lattice: the linearly independent pair $	\pvec{m}$ and $\pvec{n}$ (or $\phatvec{n}$)  which are shortest in the lattice). More generally:
 				\\
-				$\phatvec{k}$ & The $k$-th complementary vector: the shorter of $\pvec{k}\pm\pvec{0}$.
-				\\
-				$\gp{m,n}$ pair & The principal vectors of the lattice: the linearly independent pair $	\pvec{m}$ and $\pvec{n}$ (or $\phatvec{n}$)  which are shortest in the lattice). More generally:
-				\\
-				$\gp{r,s}$ pair & A generating pair: any pair of vectors that also generate $\mathcal{L}(d,h)$.
+				$\gp{r,s}$ pair & A generating pair: any pair of vectors that also generate $\mathcal{L}(d,h)$.\index{generating pair}
 				\\
 				$\pp{m,n}$ lattice & A lattice in which the principal pair 
 				are $\gp{m,n}$.
 				\\
-				$m$, $n$, $u$, $v$ & Integers satisfying $m v- n u=\Delta$ and $\Delta=\pm 1$.
+				$m$, $n$, $u$, $v$ & Integers satisfying $m v- n u=\Delta$ and $\Delta=\pm 1$.\index{B\'ezout relation}
 				\\\hline
 \end{tabularx} 
 \end{table}
 %
-We use surface coordinates $(x,z)$ on a cylinder, of fixed circumference 1, that extends infinitely in the vertical direction $z$.  At the origin we place a point of the lattice. By rotating an angle $2\pi d$ around the cylinder from the origin and rising by $z=h$
+We use surface coordinates $(x,z)$ on a cylinder, with a fixed circumference of 1, that extends infinitely in the vertical direction $z$.  At the origin we place a point of the lattice. By rotating an angle $2\pi d$ around the cylinder from the origin and rising by $z=h$
 we place a second point. Repetitions of this translation will define the whole lattice,  and we will call  
 $h$ the {rise} and $d$ the divergence. 
 
 
 \mmafig{Txb0403Coordinates}{
-Equivalent parameterisations of the same periodic planar lattice with divergence $d$ and rise $h$, here $d=4/10$, $h=1/10$.  In this case the cylindrical lattice point labelled 3 has co-ordinates $(3d-1,3h) =(3d - [3d],3h)$. In (c), some parastichy vectors are shown and  $\pvec{3}=3\pvec{1}-\pvec{0}$: the vector $\pvec{0}$ encodes the periodicity of the lattice.  In (c), the double diagonal lines mark the periodic boundary $x=\pm\jhalf$ of the cylindrical lattice. Elsewhere in this book the pale green rectangle alone, of width 1,  is used as a convention to indicate this periodicity of the cylinder. 
+Equivalent parameterisations of the same periodic planar lattice with divergence $d$ and rise $h$, here $d=4/10$, $h=1/10$.  In this case the cylindrical lattice point \protect\jpoint{3} has co-ordinates $(3d-1,3h) =(3d - [3d],3h)$. In (c), some parastichy vectors are shown and  $\pvec{3}=3\pvec{1}-\pvec{0}$: the vector $\pvec{0}$ encodes the periodicity of the lattice.  In (c), the double diagonal lines mark the periodic boundary $x=\pm\jhalf$ of the cylindrical lattice. Elsewhere in this book the pale green rectangle alone, of width 1,  is used as a convention to indicate this periodicity of the cylinder. 
 }{1.0}
 
 \newcommand{\dk}{x_k}\newcommand{\dm}{x_m}\newcommand{\dn}{x_n}\newcommand{\dmn}{x_{m+n}}
-Specifically, the lattice  $\mathcal{L}(d,h)$ is the set of points  $\jpoint{k}$ with coordinates  $(x,z)=(\dk,kh)$ where $k$
-is any integer, $\dk=kd-[kd]$ and $[x]$ is the nearest integer to $x$, with ties chosen so that $-\jhalf < \dk \leq \jhalf$.%
-\jNote{There is a temptation to take the range of $x$ as $[0,1]$ instead of $[-\jhalf,\jhalf]$. Nothing bad happens if we do; the choice here is partly historical, when a large part was played by spirals winding in opposite directions, and following this convention means opposing spirals will have positive and negative $x$ components.}
-See Figure~\ref{fig:Txb0403Coordinates}. 
-Co-ordinates of lattice points are in the cylinder strip $C=(-\jhalf,\jhalf]\times\jR$, and there is a natural 
+Given this coordinate system, the $k$-th lattice point,  $\jpoint{k}$, has coordinates  $(x,z)=(\dk,kh)$ where $\dk=kd-[kd]$ and $[x]$ is the nearest integer to $x$, with ties chosen so that $-\jhalf < \dk \leq \jhalf$. With this notation the origin is at $\jpoint{0}$. The lattice itself,   $\mathcal{L}(d,h)$, is the collection of all such points $\jpoint{k}$ for integer $k$. See Figure~\ref{fig:Txb0403Coordinates}. 
+Co-ordinates of lattice points are thus in the cylinder strip $C=(-\jhalf,\jhalf]\times\jR$, and there is a natural 
 {planar lattice}  which is the unrolled set of points $\mathcal{L}+w (1,0)$ over all integers $w$. 
 There is a simple map from the plane back to the cylinder: $(x,z)\rightarrow(x-w,z)$ where $w=[x]$ is the \emph{winding number} of the vector $(x,z)$. This maps all the plane lattice points of rise $kh$ onto the unique cylindrical lattice point $\jpoint{k}$ of rise $kh$. 
 
@@ -89,43 +88,45 @@ More generally, planar lattices are generated from pairs of vectors $\mathbf{a}$
 Each point of the plane lattice corresponds to a 
 vector in $\jR^2$ with the normal rules of vector arithmetic. But although the map of planar-lattice points to cylindrical-lattice points is many-to-one, the map of planar vectors to cylindrical vectors is one-to-one, because each pair of points on the cylinder will be joined by a family of vectors, each winding a different number of times around the cylinder, and with co-ordinate components equal to components of the corresponding plane vector.   Thus we can do our normal vector arithmetic on the cylinder, although we will  be careful about how we label vectors. 
 
-First we distinguish one special vector $\pvec{0}=(1,0)$ which encodes the periodicity of the lattice. After that, we note that the shortest of all the vectors on the cylinder from the origin to $\jpoint{k}$ is the shortest of the set of vectors from the origin to any of the points in the planar lattice with rise $kh$; it must be one of the two vectors to the point $\jpoint{k}$ with winding number zero. 
+First we distinguish one special vector $\pvec{0}=(1,0)$ which encodes the periodicity of the lattice. After that, we note that the shortest of all the vectors on the cylinder from \jpoint{0} to $\jpoint{k}$ is the shortest of the set of vectors from the origin to any of the points in the planar lattice with rise $kh$; it must be one of the two vectors to the point $\jpoint{k}$ with winding number zero. 
 We name this shortest of the vectors from the origin to $\jpoint{k}$ as  the \textit{parastichy vector} $\pvec{k}$.
 
 Sometimes adding two parastichy vectors takes the sum outside of the cylinder and then the sum is not a parastichy vector. For the most part we only need to be concerned with parastichy vectors, but for some (mathematically if not biologically)  significant special cases,  there is a role for the \textit{second} shortest vector to the point $\jpoint{k}$. We call this the \emph{complementary vector} $\phatvec{k}$ (Figure~\ref{fig:Txb0404Complementary}). The complementary vector is the shorter of $\pvec{k}\pm \pvec{0}$. There is a  special case when $d=\jhalf$, so that the vectors $(\jhalf,h)$ and $(-\jhalf,h)$ are equal-length vectors to the point $\jpoint{1}$: in this case we label them as $\pvec{1}$ and $\phatvec{1}$ respectively.
 
 
 \mmafig{Txb0404Complementary}{
-The parastichy vector $\pvec{2}=(x_2,2h)$, in red, is the shortest vector on the cylinder to the point $\jpoint{2}$ and always has $|x_2|\leq\jhalf$. The second-shortest vector to the point will wind in the opposite direction and is called the complementary vector $\phatvec{2}$, in blue. Here $d=17/72$ so $x_2=2d$ and $\phatvec{2}=\pvec{2}-\pvec{0}$ where  $\pvec{0}=(1,0)$ is the horizontal vector around the circumference of the cylinder. A further, un-named vector is shown in green that winds more than a full turn about the cylinder: there are many vectors to the point $\jpoint{2}$ with non-zero winding numbers. 
+The parastichy vector $\pvec{2}$, in red, is the shortest vector on the cylinder to the point \protect\jpoint{2} and always has $|x_2|\leq\jhalf$. The second-shortest vector to the point will wind in the opposite direction and is called the complementary vector $\phatvec{2}$, in blue. Here $d=17/72$ so $x_2=2d$ and $\phatvec{2}=\pvec{2}-\pvec{0}$ where  $\pvec{0}=(1,0)$ is the horizontal vector around the circumference of the cylinder. A further, un-named vector is shown in green that winds more than a full turn about the cylinder: there are infinitely many other vectors from periodic images of the point \protect\jpoint{0} to the point \protect\jpoint{2}, each with a non-zero winding numbers. 
 }{1}
 
 \begin{jExercise}\label{ex:phoriz}
 	Show that every parastichy vector has a horizontal component with absolute value less than or equal to $\jhalf$, and every complementary vector has a horizontal component with absolute value unstrictly between $\jhalf$ and $1$. Show that the sum of two parastichy vectors is either a parastichy vector or a complementary vector. 
 \end{jExercise}
-\begin{jAnswer}{ex:phoriz}
+\begin{jAnswer}{ex:phoriz}{
 	If $\pvec{k}=(x,z)$, then $|x|\leq\jhalf$ direct from the definition of a parastichy vector.
 	If $x>0$, then $\phatvec{k}=\pvec{k}- \pvec{0}$ with 
 	horizontal component $x-1$ which is between $-1$ and $-\jhalf$, and similarly for $x<0$. 
 	Adding $x$ components gives the final sentence. 
-\end{jAnswer}
+}\end{jAnswer}
 
 
 \begin{jExercise}\label{ex:pwinding}
 	Show that it is not true in general that $\pvec{k}=k\pvec{1}$, but that $\pvec{k}=k\pvec{1}-w_k\pvec{0}$ for some integer winding number $w_k$. Find a lattice in which there are no integers $m,n$ such that $\pvec{3}=m\pvec{1}+n\pvec{2}$. 
 \end{jExercise}
-\begin{jAnswer}{ex:pwinding}
+\begin{jAnswer}{ex:pwinding}{
 	For $d>\jfrac{1}{4}$, $\pvec{2}= (2d-1, h)=2\pvec{1}-(1,0)\neq 2\pvec{1}$;   in general we need to set $w_k= [ kd]$. For the second counter-example, choose $d$ so that $\pvec{1}$ and $\pvec{2}$ both have a positive $x$ component and $\pvec{3}$ has a negative one.  
+}
 \end{jAnswer}		
-\begin{jExercise}\label{ex:pcongruent}
-		Two vectors on the cylindrical lattice are \textit{congruent} if they go to the same point: $(\jpoint{k},w)\equiv(\jpoint{l},w')$ iff $k=l$. 
-	Show that $\pvec{n}\equiv n\pvec{1}$ and more generally that $u\pvec{m}+v\pvec{n}\equiv\pvec{um+vn}$ for integer  $u, v$.
-	This book doesn't explicitly make any further use of the congruence relation. 
-	\label{ex:npm}
-\end{jExercise}
-\begin{jAnswer}{ex:pcongruent}
-	Unwind the spiral onto the lattice in the plane by setting $\Pvec{m}=\pvec{m}+([md],0)=m(d,h)$. Then $u\Pvec{m}+v\Pvec{n}=\Pvec{um+vn}$, and the result follows by taking the $x$ coordinate modulo~1. 
-		\end{jAnswer}
-	
+%\begin{jExercise}\label{ex:pcongruent}
+%		Two vectors on the cylindrical lattice are \textit{congruent} if they go to the same point: $(\jpoint{k},w)\equiv(\jpoint{l},w')$ iff $k=l$. 
+%	Show that $\pvec{n}\equiv n\pvec{1}$ and more generally that $u\pvec{m}+v\pvec{n}\equiv\pvec{um+vn}$ for integer  $u, v$.
+%	This book doesn't explicitly make any further use of the congruence relation. 
+%	\label{ex:npm}
+%\end{jExercise}
+%\begin{% not copied to Answers
+%jAnswer}{ex:pcongruent}{
+%	Unwind the spiral onto the lattice in the plane by setting $\Pvec{m}=\pvec{m}+([md],0)=m(d,h)$. Then $u\Pvec{m}+v\Pvec{n}=\Pvec{um+vn}$, and the result follows by taking the $x$ coordinate modulo~1. 
+%}		\end{jAnswer}
+%	
 	
 	
 	Integer values of the divergence $d$ will not be very useful, and because   $\mathcal{L}(d,h)= \mathcal{L}(1+d,h)$, the range of $d$ can be taken as $(-\jhalf,\jhalf)$. The two lattices $\mathcal{L}(d,h)$ and $\mathcal{L}(-d,-h)$ are the same and we will assume that $h>0$. By contrast, the  lattices $\mathcal{L}(d,h)$ and $\mathcal{L}(-d,h)$ are mirror-images of each other.
@@ -137,13 +138,13 @@ The idea behind parastichies is to characterise a lattice not by its divergence,
 
 
 \mmafig{Txb0405Parastichy5}{
-	The family of 5-parastichies is a set of five lines on the cylinder, each member passing through one of the points $\jpoint{0}$ to $\jpoint{4}$.
-	The thick line that passes through the origin  $\jpoint{0}$, by definition the origin-parastichy of order 5,  also passes through the points $\jpoint{5}$ and all points $\jpoint{5k}$. The parastichy vector $\pvec{5}$ (blue arrow) is the shortest vector from $\jpoint{k}$ to $\jpoint{k+5}$. 
+	The family of 5-parastichies is a set of five lines on the cylinder, each member passing through one of the points \protect\jpoint{0} to \protect\jpoint{4}.
+	The  line that passes through the origin  \protect\jpoint{0}, by definition the origin-parastichy of order 5,  also passes through the points \protect\jpoint{5} and all points $\protect\jpoint{5k}$. The parastichy vector $\pvec{5}$ (arrowed) is the shortest vector from $\protect\jpoint{0}$ to $\protect\jpoint{5}$. 
 	This lattice has divergence $d=17/72$ and rise $h=0.03$.
 }{1}
 
 
-We model this psychological choice through the parastichy vector. For an integer $m$, the origin-parastichy of order $m$ is the infinite line on the cylinder winding through the origin and $\jpoint{m}$ with slope $mh/\dm$ (or zero in the case $m=0$). This choice of slope is equivalent to choosing the line that traverses the smallest $x$ distance between $0$ and $\jpoint{m}$, and the portion of this line between $0$ and $\jpoint{m}$ coincides with the vector $\mvec=(\dm,mh)$ defined above as the parastichy vector.
+We model this psychological choice through the parastichy vector. For an integer $m$, the origin-parastichy of order $m$ is the infinite line on the cylinder winding through \jpoint{0} and $\jpoint{m}$ and  with slope $mh/\dm$ (or zero in the case $m=0$). This choice of slope is equivalent to choosing the line that traverses the smallest $x$ distance between $0$ and $\jpoint{m}$, and the portion of this line between $0$ and $\jpoint{m}$ coincides with the vector $\mvec=(\dm,mh)$ defined above as the parastichy vector.
 
 For integer $m$, we define the $m$-foliation as  the family of  $m$ lines on the cylinder containing the origin-parastichy of order $m$ and the parallel lines to it through the points $\jpoint{1},\ldots,\jpoint{m-1}$. (These $m$ lines might not be distinct: there are only 5 distinct members of the $10$-foliation in Figure~\ref{fig:Txb0405Parastichy5}.)
 An $m$-parastichy is any one member of the $m$-foliation, though usually we are thinking of the origin-parastichy of order $m$. 
@@ -154,38 +155,36 @@ Most of the time the (eg) 5-parastichy, the point $\jpoint{5}$, and the vector $
 \subsection{Visible points and parastichies}
 In Figure~\ref{fig:Txb0405Parastichy5} the point $\jpoint{10}$ is not `visible' from the origin because the point $\jpoint{5}$ can be thought of as obscuring it; the 
 origin-parastichies of order 5 and 10 are the same lines. 
-We say that $\jpoint{m}$ is a \emph{visible point}, or the $m$-parastichy is a \emph{visible parastichy}, if the latter is linearly independent of all the $n$-parastichies for all $|n|<|m|$. 
+We say that $\jpoint{m}$ is a \emph{visible point}, or the $m$-parastichy is a \emph{visible parastichy}\index{parastichy vector!visible}, if the latter is linearly independent of all the $n$-parastichies for all $|n|<|m|$. 
 \begin{jExercise}\label{ex:pvisible}
 	Check  visually that in the lattice of Figure~\ref{fig:Txb0405Parastichy5} the $7$- and $9$- parastichies are visible but the $2$- parastichy is not.
 If a point $\jpoint{n}$ is on an $m$-parastichy then show that $\jpoint{m+n}$ is on the same one.
 \label{ex:bb}
 \end{jExercise}
-\begin{jAnswer}{ex:pvisible}
+\begin{jAnswer}{ex:pvisible}{
 	Each time we move from $\jpoint{k}$ to $\jpoint{k+1}$ we move to the next label in order of the foliation, which has $m$ members. When we have moved $m$ times we return to the original member.
+}
 \end{jAnswer}
 
 
 \section{Parastichy pairs}
 
-So far we have formalised what it means to be able to `see' a straight line in the lattice as a visible parastichy. 
-We now concentrate on pairs of parastichies, as it is these pairs we will use to classify our lattices. Figure~\ref{fig:Txb0406Parastichy45} shows two examples of parastichy pairs which might naturally be identified in a lattice. 
+So far we have formalised what it means to be able to `see' a straight line in the lattice as a visible parastichy. We now concentrate on pairs of parastichies, as it is these pairs we will use to classify our lattices. Figure~\ref{fig:Txb0406Parastichy45} shows two examples of parastichy pairs which might naturally be identified in a lattice. 
 
 \mmafig{Txb0406Parastichy45}{
 	Some of the more obvious parastichies and their parastichy vectors in a lattice with $d=17/72$ and $h=0.03$. The blue lines highlight the family of 4-parastichies,  the red lines the family of 5-parastichies, and the green ones the family of 1-parastichies. There are four members of the 4-parastichies, and the member that passes through the point 0 also passes through the point 4. For this lattice, $\gp{1,4}$ and $\gp{4,5}$ are each  examples of a generating and opposed pair: in each case the two parastichies wind in opposite directions, the parallelogram defined by the pair tiles the lattice and every lattice point is at a vertex of one of the parallelograms; the edges of the parallelograms form the parastichy lines. 
 }{0.9}
 
-
-
-
-\begin{definition}
+\begin{definition}\label{def:gp}
 The $\gp{m,n}$-parastichy pair is the pair of parastichy vectors $\mvec$ and $\nvec$.
 The \gphat{m}{n}-complementary pair is the pair of the parastichy vector $\mvec$ and the complementary vector $\phatvec{n}$.
+\index{pairs of parastichy vectors}\index{parastichy vector!complementary vector}
 \label{def:pp}
 \end{definition}
 Complementary pairs are only really needed for thinking about the special cases \gphat{1}{k} and do not play a role in large Fibonacci lattices. The most important of these special cases, though is frequently seen. Plants may show \textit{distichous} phyllotaxis, with successive organs  alternating in front and behind with a divergence of $180^\circ$, correspond to a lattice with a \gphat{1}{1} parastichy pair as in Figure~\ref{fig:Txb0401LeafTypes}. The  hat can and will be dropped from the second \textsf{1} when it is clear which of the vectors is meant. 
 
 \subsection{Opposed parastichy pairs}
-
+\index{pairs of parastichy vectors!opposed}
 A parastichy pair $\gp{m,n}$ is \emph{opposed} if $m/\dm$ and $n/\dn$ have opposite sign, where $\dm$ and $\dn$ are the $x$-components of $\mvec$ and $\nvec$. A complementary pair \gphat{m}{m} is always opposed. 
  Historically, the idea of opposed pairs, with parastichies that wind in opposite directions, was an important organising idea for lattice classification, and they do play a role, but here we put more emphasis on the idea of a {generating pair}, and, later,  even more on the principal pair. 
 
@@ -193,6 +192,7 @@ A parastichy pair $\gp{m,n}$ is \emph{opposed} if $m/\dm$ and $n/\dn$ have oppos
 
 
 \section{Generating pairs}
+\index{pairs of parastichy vectors!generating pairs}
 There are many pairs of visible parastichies in a lattice, but Figure~\ref{fig:Txb0407PPairs}  shows that finding one is not enough to characterise our lattices.   Looking at the lower left diagram of the Figure, both $\pvec{5}$ and $\pvec{7}$ are visible but knowing this pair exists doesn't tell us about $\pvec{4}$: even though the pair  are linearly independent, we can't always express other parastichy vectors as their integer sums.  To make that precise we use the idea of a generating pair. 
 \mmafig{Txb0407PPairs}{
 	Further parastichy pairs in the same lattice as Figure~\ref{fig:Txb0406Parastichy45}. (a) $\gp{5,9}$ is a generating but not opposed pair and the corresponding parallelogram (in black) has no lattice points except at its corners; (b) $\gp{3,8}$, though a linearly independent pair, is  nonopposed and nongenerating pair; (c) although $\pvec{5}$ and $\pvec{7}$ are both visible parastichies, and are linearly independent, $\gp{5,7}$ is  not a generating pair because there are lattice points internal to its parallelogram; (d) $\gp{1,2}$ is not a linearly independent pair and cannot be generating, although for this spiral lattice, \gphat{1}{2} is a generating pair.
@@ -207,7 +207,7 @@ There are many pairs of visible parastichies in a lattice, but Figure~\ref{fig:T
 \begin{jExercise}\label{ex:pinfgp}
 	Show this.
 \end{jExercise}
-\begin{jAnswer}{ex:pinfgp}
+\begin{jAnswer}{ex:pinfgp}{
 	If the pair $(x_m, m h)$ and $(x_n,n h)$ is generating in the lattice $\mathcal{L}(d,h)$, then the lattice  $\mathcal{L}(d, s h )$ has a generating pair $(x_m, s m h)$ and $(x_n,s n h)$.
 	
 	If $\mvec$ and $\nvec$ are a generating pair for $\mathcal{L}$ then so is any invertible linear combination
@@ -222,7 +222,7 @@ There are many pairs of visible parastichies in a lattice, but Figure~\ref{fig:T
 \end{pmatrix}
 	\end{equation}
 	for integer $a,b,c,d$. Most of these will not be parastichy vector pairs.
-\end{jAnswer}
+}\end{jAnswer}
 
 Since every point in our lattice has a rise which is an integer multiple of $h$, a necessary condition for a pair to be generating is that it can generate all these $h$ multiples in the vertical component of its sums:
 \begin{theorem}
@@ -244,43 +244,43 @@ Excluding co-linearity is still not enough, as part (b) of Figure~\ref{fig:Txb04
 
 \begin{jExercise}\label{ex:p01g}
 	\label{ex:01generating}
-	Show that $\gp{0,1}$ is always generating, and that  $\gp{0,n>1}$ never is. 
+	Show that $\gp{0,1}$ is always generating, and that  $\gp{0,n}$ never is for $n>1$. 
 \end{jExercise}
-\begin{jAnswer}{ex:p01g}
+\begin{jAnswer}{ex:p01g}{
 	Any parastichy vector $\pvec{k}$ can be written as $k\pvec{1}-w_k \pvec{0}$, so $\gp{0,1}$ is generating. The rise of every integer sum of $\pvec{0}$ and $\pvec{n>1}$ is a multiple of $nh$ and cannot be equal to $h$ and the pair cannot generate $\pvec{1}$.
-	
+}
 \end{jAnswer}
 \begin{jExercise}\label{ex:pcomp}
 	Show that the complementary pair \gphat{m}{m} is generating only when $|m|=1$.
 \end{jExercise}
-\begin{jAnswer}{ex:pcomp}
+\begin{jAnswer}{ex:pcomp}{
 	Since $\pvec{0}=\pvec{1}\pm\phatvec{1}$, every parastichy vector $\pvec{k}=k\pvec{1}-w\pvec{0}$ is an integer sum of $\pvec{1}$ and $\phatvec{1}$. However every integer sum of
 	$\pvec{m}$ and $\phatvec{m}$ has rise which is a multiple of $m$ and so the pair is not generating unless $|m|=1$. 
-\end{jAnswer}
+}\end{jAnswer}
 
 
 
 \begin{jExercise}\label{ex:p57ng}
 	Show that in the lattice $\mathcal{L}(d=17/72)$, $\pvec{4}$ cannot be expressed as an integer sum of $\pvec{5}$ and $\pvec{7}$ and thus that $\gp{5,7}$ is not generating in this lattice.
 \end{jExercise}
-\begin{jAnswer}{ex:p57ng}
+\begin{jAnswer}{ex:p57ng}{
 	The only candidate vector sum with the correct rise is $2\pvec{7}-2\pvec{5}$, but by direct calculation this is $\pvec{4}-(1,0)$ and thus is not a parastichy vector. 
-\end{jAnswer}
+}\end{jAnswer}
 
 
 \subsection{Generating pairs as basis vectors}
  A helpful way to think of the generating pair $\gp{m,n}$ is that  $\pvec{m}$ and $\pvec{n}$ provide a coordinate basis for the plane, and the lattice points are the ones with integer coordinates in that basis. From this perspective, a cylindrical lattice is not generated merely by the first parastichy vector $\pvec{1}$, but instead by  the pair comprising  $\pvec{1}$ together with the periodicity vector $\pvec{0}$, which is used as necessary to pull multiples of $\pvec{1}$ back into the cylindrical strip (Figure~\ref{fig:Txb0408Periodic}).
  \mmafig{Txb0408Periodic}{The  pair of red and blue vectors $\pvec{3}$ and $\pvec{2}$ , and the pair of white and green vectors $\pvec{0}$ and $\pvec{1}$ each generate the same lattice}{1.0}
  Indeed we saw in Exercise~\ref{ex:01generating} that $\pvec{0}$ and $\pvec{1}$ are always generating, or in this sense always form a basis pair for the cylindrical lattice. 
- But there are many possible gnerating pairs. 
- One of the ways that this is viewpoint is useful  that it gives us a way to characterise generating pairs by thinking of them as corresponding to a change of basis from the basis associated with $\gp{0,1}$ and produce the central algebraic result of this chapter:
+ But there are many possible generating pairs. 
+ One of the ways that this is viewpoint is useful  that it gives us a way to characterise generating pairs by thinking of them as corresponding to a different choice of basis for the space of  lattice vectors in the plane and produce the central algebraic result of this chapter:
 
 \begin{theorem}
 \label{thm:gLattice}
 \label{thm:glattice}
 	In any lattice $\mathcal{L}(d,h)$, the following are equivalent for coprime integers $m,n$:
 	\begin{enumerate}
-			\item The pair of parastichy vectors $\mvec$ and $\nvec$, is a generating pair.
+			\item The pair of parastichy vectors $\mvec$ and $\nvec$ is a generating pair.
 \item The area of the parallelogram formed by $\mvec$ and $\nvec$, namely the vector cross product $h\Delta_{mn}=\mvec\times\nvec$, satisfies
 $|\Delta_{mn}|=1$. 	
 		\item The integers $u=[md],v=[nd]$ satisfy $|mv-un|=1$ and the parastichy vectors	
@@ -351,9 +351,9 @@ This Theorem allows a more algebraic demonstration of the requirement that $|\De
 \begin{jExercise}\label{ex:padajacent}
 	If $\gp{m,n}$ is generating, then $\mvec$ lies on the adjacent $n$-parastichy to $\nvec$. 
 \end{jExercise}
-\begin{jAnswer}{ex:padajacent}
+\begin{jAnswer}{ex:padajacent}{
 	$\mvec$ lies on the $m$-parastichy through the origin, and on some $n$-parastichy. If this was not the one adjacent to the $n$-parastichy through the origin, then it would intersect that $n$-parastichy and the intersection would be a lattice point since the pair is generating. But then the intersection would be a lattice point in but not at the corners of the $m,n$ parallelogram which it cannot be since the pair is generating. 
-\end{jAnswer}
+}\end{jAnswer}
 
 Theorem~\ref{thm:glattice} is not as general as it could be because not all generating pairs are pairs of parastichy vectors. We will also encounter the case of the pair of vectors 
 $\pvec{1}$ and $\phatvec{n}$ which are a parastichy vector and a complementary vector. But if need be, each part of Theorem~\ref{thm:glattice} can be translated as a statement about $\phatvec{n}=\nvec\pm\pvec{0}$ instead of $\nvec$. 
@@ -362,7 +362,7 @@ $\pvec{1}$ and $\phatvec{n}$ which are a parastichy vector and a complementary v
 Extend the definition of $\Delta$ to complementary vectors. 	Find   $\Delta_{1n}$ and $\Delta_{1\hat n}$. Find  $d$-intervals on which 
 $\Delta_{12}=1$ or $\Delta_{1\hat 2}=1$. Rewrite~\eqref{eq:Pmnuv1} for the case $\phatvec{n}=\pvec{n}+\sigma\pvec{1}$.
 \end{jExercise}
-\begin{jAnswer}{ex:pdeltacomp}
+\begin{jAnswer}{ex:pdeltacomp}{
 From Theorem~\ref{thm:glattice}, $h\Delta_{1n}=\pvec{1}\times\pvec{n}=[nd]$.
 Setting $\sigma=\Sign (nd -[nd])$, $\phatvec{n}=\pvec{n}-\sigma\pvec{0}$ and so $\Delta_{1\hat n}=[nd]+\sigma$. 
 If $0<d<\jfrac{1}{4}$ then $\Delta_{12}=1$ and $\Delta_{1\hat2}=0$, while 
@@ -383,7 +383,7 @@ Finally we must choose $u,v$ so that $|mv -u(n+\sigma)|=1$ and
 			\pvec{0}
 		\end{pmatrix}
 	\end{align}
-\end{jAnswer}
+}\end{jAnswer}
 
 Theorem~\ref{thm:glattice} gives us a criterion, $|\Delta_{mn}|=1$, for a parastichy pair to be generating which is independent of $h$: whether a parastichy pair is generating or not is independent of the rise, as can be seen by scaling the diagrams of Figure~\ref{fig:Txb0407PPairs} vertically.  Note also that $\gp{m,n}$ are not claimed to be unique: for fixed $d$ and thus $\pvec{0}$ and $\pvec{1}$, every integer matrix with determinant of modulus 1 in~\eqref{eq:Pmnuv1} yields a different generating pair.
 
@@ -405,14 +405,14 @@ complementary-generating interval for the integers $m$ and $n$, which is the sub
 \begin{jExercise}\label{ex:pmn01g}
 	Find the generating and complementary-generating intervals for $m=0,n=1$ and for $m=1,n$. 
 \end{jExercise}
-\begin{jAnswer}{ex:pmn01g}
+\begin{jAnswer}{ex:pmn01g}{
 	 By Exercise~\ref{ex:calcdelta} the generating and complementary-generating intervals for $m=0$ and $n=1$ are the whole $d$-interval  $[0,\jhalf]$.  
 	The generating interval for $1,1$ is empty, since $\gp{1,1}$ is never generating, but the complementary-generating interval is the whole $d$-interval, since \gphat{1}{1} is always generating.
 For $m=1$, $n=2$, Exercise~\ref{ex:calcdelta} shows that the generating interval is $[\jfrac{1}{4},\jhalf]$ and the complementary-generating interval is the whole $d$-interval.
 For $m=1$ and $n>2$,  Exercise~\ref{ex:calcdelta} shows the generating interval is the $d$ such that $[nd]=1$, which is $2nd\in [1,3]$.  
 The complementary pair is generating either when (a) $[nd]=0$, which requires $2nd<1$ or (b) when both $[nd]=2$ (so $2nd\in [3,5]$) and $nd<[nd]=2$,
 so (b) requires $2nd\in[3,4]$. These two possibilities flank the generating interval.
-\end{jAnswer}
+}\end{jAnswer}
 These direct calculations become more irksome for larger numbers, but we can also calculate generating intervals using winding-number pairs. The strategy to find the generating interval for ${m,n}$ is first to find $u,v$ satisfying equation $mv-nu=\pm 1$, so we can satisfy Theorem~\ref{thm:gLattice} and then to solve the piecewise linear equations $[md]=u$ and $[nd]=v$ for $d$. For a general one of these B\'ezout pairs, the resulting interval won't be in $[0,\jhalf]$, although there will be one related by an integer difference or the mirror symmetry $d\rightarrow1-d$. In fact, the selection of the winding-number pair from the possible B\'ezout pairs in section~\ref{sec:wnp} was so as to ensure we get a generating interval in $[0,\jhalf]$, as we will see in the proof of Theorem~\ref{thm:fundamentalcorresponding}. 
 
 
@@ -420,10 +420,10 @@ These direct calculations become more irksome for larger numbers, but we can als
 	Show that the $d$-intervals on which
 	$\Delta_{mn}=\pm1$ are related by the mirror symmetry.
 \end{jExercise}
-\begin{jAnswer}{ex:pmirror}
+\begin{jAnswer}{ex:pmirror}{
 	Write the intervals for $\Delta=-1$ as $(L_{m-},R_{m-})= (u_--\jhalf,u_-+\jhalf)/m$, $(L_{n-},R_{n-})= (v_--\jhalf,v_-+\jhalf)/n$.
 	Use $u_-=m-u$ and $v_-=n-v$. 
-\end{jAnswer}
+}\end{jAnswer}
 
 Example~\ref{ex:fibex} shows the relationship between Fibonacci generating pairs and the golden ratio. 
 
@@ -433,8 +433,8 @@ Example~\ref{ex:fibex} shows the relationship between Fibonacci generating pairs
 	Show that  pairs of large enough adjacent Fibonacci numbers are parastichy numbers which are generating in a lattice only if the divergence in $[0,\jhalf]$ is near to $1/\tau^2$.
 	\label{ex:fibex}
 \end{jExercise}
-\begin{jAnswer}{ex:pneartau}
-	Suppose $k$ is odd, then the winding-number pair for 
+\begin{jAnswer}{ex:pneartau}{
+			Suppose $k$ is odd, then the winding-number pair for 
 	$m=F_k$, $n=F_{k+1}$ is $u=F_{k-1}$, $v=F_{k}$. 
 	Let $I_k$ be the interval $[F_k-\jhalf,F_k+\jhalf]/F_{k+1}$. 
 	Then $[md]=u$ when $d\in I_k$ and $[nd]=v$ when $d\in I_{k+1}$.
@@ -443,6 +443,7 @@ Example~\ref{ex:fibex} shows the relationship between Fibonacci generating pairs
 Since $1/\tau>\jhalf$, in either case the interval in $[0,\jhalf]$ on which
 parastichy vectors for adjacent Fibonacci numbers
  is generating is close to $1-1/\tau=1/\tau^2$. 	
+}
 \end{jAnswer}
 
 
@@ -501,12 +502,12 @@ This says that if we see $m$ spirals one way and $n$ the other, the divergence o
 			
 \end{proof}
 
-Jean's statement of this theorem~\autocite{jeanPhyllotaxisSystemicStudy1994} is incorrect in the case $m=1$. This is because of the complication which arises in the following exercise, but although of historical significance\footnote{Trying to understand these complications is what led me to write this book, and in particular to introduce the complementary vector.} there is little deeper importance to this edge case and it is excluded in my version of the Theorem above.
+Jean's statement of this theorem~\autocite{jeanPhyllotaxisSystemicStudy1994} is incorrect in the case $m=1$. This is because of the complication which arises in the following exercise, but although of historical significance\footnote{Trying to understand these complications is what led me to write this half of this book, and in particular to introduce the complementary vector.} there is little deeper importance to this edge case and it is excluded in my version of the Theorem above.
 
 \begin{jExercise}\label{ex:ftpfail}
 	Calculate generating and opposed intervals for the integer pairs $m=1,n=1$ and $m=1,n>1$.
 \end{jExercise}
-\begin{jAnswer}{ex:ftpfail}
+\begin{jAnswer}{ex:ftpfail}{
 	In Theorem~\ref{thm:fundamentalcorresponding} the vectors are restricted to be parastichy vectors, but to find two generating and opposed vectors  with $m=1$ and $n=1$ we must allow complementary vectors and take $\pvec{1}$ and $\phatvec{1}$. 
 	These are always generating and opposed and so the generating interval is $[0,1]$. 
 	Either B\'ezout pair of $u=1, v=0$ or $u=0,v=1$ allows this to be written as $[u/m,v/n]$ in some order.
@@ -515,7 +516,7 @@ Jean's statement of this theorem~\autocite{jeanPhyllotaxisSystemicStudy1994} is 
 	 $\pvec{n}$ becomes vertical, which happens when $nd=1$. After this the pair is no longer opposed.
 	 	 For $m=1$ amd $n>1$, the winding-number pair is $u=0$ and $v=1$, corresponding to a Farey interval of $[0,1/n]$. Thus this is the interval on which the lattice has an opposed generating pair, but below the midpoint $d<1/2n$, the pair is of a parastichy vector and a complementary vector. 
 	 
-
+}
 \end{jAnswer}
 % exercise
 
@@ -546,10 +547,11 @@ If $F^k_m$ and $F^k_{m+1}$ are successive members of the sequence $F^k_0=1$, $F^
 \begin{jExercise}\label{ex:pdiv}
 	Compute the divergence interval in $[0,\jhalf]$ on which  $\gp{55,89}$ is a generating opposed pair.
 \end{jExercise}
-\begin{jAnswer}{ex:pdiv}
+\begin{jAnswer}{ex:pdiv}{
 	We set $m=55=F_j$ and $89=n=F_j$ with $j=10$, and use $u=F_9=34$, $v=F_{10}=55$ to give $mv-nu=(-1)^{11}$ as expected.
 	The interval in $[0,\jhalf]$ is $1-(34/55,55/89)= 1/\tau^2+ [-0.00014\ldots, 0.0005\ldots]$.
-	Thus the divergence angle of such a lattice must be within less than 2 parts in a thousand of the golden angle. 
+	Thus the divergence angle of such a lattice must be within less than 2 parts in a thousand of the golden angle.
+} 
 \end{jAnswer}
 
 So we can apparently deduce from the fact of 55 and 89 parastichies in Figure~\ref{fig:Txb0102Sunflower91} that the arrangement of successive florets in the sunflower head is at an angle very close to the golden angle $\Phi$. However recall from Exercise~\ref{ex:fibex} that this also follows from the fact that the Fibonacci parastichy pair is generating: observing that it is opposed merely tightens the interval around $\Phi$. But more fundamentally we also need to assume, incorrectly, that the seeds are indeed arranged in a lattice in the first place: a more accurate description of the Theorem is that it says what the divergence must be \textit{if} the arrangement was a lattice. 
@@ -557,7 +559,7 @@ So we can apparently deduce from the fact of 55 and 89 parastichies in Figure~\r
 \section{Principal parastichies}
 
 \label{sec:ppair}
-One lattice can have many generating, or generating and opposed, parastichy pairs.  We want to pick a principal pair that preserves the idea of being the `most obvious' to the eye. 
+One lattice can have many generating, or generating and opposed, parastichy\index{parastichy}{} pairs.  We want to pick a principal pair that preserves the idea of being the `most obvious' to the eye. 
 One strong idea of obviousness comes from returning to the motivating example of the sunflower head. In practice each seed is typically in direct contact with four others and shaped into a corresponding diamond. It is these seeds which are directly adjacent which define, to the eye, the spirals. 
 In the language of our mathematical lattice it is the parastichies through the points nearest to the origin.
 \begin{definition}
@@ -566,8 +568,9 @@ In the language of our mathematical lattice it is the parastichies through the p
 	
 \end{definition}
 The first principal vector has to be a parastichy vector, and the second principal vector will normally be a parastichy vector or sometimes a complementary vector.
-\begin{definition}
+\begin{definition}\label{def:ppdef}
 	An  $\pp{m,n}$ lattice is a lattice $\mathcal{L}(h,d)$ in which the first and second principal vectors have parastichy numbers $m$ and $n$ respectively. 
+	\footnote{We are using the same $\gp{m,n}$ typeface in definitions~\ref{def:ppdef} and~\ref{def:gp}: the lattice is being labelled by the label of its principal parastichy pair. Later we will use the same typeface for the empirical pairs of parastichy  counts which this models.}
 \end{definition}
 Similarly a  $\pp{m,n,t}$ lattice is a lattice  in which the first  second  and third parastichy numbers are $m$, $n$ and $t$. If the first and second principal  vectors are equal in length we alternatively describe the lattice as an $\pp{m=n,t}$ lattice.
 Principal pairs are always generating pairs and a proof of this will become apparent after we have seen how to construct principal pairs. 
@@ -576,7 +579,7 @@ Whether a parastichy vector is a principal one is an $h$-dependent property, unl
 Figure~\ref{fig:Txb0411LatticesSpecialD} shows principal parastichy pairs for the special case of  $d=0$ and distichous patterns $d=\jhalf$.  
 \mmafig{Txb0411LatticesSpecialD}{Lattices, and principal parastichies, in the special cases $d=0$  and distichous patterns $d=\jhalf$, and varying $h$. A circle equal in diameter to the shortest principal parastichy vector is drawn around each point.
 Red lines correspond to the principal parastichy, and blue lines to the parastichy which has the next strictly shorter parastichy vector.}{1}
-%
+In the Figure,  we have stretched the $\pp{(m,n)}$ notation a little further to label the lattices. Now, for example, the $\gponeonhattwo$ lattice is one in which the parastichy vectors $\pvec{1}$ and the complementary vector $\phatvec{1}$ tie as the principal parastichy vector and $\pvec{2}$ is the third-shortest parastichy vector.
 \section{Spiral lattices}
 \label{sec:spiral}
 
@@ -592,7 +595,7 @@ our Fibonacci framework, and calculating principal pairs directly for such latti
 	  $\pphat{1}{2}$,\ldots ,  $\pphat{1}{k}$, until reaching $\pp{1,k+1}$ and that  both principal vectors are parastichy vectors for all $h$ values smaller than this. 
 	 
 \end{jExercise} 
-\begin{jAnswer}{ex:pspiral}
+\begin{jAnswer}{ex:pspiral}{
 For $h$ large enough, 	the shortest vector in the lattice is  $\pvec{0}=(1,0)$ 
 of length 1, and the second shortest is  $\pvec{1}=(h,d)$ of length $h^2+d^2$.
 These change relative magnitude when $h^2+d^2=1$ giving us a $(1,0)$ lattice.
@@ -623,7 +626,7 @@ Note that for the initial case $n=0$ we recover $h^2+d^2=2d$ as the $0=\hat{1}$ 
 
 The region of lattice space in which lattices are of the form $(1,\hat{n})$ are shown in Figure~\ref{fig:Txb0413SpiralExample}.
 \mmafig{Txb0413SpiralExample}{Structure of lattices space near $(d,h)=(0,0)$ where lattices are spiral lattices. Shaded in light and dark yellow are regions where the principal parastichy pair are $(1,\hat{n})$ for $n=1$ to $n=7$.  At each the light-dark boundary the lattice is square, as will be shown in the next chapter. The principal pair transitions from $(1,\hat{n})$ to  $(1,{n})$ at the vertical line $d=\jfrac{1}{2n}$. }{.5}
-
+}
 \end{jAnswer}
  
 
@@ -633,7 +636,7 @@ The examples of the previous section explicitly computed the principal vector pa
 general. 
 The principal vectors can often be found by eye --- indeed that is the point of them --- and certainly always by an exhaustive search of what is only a finite number of possibilities, since they must be at least as short as $\pvec{0}$ and $\pvec{1}$, which bounds the possible rise.
 But they can also be found by a reduction process from any vectors which generate the lattice. One reason to do this is in the proof of Turing's Theorem below. Moreover this reduction process is a version of the Euclidean algorithm, which begins to explain the connection between the continued fraction of the divergence and the principal pairs of the lattice that we will see in subsequent chapters. 
-\todo{xxx}
+
 We gave a standard version of the Euclidean algorithm back in section~\eqref{sec:euclidean} as a series of successive reductions of pairs of integers, and it can be generalised to vectors as long as we choose a norm for those vectors. Another way of viewing the first half of this chapter and Theorem~\ref{thm:glattice} in particular is that 
 if we define the size of a lattice vector as its rise, then application of the Euclidean algorithm to successively reduce the size of pairs of generating  vectors $\mvec$ and $\nvec$  terminates with a pair that have the very smallest rises, ie $\pvec{0}$ and $\pvec{1}$. If instead we define the size of a lattice vector as its length, then the same Euclidean algorithm terminates not at the vectors with shortest rise, but the vectors with shortest length: the principal vectors. One step of the algorithm is illustrated in Figure~\ref{fig:Txb0414Reduction}.
  \mmafig{Txb0414Reduction}{A pair of generating vectors reduced by a step of the Euclidean algorithm. $\pvec{4}=\pvec{14}-2\pvec{5}$
@@ -658,9 +661,9 @@ As before $|\rpvec{i}|$ is strictly decreasing over a finite set of vectors shor
 \begin{jExercise}\label{ex:pte}
 	In the lattice $h=1/100$, $d=17/72$, find an example where Turing-Euclidean reduction  requires more than two steps to terminate.
 \end{jExercise}
-\begin{jAnswer}{ex:pte}
+\begin{jAnswer}{ex:pte}{
 	The pair $\gp{73,103}$ is successively reduced to $\gp{30,73}$, $\gp{13,30}$, and terminates at $\gp{4,13}$ which  is the principal pair for the lattice. 
-\end{jAnswer}
+}\end{jAnswer}
 
 Turing-Euclid reduction certainly terminates with a pair of vectors no longer than the pair that it started with. To show that it actually terminates at the shortest pair of vectors in the lattice we will use
 \begin{theorem}
@@ -701,13 +704,13 @@ Because the first and second parastichy vectors $\fvec$ and $\svec$ are of the f
 	The third parastichy number is the sum or difference of the first two.%
 	\end{theorem}
 See Figure~\ref{fig:Txb0415SumDifference}.	This form of the Theorem neglects the hats, so requires us to interpret $1+\hat{1}$ as $2$ or $\hat{2}$ as necessary. We will see in the next Chapter how Turing sought to use this theorem as part of his explanation of Fibonacci structure.
-\mmafig{Txb0415SumDifference}{Turing's theorem: the third parastichy vector in a lattice is always the sum or difference of the first two.}{1.0}
+\mmafig{Txb0415SumDifference}{Turing's theorem: the third parastichy vector in a lattice is always the sum or difference of the first two. It is intuitively clear in this case (and ensured by the Theorem) that the point reached by third parastichy vector lies on the adjacent 4-parastichy to the origin, and so has paastichy number 9 or 5 depending on where the normal to the 4-parastichy through the origin intersects the adjacent parastichy.}{1.0}
 
 
 
 
 \section{Orthostichies}
-With the notation in place we can observe a consequence of having golden angle lattices. An \textit{orthostichy} is a parastichy vector of nonnegative rise which is closer to the vertical than any other parastichy vector of lower nonnegative rise.%
+With the notation in place we can observe a consequence of having golden angle lattices. An \textit{orthostichy} is a parastichy\index{parastichy}{} vector of nonnegative rise which is closer to the vertical than any other parastichy vector of lower nonnegative rise.%
 \jNote{Historically, orthostichy has also been used to mean a strictly vertical parastichy.} Thus there are is a sequence of orthostichies,  starting with $\pvec{0}$ and $\pvec{1}$, of increasing rise. If the divergence of the lattice is a rational $d=p/q$ in its lowest terms then the final orthostichy is $\pvec{q}$; if $d$ is irrational then the sequence of orthostichies is infinite, and tends to the vertical. The parastichy number of each orthostichy corresponds to the denominator of an increasingly accurate series of rational approximations to the divergence. Provided the rise is small enough (and excluding spiral lattices), the principal parastichy pair of the lattice will be two successive orthostichies,
 and as the rise continues to decrease the principal parastichy counts will move up the sequence of these denominators. Thus the principal parastichy numbers could be made to be successive and arbitrarily large Fibonacci numbers down to an arbitrary small $h$ by setting the divergence sufficiently close to the golden angle, as in Figure~\ref{fig:Txb0416FibLattices}.
 
@@ -729,9 +732,9 @@ Equipped with the ability to find the shortest vectors in a lattice we can now c
 \begin{jExercise}\label{ex:hexhex}
 	Show that every hexagonal lattice is hexagonal.
 \end{jExercise}
-\begin{jAnswer}{ex:hexhex}
+\begin{jAnswer}{ex:hexhex}{
 	If the angle between any two parastichy vectors was not 60$^\circ$, then the third of the vectors, which must be their sum or difference, would not be the third side of an equilateral triangle and would not also have the same length.
-\end{jAnswer}
+}\end{jAnswer}
 Less fundamental, but sometimes of use to identify, are square lattices:
 \begin{definition}
 	An square lattice has the first and second parastichy vectors the same length and at right angles. 
@@ -748,38 +751,11 @@ Figure~\ref{fig:Txb0418LowOrder} shows a number of touching circle lattices, esp
 \mmafig{Txb0418LowOrder}{Some touching circle lattices, labelled by the principal vectors. Red lines correspond to the shortest vectors in the lattice, including ties, and blue lines to one of the second-shortest vectors after ties. 
 	Redrawn from van Iterson~\autocite{vanitersonjrMathematischeUndMikroscopischAnatomische1907}. }{1}
 %
+
 In a square lattice the first two parastichy vectors $\pvec{m}$ and $\pvec{n}$ have the same length, and the third and fourth parastichies also share the length $\sqrt{2}|\pvec{m}|$; this is the boundary case when the third parastichy number changes between the sum and the difference of the first two. In a hexagonal lattice, the  first,  second and third principal  vectors all have the same length, and can be written as $\pvec{m}$, $\pvec{n}$, and $\pvec{m+n}$ with $m<n$; this is the boundary case between changes of first and second principal parastichy numbers. 
 By considering these boundary cases, we will be able to  infer how principal parastichy numbers change as we cross the boundaries.  
 
 
-
-\section{Relation to \textit{Phyllotaxis: a systemic study}.}
-The relationship between continued fractions and divergence angles was worked out in some detail by Bravais as early as 1837~\cite{bravaisEssaiDispositionFeuilles1837}. Bravais also developed versions of Theorem~\ref{thm:glattice}, and especially the integer condition $| m v - n u|=1$ \cite{bravaisSystemsFormedPoints1949}.
-
- 
-Useful contributions to the analysis of cylindrical lattices then came from many writers, most relevantly a series of papers in the 1970s by Adler. Details of these and many further references can be conveniently found in Jean's 1994 book \textit{Phyllotaxis: a systemic study in plant morphogenesis}~\cite{jeanPhyllotaxisSystemicStudy1994}.
-This section notes a few of the differences between Jean's book and the current one and can be skipped by most readers.
-Jean's book included an invaluable mathematical synthesis, predominantly but not exclusively of Adler's work, but perhaps as a consequence contains a handful of mathematical inconsistencies. It is a tribute to the centrality of Jean's textbook to the field that it is still worth untangling them; and while in general the problems are ones that do not apply to large-Fibonacci-number lattices, the viewpoint of the next chapter requires a robust foundation for simpler lattices too. 
-
-Although I have preserved Jean's name for what is here Theorem~\ref{thm:fundamentalcorresponding} as the `fundamental theorem of phyllotaxis', it is instead Turing's theorem, Theorem~\ref{thm:Turing}, which is more fundamental from the bifurcation theory viewpoint of this book. This is because Turing's theorem allows patterns to be interpreted as the outcome of a dynamic, and modellable, biological process, while the `fundamental' theorem assumes the very existence of the emergent lattice which we are attempting to explain. 
-
-One notational difference from Jean is in the idea of the generating pair which Jean makes much of use of under the name of the `visible pair'. Jean gives a number of useful theorems about generating pairs: his A4.1 on p306, for example,  is in close correspondence with our Theorem~\ref{thm:glattice}. These theorems are correct and consistent for most phyllotactic lattices but in my interpretation they fail in some edge-cases  alluded to in Exercise~\ref{ex:ftpfail}. Specifically, they fail with the spiral lattices we introduced in Section~\ref{sec:spiral}.
- %
-As a counter-example to Jean's A4.2 (p307 of~\cite{jeanPhyllotaxisSystemicStudy1994}), consider its statement for the particular case  $m=1$ and $n=2$. It becomes `the parastichy pair (1,2) is visible and opposed iff there exist unique integers $u$ and $v$ such that $0\leq u<1$, $0\leq v<2$, $|v-2u=1|$ and such that the divergence $d<\jhalf$ lies at or is between $u$ and $v/2$'. Solving the constraints unambiguously gives $u=0$ and $v=1$, and gives a generating interval of $[0,1/2]$.  However the pair $\pvec{1}$ and $\pvec{2}$ are only generating on the interval $d\in [1/4,1/2]$. 
- For any $d<1/4$ it is not true, at least in the language of this book, to say as  
- Jean's A4.2 does that the parastichy pair  \gp{1,2} is a generating pair (and also incorrectly, that the pair is opposed for all $0<d<\jhalf$).  What has happened is that Adler's proof method actually leads to the pair \gphat{1}{2}, ie the 1-parastichy vector and the 2-complementary vector, which \textit{is} generating and opposed: see Figure~\ref{fig:Txb0419JeanX}.
- \mmafig{Txb0419JeanX}{A counter-example to Jean's Proposition A4.2~\autocite{jeanPhyllotaxisSystemicStudy1994}, with $m=1$, $n=2$, $d=7/72$ and $h=0.1$; this counter-example holds for all $h$ and $0<d<\jfrac{1}{4}$. A4.2 asserts that the 1-parastichy and the 2-parastichy form what Jean calls a visible pair and we call a generating pair. For spiral lattices, in the sense of Section~\ref{sec:spiral}, Jean's A4.2 fails because the 2-parastichy is not visible: it is the pair \gphat{1}{2} which is the generating pair. }{1}
-
-
-
-
-Another area where this text differs from Jean's synthesis is the \emph{conspicuous pair} as a model of the most obvious spirals. Adler~\cite{adlerModelContactPressure1974} defined a conspicuous visible opposed parastichy pair as identical to our principal parastichy pair (at least when opposed, and away from spiral lattices), and in 1988~\cite[p214]{jeanNumbertheoreticPropertiesTwodimensional1988} Jean followed this, but by 1994 he was differently defining the conspicuous pair as that closest to a right angle~\cite[p18]{jeanPhyllotaxisSystemicStudy1994}.
-
-In any case I prefer here to use the principal parastichy pair as the most natural model of `obvious'. 
-The concept of the principal parastichy pair, central to this book, was first made explicit by Turing~\autocite{turingMorphogenTheoryPhyllotaxis2013} in unpublished material in the early 1950s: Theorems~\ref{thm:third} and~\ref{thm:Turing} are based on his ideas. Turing's algorithm was eventually published in the 1990s as described in~\cite{turingMorphogenTheoryPhyllotaxis2013}.  With the aid of hindsight, the theorem I have called here Turing's Theorem is implicit in Bravais' nineteenth century work. 
-The independent Adler/Jean synthesis  makes use of `contractions' (eg A4.3 of~\cite{jeanPhyllotaxisSystemicStudy1994}) which correspond to steps in the Turing-Euclid reduction, and implicitly uses reaching the principal  vectors as a stopping point.
-
-Adler was well aware of Turing's notes on phyllotaxis and cited them in his 1974 literature survey~\cite{adlerModelContactPressure1974}. Adler's perspective was that the central mathematical problem was the relationship between the divergence and the set of possible generating pairs. It was from this perspective that he wrote that Turing had been `prevented' from using this `fundamental' concept because of Turing's focus on the principal parastichy pair, which is in fact more fundamental to the modern Standard Picture. For some reason, perhaps the very long delay in publishing Turing's notes, even this dismissal was removed from Jean's book, even though the notes had by then been published. As a consequence Jean's book contains no explicit equivalent of Turing's Theorem. 
 
  
  \section{Multijugate lattices}
@@ -797,8 +773,34 @@ Adler was well aware of Turing's notes on phyllotaxis and cited them in his 1974
 % \mmafig{Txb0421JugacyHat}{The multijugate version of lattices with complementary vectors as principal vectors have the same property, although perhaps easier to visualise. Left: A monojugate lattice with divergence $d=0.245$,  rise $h=0.45$, and $J=1$, with  principal parastichy numbers are \gphatnothat{1}{1}{0}. Right the corresponding bijugate lattice with  $J=2$, divergence $d/J$, rise $h/J$,  whose principal parastichy numbers are \gphatnothat{2}{2}{0}}{1.0}
  \section{Dropping the hats}
  Complementary vectors and the hat notation have done their job now in allowing precision in  the Theorems of this Chapter when applied to spiral lattices and we can drop them from now on, with the understanding that any future description of a \gp{m,m} parastichy pair is referring to what this chapter called a \gphat{m}{m} pair. In particular we can  without ambiguity now talk of the lattice with divergence $d=1/2$ as having a \gp{1,1}  parastichy pair corresponding to the two lines from the origin to ${1/2,h}$ winding in opposite directions around the cylinder. 
+ 
+ 
+\section{Relation to \textit{Phyllotaxis: a systemic study}}
+Useful contributions to the analysis of cylindrical lattices then came from many writers, most relevantly a series of papers in the 1970s by Adler. Details of these and many further references can be conveniently found in Jean's 1994 book \textit{Phyllotaxis: a systemic study in plant morphogenesis}~\cite{jeanPhyllotaxisSystemicStudy1994}.
+This section notes a few of the differences between Jean's book and the current one and can be skipped by most readers.
+Jean's book included an invaluable mathematical synthesis, predominantly but not exclusively of Adler's work, but perhaps as a consequence contains a handful of mathematical inconsistencies. It is a tribute to the centrality of Jean's textbook to the field that it is still worth untangling them; and while in general the problems are ones that do not apply to large-Fibonacci-number lattices, the viewpoint of the next chapter requires a robust foundation for simpler lattices too. 
 
-\section{Summary of parastichies}
+Although I have preserved Jean's name for what is here Theorem~\ref{thm:fundamentalcorresponding} as the `fundamental theorem of phyllotaxis', it is instead Turing's theorem, Theorem~\ref{thm:Turing}, which is more fundamental from the bifurcation theory viewpoint of this book. This is because Turing's theorem allows patterns to be interpreted as the outcome of a dynamic, and modellable, biological process, while the `fundamental' theorem assumes the very existence of the emergent lattice which we are attempting to explain. 
+
+One notational difference from Jean is in the idea of the generating pair which Jean makes much of use of under the name of the `visible pair'. Jean gives a number of useful theorems about generating pairs: his A4.1 on p306, for example,  is in close correspondence with our Theorem~\ref{thm:glattice}. These theorems are correct and consistent for most phyllotactic lattices but in my interpretation they fail in some edge-cases  alluded to in Exercise~\ref{ex:ftpfail}. Specifically, they fail with the spiral lattices we introduced in Section~\ref{sec:spiral}.
+%
+As a counter-example to Jean's A4.2 (p307 of~\cite{jeanPhyllotaxisSystemicStudy1994}), consider its statement for the particular case  $m=1$ and $n=2$. It becomes `the parastichy pair (1,2) is visible and opposed iff there exist unique integers $u$ and $v$ such that $0\leq u<1$, $0\leq v<2$, $|v-2u=1|$ and such that the divergence $d<\jhalf$ lies at or is between $u$ and $v/2$'. Solving the constraints unambiguously gives $u=0$ and $v=1$, and gives a generating interval of $[0,1/2]$.  However the pair $\pvec{1}$ and $\pvec{2}$ are only generating on the interval $d\in [1/4,1/2]$. 
+For any $d<1/4$ it is not true, at least in the language of this book, to say as  
+Jean's A4.2 does that the parastichy pair  \gp{1,2} is a generating pair (and also incorrectly, that the pair is opposed for all $0<d<\jhalf$).  What has happened is that Adler's proof method actually leads to the pair \gphat{1}{2}, ie the 1-parastichy vector and the 2-complementary vector, which \textit{is} generating and opposed: see Figure~\ref{fig:Txb0419JeanX}.
+\mmafig{Txb0419JeanX}{A counter-example to Jean's Proposition A4.2~\autocite{jeanPhyllotaxisSystemicStudy1994}, with $m=1$, $n=2$, $d=7/72$ and $h=0.1$; this counter-example holds for all $h$ and $0<d<\jfrac{1}{4}$. A4.2 asserts that the 1-parastichy and the 2-parastichy form what Jean calls a visible pair and we call a generating pair. For spiral lattices, in the sense of Section~\ref{sec:spiral}, Jean's A4.2 fails because the 2-parastichy is not visible: it is the pair \gphat{1}{2} which is the generating pair. }{1}
+
+
+
+
+Another area where this text differs from Jean's synthesis is the \emph{conspicuous pair} as a model of the most obvious spirals. Adler~\cite{adlerModelContactPressure1974} defined a conspicuous visible opposed parastichy pair as identical to our principal parastichy pair (at least when opposed, and away from spiral lattices), and in 1988~\cite[p214]{jeanNumbertheoreticPropertiesTwodimensional1988} Jean followed this, but by 1994 he was differently defining the conspicuous pair as that closest to a right angle~\cite[p18]{jeanPhyllotaxisSystemicStudy1994}.
+
+In any case I prefer here to use the principal parastichy pair as the most natural model of `obvious'. 
+The concept of the principal parastichy pair, central to this book, was first made explicit by Turing~\autocite{turingMorphogenTheoryPhyllotaxis2013} in unpublished material in the early 1950s: Theorems~\ref{thm:third} and~\ref{thm:Turing} are based on his ideas. Turing's algorithm was eventually published in the 1990s as described in~\cite{turingMorphogenTheoryPhyllotaxis2013}. The theorem I have called here Turing's Theorem is,  with hindsight,  implicit in or a simple consequence of Bravais' nineteenth century work. 
+The independent Adler/Jean synthesis  makes use of `contractions' (eg A4.3 of~\cite{jeanPhyllotaxisSystemicStudy1994}) which correspond to steps in the Turing-Euclid reduction, and implicitly uses reaching the principal  vectors as a stopping point. The reduction algorithm itself was of course encountered multiple other times over the centuries between Turing and Euclid -- and Turing himself was taught by number theorists who were well aware of it -- but I have adopted this name to emphasise that it is in Turing's disorganised posthumous notes that the first application to phyllotaxis can be found~\cite{swintonWatchingDaisiesGrow2004}. 
+
+Adler was well aware of Turing's notes on phyllotaxis and cited them in his 1974 literature survey~\cite{adlerModelContactPressure1974}. Adler's perspective was that the central mathematical problem was the relationship between the divergence and the set of possible generating pairs. It was from this perspective that he wrote that Turing had been `prevented' from using this `fundamental' concept because of Turing's focus on the principal parastichy pair, which is in fact more fundamental to the modern Standard Picture. For some reason, perhaps the very long delay in publishing Turing's notes, even this dismissal was removed from Jean's book, even though the notes had by then been published. As a consequence Jean's book contains no explicit equivalent of Turing's Theorem. 
+
+\section{Summary}
 We have classified parastichy pairs in lattices. Most simply we classified them  by whether they are opposed, that is wind in opposite directions. That simple classification is less useful than knowing whether they are generating, that is capable of describing the whole lattice, and we saw that a simple visual check for this was whether the triangle they defined contained any other lattice points. Each lattice has many generating pairs but typically only one of them is the shortest pair. 
 
 We called this shortest pair the principal parastichy pair and argued that this a good model for the spiral counts typically done when examining specimens. This principal parastichy pair depends on the rise: lattices with the same $d$ and different $h$ will have exactly the same generating pairs but which of those is the principal pair will vary with $h$. Crucially, we observed Turing's Theorem: geometrical constraints mean that the third principal parastichy number is always the sum or difference of the first two. 

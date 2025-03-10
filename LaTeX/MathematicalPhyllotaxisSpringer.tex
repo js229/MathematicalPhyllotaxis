@@ -1,5 +1,10 @@
-% !TeX program = lualatex
+% !TeX rogram = lualatex
 \documentclass[graybox,envcountchap,sectrefs]{svmono}
+
+%\includeonly{Classifying,Transformed,Developmental,Empirical,Placement,StackedDisksChapter}
+%\includeonly{Classifying}
+%\includeonly{Motivation,Background,Coprimality}
+
 
 \usepackage[british]{babel}\usepackage{csquotes}
 %\usepackage{mathptmx}
@@ -9,7 +14,8 @@
 % Springer recommended packages
 \usepackage{type1cm}         
 
-\usepackage{makeidx}         % allows index generation
+\usepackage{makeidx}    
+\makeindex     % allows index generation
 \usepackage{graphicx}        % standard LaTeX graphics tool
 % when including figure files
 \usepackage{multicol}        % used for the two-column index
@@ -76,9 +82,8 @@
 	\SetupExSheets{counter-within=ch}
 }
 {
-	\newenvironment{jExercise}{\begin{prob}}{\end{prob}}
-	\newenvironment{jAnswer}[1]{\begin{sol}{#1}}{\end{sol}}
-	\newcommand{\jBookEndSolutions}{}
+	\newenvironment{jExercise}{\prob}{\endprob}
+	\newenvironment{jAnswer}[2]{}{} %throw away label as exsheets is %	\newcommand{\jBookEndSolutions}{}
 }
 \input{MPSpringerPreamble.tex}
 \input{githubMathematicalPhyllotaxisRepoProperties.tex}
@@ -137,7 +142,7 @@
 	\chapter{Answers to Exercises}\printsolutions
 }
 {
-	{}
+	\include{Answers}
 }
 
 \ifthenelse{\boolean{useBiber}}%
@@ -147,6 +152,8 @@
 {
 	\bibliography{MPCite}
 }
+
+\printindex
 
 \end{document}
 

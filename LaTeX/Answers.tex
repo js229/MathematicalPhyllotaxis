@@ -1,0 +1,497 @@
+\chapter{Answers to exercises}
+
+
+%%%% Motivation.tex
+
+\begin{sol}{ex:doit}{
+	The grocery proof is left as an exercise to the reader. If using the Linford pineapple, there are clearly 8 spirals going up and to the right; depending on how the scales as the edges were originally joined there are either 12 or 13 spirals up and to the left. 
+}\end{sol}
+
+\begin{sol}{ex:doitagain}{
+Based on the consistent jumps between adjacent numbered scales (eg in Fig 1, from 22 to 26 to 40 to 34 is evidence of four separate spirals), I would say these cones display evidence of 4 and 7 spirals (Fig 1); 7 and 11 (Fig 2); 7 and 10 (Fig 4a). Based on the scale numbering alone, I can't assign an unambiguous spiral count  for Fig 3. 
+}\end{sol}
+%%%% Background.tex
+
+
+%%%% Coprimality.tex
+
+\begin{sol}{ex:wnp}{
+	Some winding-number pairs are given in Table~\ref{tab:wnp2}.
+	\begin{table}
+	\caption{Winding number pairs given as Farey intervals $[u/m,v/n]$. For $m$ and $n$ positive and distinct these are all contained in $[0,\jhalf]$ but the natural order of the endpoints varies with the sign of $mv-nu=\pm 1$.}
+\label{tab:wnp2}
+	\begin{equation*}
+		\begin{array}{lllll}
+			\hline
+			\\
+			\jFarey{u}{m}{v}{n}
+			&\jFarey{0}{1}{1}{0}&   &  &   \\[2ex]
+			\jFarey{ 1}{0}{0}{1} &  \jFarey{1}{1}{0}{1}  &  \jFarey{1}{2}{0}{1}  & \jFarey{1}{3}{0}{1}& \jFarey{1}{4}{0}{1} \\[2ex]
+			&  \jFarey{0}{1}{1}{2}&  & \jFarey{1}{3}{1}{2} &  \\
+			&  \jFarey{0}{1}{1}{3} & \jFarey{1}{2}{1}{3} &  & \jFarey{1}{4}{1}{3} \\[2ex]
+			&  \jFarey{0}{1}{1}{4} &  & \jFarey{1}{3}{1}{4} & \\[2ex]
+			&  \jFarey{0}{1}{1}{5} &\jFarey{1}{2}{2}{5} & \jFarey{1}{3}{2}{5} &\jFarey{1}{4}{1}{5} \\[2ex]
+			&  \jFarey{0}{1}{1}{6} &  &  &  \\
+			&  \jFarey{0}{1}{1}{7} &\jFarey{1}{2}{3}{7}& \jFarey{1}{3}{2}{7} & \jFarey{1}{4}{2}{7}  \\[2ex]
+			&  \jFarey{0}{1}{1}{8} &  & \jFarey{1}{3}{3}{8} &  \\[2ex]
+			&  \jFarey{0}{1}{1}{9} & \jFarey{1}{2}{4}{9} &  & \jFarey{1}{4}{2}{9}  \\[2ex]
+			\hline
+		\end{array}
+	\end{equation*}
+		\end{table}
+}\end{sol}
+
+\begin{sol}{ex:showk}{
+	Multiply~\eqref{eq:EuclideanMatrixq} by $g$.
+}\end{sol}
+
+\begin{sol}{ex:f1}{
+		It is easy to show by induction that 
+\begin{align}
+	\begin{pmatrix} 
+		F_{j+1} & F_{j} 
+		\\
+		F _j & F_{j-1}
+	\end{pmatrix} &= 	(E^\jqn{1} S)^{j}.
+	\label{eq:FibonacciMatrixB}
+\end{align}
+So the  $\jqi$'s are all \jqn{1} and the determinant shows that $(F_{j},F_{j-1})$ is a B\'ezout pair. It is not a winding-number pair because $F_{j-1}/F_j>\jhalf$. Note these are not the matrices that appear in Figure~\ref{fig:Txb0301EuclideanTree}.
+}\end{sol}
+
+\begin{sol}{ex:farey}{
+	Compute the difference between the Farey sum and the endpoints: the signs of these and the difference between the endpoints are all controlled by the sign of~$\Delta$. 
+}
+\end{sol}
+
+\begin{sol}{ex:fpairs}{
+\begin{align}
+E S \begin{pmatrix} 	F_{j+1} & F_{j-1} 	\\	F _j & F_{j-2}\end{pmatrix}
+  &= 	\begin{pmatrix} 1 & 1\\1 & 0 \end{pmatrix}
+\begin{pmatrix} F_{j+1} & F_{j-1} \\F _j & F_{j-2}\end{pmatrix}
+&= 
+\begin{pmatrix} 	F_{j+2} & F_{j+1} 	\\	F _{j+2} & F_{j-1}
+\end{pmatrix}
+\end{align}
+}\end{sol}
+
+\begin{sol}{ex:fareyFpair}  {
+For  $k=1$, the mediant of the Farey interval $(u+v)/(m+n)$ is $F_j/F_{j+2}$. 
+Generalised Fibonacci number pairs, such as the Lucas numbers $F^3_4=7$ and $F^3_5=11$, also appear in Figure~\ref{fig:Txb0301EuclideanTree}. From inspection of the tree or by induction we have for $k>1$
+\begin{align}
+	\begin{pmatrix} 
+		F^k_{j+1} & F_j 
+		\\
+		F^k_j & F_{j-1}
+	\end{pmatrix} &= 	(E\cdot  S)^{j-1} \cdot  (E^k S) 
+	\label{eq:GeneralizedFibonacciMatrix}
+\end{align}
+(This is still true for $k=1$ but as we have seen delivers a B\'ezout pair but not the winding-number pair). For these generalised pairs the Farey mediant is 
+\begin{align}
+	\frac{	 F_j + F_{j-1}}{F^k_{j+1}+F^k_{j}}&=	\frac{	 F_{j+1}}{F^k_{j+2}}
+\\
+	&= 	\frac{	 F_{j+1}}{F_{j} + k F_{j+1}}
+		\\&= \frac{ F_{j+1}/F_{j}}{1+ k F_{j+1}/F_{j}}
+\end{align}	
+making use of the well-known relation $	F^k_{j+1} =   k F_j+ F_{j-1}$. Finally we use $\lim_{ k\tends \infty}  F_{j+1}/F_{j}=\tau$ together with the fact that the Farey intervals are nested.
+}
+\end{sol}
+%%%% Geometry.tex
+
+\begin{sol}{ex:phoriz}{
+	If $\pvec{k}=(x,z)$, then $|x|\leq\jhalf$ direct from the definition of a parastichy vector.
+	If $x>0$, then $\phatvec{k}=\pvec{k}- \pvec{0}$ with 
+	horizontal component $x-1$ which is between $-1$ and $-\jhalf$, and similarly for $x<0$. 
+	Adding $x$ components gives the final sentence. 
+}\end{sol}
+
+\begin{sol}{ex:pwinding}{
+	For $d>\jfrac{1}{4}$, $\pvec{2}= (2d-1, h)=2\pvec{1}-(1,0)\neq 2\pvec{1}$;   in general we need to set $w_k= [ kd]$. For the second counter-example, choose $d$ so that $\pvec{1}$ and $\pvec{2}$ both have a positive $x$ component and $\pvec{3}$ has a negative one.  
+}
+\end{sol}
+
+\begin{sol}{ex:pcongruent}{
+	Unwind the spiral onto the lattice in the plane by setting $\Pvec{m}=\pvec{m}+([md],0)=m(d,h)$. Then $u\Pvec{m}+v\Pvec{n}=\Pvec{um+vn}$, and the result follows by taking the $x$ coordinate modulo~1. 
+}		\end{sol}
+
+\begin{sol}{ex:pvisible}{
+	Each time we move from $\jpoint{k}$ to $\jpoint{k+1}$ we move to the next label in order of the foliation, which has $m$ members. When we have moved $m$ times we return to the original member.
+}
+\end{sol}
+
+\begin{sol}{ex:pinfgp}
+	If the pair $(x_m, m h)$ and $(x_n,n h)$ is generating in the lattice $\mathcal{L}(d,h)$, then the lattice  $\mathcal{L}(d, s h )$ has a generating pair $(x_m, s m h)$ and $(x_n,s n h)$.
+	
+	If $\mvec$ and $\nvec$ are a generating pair for $\mathcal{L}$ then so is any invertible linear combination
+	\begin{equation}
+		\begin{pmatrix}
+		\mvec' \\ \nvec' 
+		\end{pmatrix}= 
+	\begin{pmatrix}
+		a & b  \\ c & d  
+	\end{pmatrix}	\begin{pmatrix}
+	\mvec \\ \nvec 
+\end{pmatrix}
+	\end{equation}
+	for integer $a,b,c,d$. Most of these will not be parastichy vector pairs.
+\end{sol}
+
+\begin{sol}{ex:p01g}{
+	Any parastichy vector $\pvec{k}$ can be written as $k\pvec{1}-w_k \pvec{0}$, so $\gp{0,1}$ is generating. The rise of every integer sum of $\pvec{0}$ and $\pvec{n>1}$ is a multiple of $nh$ and cannot be equal to $h$ and the pair cannot generate $\pvec{1}$.
+}
+\end{sol}
+
+\begin{sol}{ex:pcomp}{
+	Since $\pvec{0}=\pvec{1}\pm\phatvec{1}$, every parastichy vector $\pvec{k}=k\pvec{1}-w\pvec{0}$ is an integer sum of $\pvec{1}$ and $\phatvec{1}$. However every integer sum of
+	$\pvec{m}$ and $\phatvec{m}$ has rise which is a multiple of $m$ and so the pair is not generating unless $|m|=1$. 
+}\end{sol}
+
+\begin{sol}{ex:p57ng}{
+	The only candidate vector sum with the correct rise is $2\pvec{7}-2\pvec{5}$, but by direct calculation this is $\pvec{4}-(1,0)$ and thus is not a parastichy vector. 
+}\end{sol}
+
+\begin{sol}{ex:padajacent}{
+	$\mvec$ lies on the $m$-parastichy through the origin, and on some $n$-parastichy. If this was not the one adjacent to the $n$-parastichy through the origin, then it would intersect that $n$-parastichy and the intersection would be a lattice point since the pair is generating. But then the intersection would be a lattice point in but not at the corners of the $m,n$ parallelogram which it cannot be since the pair is generating. 
+}\end{sol}
+
+\begin{sol}{ex:pdeltacomp}{
+From Theorem~\ref{thm:glattice}, $h\Delta_{1n}=\pvec{1}\times\pvec{n}=[nd]$.
+Setting $\sigma=\Sign (nd -[nd])$, $\phatvec{n}=\pvec{n}-\sigma\pvec{0}$ and so $\Delta_{1\hat n}=[nd]+\sigma$. 
+If $0<d<\jfrac{1}{4}$ then $\Delta_{12}=1$ and $\Delta_{1\hat2}=0$, while 
+if  $\jfrac{1}{4}<d<\jfrac{1}{2}$ then  $\Delta_{12}=0$ and $\Delta_{1\hat2}=1$.
+Finally we must choose $u,v$ so that $|mv -u(n+\sigma)|=1$ and
+		\begin{align}\label{eq:Pmnuv1ex}
+		\begin{pmatrix}
+			\phatvec{n} \\ \mvec 
+		\end{pmatrix} = &
+		\begin{pmatrix}
+			(n+\sigma)  & - v 
+			\\
+			m &- u &
+		\end{pmatrix}
+		\begin{pmatrix}
+			\pvec{1}
+			\\
+			\pvec{0}
+		\end{pmatrix}
+	\end{align}
+}\end{sol}
+
+\begin{sol}{ex:pmn01g}{
+	 By Exercise~\ref{ex:calcdelta} the generating and complementary-generating intervals for $m=0$ and $n=1$ are the whole $d$-interval  $[0,\jhalf]$.  
+	The generating interval for $1,1$ is empty, since $\gp{1,1}$ is never generating, but the complementary-generating interval is the whole $d$-interval, since \gphat{1}{1} is always generating.
+For $m=1$, $n=2$, Exercise~\ref{ex:calcdelta} shows that the generating interval is $[\jfrac{1}{4},\jhalf]$ and the complementary-generating interval is the whole $d$-interval.
+For $m=1$ and $n>2$,  Exercise~\ref{ex:calcdelta} shows the generating interval is the $d$ such that $[nd]=1$, which is $2nd\in [1,3]$.  
+The complementary pair is generating either when (a) $[nd]=0$, which requires $2nd<1$ or (b) when both $[nd]=2$ (so $2nd\in [3,5]$) and $nd<[nd]=2$,
+so (b) requires $2nd\in[3,4]$. These two possibilities flank the generating interval.
+}\end{sol}
+
+\begin{sol}{ex:pmirror}{
+	Write the intervals for $\Delta=-1$ as $(L_{m-},R_{m-})= (u_--\jhalf,u_-+\jhalf)/m$, $(L_{n-},R_{n-})= (v_--\jhalf,v_-+\jhalf)/n$.
+	Use $u_-=m-u$ and $v_-=n-v$. 
+}\end{sol}
+
+\begin{sol}{ex:pneartau}{
+			Suppose $k$ is odd, then the winding-number pair for 
+	$m=F_k$, $n=F_{k+1}$ is $u=F_{k-1}$, $v=F_{k}$. 
+	Let $I_k$ be the interval $[F_k-\jhalf,F_k+\jhalf]/F_{k+1}$. 
+	Then $[md]=u$ when $d\in I_k$ and $[nd]=v$ when $d\in I_{k+1}$.
+	As $k$ becomes large and odd, $I_k$ tends to the point $\lim F_k/F_{k+1}=1/\tau$.
+	If $k$ is even, the winding number pair is $F_{k-2}$,$F_{k-1} = F_{k}-F_{k-1},F_{k+1}-F_k$ which we recognise as giving us the interval $1-I_k$ for $[md]=u$ and $[nd]=v$ instead.  
+Since $1/\tau>\jhalf$, in either case the interval in $[0,\jhalf]$ on which
+parastichy vectors for adjacent Fibonacci numbers
+ is generating is close to $1-1/\tau=1/\tau^2$. 	
+}
+\end{sol}
+
+\begin{sol}{ex:ftpfail}{
+	In Theorem~\ref{thm:fundamentalcorresponding} the vectors are restricted to be parastichy vectors, but to find two generating and opposed vectors  with $m=1$ and $n=1$ we must allow complementary vectors and take $\pvec{1}$ and $\phatvec{1}$. 
+	These are always generating and opposed and so the generating interval is $[0,1]$. 
+	Either B\'ezout pair of $u=1, v=0$ or $u=0,v=1$ allows this to be written as $[u/m,v/n]$ in some order.
+	
+	Suppose that $m=1$ and $n>1$. If $dn<\jhalf$, then $\pvec{1}$ and $\pvec{n}$ are co-linear, so instead pay attention to the pair $\pvec{1}$ and $\phatvec{n}$. For $d$ small and positive this pair is generating and opposed, and remains so until $dn=\jhalf$ at which point the horizontal component of $\pvec{n}$ increases through $\jhalf$ and jumps back down to $-\jhalf$ so that  $\pvec{n}$ is no longer co-linear with $\pvec{1}$. As $d$ continues to increase, the new pair $\pvec{1}$ and $\pvec{n}$ remain generating and opposed until
+	 $\pvec{n}$ becomes vertical, which happens when $nd=1$. After this the pair is no longer opposed.
+	 	 For $m=1$ amd $n>1$, the winding-number pair is $u=0$ and $v=1$, corresponding to a Farey interval of $[0,1/n]$. Thus this is the interval on which the lattice has an opposed generating pair, but below the midpoint $d<1/2n$, the pair is of a parastichy vector and a complementary vector. 
+	 
+}
+\end{sol}
+
+\begin{sol}{ex:pdiv}{
+	We set $m=55=F_j$ and $89=n=F_j$ with $j=10$, and use $u=F_9=34$, $v=F_{10}=55$ to give $mv-nu=(-1)^{11}$ as expected.
+	The interval in $[0,\jhalf]$ is $1-(34/55,55/89)= 1/\tau^2+ [-0.00014\ldots, 0.0005\ldots]$.
+	Thus the divergence angle of such a lattice must be within less than 2 parts in a thousand of the golden angle.
+} 
+\end{sol}
+
+\begin{sol}{ex:pspiral}{
+For $h$ large enough, 	the shortest vector in the lattice is  $\pvec{0}=(1,0)$ 
+of length 1, and the second shortest is  $\pvec{1}=(h,d)$ of length $h^2+d^2$.
+These change relative magnitude when $h^2+d^2=1$ giving us a $(1,0)$ lattice.
+As $h$ decreases further, there is a point when  $\phatvec{1}=(h,d-1)$ is of equal length to $\pvec{0}$: this is when $h^2+d^2=2d$. These give the boundaries between the $(0,1)$, $(1,0)$ and $(1,\hat 1)$ regions in Figure~\ref{fig:Txb0501VanItersonMain}. 
+
+As $h$ continues to decrease, but as long as $\pvec{1}$ remains the shortest vector in the lattice, the second shortest
+must be on the adjacent 1-parastichy to the origin. Given the definition of $k=\lfloor1/2d\rfloor-1\geq 1$, $1/2(k+1)<d\leq 1/2k$,  and then $\pvec{2},\ldots,\pvec{k}$ are co-linear with $\pvec{1}$ on the origin parastichy, so they are not the second shortest principal vector. On the adjacent 1-parastichy, though, we can set $\rpvec{n}=  (nd-1,n h)$, and we have $\phatvec{n}=\rpvec{n}=\pvec{n}-\pvec{0}$ for $-k\leq n\leq k$ and $\pvec{n}=\rpvec{n}$ for $k+1\leq n\leq 2k+1$. Then the second principal vector is one of these $\rpvec{}$s and specifically it is the one closest to $\mathbf{n}$: the vector which normal to the origin 1-parastichy from the origin to the adjacent 1-parastichy: see Figure~\ref{fig:Txb0412Spiral}.
+ %
+\mmafig{Txb0412Spiral}{First (red) and second (blue) parastichies in a lattice with $d=7/72$ and (left to right) $h$ equal to 0.4, 0.115, 0.08. The corresponding principal parastichy pairs are $(1,\hat 1)$, $(1,\hat 3)$,
+and $(1,6)$.  The normal to the 1-parastichy is shown as a thin line. For large enough $h$, as in the first two cases, one of the principal vectors is a complementary vector. }{1.0}
+%
+
+We have $\pvec{1}=(d,h)$; so $\mathbf{n}$  has slope $-d/h$. Since   $\mathbf{n}$ and $\pvec{1}$
+must form a rectangle of area $h$, we can find the length of  $\mathbf{n}$ and discover  $\mathbf{n} = \nu (-h^2 /d,h)$
+where 
+$
+	\nu = 
+	%\frac
+	{d}/{(h^2+d^2)}
+$
+Since the rise of $\mathbf{n}$ is $h\nu$, it passes through one of the $r_n$ every time $\nu$ passes through an integer,
+and the closest  $\mathbf{r}_n$ has $n=[\nu]$, so that the second principal vector changes from $\rpvec{n}$ to 
+$\rpvec{n+1}$  when $\nu=n+\jhalf$ which can be rewritten as 
+\begin{equation}
+{h^2+\left(d-\frac{1}{2n+1}\right)^2}=  \frac{1}{(2n+1)^2}
+\end{equation}
+Note that for the initial case $n=0$ we recover $h^2+d^2=2d$ as the $0=\hat{1}$ boundary where a $(1,0)$ lattice became a $(1,\hat 1)$ lattice. For each of $n=1,\ldots,k$ this gives the point at which a  $(1,\hat n)$ becomes a  $(1,\widehat {n+1})$ lattice, and then for $n=k+1$ the lattice transitions from a  $(1,\hat {k})$ to a $(1, {k+1})$ lattice.  From this point on the principal pair are both parastichy vectors, though at some yet smaller $h$.  $\pvec{1}$ will cease to be the principal vector and we are back in the full complexity of Figure~\ref{fig:Txb0501VanItersonMain}.
+
+The region of lattice space in which lattices are of the form $(1,\hat{n})$ are shown in Figure~\ref{fig:Txb0413SpiralExample}.
+\mmafig{Txb0413SpiralExample}{Structure of lattices space near $(d,h)=(0,0)$ where lattices are spiral lattices. Shaded in light and dark yellow are regions where the principal parastichy pair are $(1,\hat{n})$ for $n=1$ to $n=7$.  At each the light-dark boundary the lattice is square, as will be shown in the next chapter. The principal pair transitions from $(1,\hat{n})$ to  $(1,{n})$ at the vertical line $d=\jfrac{1}{2n}$. }{.5}
+}
+\end{sol}
+
+\begin{sol}{ex:pte}{
+	The pair $\gp{73,103}$ is successively reduced to $\gp{30,73}$, $\gp{13,30}$, and terminates at $\gp{4,13}$ which  is the principal pair for the lattice. 
+}\end{sol}
+
+\begin{sol}{ex:hexhex}{
+	If the angle between any two parastichy vectors was not 60$^\circ$, then the third of the vectors, which must be their sum or difference, would not be the third side of an equilateral triangle and would not also have the same length.
+}\end{sol}
+%%%% Classifying.tex
+
+\begin{sol}{ex:calcr2}{
+	Note that $n x_n - m x_n=\Delta$ and use this to eliminate $x_n$ and $r^2$ from~\eqref{eq:rm} and~\eqref{eq:rn}.
+	This (or alternatively eliminating $x_m$) yields
+	\begin{align}
+	r^2		&= \frac{2 \Delta n x_m -1}{4(n^2-m^2)} \label{ex:r2xm}
+		\\
+		r^2		&=  \frac{2 \Delta m x_n + 1}{4(n^2-m^2)} \label{ex:r2xn}
+%		\\
+%		 r^2 	&=  \frac{ \Delta (n x_m+ m x_n)}{4(n^2-m^2)} = \frac{ n^2 x_m^2-  m^2 x_n^2)}{4(n^2-m^2)}
+	\end{align}
+}
+\end{sol}
+
+\begin{sol}{ex:semi}{
+Substituting for $x_m$ and $x_n$ into~\eqref{eq:rm} and~\eqref{eq:rn} and eliminating $r^2$ gives
+\begin{equation}
+	\label{eq:poly}
+d^2 m^2+2 d n v+h^2 m^2+u^2=d^2 n^2+2 d m u+h^2 n^2+v^2
+\end{equation}
+Using the definition of $\bar{d}$ and $\Delta^2=1$ this gives~\eqref{eq:semi}. 
+Equation \eqref{eq:r2def} follows from the answer to Exercise~\ref{ex:calcr2}, or by 
+ using $\Delta=mv-nu$ to eliminate $v$ in~\eqref{eq:poly} and then eliminating $h^2$ using~\eqref{eq:rm}.
+}
+\end{sol}
+
+\begin{sol}{ex:paxis}{
+	Suppose $m<n$. The $d,h$ semi-circle intersects the $h=0$ axis 
+	at $(d_L= (v-u)/(n-m),0)$, with $x_m=x_n$, and $(d_R=(v+u)/(n+m),0)$, 
+	and $(n^2-m^2)(d_L-d_R) = 2\Delta$. 
+	At these points $2r(n\pm m)=1$.
+Except in the cases $(0=1)$, $(1=1)$ and $(1=2)$,  $d_L$ and $d_R$ either both lie in $[0,\jhalf]$ or or both lie in $[\jhalf,0]$.
+}\end{sol}
+
+\begin{sol}{ex:ptriple}{
+Consider the triangle of Figure~\ref{fig:Txb0409Apextriangle} which has sides $n\mvec$, $m\nvec$ and $1$. Since the lattice is hexagonal, the top angle of the triangle there is $60^\circ$, so set $|\mvec|=|\nvec|=2r$ and use the cosine rule to find   
+\begin{align*}
+	4 r^2  &=  \frac{1}{m^2+mn + n^2} \label{eq:cosine}
+\end{align*}
+With this form, equations~\eqref{ex:r2xm} and~\eqref{ex:r2xn} simplify to 
+\begin{align*}
+	x_m 
+	&= 2\Delta(m+2n) r^2
+	\\
+	x_n &= -2 \Delta (2m+n) r^2
+	\\
+	x_{m+n} &=  2  \Delta(n-m) r^2
+\end{align*}
+and by using $(n^2-m^2)h^2=x^2_m-x^2_n=3\cdot 4 r^4 (n^2-m^2)$ we get equation~\eqref{eq:hofr} and could further use this to find $d-\bar{d}$ as a function of $m$ and $n$. Note this shows that $\mvec$ and $\nvec$ are opposed and that none of the principal vectors are vertical at a triple-point with $n>m$. 
+}\end{sol}
+
+\begin{sol}{ex:ptopbranch}{
+	A square lattice occurs for $\mvec.\nvec=0$; using $|n\mvec-m\nvec|=1$ we get
+	$1=n^2|\mvec|^2+m^2|\nvec|^2= 4 r^2 ( m^2+n^2)$. This is unique on the branch because  $4r^2$ is strictly decreasing.
+}\end{sol}
+
+\begin{sol}{ex:pslope}{
+		At the triple-point  $m=n=m+n$, the \branch{m=n} branch, interpreted as a function $h(d)$, has a slope $h'$ given by 
+		\begin{align}
+			\frac{h'}{h} &= - \frac{1}{6 r^2 \Delta}
+\end{align}}
+\end{sol}
+
+\begin{sol}{ex:signz}{
+For the original lattice in \gp{0,1}, we have $h_0\geq0$. Separation into real and imaginary parts  gives
+	\begin{align}
+		z_1 &= g_{mn}(d_0+ih_0) 
+		\\
+		\Re z_1 &= 
+		\frac{n v + m u| w^2|	- d_0( n u + m v)}{|m w-n|^2} 
+			\\
+			\Im z_1 &=
+	\frac{	 h_0 \Delta_{mn}}{|m w-n|^2}
+	\label{eq:gReImA}
+\end{align}
+and then setting $h=\Im \Delta_{mn}z_1$ shows that $z$ has positive rise.
+}\end{sol}
+
+\begin{sol}{ex:circles}{
+	Parameterise the  $\gp{0,1}$ region of van Iterson space by setting $w=d_0+ih_0$ and choose a transformed lattice with $z=\Delta g_{mn}(w)$ in~\eqref{eq:gReImA} gives
+	\begin{align}
+		\Re z &= 
+		\Delta \frac{n v + m u| w^2|	- d_0( n u + m v)}{|m w-n|^2} 
+		\label{eq:rez}
+		\\
+		\Im z &=	h_0 
+		\frac{ 1}{|m w-n|^2} =  
+		\frac{ h_0}{n^2 + m^2 |w|^2 - 2 m n d_0}
+		\label{eq:gReIBm}
+	\end{align}
+	
+	The orthogonal lattices in \gp{0,1} are $\mathcal{L}(is)$ for $0<s<1$, so we set $d_0=0$, $h_0=s$ and $|w|^2=s^2$ to get 
+	\begin{align}
+		d(s) &= \frac{ m u +  n v s^2  }{n^2 +m^2 s^2 },
+		\\
+		h(s)  &= \frac{s}{n^2 +m^2 s^2  }.
+	\end{align}
+	They must lie on a circle because the M\"obius map takes vertical lines in the complex plane into circles and indeed
+	\begin{align}
+		\left( d(s)- \frac{1+2nu}{2mn}\right)^2 + h(s)^2 &= \frac{1}{4 m^2 n^2}.
+	\end{align}
+}
+\end{sol}
+
+\begin{sol}{ex:shcircles}
+Touching circle lattices occur in \gp{0,1} space when $w=e^{i\theta}$, for $\pi/3\leq\theta\leq2\pi/3$ and $\theta$ is the angle between the principal vectors. 
+Equations~\eqref{eq:rez} and~\eqref{eq:gReIBm} give the divergence and rise of the lattice transformed by $\Delta g_{mn}$ as 
+\begin{align}
+	d(\theta) &= 
+	\Delta \frac{n v + m u	- \cos\theta ( n u + m v)}{m^2-2 \cos \theta mn +n^2   } 
+	\\
+	h(\theta) &=
+	\frac{	\sin\theta}{m^2-2 \cos \theta mn +n^2   }
+	\label{eq:tchd}
+\end{align}
+
+For a square touching circle lattice, $\theta=\pi/2$ and 
+\begin{align}
+	d &= \Delta \frac{ m u +  n v   }{m^2 +  n^2},
+	\\
+	h  &= \frac{1}{m^2 + n^2}.
+\end{align}
+
+There are two hexagonal lattice points in \gp{0,1} at $e^{i\pi/3}$ and $e^{2i\pi/3}$ which map to different hexagonal lattices corresponding to principal parastichies  $(m,n,n+m)$ or  $(m,n-m,n)$. For $w= e^{i\pi/3}$ we get
+	\begin{align}
+	d &= \Delta \frac{ m u +  n v- (n u + mv)/2   }{m^2 + m n + n^2},
+	\\
+	h  &= \frac{\sqrt{3}}{2} \frac{1}{\left(m^2 -  mn +n^2 \right)}  .
+	\end{align}
+	
+\end{sol}
+
+\begin{sol}{ex:calcprinciplay}
+The angle  $\theta$ between the principal parastichy vectors is the same in the $\gp{0,1}$ lattice and in the rotated and scaled lattice, and  $w=|w_0|e^{i\theta}$.  Inserting this into in~\eqref{eq:gReImA} and taking real and imaginary parts allows the calculation of $\pvec{m}=m z_1 -u$ and $|\pvec{m}|^2$: 
+	\begin{align}
+	|\pvec{m}|^2 &=\frac{1}{m^2 w_0^2-2 m n w_0 \cos (\theta )+n^2}.
+		\end{align}
+	
+		
+For a touching circle lattice, $w_0=1$ and $4r^2=	|\pvec{m}|^2$ so the radius of the touching circles (not the radius of the circle in van Iterson space where lattices are touching circles!) is
+\begin{align}
+4 r^{2}  &=\frac{1}{ m^2-2 m n \cos (\theta )+n^2}.
+\\
+&= \frac{h(\theta)}{\sin \theta}
+\end{align}
+Eliminating $\cos\theta$ between this and~\eqref{eq:tchd} gives
+\begin{align}
+d&=		\jhalf
+\left(\frac{u}{m}+\frac{v}{n}\right)
++ 2\Delta  \left(\frac{n}{m}-\frac{m}{n}\right)r^2
+\end{align}
+
+As $w_1$ rotates around the unit circle from $e^{2i\pi/3}$ to $e^{i\pi/2}$ to $e^{i\pi/3}$, the inverse square diameter of the transformed lattice increases from $m^2-mn+n^2$at the top triple point on the $m=n$ branch, through  $m^2+n^2$ at the square lattice point, down to $m^2+mn+n^2$  at the lower triple point.
+\end{sol}
+
+\begin{sol}{ex:fibthresholds}{
+If $m$ and $n$ are adjacent Fibonacci numbers $F_{k}$ and $F_{k+1}$, then using $F_k\approx \tau^k/\sqrt{5}
+$ we find the value of $r$ on the branch is approximately
+	\begin{align}
+  F_k \sqrt{2} &\leq	2 r^{-1}  \leq F_k \sqrt{2(1+\tau)}.
+\end{align}
+So on the Fibonacci branch of the van Iterson diagram, 
+the larger Fibonacci number becomes $F_{k+1}$ at approximately $r=\sqrt{5/2}\tau^{-k}\approx \frac{1}{\sqrt{2}F_k}$.
+}\end{sol}
+
+\begin{sol}{ex:crvani}{
+		From~\eqref{eq:tchd}, the imaginary part of $z_1$ is zero when  $\sin\theta=0$, so the left and right intersections of the image of $w$ on the real axis are in some order $(u-v)/(m-n)$ and $(u+v)/(m+n)$ so that the radius of the van Iterson circle
+		is
+\begin{align}	
+			v_r &= \frac{1}{n^2-m^2}
+\end{align}
+and it is centred at
+\begin{align}			v_0 &= \frac{|m u - n v|}{n^2-m^2}
+\end{align}	so that $z_1=\Delta v_0 + v_r e^{i\psi}$. 
+A bit more work shows
+\begin{align}
+	\tan \psi &= \frac{ (n^2-m^2)\sin \theta}{(m^2+n^2)\cos\theta-2mn}
+	\\
+	&= \frac{ (n^2-m^2)}{n^2-2mn/\cos\theta+m^2}\tan\theta
+\end{align}
+The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, so
+\begin{align}
+	\tan \psi 
+	&= \frac{ (n^2-m^2)}{\pm\sqrt{3}(n^2+m^2)-mn }
+\end{align}
+}
+	\end{sol}
+
+\begin{sol}{ex:whenno}{
+		The bifurcation theory argument of this chapter or specifically examination of Figure~\ref{fig:Txb0505Pruned} show we must have $n-m>m$ or $ m < \jhalf n$. If this is true, 
+		the lattice is non-opposed  on the $\gp{m=n}$ branch from the triple point $\gp{m=n=n-m}$ to the point where either $\pvec{m}$ or $\pvec{n}$ vector becomes vertical.
+
+			Choose $u,v$ as the winding number pair so that $m v - n u=\Delta$. We need either $\Re \pvec{m}=0$, so $\Re z_1=u/m$ or $\Re \pvec{n}=0$, so $\Re z_1=v/n$. This gives $\cos\theta=n/m$ or $\cos\theta=m/n$ respectively, so we need to choose $\cos\theta=m/n$,
+			and since $m/n<\jhalf$, $\pi/3\leq\theta\leq 2\pi/3$ and one of the solutions of  $\cos\theta=m/n$ is indeed a point on the touching circle
+			 branch. From the previous exercise $\tan\psi=-\tan\theta$ at that point, 
+			 and so $|\cos\psi|=m/n$ there too. 
+}	\end{sol}
+
+\begin{sol}{ex:localpacking}{
+	Lagrange proved in 1773 that a hexagonal lattice is the closest possible lattice packing, and triple-points are the only points in lattice space at which the lattice is hexagonal. For more on the connection between the modular group and sphere-packings see, say, Berger~\cite{bergerGeometryRevealedJacob2010}.
+}\end{sol}
+%%%% Transformed.tex
+
+\begin{sol}{ex:richards}{
+	The first result itself follows
+	from reading the rise of a lattice from~\eqref{eq:gReImA}, combined with observing that Fibonacci numbers scale like $\tau^k$
+	and so $h$ scales like $n^{-2}$. 
+	
+The exercise is to warn the reader against trying to make too much sense of the following strange expression which appeared in
+	\autocite{richardsPhyllotaxisItsQuantitative1951}:
+	\begin{align}
+		k\approx \mbox{P.I} &= 0.33 - 2.39 \log_{10}  \log_{10} R.
+		\label{eq:richards}
+	\end{align}
+	 Richards wanted to fit real disk patterns as idealisations of those on the left of Figure~\ref{fig:Txb0603Transforms}. He  
+	 seems to have assumed an orthogonal golden lattice transformed with logarithmic spirals, and his unfortunate idea was to use the $R$ of equation~\eqref{eq:plastoratio} to estimate $h$, which gives one $\log$ in equation~\ref{eq:richards}, and then use the knowledge of how $h$ scaled with $k$ to estimate $k$, giving another $\log$ in that equation. The specific numerical values of the coefficients in equation~\eqref{eq:plastoratio} depend on exactly what lattice is being imagined as the precursor. The argument in~	\autocite{richardsPhyllotaxisItsQuantitative1951} is not easy to follow mathematically, creating an opportunity for several subsequent papers to attempt a more rigorous formulation~\autocite{thornleyPhyllotaxisIIDescription1975,jeanBib647,jeanBib278}.
+
+Quite apart from the problems inherent in a $\log \log$, term, estimates of $R$ will be in practice very sensitive  to the estimate of position of the unknown centre of the disk. Even if the plastochrone ratio $R$ can be reliably estimated from the observed pattern then it seems much, much,  simpler to just count the $k$. But more fundamentally the Richards plastochrone index just assumes too much to discriminate between different developmental models.  
+}
+\end{sol}
+%%%% Developmental.tex
+
+
+%%%% Empirical.tex
+
+
+%%%% Placement.tex
+
+
+%%%% StackedDisksChapter.tex
+
