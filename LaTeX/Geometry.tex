@@ -175,7 +175,7 @@ So far we have formalised what it means to be able to `see' a straight line in t
 	Some of the more obvious parastichies and their parastichy vectors in a lattice with $d=17/72$ and $h=0.03$. The blue lines highlight the family of 4-parastichies,  the red lines the family of 5-parastichies, and the green ones the family of 1-parastichies. There are four members of the 4-parastichies, and the member that passes through the point 0 also passes through the point 4. For this lattice, $\gp{1,4}$ and $\gp{4,5}$ are each  examples of a generating and opposed pair: in each case the two parastichies wind in opposite directions, the parallelogram defined by the pair tiles the lattice and every lattice point is at a vertex of one of the parallelograms; the edges of the parallelograms form the parastichy lines. 
 }{0.9}
 
-\begin{definition}
+\begin{definition}\label{def:gp}
 The $\gp{m,n}$-parastichy pair is the pair of parastichy vectors $\mvec$ and $\nvec$.
 The \gphat{m}{n}-complementary pair is the pair of the parastichy vector $\mvec$ and the complementary vector $\phatvec{n}$.
 \index{pairs of parastichy vectors}\index{parastichy vector!complementary vector}
@@ -207,7 +207,7 @@ There are many pairs of visible parastichies in a lattice, but Figure~\ref{fig:T
 \begin{jExercise}\label{ex:pinfgp}
 	Show this.
 \end{jExercise}
-\begin{jAnswer}{ex:pinfgp}
+\begin{jAnswer}{ex:pinfgp}{
 	If the pair $(x_m, m h)$ and $(x_n,n h)$ is generating in the lattice $\mathcal{L}(d,h)$, then the lattice  $\mathcal{L}(d, s h )$ has a generating pair $(x_m, s m h)$ and $(x_n,s n h)$.
 	
 	If $\mvec$ and $\nvec$ are a generating pair for $\mathcal{L}$ then so is any invertible linear combination
@@ -222,7 +222,7 @@ There are many pairs of visible parastichies in a lattice, but Figure~\ref{fig:T
 \end{pmatrix}
 	\end{equation}
 	for integer $a,b,c,d$. Most of these will not be parastichy vector pairs.
-\end{jAnswer}
+}\end{jAnswer}
 
 Since every point in our lattice has a rise which is an integer multiple of $h$, a necessary condition for a pair to be generating is that it can generate all these $h$ multiples in the vertical component of its sums:
 \begin{theorem}
@@ -244,7 +244,7 @@ Excluding co-linearity is still not enough, as part (b) of Figure~\ref{fig:Txb04
 
 \begin{jExercise}\label{ex:p01g}
 	\label{ex:01generating}
-	Show that $\gp{0,1}$ is always generating, and that  $\gp{0,n>1}$ never is. 
+	Show that $\gp{0,1}$ is always generating, and that  $\gp{0,n}$ never is for $n>1$. 
 \end{jExercise}
 \begin{jAnswer}{ex:p01g}{
 	Any parastichy vector $\pvec{k}$ can be written as $k\pvec{1}-w_k \pvec{0}$, so $\gp{0,1}$ is generating. The rise of every integer sum of $\pvec{0}$ and $\pvec{n>1}$ is a multiple of $nh$ and cannot be equal to $h$ and the pair cannot generate $\pvec{1}$.
@@ -272,15 +272,15 @@ Excluding co-linearity is still not enough, as part (b) of Figure~\ref{fig:Txb04
  A helpful way to think of the generating pair $\gp{m,n}$ is that  $\pvec{m}$ and $\pvec{n}$ provide a coordinate basis for the plane, and the lattice points are the ones with integer coordinates in that basis. From this perspective, a cylindrical lattice is not generated merely by the first parastichy vector $\pvec{1}$, but instead by  the pair comprising  $\pvec{1}$ together with the periodicity vector $\pvec{0}$, which is used as necessary to pull multiples of $\pvec{1}$ back into the cylindrical strip (Figure~\ref{fig:Txb0408Periodic}).
  \mmafig{Txb0408Periodic}{The  pair of red and blue vectors $\pvec{3}$ and $\pvec{2}$ , and the pair of white and green vectors $\pvec{0}$ and $\pvec{1}$ each generate the same lattice}{1.0}
  Indeed we saw in Exercise~\ref{ex:01generating} that $\pvec{0}$ and $\pvec{1}$ are always generating, or in this sense always form a basis pair for the cylindrical lattice. 
- But there are many possible gnerating pairs. 
- One of the ways that this is viewpoint is useful  that it gives us a way to characterise generating pairs by thinking of them as corresponding to a change of basis from the basis associated with $\gp{0,1}$ and produce the central algebraic result of this chapter:
+ But there are many possible generating pairs. 
+ One of the ways that this is viewpoint is useful  that it gives us a way to characterise generating pairs by thinking of them as corresponding to a different choice of basis for the space of  lattice vectors in the plane and produce the central algebraic result of this chapter:
 
 \begin{theorem}
 \label{thm:gLattice}
 \label{thm:glattice}
 	In any lattice $\mathcal{L}(d,h)$, the following are equivalent for coprime integers $m,n$:
 	\begin{enumerate}
-			\item The pair of parastichy vectors $\mvec$ and $\nvec$, is a generating pair.
+			\item The pair of parastichy vectors $\mvec$ and $\nvec$ is a generating pair.
 \item The area of the parallelogram formed by $\mvec$ and $\nvec$, namely the vector cross product $h\Delta_{mn}=\mvec\times\nvec$, satisfies
 $|\Delta_{mn}|=1$. 	
 		\item The integers $u=[md],v=[nd]$ satisfy $|mv-un|=1$ and the parastichy vectors	
@@ -568,8 +568,9 @@ In the language of our mathematical lattice it is the parastichies through the p
 	
 \end{definition}
 The first principal vector has to be a parastichy vector, and the second principal vector will normally be a parastichy vector or sometimes a complementary vector.
-\begin{definition}
+\begin{definition}\label{def:ppdef}
 	An  $\pp{m,n}$ lattice is a lattice $\mathcal{L}(h,d)$ in which the first and second principal vectors have parastichy numbers $m$ and $n$ respectively. 
+	\footnote{We are using the same $\gp{m,n}$ typeface in definitions~\ref{def:ppdef} and~\ref{def:gp}: the lattice is being labelled by the label of its principal parastichy pair. Later we will use the same typeface for the empirical pairs of parastichy  counts which this models.}
 \end{definition}
 Similarly a  $\pp{m,n,t}$ lattice is a lattice  in which the first  second  and third parastichy numbers are $m$, $n$ and $t$. If the first and second principal  vectors are equal in length we alternatively describe the lattice as an $\pp{m=n,t}$ lattice.
 Principal pairs are always generating pairs and a proof of this will become apparent after we have seen how to construct principal pairs. 
@@ -578,7 +579,7 @@ Whether a parastichy vector is a principal one is an $h$-dependent property, unl
 Figure~\ref{fig:Txb0411LatticesSpecialD} shows principal parastichy pairs for the special case of  $d=0$ and distichous patterns $d=\jhalf$.  
 \mmafig{Txb0411LatticesSpecialD}{Lattices, and principal parastichies, in the special cases $d=0$  and distichous patterns $d=\jhalf$, and varying $h$. A circle equal in diameter to the shortest principal parastichy vector is drawn around each point.
 Red lines correspond to the principal parastichy, and blue lines to the parastichy which has the next strictly shorter parastichy vector.}{1}
-%
+In the Figure,  we have stretched the $\pp{(m,n)}$ notation a little further to label the lattices. Now, for example, the $\gponeonhattwo$ lattice is one in which the parastichy vectors $\pvec{1}$ and the complementary vector $\phatvec{1}$ tie as the principal parastichy vector and $\pvec{2}$ is the third-shortest parastichy vector.
 \section{Spiral lattices}
 \label{sec:spiral}
 
@@ -703,7 +704,7 @@ Because the first and second parastichy vectors $\fvec$ and $\svec$ are of the f
 	The third parastichy number is the sum or difference of the first two.%
 	\end{theorem}
 See Figure~\ref{fig:Txb0415SumDifference}.	This form of the Theorem neglects the hats, so requires us to interpret $1+\hat{1}$ as $2$ or $\hat{2}$ as necessary. We will see in the next Chapter how Turing sought to use this theorem as part of his explanation of Fibonacci structure.
-\mmafig{Txb0415SumDifference}{Turing's theorem: the third parastichy vector in a lattice is always the sum or difference of the first two.}{1.0}
+\mmafig{Txb0415SumDifference}{Turing's theorem: the third parastichy vector in a lattice is always the sum or difference of the first two. It is intuitively clear in this case (and ensured by the Theorem) that the point reached by third parastichy vector lies on the adjacent 4-parastichy to the origin, and so has paastichy number 9 or 5 depending on where the normal to the 4-parastichy through the origin intersects the adjacent parastichy.}{1.0}
 
 
 
@@ -750,6 +751,7 @@ Figure~\ref{fig:Txb0418LowOrder} shows a number of touching circle lattices, esp
 \mmafig{Txb0418LowOrder}{Some touching circle lattices, labelled by the principal vectors. Red lines correspond to the shortest vectors in the lattice, including ties, and blue lines to one of the second-shortest vectors after ties. 
 	Redrawn from van Iterson~\autocite{vanitersonjrMathematischeUndMikroscopischAnatomische1907}. }{1}
 %
+
 In a square lattice the first two parastichy vectors $\pvec{m}$ and $\pvec{n}$ have the same length, and the third and fourth parastichies also share the length $\sqrt{2}|\pvec{m}|$; this is the boundary case when the third parastichy number changes between the sum and the difference of the first two. In a hexagonal lattice, the  first,  second and third principal  vectors all have the same length, and can be written as $\pvec{m}$, $\pvec{n}$, and $\pvec{m+n}$ with $m<n$; this is the boundary case between changes of first and second principal parastichy numbers. 
 By considering these boundary cases, we will be able to  infer how principal parastichy numbers change as we cross the boundaries.  
 
