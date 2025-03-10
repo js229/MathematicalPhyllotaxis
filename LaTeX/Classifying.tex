@@ -123,7 +123,7 @@ The crucial organising centres of lattice space are the triple-points, where two
 )}
 % \gp{0=1=\hat{1}} and \gp{1=\hat{1}=2} 
 and otherwise the  triple-point is of the form \gp{m=n=n+m} with $0\leq m<n$. 
-The semicircles defined in the previous section provide necessary but not sufficient conditions for a lattice to be a van Iterson lattice with $|\mvec|=|\nvec|$ : we also need that $\mvec$ and $\nvec$ are the principal parastichy vectors. 
+The semicircles defined in the previous section provide necessary but not sufficient conditions for a lattice to be a van Iterson lattice with $|\mvec|=|\nvec|$: we also need that $\mvec$ and $\nvec$ are the principal parastichy vectors. 
 The diagram of  Figure~\ref{fig:Txb0502VanItersonZoom} is organised by these triple-points  at which the lattice has hexagonal symmetry as in eg the \gp{2=3=5} lattice in Figure~\ref{fig:Txb0418LowOrder}. The bifurcations at these triple-points can completely characterise transitions in lattice space.
 
 It is possible, as in Exercise~\ref{ex:triplealgebra}, to calculate the positions of the triple-points algebraically, though this does not offer much insight.
@@ -246,7 +246,7 @@ Now suppose we have a cylindrical lattice with principal parastichy numbers \gp{
  An example is given in Figure~\ref{fig:Txb0506Renormalisation}. By a weak analogy with theoretical physics this rotate-and-scale process is called lattice renormalisation, and we call the corresponding parastichy vectors of the renormalised lattice $w_m$.
 \mmafig{Txb0506Renormalisation}{A lattice with arbitrary parastichy numbers can be 
 	constructed from a $(0,1)$ lattice by a carefully chosen scaling and rotation that preserves the cylindrical periodicity. From left to right, a lattice (here with principal parastichy numbers 3 and 2) is rotated so that the principal parastichy vector $\pvec{3}$ becomes horizontal, then scaled to length 1 so it is the periodicity vector of a new lattice on the gray cylinder. The second principal parastichy vector, here 2, must map to the second shortest vector in the new lattice, which has principal parastichy numbers $(0,1)$. 
-	Theorem~\ref{thm:renormalization} inverts this compound of rotation and scaling to compute the a complex number $z_m$ which can multiply the $(0,1)$ gray lattice and retrieve the desired $(m,n)$ lattice. 
+	Theorem~\ref{thm:renormalization} inverts this compound of rotation and scaling to compute the a complex number $z_m$ which can multiply the $(0,1)$ gray lattice and retrieve the desired $(m,n)$ lattice. By construction, both lattices have the same angle between the principal parastichy vectors.
 }{1}
 
 The original and the renormalised lattice are represented by two different points $(d,h)$ in lattice space, and each point in that space has co-ordinates which are those of the parastichy vector of smallest positive rise of the corresponding lattice. So renormalisation corresponds to a map $w_1=f(z_1)$; we will compute it, or rather its inverse $g$ such that $g(w_1)=z_1$. This gives a way of constructing a lattice with any desired principal parastichy numbers $m$ and $n$ by multiplying a normalised one by a particular complex number $z_m$. Moreover, since the angle between the parastichy vectors is not changed by the renormalisation, a lattice with any desired such angle, such as a hexagonal lattice, can be found by starting from an lattice with the same angle in $\gp{0,1}$ space. 
@@ -377,7 +377,7 @@ Once we have done all this work to see where the renormalisation transform comes
 	\label{ex:orthogonal}
 }\end{jExercise}
 
-\begin{jAnswer}{ex:shcircles}
+\begin{jAnswer}{ex:shcircles}{
 Touching circle lattices occur in \gp{0,1} space when $w=e^{i\theta}$, for $\pi/3\leq\theta\leq2\pi/3$ and $\theta$ is the angle between the principal vectors. 
 Equations~\eqref{eq:rez} and~\eqref{eq:gReIBm} give the divergence and rise of the lattice transformed by $\Delta g_{mn}$ as 
 \begin{align}
@@ -402,7 +402,7 @@ There are two hexagonal lattice points in \gp{0,1} at $e^{i\pi/3}$ and $e^{2i\pi
 	\\
 	h  &= \frac{\sqrt{3}}{2} \frac{1}{\left(m^2 -  mn +n^2 \right)}  .
 	\end{align}
-	
+}
 \end{jAnswer}
 
 \begin{jExercise}\label{ex:calcprinciplay}{
@@ -410,7 +410,7 @@ There are two hexagonal lattice points in \gp{0,1} at $e^{i\pi/3}$ and $e^{2i\pi
 	Find the magnitude of the principal parastichy vector in an \gp{m,n}  lattice with angle $\theta$ between its principal parastichy vectors.
 	Find the radius of the disks in a touching circle lattice as a function of $\theta$, and the divergence $d$ as a function of $r$.
 }\end{jExercise}
-\begin{jAnswer}{ex:calcprinciplay}
+\begin{jAnswer}{ex:calcprinciplay}{
 The angle  $\theta$ between the principal parastichy vectors is the same in the $\gp{0,1}$ lattice and in the rotated and scaled lattice, and  $w=|w_0|e^{i\theta}$.  Inserting this into in~\eqref{eq:gReImA} and taking real and imaginary parts allows the calculation of $\pvec{m}=m z_1 -u$ and $|\pvec{m}|^2$: 
 	\begin{align}
 	|\pvec{m}|^2 &=\frac{1}{m^2 w_0^2-2 m n w_0 \cos (\theta )+n^2}.
@@ -431,6 +431,7 @@ d&=		\jhalf
 \end{align}
 
 As $w_1$ rotates around the unit circle from $e^{2i\pi/3}$ to $e^{i\pi/2}$ to $e^{i\pi/3}$, the inverse square diameter of the transformed lattice increases from $m^2-mn+n^2$at the top triple point on the $m=n$ branch, through  $m^2+n^2$ at the square lattice point, down to $m^2+mn+n^2$  at the lower triple point.
+}
 \end{jAnswer}
 
 \begin{jExercise}\label{ex:fibthresholds}
@@ -511,7 +512,7 @@ It is a matter of taste whether the structure of van Iterson space as revealed b
 Some of the less convincing arguments for the occurence of Fibonacci phyllotaxis have centred on analyses of packing efficiency, partly because of phenomenon like the ones illustrated in Figure~\ref{fig:Txb0508SpiralPacking}.%
 \mmafig{Txb0508SpiralPacking}{A golden-angle lattice packs more uniformly than nearby lattices, in the sense that the angular distribution of the angles of the nodes is most even at the golden angle. Above, nodes with polar coordinates $(r,\theta)=( nh , n\phi)$ are shown for $n=1\ldots1000$, $h=0.001$, and $\theta=\tau/1.001$, $\tau$ and $1.001\tau$. Below, the angles of each node are binned and coloured by count. 
 }{1.0}%
-Each of the three node patterns in Figure~\ref{fig:Txb0508SpiralPacking} contain the same number of nodes in the same sized region: in that sense mean packing is equivalent between them. What (extremely close) adherence to the Golden angle offers is a closeness to uniformity in the angle distribution of the nodes. This most-uniform packing property has been known for a long time and seems to have first been explicitly proved by Wright~\cite{wrightMostThoroughUniform1859}. It has sometimes been suggested that this kind of uniformity in the distribution of leaf positions offers a fitness advantage in that such a leaf architecture could maximise sunlight capture. There's never been any good evidence of this inherently implausible fitness effect.
+Each of the three node patterns in Figure~\ref{fig:Txb0508SpiralPacking} contain the same number of nodes in the same sized region: in that sense mean packing is equivalent between them. What (extremely close) adherence to the Golden angle offers is a closeness to uniformity in the angle distribution of the nodes. This most-uniform packing property, which is intimately related to the continued fraction representation of the golde angle, has been known for a long time and seems to have first been explicitly proved by Wright~\cite{wrightMostThoroughUniform1859}. It has sometimes been suggested that this kind of uniformity in the distribution of leaf positions offers a fitness advantage in that such a leaf architecture could maximise sunlight capture. There's never been any good evidence of this inherently implausible fitness effect.
 
 Nevertheless, given that there clearly are molecular mechanisms that promote particular kinds of close packing in node placement, it is worth clarifying how packing closeness varies over the van Iterson diagram.  If we  draw a circle of the same radius around every point of a lattice and choose the radius as large as possible without two circles intersecting, then the radius of such a circle is $|\pvec{m}|/2$ where $m$ is the primary parastichy number. There is one such circle of area $ {\pi |\pvec{m}|^2 }/{4}$ attached to each point, but we saw in the previous Chapter that the cylinder area per point is $h$ so  the packing efficiency $\beta$ of the lattice, defined as the fraction of the cylinder covered by the circles, is
 \[
@@ -534,7 +535,7 @@ Since packing efficiency scales like $1/h$ in the $(0,1)$ region, its contour li
 
 \section{The structure of multijugate lattice space}
 \label{sec:Jlattice}
-Implicit in the structure of renormalisation is the idea of a parastichy vector moving down through the axis and having rise $h=0$ at that point. This process gives us a way to navigate through a three-dimensional lattice space $(d,h,J)$ where the jugacy variable only takes integer values. We saw in the previous chapter that the principal vectors of a tree with parameters $(d/J,h/J,J)$ were $J$ times the principal vectors of a tree with $(d,h,1)$,so that the van Iterson tree of a multijugate is structurally identical to the $J=1$ version, but simply reduced in scale by a factor $J$.  Figure~\ref{fig:Txb0499showJugacyTrees} gives one visualisation of this three dimensional parameter space, but other visualisations are possible. 
+Implicit in the structure of renormalisation is the idea of a parastichy vector moving down through the axis and having rise $h=0$ at that point. This process gives us a way to navigate through a three-dimensional lattice space $(d,h,J)$ where the jugacy variable only takes integer values. We saw in the previous chapter that the principal vectors of a tree with parameters $(d/J,h/J,J)$ were $J$ times the principal vectors of a tree with $(d,h,1)$,so that the van Iterson tree of a multijugate is structurally identical to the $J=1$ version, but simply reduced in scale by a factor $J$.  Figure~\ref{fig:Txb0510MultiJugacy} gives one visualisation of this three dimensional parameter space, but other visualisations are possible. 
 \mmafig{Txb0510MultiJugacy}{XXX to edit The separate van-Iterson trees for lattices of jugacies 1 to 4.}{1.0}
 
 \section{Notes to this Chapter}%~\ref{ch:classifying}
