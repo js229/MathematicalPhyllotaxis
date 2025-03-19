@@ -10,6 +10,7 @@
 
 
 \section{B\'ezout relations}
+\index{co-prime integers!B\'ezout relation}
 The previous chapter defined co-primality for a pair of integers. An equivalent condition is the existence of a  B\'ezout relation: the integer pair $(u,v)$ satisfies the B\'ezout relation for the non-negative integer pair $(m,n)$ iff
 \begin{align}
 	|n  u-mv| = 1.
@@ -23,6 +24,7 @@ If $u$ and $v$ exist then they are a certificate of co-primality: we will see be
 $n u- m v  =+1$ provides one solution, then $n(m-u)-m(n-v)=-1$ provides another: because $11\times3-4\times8 =+1$ we can find $11\times 1-4\times 3=-1$. 
 
 \section{The winding-number pair}
+\index{co-prime integers!winding-number pair}
 \label{sec:wnp}
 There are different ways to cope with the non-uniqueness of  B\'ezout pairs.
 Here we pick out a particular pair, the \textit{winding-number pair}. 
@@ -68,6 +70,7 @@ For the small integers in plant spiral counts it is perfectly feasible to comput
 
 
 \section{Euclid's algorithm}
+\index{Euclidean algorithm}
 \label{sec:euclid}
 Euclid's algorithm finds the highest common divisor of two positive integers by repeatedly subtracting the smaller as many times as we can from the larger to find a new, smaller pair of integers,  stopping when one of them is zero. It is  simple to implement, and tracking the variables in the intermediate steps of the algorithm will allow us to understand connections with continued fractions and structure of the van Iterson diagram of Chapter~\ref{ch:cylinder}.
 For example, consider calculating the highest common factor of $4$ and $11$:
@@ -100,6 +103,7 @@ Given integers $n\geq m>0$  we set $r_{-1}=n$, $r_0=m$ and $i=0$:
 \end{proof}
 
 \subsection{Matrix form of the Euclidean algorithm}
+\index{Euclidean algorithm!matrix form}
 \mmafig{Txb0301EuclideanTree}{Computing the highest common factor of 4 and 11 by successive matrix reductions upwards to the identity matrix. Conversely, the extended tree downwards from the identity matrix, branching by an $E$ or an $ES$ matrix-multiplication at each node after the second, will contain every pair of co-prime integers, in the first column of each matrix, with the corresponding winding-number pair in the second column. 
 The $\jqi$s of the Euclidean reduction emerge as the number of $E$s between each $S$. The horizontal order of the $E$ and $ES$ branches below each matrices is chosen so that the child matrices are ordered by their Farey mediant as defined in section~\ref{sec:farey}. Chapter~\ref{ch:classifying} will reflect on the close similarity between this diagram than the van Iterson classification.}{1}
 %

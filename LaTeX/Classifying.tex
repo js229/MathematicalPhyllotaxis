@@ -15,6 +15,8 @@ The answer is given in the van Iterson diagram of Figure~\ref{fig:Txb0501VanIter
 
 \section{Components of the van Iterson diagram: the \branch{m=n} branch}
 \label{sec:mequalsn}
+\index{van Iterson diagram}
+\index{van Iterson diagram!branch}
 We have not yet seen shown how to draw the van Iterson diagram nor seen a reason for its remarkable self-similarity. We will do the latter in section~\ref{sec:levitov}, and though elegant and powerful, that approach masks the structure of the crucial lattice bifurcation.  So first we take an approach using only elementary algebra, and then only afterwards see why the answers take the form they do. 
 Figure~\ref{fig:Txb0502VanItersonZoom} redraws 
 the van Iterson diagram in a subset of lattice space, and adds labels for the boundaries and the bifurcation points at which they meet. 
@@ -25,8 +27,9 @@ the van Iterson diagram in a subset of lattice space, and adds labels for the bo
 It shows that we can construct the structure of lattice space by finding the arcs on which  the principal vectors have the same length. We call these branches: 
 \begin{definition}
 The branch  \branch{m=n} is the set of solutions in lattice space on which $\pvec{m}$ and $\pvec{n}$ are a generating pair and have the same length.
+
 \end{definition}
-Recalling from~\ref{sec:hexdef} that a van Iterson or touching circle lattice has the first two parastichy\index{parastichy}{} vectors the same length, an \branch{m=n} van Iterson lattice 
+Recalling from~\ref{sec:hexdef} that a van Iterson or touching circle lattice has the first two parastichy vectors the same length, an \branch{m=n} van Iterson lattice 
  lies on a \branch{m=n} branch, but not all lattices on the branch are van Iterson.   Typically the branches are semicircular and the van Iterson region, where the two generating vectors are also the two shortest vectors, is a single segment on the circle. 
 
 
@@ -108,6 +111,7 @@ $x_m=0$ means $x_n^2=(m^2-n^2)h^2$ so cannot occur if $m<n$  and we are left wit
 
 \section{Triple-points}
 \label{sec:triplep}
+\index{van Iterson diagram!triple-point bifurcation}
 \begin{definition}
 	A {triple-point} \gp{m=n=t} is a point in $\mathcal{L}(d,h)$ space at which the lattice is hexagonal, or equivalently where the lattice has the first three  principal vectors equal in length, with three distinct corresponding parastichy numbers $m$, $n$, $t$. 
 \end{definition}
@@ -171,8 +175,8 @@ It is simple to show from Exercise~\ref{ex:triplealgebra} that on the \branch{m=
 
 
 Between each triple-point, there is a point on the branch where the lattice is square. 
-As lattice parameters pass through these square points, the third and fourth parastichy\index{parastichy}{} numbers swap and to that extent these points also organise the lattice space. 
-Square lattices also have a role in modelling obvious parastichies as several authors have considered the `most obvious' to be those which are orthogonal. 
+As lattice parameters pass through these square points, the third and fourth parastichy numbers swap and to that extent these points also organise the lattice space. 
+Square lattices also have a role in modelling obvious parastichies as some authors have considered the `most obvious' to be those which are orthogonal. 
 \begin{jExercise}\label{ex:ptopbranch}
 	At the top of the \branch{m=n} branch, the three principal parastichy numbers change from \gp{m=n,n-m} to \gp{m=n,n+m} at the point where the lattice is a square lattice with principal parastichy numbers \gp{m=n,n-m=n+m}. Find the values of $h$, $r$ and $d$ at which this happens and hence show this is unique on the van Iterson branch.
 \end{jExercise}
@@ -183,9 +187,11 @@ Square lattices also have a role in modelling obvious parastichies as several au
 
 
 \section[Unfolding the triple-point bifurcation]{Nearly hexagonal lattices: unfolding the triple-point bifurcation}
+\index{van Iterson diagram!triple-point bifurcation}
 We have established algebraically the structural properties of lattice space so that we can draw it, but the key property of lattice space we need to understand for Fibonacci structure depends only on what happens at triple-points at which the lattice is hexagonal. In fact we can obtain the key structural information by understanding the structure of lattice space near each such bifurcation: in the language of bifurcation theory we need only consider the unfolding of the triple-point.  
 
-In particular, we will show that one of the branches downward from the triple-point corresponds to a non-opposed principal parastichy pair. We have not yet classified lattice space by whether pairs are opposed or not, so it is important to note that van Iterson lattices can sometimes have non-opposed principal parastichy vectors as shown in  Figure~\ref{fig:Txb0503NonOpposed}. 
+In particular, we will show that one of the branches downward from the triple-point corresponds to a non-opposed principal parastichy pair. It is crucial to note that van Iterson lattices can sometimes have non-opposed principal parastichy vectors as shown in  Figure~\ref{fig:Txb0503NonOpposed}. 
+\index{lattice!non-opposed}
 
 \mmafig{Txb0503NonOpposed}{A van Iterson lattice can be non-opposed. The two shortest vectors $\pvec{2}$ and $\pvec{5}$ with $|\pvec{2}|=|\pvec{5}|$, both wind in the same direction. This example has $d=1/21 (8+\cos \theta)$ and $h=1/21 \sin\theta$ where $2\theta=\arctan( 21\sqrt{3}/11)+\arctan (\sqrt{21}/2) $ and has been constructed by the renormalisation technique of section~\ref{sec:renormalisation}.}{1.0}%
 
@@ -206,7 +212,7 @@ and we know from the previous chapter that there is only one change of oppositio
 These properties taken together prove that the structure visible in the numerically calculated Figures of this chapter do indeed hold for all lattices. We can also redraw in Figure~\ref{fig:Txb0505Pruned} the van Iterson tree, showing which portions are opposed and which non-opposed. This Figure illustrates an important consequence of Theorem~\ref{thm:tp}: any model whose solutions move through the van Iterson tree but always reject non-opposed solutions in favour of opposed ones will produce Fibonacci structure. 
 \mmafig{Txb0505Pruned}{At every bifurcation of the van Iterson tree, one downward branch is opposed and one is non opposed. 
 	Opposed branches are shown as red lines and non-opposed ones as yellow.  }{1}
-
+\index{van Iterson diagram!Fibonacci branches}
 
 Yet more algebra can be deployed to show that no triple-point occurs at the maximum of a branch, so all the van Iterson sub branches can be traversed with $h$ strictly decreasing. 
 \begin{jExercise}\label{ex:pslope}
@@ -237,6 +243,7 @@ We have shown that packing efficiency remains close to the hexagonal optimum on 
 
 
 \section{Lattice renormalisation}
+\index{lattice!renormalisation}
 \label{sec:renormalisation}
 The algebra of the Chapter so far is straightforward, if a little tedious, but it doesn't give any insight into the remarkable self-similarity of the van Iterson diagram. The technique of lattice renormalisation uses the observation that one lattice can be mapped to another by scaling and rotating to give a powerful way of mapping from one part of lattice space to another. Lattice renormalisation gives considerably more insight into the structure of the van Iterson diagram than the results so far, at the cost of introducing the technology of M{\"obius} functions, and although in my view it adds little to a scientific understanding of the appearance of Fibonacci numbers it does provide an   description of lattice space.
 \label{sec:levitov}
@@ -498,6 +505,7 @@ The hexagonal points are when $\cos\theta=\pm\sqrt{3}/2$ and $\sin\theta=1/2$, s
 
 \section{Classification of van Iterson space by Euclidean reduction}
 It is no accident that there is a direct similarity between the coefficient matrix of the $g_{mn}$ and that of the solution matrix for the Euclidean algorithm of section~\ref{sec:euclid}.
+\index{van Iterson diagram!Euclidean algorithm}
 Each transition from a region of the van Iterson diagram with principal pairs $\gp{m,n}$ to the region above with pairs $\gp{m,n-m}$ is a substep of the Euclidean algorithm; this moving upwards by subtraction from the larger can be done exactly $q_0$ times to get $n'=n-q_0 m$ and reach the region $\gp{m,n'}$ before we have to swap and repeat. 
 Each $\gp{m,n}$ region of van Iterson space corresponds to a particular sequence of  $q_1, q_2, \ldots q_N$s that take the region back to the $\gp{0,1}$ region.     Moving down the tree through the $(r_i,r_i-1)$ principal parastichy pairs, the Euclidean algorithm for $u_i$ and $v_i$ also yields  $r_{i-1} v_i- r_i u_i=1$ for each pair, and allows us to calculate the Fundamental Theorem of Phyllotaxis with ease. The Fibonacci branch, where we swap over at each transition, corresponds to all of the integer pairs whose $q$-sequence is exactly $1$, which are the convergents to the Golden Ratio. 
 
@@ -509,6 +517,7 @@ It is a matter of taste whether the structure of van Iterson space as revealed b
 
 
 \section{Packing efficiencies}
+\index{lattice!packing efficiency}
 Some of the less convincing arguments for the occurence of Fibonacci phyllotaxis have centred on analyses of packing efficiency, partly because of phenomenon like the ones illustrated in Figure~\ref{fig:Txb0508SpiralPacking}.%
 \mmafig{Txb0508SpiralPacking}{A golden-angle lattice packs more uniformly than nearby lattices, in the sense that the angular distribution of the angles of the nodes is most even at the golden angle. Above, nodes with polar coordinates $(r,\theta)=( nh , n\phi)$ are shown for $n=1\ldots1000$, $h=0.001$, and $\theta=\tau/1.001$, $\tau$ and $1.001\tau$. Below, the angles of each node are binned and coloured by count. 
 }{1.0}%

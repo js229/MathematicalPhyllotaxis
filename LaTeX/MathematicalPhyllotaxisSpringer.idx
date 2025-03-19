@@ -1,34 +1,52 @@
-\indexentry{parastichy}{vii}
-\indexentry{parastichy}{5}
-\indexentry{parastichy}{29}
-\indexentry{parastichy}{29}
-\indexentry{periodicity vector}{32}
-\indexentry{generating vector}{32}
+\indexentry{parastichy lines}{vii}
+\indexentry{parastichy number}{vii}
+\indexentry{parastichy number}{5}
+\indexentry{co-prime integers}{13}
+\indexentry{co-prime integers!B\'ezout relation}{15}
+\indexentry{co-prime integers!winding-number pair}{16}
+\indexentry{Euclidean algorithm}{16}
+\indexentry{Euclidean algorithm!matrix form}{17}
+\indexentry{pairs of parastichy vectors!principal pair}{29}
+\indexentry{parastichy number}{29}
+\indexentry{lattice!divergence}{31}
+\indexentry{lattice!rise}{31}
+\indexentry{lattice}{31}
+\indexentry{parastichy vector!periodicity vector}{32}
+\indexentry{parastichy vector!generating vector}{32}
 \indexentry{parastichy vector}{32}
-\indexentry{complementary vector}{32}
-\indexentry{principal vector pair}{32}
-\indexentry{generating pair}{32}
-\indexentry{B\'ezout relation}{32}
-\indexentry{parastichy vector!visible}{35}
+\indexentry{parastichy vector!complementary vector}{32}
+\indexentry{pairs of parastichy vectors!principal pair}{32}
+\indexentry{pairs of parastichy vectors!generating pair}{32}
+\indexentry{co-prime integers!B\'ezout relation}{32}
+\indexentry{parastichy lines}{34}
+\indexentry{parastichy lines!origin-parastichy}{34}
+\indexentry{parastichy vector!visible vector}{35}
 \indexentry{pairs of parastichy vectors}{36}
 \indexentry{parastichy vector!complementary vector}{36}
-\indexentry{pairs of parastichy vectors!opposed}{37}
-\indexentry{pairs of parastichy vectors!generating pairs}{37}
-\indexentry{parastichy}{45}
-\indexentry{parastichy}{50}
-\indexentry{parastichy}{58}
-\indexentry{parastichy}{61}
+\indexentry{pairs of parastichy vectors!opposed pair}{37}
+\indexentry{pairs of parastichy vectors!generating pair}{37}
+\indexentry{lattice!Golden}{42}
+\indexentry{lattice!golden angle divergence}{44}
+\indexentry{pairs of parastichy vectors!principal pair}{45}
+\indexentry{lattice!opposed}{46}
+\indexentry{lattice!non-opposed}{46}
+\indexentry{lattice!spiral}{46}
+\indexentry{Euclidean algorithm!reduction of generating pairs}{48}
+\indexentry{parastichy vector!orthostichy vector}{50}
+\indexentry{lattice!hexagonal}{51}
+\indexentry{lattice!square}{52}
+\indexentry{lattice!touching circle}{52}
+\indexentry{lattice!multijugate}{54}
+\indexentry{van Iterson diagram}{57}
+\indexentry{van Iterson diagram!branch}{57}
+\indexentry{van Iterson diagram!triple-point bifurcation}{60}
+\indexentry{van Iterson diagram!triple-point bifurcation}{61}
+\indexentry{lattice!non-opposed}{61}
+\indexentry{van Iterson diagram!Fibonacci branches}{63}
+\indexentry{lattice!renormalisation}{65}
+\indexentry{van Iterson diagram!Euclidean algorithm}{69}
+\indexentry{lattice!packing efficiency}{69}
 \indexentry{parastichy lines!transformed}{77}
 \indexentry{parastichy lines!as spirals}{80}
-\indexentry{parastichy}{92}
-\indexentry{parastichy}{96}
-\indexentry{parastichy}{97}
-\indexentry{parastichy}{105}
-\indexentry{parastichy}{105}
-\indexentry{parastichy}{110}
-\indexentry{parastichy}{113}
-\indexentry{parastichy}{122}
-\indexentry{parastichy}{130}
-\indexentry{parastichy}{130}
-\indexentry{parastichy}{140}
-\indexentry{parastichy}{140}
+\indexentry{pairs of parastichy vectors!columnar pair}{113}
+\indexentry{parastichy number!for non-lattice patterns}{130}
