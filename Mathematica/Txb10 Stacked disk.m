@@ -122,33 +122,28 @@ Graphics[g36,PlotRange->{{-1/2,1/2},{7,8.2}},PlotRangeClipping->True]}]
 
 (* ::Input::Initialization:: *)
 
-scpShowParastichyLines[lattice_,lineColourFunction_]  :=  Module[{ll,llines,paraset,plines,numbers,rise,divergence,glines},
-ll =Take[Flatten[ LatticePhyllotaxis`latticeLabel[lattice]],2];
-llines = Map[LatticePhyllotaxis`latticeParastichyLines[lattice,#]&,ll];
-numbers= KeyValueMap[Style[Text[#1,#2],Background->White]&,KeyTake[lattice["namedLatticePoints"],Range[0,10]]];
-glines = {Line[{{-1/2,lattice["namedLatticePoints"][0][[2]]},{1/2,lattice["namedLatticePoints"][0][[2]]}}],
-,Line[{{-1/2,lattice["namedLatticePoints"][1][[2]]},{1/2,lattice["namedLatticePoints"][1][[2]]}}]};
+txb10ShowParastichyLines[lattice_,lineColourFunction_]  :=  Module[{ll,llines,paraset,plines,numbers,rise,divergence,glines},
+disks= LatticePhyllotaxis`latticeCircles[lattice];
+diskAboveCutoff[Circle[{x_,y_},_]]:= y>0.35;
+lowerDisks= Select[disks,!diskAboveCutoff[#]&] /. Circle->Disk;
 Graphics[{
 {jStyle["CylinderColour"],LatticePhyllotaxis`latticeGraphicsCylinder[lattice]}
-,{FaceForm[White],LatticePhyllotaxis`latticeCircles[lattice]/. Circle->Disk}
-, {Thick,MapIndexed[{lineColourFunction[First[#2]],#1}&,llines]}
+,{FaceForm[White],lowerDisks}
 ,{PointSize[Small],Point[LatticePhyllotaxis`latticePoints[lattice]]}
 },PlotRange->{{-1/2,.6},{-0.05,0.4}}
 ,BaseStyle->Directive[FontFamily-> jStyle["FontFamily"],FontSize->Scaled[0.03]]
 ]
 ];
 
-scpNonOpposed := Module[{lattice,dh},
+txb10NonOpposed := Module[{lattice,dh},
 dh=LatticePhyllotaxis`latticeDivergenceRiseForNonOpposedTC[{2,5}];
 lattice = LatticePhyllotaxis`latticeFromDivergenceRise[dh, {-0.1,0.5}];
 
-Legended[
 Show[
-scpShowParastichyLines[lattice,jParastichyColour]
-,PlotRange->{{-1/2,1},{0,0.6}}
-],Placed[LineLegend[{jParastichyColour[1],jParastichyColour[2]},{"2-parastichies","5-parastichies"},LabelStyle->Directive[FontFamily-> jStyle["FontFamily"],FontSize->12]],Scaled[{0.85,0.5}]
+txb10ShowParastichyLines[lattice,jParastichyColour]
+,PlotRange->{{-1/2,1/2},{0,0.6}}
 ]
-]
+
 ];
 
 
