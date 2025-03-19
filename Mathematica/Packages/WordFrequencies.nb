@@ -1,0 +1,221 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      8872,        213]
+NotebookOptionsPosition[      7577,        185]
+NotebookOutlinePosition[      7983,        201]
+CellTagsIndexPosition[      7940,        198]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"contentFiles", " ", "=", " ", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{"repo", ",", "\"\<LaTeX\>\"", ",", "#"}], "}"}], "]"}], 
+       "&"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Motivation.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Background.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Coprimality.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Geometry.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Classifying.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Transformed.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Developmental.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Empirical.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Placement.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<StackedDisksChapter.tex\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Future.tex\>\""}], "\[IndentingNewLine]", 
+       "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[53]:=",ExpressionUUID->"6225b460-c3a4-804c-9985-118fa52caf64"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"file", "=", " ", 
+  RowBox[{"contentFiles", "[", 
+   RowBox[{"[", "6", "]"}], "]"}]}]], "Input",
+ CellLabel->"In[54]:=",ExpressionUUID->"3329c3bb-2daf-a645-8425-fd8aa699b567"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\\
+MathematicalPhyllotaxis\\\\LaTeX\\\\Transformed.tex\"\>"], "Output",
+ CellLabel->"Out[54]=",ExpressionUUID->"eeb123f3-bd28-7441-a105-75b309104be6"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"fileContents", " ", "=", " ", 
+  RowBox[{"Import", "[", 
+   RowBox[{"file", ",", "\"\<String\>\""}], "]"}]}]], "Input",
+ CellLabel->"In[57]:=",ExpressionUUID->"4e959e7a-fb2b-4947-aead-4142ce4aa42b"],
+
+Cell[BoxData["LaTeX"], "Input",
+ CellLabel->"In[58]:=",ExpressionUUID->"7c1f9b65-880c-894e-9042-20694b10e3e1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"texWords", " ", "=", " ", 
+   RowBox[{"Flatten", "@", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ReadList", "[", 
+        RowBox[{"#", ",", "Word"}], "]"}], "&"}], ",", "contentFiles"}], 
+     "]"}]}]}], ";"}]], "Input",ExpressionUUID->"19a7b1cc-e61a-764c-82fd-\
+0edfd26283f3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sorted", " ", "=", " ", 
+  RowBox[{"Sort", "[", 
+   RowBox[{"-", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"Counts", "[", "texWords", "]"}], ",", 
+      RowBox[{
+       RowBox[{"#", ">", "1"}], "&"}]}], "]"}]}], "]"}]}]], "Input",
+ CellLabel->"In[67]:=",ExpressionUUID->"ec4781b0-25b2-874f-81c3-82e5b03c1b10"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+         RowBox[{"\"the\"", "\[Rule]", 
+           RowBox[{"-", "3072"}]}], ",", 
+         RowBox[{"\"of\"", "\[Rule]", 
+           RowBox[{"-", "1694"}]}], ",", 
+         RowBox[{"\"and\"", "\[Rule]", 
+           RowBox[{"-", "1154"}]}], ",", 
+         RowBox[{"\"a\"", "\[Rule]", 
+           RowBox[{"-", "1026"}]}], ",", 
+         RowBox[{"\"is\"", "\[Rule]", 
+           RowBox[{"-", "909"}]}], ",", 
+         RowBox[{"\"to\"", "\[Rule]", 
+           RowBox[{"-", "869"}]}], ",", 
+         RowBox[{"\"in\"", "\[Rule]", 
+           RowBox[{"-", "846"}]}], ",", 
+         RowBox[{"\"that\"", "\[Rule]", 
+           RowBox[{"-", "521"}]}], ",", 
+         RowBox[{"\"are\"", "\[Rule]", 
+           RowBox[{"-", "363"}]}], ",", 
+         RowBox[{"\"as\"", "\[Rule]", 
+           RowBox[{"-", "360"}]}], ",", 
+         RowBox[{"\"this\"", "\[Rule]", 
+           RowBox[{"-", "318"}]}], ",", 
+         RowBox[{"\"for\"", "\[Rule]", 
+           RowBox[{"-", "314"}]}], ",", 
+         RowBox[{"\"lattice\"", "\[Rule]", 
+           RowBox[{"-", "309"}]}], ",", 
+         TemplateBox[{"3042"}, "OutputSizeLimit`Skeleton"], ",", 
+         RowBox[{"\"extremely\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"compare\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"(like\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"occasional\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"deemed\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"asymmetry\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"Schwendener\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"influenced\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"studies?\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"differ\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"additional\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}], ",", 
+         RowBox[{"\"bryophytes\"", "\[Rule]", 
+           RowBox[{"-", "2"}]}]}], "\[RightAssociation]"}], Short[#, 8]& ], 
+   "line" -> 67, "sessionID" -> 31546263292224825307, "byteCount" -> 453104, 
+   "size" -> 8, "stored" -> False, "expr" -> Missing["NotStored"], "wrap" -> 
+   OutputSizeLimit`Defer, "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellLabel->"Out[67]=",ExpressionUUID->"fc2c846f-031d-f242-8e97-7b00312e0ab5"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Keys", "[", "sorted", "]"}]], "Input",
+ CellLabel->"In[70]:=",ExpressionUUID->"93ed019c-b327-c946-89e9-13d76ba549f2"],
+
+Cell[BoxData[
+ RowBox[{"ixWords", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{"\"\<lattice\>\"", ",", "\"\<parastichy\>\"", 
+    ",", "\"\<Fibonacci\>\"", ",", "\"\<pair\>\"", ",", "\"\<principal\>\"", 
+    ",", "\"\<vector\>\"", ",", "\"\<generating\>\"", ",", "\"\<Iterson\>\"", 
+    ",", "\"\<divergence\>\"", ",", "\"\<shows\>\"", ",", "\"\<such\>\"", 
+    ",", "\"\<some\>\"", ",", "\"\<pairs\>\"", ",", "\"\<were\>\"", 
+    ",", "\"\<cylinder\>\"", ",", "\"\<phyllotaxis\>\"", ",", "\"\<auxin\>\"",
+     ",", "\"\<radius\>\"", ",", "\"\<golden\>\"", ",", "\"\<sunflower\>\"", 
+    ",", "\"\<hexagonal\>\"", ",", "\"\<Turing\>\"", ",", "\"\<Farey\>\"", 
+    ",", "\"\<SAM\>\"", ",", "\"\<spiral\>\"", ",", "\"\<phyllotactic\>\"", 
+    ",", "\"\<Euclidean\>\"", ",", "\"\<winding-number\>\"", 
+    ",", "\"\<B\\\\'ezout\>\"", ",", "\"\<stacked-coin\>\"", 
+    ",", "\"\<stacked-disk\>\"", ",", "\"\<plants\>\"", ",", "\"\<count\>\"", 
+    ",", "\"\<M\\\\\\\"obius\>\"", ",", "\"\<maps\>\"", 
+    ",", "\"\<renormalisation\>\"", ",", "\"\<triple-point\>\"", 
+    ",", "\"\<touching-circle\>\"", ",", "\"\<meristem\>\"", 
+    ",", "\"\<Lucas\>\"", ",", "\"\<multijugate\>\"", ",", "\"\<Douady\>\"", 
+    ",", "\"\<capitulum\>\"", ",", "\"\<group\>\"", ",", "\"\<geometry\>\"", 
+    ",", "\"\<circumference\>\"", ",", "\"\<independent\>\"", 
+    ",", "\"\<winding\>\"", ",", "\"\<generating,\>\"", 
+    ",", "\"\<branch,\>\""}], "\[IndentingNewLine]", "}"}]}]], "Input",Express\
+ionUUID->"d6953e6f-e434-3447-8cc5-c7ba8e179732"]
+},
+WindowSize->{538.5, 646.875},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"28acbabb-5d83-1148-a3f7-169575f6dc2a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 1227, 25, 310, "Input",ExpressionUUID->"6225b460-c3a4-804c-9985-118fa52caf64",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[1806, 49, 199, 4, 28, "Input",ExpressionUUID->"3329c3bb-2daf-a645-8425-fd8aa699b567"],
+Cell[2008, 55, 214, 2, 51, "Output",ExpressionUUID->"eeb123f3-bd28-7441-a105-75b309104be6"]
+}, Open  ]],
+Cell[2237, 60, 222, 4, 28, "Input",ExpressionUUID->"4e959e7a-fb2b-4947-aead-4142ce4aa42b"],
+Cell[2462, 66, 110, 1, 28, "Input",ExpressionUUID->"7c1f9b65-880c-894e-9042-20694b10e3e1"],
+Cell[2575, 69, 340, 10, 28, "Input",ExpressionUUID->"19a7b1cc-e61a-764c-82fd-0edfd26283f3"],
+Cell[CellGroupData[{
+Cell[2940, 83, 348, 9, 28, "Input",ExpressionUUID->"ec4781b0-25b2-874f-81c3-82e5b03c1b10"],
+Cell[3291, 94, 2601, 59, 172, "Output",ExpressionUUID->"fc2c846f-031d-f242-8e97-7b00312e0ab5"]
+}, Open  ]],
+Cell[5907, 156, 141, 2, 28, "Input",ExpressionUUID->"93ed019c-b327-c946-89e9-13d76ba549f2"],
+Cell[6051, 160, 1522, 23, 256, "Input",ExpressionUUID->"d6953e6f-e434-3447-8cc5-c7ba8e179732"]
+}
+]
+*)
+
