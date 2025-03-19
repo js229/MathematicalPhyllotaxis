@@ -3,24 +3,30 @@
   \item co-prime integers, 13
     \subitem B\'ezout relation, 15, 32
     \subitem winding-number pair, 16
+  \item cylindrical lattice, 31
+    \subitem classification by principal parastichy numbers, 57
+    \subitem classified by principal parastichies, 46
+    \subitem divergence, 31
+    \subitem Golden, 42
+    \subitem golden angle divergence, 44
+    \subitem hexagonal, 51
+    \subitem multijugate, 54
+    \subitem non-opposed, 46, 61
+    \subitem opposed, 46
+    \subitem packing efficiency, 69
+    \subitem renormalisation, 65
+    \subitem rhombic tiling generalisation, 133
+    \subitem rise, 31
+    \subitem spiral, 46
+    \subitem square, 52
+    \subitem touching circle, 52
 
   \indexspace
 
   \item Euclidean algorithm, 16
     \subitem matrix form, 17
     \subitem reduction of generating pairs, 48
-
-  \indexspace
-
-  \item lattice, 31
-    \subitem Golden, 42
-    \subitem hexagonal, 51
-    \subitem multijugate, 54
-    \subitem non-opposed, 46, 61
-    \subitem opposed, 46
-    \subitem spiral, 46
-    \subitem square, 52
-    \subitem touching circle, 52
+    \subitem van Iterson diagram, 69
 
   \indexspace
 
@@ -34,19 +40,33 @@
     \subitem origin-parastichy, 34
     \subitem transformed, 77
   \item parastichy number, vii, 5, 29
+    \subitem first two as lattice label, 46
     \subitem for non-lattice patterns, 130
+    \subitem principal, 46
   \item parastichy vector, 32
     \subitem complementary vector, 32, 36
     \subitem generating vector, 32
     \subitem orthostichy vector, 50
     \subitem periodicity vector, 32
+    \subitem principal vector, 46
     \subitem visible vector, 35
+  \item placement model
+    \subitem cellularly explicit, 120
+    \subitem Douady-Couder, 115
+    \subitem energy-based, 118
+    \subitem L-system, 122
+    \subitem mechanical, 121
+    \subitem protractor, 121
+    \subitem reaction-diffusion, 121
+    \subitem stacked-disk, 125
+    \subitem Turing, 119
 
   \indexspace
 
-  \item van Iterson diagram
+  \item van Iterson diagram, 57
     \subitem branch, 57
     \subitem Euclidean algorithm, 69
+    \subitem Fibonacci branches, 63
     \subitem triple-point bifurcation, 60, 61
 
 \end{theindex}

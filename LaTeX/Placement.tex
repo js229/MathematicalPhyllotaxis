@@ -9,7 +9,7 @@
 
 \section{The Douady-Couder ferromagnetic model}
 \label{sec:DouadyCouderModel}
-
+\index{placement model!Douady-Couder}
 A seminal physical model for phyllotaxis was Douady and Couder's 1992 ferromagnetic system, in which charged drops of oil are dropped onto a cylindrical plate in a magnetic field that causes a centrifugal motion. A caricature of this model is shown in Figure~\ref{fig:Txb0901DCApparatus}.
 \mmafig{Txb0901DCApparatus}{Simplified view of Douady and Couder's apparatus for generating phyllotactic patterns. A centrifugal magnetic gradient transports ferrofluid magnetic dipoles periodically dropped from the central pipette. Redrawn from~\cite{douadyPhyllotaxisDynamicalSelf1996a}.}{1}
 If there is a very long time between successive drops, the drops will move off at random directions; if the process is speeded up slightly then mutual repulsion of the drops 
@@ -40,6 +40,7 @@ A model of this spiral generation-phenomenon  can be built by assuming that the 
 
 \section{Energy based models}
 \label{sec:energy}
+\index{placement model!energy-based}
 The Douady-Couder model of section~\ref{sec:DouadyCouderModel} imposed a time delay between new nodes and a centrifugal movement, which together ensured that new nodes could not be placed too closely to old ones. It then defined an energy function for the new pattern, so that minimising the energy step-by-step then placed nodes as close as possible given the first constraint.  By contrast the stacked-coin model uses a fixed disk to keep the nodes separate, whilst using `gravity', that is the requirement that the new node is in contact with the old ones, to keep them close. Both of these models yield  a typical inter-node distance of say $D$, and can be thought of as defining a  node-node potential energy which is large before $D$, then drops off sharply to a minimum near $D$ before more smoothly re-increasing. 
 
 Given such a potential energy representing a mixture of close-range repulsion and long-range attraction, it is possible to define an energy for cylindrical node patterns, and then to analyse the patterns which are local minima of this energy. In the notation of Chapter~\ref{ch:cylinder},such an energy is of the form 
@@ -54,7 +55,9 @@ Nevertheless, this is a convenient formalism to express how the ratio of a  fixe
  in expressing the idea of relatively soft disks and limited local rearrangements means they may well continue as a helpful tool. 
 
 \section{Auxin flow models: Partial differential equation and cell-based models}
+
 \subsection{An early reaction-diffusion approach}
+\index{placement model!Turing}
  In 1951 Alan Turing wrote to a prominent British zoologist of the time that 
 \begin{quotation}
 	\dots my mathematical theory of embryology\dots is yielding to 
@@ -77,21 +80,23 @@ The previous models of this Chapter abstracted known, or guessed, details of the
 
 As molecular details have accumulated, Turing's essentially arbitrary activator-inhibitor  model for primordia formation has had to be abandoned in its details.  One modelling problem with any reaction-diffusion theory has been that auxin transport is not primarily diffusive, and is more importantly transported through the plant cell wall via PIN1-type proteins, in directions highly dependent on which faces of the cell wall PIN1 is localised. 
 The Turing instability itself  is unlikely to be a helpful concept for primordium formation. Its defining mathematical ability to generate a macroscopic length scale through a spatially extended linear wave instability seems not to play a biological role in these phyllotactic problems. Instead the length scale is generated, on our current biological understanding, by the physical scale of the developing primordium, which is largely independent of neighbouring primordia, and certainly distant ones, and controlled by a mixture of hierarchical genetic signalling,  the hormonal and mechanical dynamics that maintain the primordium, and the need to fit against existing patterns. 
-
+\index{placement model!cellularly explicit}
 PDE models, or their spatially discrete analogues which represent individual cells, continue to be a core tool in understanding the role of the spatio-temporal patterning of auxin in phyllotaxis, following~\cite{reinhardtRegulationPhyllotaxisPolar2003,smithPlausibleModelPhyllotaxis2006,jonssonAuxindrivenPolarizedTransport2006}, and have been particularly useful in articulating different hypotheses about the role of polarised auxin flux  within cells.
  At present we do not have reliable enough quantitative measurements of auxin to fully validate the models at a cellular scale, and 
  even recent work~\cite{pennybackerPhyllotaxisProgressStory2015} validates the model through emergent node positions, just as we might with the stacked-coin model. However emerging molecular data at cellular and subcellular scales is likely to change this in the foreseeable future. Models such as those from the Smith laboratory~\cite{martinezLeftRightLeaf2016,chitwoodLeafAsymmetryDevelopmental2012} are now impressively capable of generating detailed and testable hypotheses in conjunction with molecular work. 
  
 Some other researchers continue to claim simple continuum reaction diffusion models as plausible source of phyllotactic pattern \textit{de novo}. Carteni et al~\autocite{carteniModellingDevelopmentArrangement2014} published a model suggesting that the patterning of vascular bundles could arise in this way, rather than as a sequence of patterns of increasing complexity. Among other problems, I doubt that such simple reaction-diffusion models can overcome the frequent problem of the strong dependence of emergent pattern on arena geometry. 
-
+\index{placement model!reaction-diffusion}
 
 \section{Mechanical tension models}
+\index{placement model!mechanical}
 Mechanical stress on the rigid plant cell well is known to reorient the microtubule orientation within the cell, and this has been suggested as a way in which PIN1 orientation, and thus auxin flux, can be affected by mechanical stress~\autocite{heislerAlignmentPIN1Polarity2010}. Galvan~\autocite{galvan-ampudiaPhyllotaxisPatternsOrganogenesis2016} is a recent review that includes this alternative tradition of modelling node placement as resulting from mechanical buckling, associated with Green~\cite{greenPhyllotacticPatternsBiophysical1996};  recently models which include both biochemical and mechanical elements have been developed by a variety of different groups~\cite{newellFibonacciPatternsCommon2013,galvan-ampudiaTemporalIntegrationAuxin2020,bull-herenuMechanicalForcesFloral2022}.  
 
 Indeed it is a significant advantage of a PDE-type formalism that it can be combined with a similar continuous stress-strain term using  well-established formalisms. However when Pennybacker and Newell took advantage of this in their model, they still found they could derive all the key pattern behaviours they sought for Fibonacci structure by setting the strain dynamics to a constant~\autocite{pennybackerPhyllotaxisProgressStory2015}. But while the interaction between mechanical stress and molecular dynamics for phyllotaxis remains controversial, this class of models is likely to remain important~\cite{kierzkowskiMechanicalInteractionsTissue2024}.
 
 
 \section{A divergence: protractor models}
+\index{placement model!protractor}
 All of the models above are either consequences of embracing the Standard Picture or at least not inconsistent with it. 
 An alternative  explanation for Fibonacci phyllotaxis which has been greatly loved by mathematicians is that patterns are created by
 repeated rotation by the Golden angle and that this has evolved because of an fitness arising from the resulting `close' packing. The earliest appearance of this idea was Wright's 1859 suggestion that a uniform distribution of leaves would maximise sunlight capture~\autocite{wrightMostThoroughUniform1859}, but despite being dismissed by high profile writers from D'Arcy Thompson~\cite{thompsonGrowthForm1917} to Richard Smith~\cite{straussPhyllotaxisGoldenAngle2020} it still persists; one goal of this book is to add to the chorus that these arguments really should be retired. 
@@ -104,6 +109,7 @@ But most fundamentally, the known biology offers no evidence for any molecular p
 Okabe does makes one observation that is useful to highlight here. The theorem that Jean christened the `Fundamental' Theorem of Phyllotaxis says that a $(1,2)$ system can take any divergence between 128.5$^\circ$ and 180$^\circ$, while experimental evidence is that divergence angles are in a much narrower range around the Fibonacci angle than this. Okabe's claim is perhaps that this suggests the divergence is a more fundamental property than the parastichy count, but my perspective is that this observation merely underlines how non-Fundamental the Theorem actually is for Phyllotaxis: it classifies lattices, but does not describe how they have evolved from other patterns, not even nearby lattices. 
 
 \subsection{L-system models}
+\index{placement model!L-system}
 L-systems, which use recursive string rewriting to encode  increasingly complex morphological patterns, have long been used to generate phyllotactic patterns of great beauty~\cite{prusinkiewiczAlgorithmicBeautyPlants1991,prusinkiewiczModelingPlantDevelopment2018}. After the lattice theory, and especially the bifurcation theory, of this book, it is unsurprising that L-systems can generate Fibonacci-type phyllotaxis by placing the next node into the largest gap between existing ones,  Recently these models have been put in much closer alignment with morphological and molecular evidence  in some beautiful work on \textit{Gerbera}\cite{zhangPhyllotacticPatterningGerbera2021}. Although to my mind the link between the biological dynamics of node placement and the emergence of this structure is less clear within the L-system framewok, that is a matter of taste and these models will rightly continue to see considerable use. 
 
 
