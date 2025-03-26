@@ -18,8 +18,8 @@ By contrast the third and fourth patterns in Figure~\ref{fig:Txb0401LeafTypes} a
 The classification in Figure~\ref{fig:Txb0401LeafTypes} assumes that there is a clear, and fixed, rise between each occurrence of each whorl but the node numbering assigns only an arbitrary sequence to the nodes at each fixed rise. Yet further patterns are possible: for example Yonekura et al have recognised `orixate' phyllotaxis in which there is a consistent developmental order within each pair of decussate leaves~\cite{yonekuraMathematicalModelStudies2019}, but we restrict attention to the simpler cases. 
 
 These patterns can all be idealised into a family of points on a cylinder, each rotated by a fixed fraction of the circle or \emph{divergence} $d$ from the next and shifted vertically by the \emph{rise}. 
-\index{lattice!divergence}
-\index{lattice!rise}
+\index{cylindrical lattice!divergence}
+\index{cylindrical lattice!rise}
 In the spiral example, the third leaf is roughly vertically above the first one, and the fifth leaf even more so. 
 If there was always a $p$-th leaf directly above the first, after having gone round the stem $q$ times, then all divergences would be rational fractions $p/q$  and this would provide a system of classification of leaf patterns. At its simplest this would come from identifying the \emph{orthostichy leaf} which is the leaf most `directly' above the first, but this is in many cases impractical or 
 prone to disagreement. An alternative would be to estimate the divergence, which has the attraction that it can be estimated locally from nearby leaf positions and can be averaged over many observations, and 
@@ -38,7 +38,7 @@ Nevertheless, this classification method is a natural one which works well for s
 
 
 \section{Cylindrical and plane lattices}\label{sec:latticedef}
-\index{lattice}
+\index{cylindrical lattice}
 Cylindrical lattices can be thought of as lattices in the plane with a particular distinguished vector corresponding to the cylindrical periodicity,  and in this plane all the normal rules of vector arithmetic hold. 
 Table~\ref{tab:notation} summarises the notation used in this Chapter.
 %
@@ -437,7 +437,7 @@ These direct calculations become more irksome for larger numbers, but we can als
 Example~\ref{ex:fibex} shows the relationship between Fibonacci generating pairs and the golden ratio. 
 
 
-\index{lattice!Golden}
+\index{cylindrical lattice!Golden}
 \begin{jExercise}\label{ex:pneartau}
 	Show that  pairs of large enough adjacent Fibonacci numbers are parastichy numbers which are generating in a lattice only if the divergence in $[0,\jhalf]$ is near to $1/\tau^2$.
 	\label{ex:fibex}
@@ -534,7 +534,7 @@ Like Theorem~\ref{thm:glattice}, this Theorem~\ref{thm:fundamentalcorresponding}
 
 %
 As Jean's name for it suggests, this Theorem has historically been given some prominence. One reason is the following special case when the parastichy numbers are adjacent Fibonacci numbers:
-\index{lattice!golden angle divergence}
+\index{cylindrical lattice!golden angle divergence}
 \begin{theorem}
 	Lattice divergences which lead to Fibonacci structure are very close to the golden angle:
 	\begin{enumerate}
@@ -585,7 +585,10 @@ The principal parastichy pair of vectors, together with the angle between them, 
 \end{definition}
 Similarly a  $\pp{m,n,t}$ lattice is a lattice  in which the first  second  and third parastichy numbers are $m$, $n$ and $t$. If the first and second principal  vectors are equal in length we alternatively describe the lattice as an $\pp{m=n,t}$ lattice.
 Principal pairs are always generating pairs and a proof of this will become apparent after we have seen how to construct principal pairs. 
-
+\index{parastichy number!principal}
+\index{parastichy number!first two as lattice label}
+\index{parastichy vector!principal vector}
+\index{cylindrical lattice!classified by principal parastichies}
 
 
 Whether a parastichy vector is a principal one is an $h$-dependent property, unlike the properties of being opposed or generating which are $h$-independent. At any fixed $d$, for $h$ large enough, the principal vector is always $\pvec{0}$; if $d=1/\tau^2$, for example, we will see  how the principal parastichy number increases through the Fibonacci numbers as $h$ decreases. We will see below that lattices with ties in length between principal parastichy vectors, though non-generic, are particularly important in organising the classification, and that hexagonal lattices where the first three parastichy vectors are equal in length play a crucial role. 
@@ -596,12 +599,12 @@ In the Figure,  we have stretched the $\pp{(m,n)}$ notation a little further to 
 
 \section{Opposed and non-opposed lattices}
 An opposed (or non-opposed) lattice is one in which the principal parastichy pair is an opposed (or non-opposed) pair. Non-opposed lattices are rare but mathematically possible and crucial in understanding the bifurcation diagrams of the next Chapter: we will construct an example of a non-opposed lattice in  Figure~\ref{fig:Txb0503NonOpposed}.
-\index{lattice!opposed}
-\index{lattice!non-opposed}
+\index{cylindrical lattice!opposed}
+\index{cylindrical lattice!non-opposed}
 
 \section{Spiral lattices}
 \label{sec:spiral}
-\index{lattice!spiral}
+\index{cylindrical lattice!spiral}
 Before we go on to the main result we can look at a special case which is algebraically simple, although not applicable to large Fibonacci number phyllotaxis. This is the \emph{spiral lattice} which by definition is a lattice $\mathcal{L}(d<\jfrac{1}{4},h)$ as in the examples in Figure~\ref{fig:Txb0412Spiral}. These are lattices in which
 the genetic spiral or 1-parastichy visually dominates, and in which the idea of a principal pair is not the most observationally important. 
 %
@@ -745,7 +748,7 @@ The Standard Picture models have the divergence as an outcome, not an input. So 
 \label{sec:hexdef}
 Equipped with the ability to find the shortest vectors in a lattice we can now classify lattice types, as in Figure~\ref{fig:Txb0417LatticeTypes}.
 \mmafig{Txb0417LatticeTypes}{Different types of lattice. \gp{2,5}: a lattice with principal vector $\pvec{2}$ and second principal $\pvec{5}$;  \gp{2=5,3}: a touching-circle lattice with a tie for the two shortest vectors, which in this case are non-opposed; \gp{2=5,7} a touching-circle lattice which is opposed; and \gp{2=5=7}, a hexagonal lattice.}{1.0}
-\index{lattice!hexagonal}
+\index{cylindrical lattice!hexagonal}
 \begin{definition}
 	A hexagonal lattice is a lattice where the first three parastichy vectors are all the same length. 
 \end{definition}
@@ -759,12 +762,12 @@ Less fundamental, but sometimes of use to identify, are square lattices:
 \begin{definition}
 	An square lattice has the first and second parastichy vectors the same length and at right angles. 
 \end{definition}
-\index{lattice!square}
+\index{cylindrical lattice!square}
 Square and hexagonal lattices are special cases of van Iterson lattices:
 \begin{definition}
 	A van Iterson, or touching circle, lattice, is one in which the first and second parastichy vectors have the same length.
 \end{definition}
-\index{lattice!touching circle}
+\index{cylindrical lattice!touching circle}
 The van Iterson connection will appear in the next chapter; the reason for the name `touching circle' is that disks of diameter equal to the first principal parastichy vector can be placed at each point of a van Iterson lattice without overlapping, and will touch at a point halfway along that vector. 
 
 
@@ -787,7 +790,7 @@ By considering these boundary cases, we will be able to  infer how principal par
  and can be constructed by placing $J$ copies of the primary cylinder next to each other and then reducing the divergence by a factor of $J$ so the multijugate lattice is still on a cylinder of circumference 1: see Figure~\ref{fig:Txb0420MultiJugate}. If we then also reduce the rise by a factor of $J$ we will produce a lattice in which the parastichy vectors have the same proportions  as in the original. Instead of numbering the points $0$, $1$, \ldots, at each succesive rise, we can number them around the cylinder first and then increase with the rise. 
  With this natural numbering of points in the multijugate lattice, the points numbered $0$ and $k$ in the monojugate lattice become the points $0$ and $kJ$, so the principal parastichy numbers of a the lattice $\mathcal{L}(d/J,h/J,J)$ are $J$ times the principal parastichy numbers of $\mathcal{L}(d,h,1)$. 
  %
-\index{lattice!multijugate} 
+\index{cylindrical lattice!multijugate} 
 % %
 % 
 % If needed, the apparatus of hats and complementary vectors goes over to multijugate lattices, so that for instance the bijugate version of a \gphat{1}{1} lattice is a \gphat{2}{2} lattice as in Figure~\ref{fig:Txb0421JugacyHat}. 
