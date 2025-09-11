@@ -1,63 +1,42 @@
-\newcommand{\jPublicationYear}{2024}
-
+%\newcommand{\jPublicationYear}{2024}
+\newcommand{\jEmphasisColour}{\color{red}}
 
 
 \newlength{\titlepagespacing}
-\ifthenelse{\boolean{a5Target}}{
-\setlength{\titlepagespacing}{5ex}
-}{
-\setlength{\titlepagespacing}{10ex}
-}
 
-\ifthenelse{\boolean{a5Target}}{
-\thispagestyle{titlingpage}
-{
-	\mbox{}\vfill
-	\centering	
-	\includegraphics[width=.6\jfigwidth]{./Figures/infang.jpg}
-	\\[2 \titlepagespacing]
-	Infang Publishing is a registered trademark of Deodands Ltd, 
-	a company registered in England with company number 07589092 and
-	a registered office at
-	20-22 Wenlock Road, London N1 7GU.
-	\\[10ex] %		These ISBNs will refer to the final version of the text, not this draft\\	
-	{\textsc{ISBN}} 978-0-9931789-6-2 (softback).		\\		{\textsc{ISBN}} 978-0-9931789-7-9 (ebook)
-	\\[\titlepagespacing]
-	\copyright Deodands Ltd \jPublicationYear.
-	\\[2\titlepagespacing]
-	\textbf{Book website:}
+
+\chapter*{Notes for the Third Edition preview}
+
+
+%The front cover image is taken from the Flickr stream of user \texttt{aiko vanhulsen} under a Creative %Commons CC BY 2.0 license. 
+
+This is my private draft number \jdraftnumber\  of \textit{A Textbook of Mathematical Phyllotaxis}. This third edition collects changes postdating the Springer edition and has not been peer-reviewed. 
+%The text width is \printinunitsof{cm}\prntlen{\textwidth}{} or \the\textwidth{} points% from\usepackage{layouts}
+
+%\listoftodos\vfill
+\begin{tabular}{|c|}
+	\hline
+	GitHub for document source and Mathematica figure generation
 	\\
-	\texttt{www.phyllotaxis.uk}
-	\\[\titlepagespacing]
-	%		\textbf{This is pre-publication draft \jdraftnumber{} created on \today.}
-	{Compiled  on \today\ from SHA}
+	\url{https://github.com/js229/MathematicalPhyllotaxis}
 	\\
-	\texttt{\jGithubRepoSHA}
-	\\[\titlepagespacing]
-	Front cover image from Flickr user \texttt{aiko vanhulsen}  \copyright CC-BY 2.0.\\
-}
+	Branch
+	\\ \texttt{\jGithubMathematicalPhyllotaxisRepoBranch}
+	\\
+	Last commit 
+	\\
+	\jGithubMathematicalPhyllotaxisRepoTimeStamp
+	\\
+	SHA \\
+	\texttt{\jGithubMathematicalPhyllotaxisRepoSHA} 
+	\\ \hline
+	Compiled  \\ \today.
+	\\\hline
+\end{tabular}
+
+
 \newpage
 
-\thispagestyle{titlingpage}
-{
-	\centering
-	\mbox{}
-%	{\LARGE A textbook of }	\\
-\\[	2 cm]
-	{\HUGE\jEmphasisColour
-		\textsc{Mathematical \\[5 mm] phyllotaxis}}
-	\\
-	\vfill
-	{\Huge	\scshape Jonathan Swinton}
-	\vfill
-	{\LARGE	Infang Publishing}	\\
-		{\LARGE \textsc{\jPublicationYear}\\}
-}
-\newpage
-
-
-}
-{ % not a5 target, a4 
 
 
 
@@ -67,19 +46,24 @@
 		\centering	
 		\includegraphics[width=.6\jfigwidth]{./Figures/infang.jpg}
 		\\[10ex]
-		Infang Publishing is a registered trademark of Deodands Ltd.
-		\\
-		Email \texttt{info@deodands.co.uk}; website \texttt{deodands.co.uk}.
-	\\[5ex]
+		Infang Publishing is a registered trademark of Deodands Ltd. 		Email \texttt{info@deodands.co.uk}; website \texttt{deodands.co.uk}.
 		Deodands Ltd is a company registered in England with company number 07589092. 
-%		\\
 		Deodands Ltd has a registered office at
 		20-22 Wenlock Road, London N1 7GU.
 		\\[10ex] %		These ISBNs will refer to the final version of the text, not this draft\\	
-		{\textsc{ISBN}} 978-0-9931789-6-2 (softback)
-%		\\		{\textsc{ISBN}} 978-0-9931789-7-9 (ebook)
+		\begin{tabular}{ll}
+First Infang print edition & 978-0-9931789-6-2 
+\\
+Springer print edition & 978-3-031-94012-5
+\\
+Springer electronic edition & 978-3-031-94013-2
+\\
+This document & No ISBN
+		\end{tabular}
+%
+{}
 		\\[10ex]
-		\copyright Deodands Ltd \jPublicationYear
+		\copyright Deodands Ltd \jPublicationYear. This document contains material from the second edition; Springer Nature hold an exclusive copyright license to that edition.
 		\\[20ex]
 %	\textit{The publishers believe that Deodands Ltd believe every such image has been identified.   Deodands Ltd have  received specific license permission for each image via the Copyright Clearance Center to reproduce these images  on the basis that this text is intended to be published by Cambridge University Press. } 	\\[10ex]
 		\textbf{Book website:}
@@ -88,8 +72,6 @@
 		\\[10ex]
 %		\textbf{This is pre-publication draft \jdraftnumber{} created on \today.}
 		{Based on an author manuscript  \jdraftnumber{} released on \today.}
-		\\[10ex]
-The front cover image is taken from the Flickr stream of user \texttt{aiko vanhulsen} under a Creative Commons CC BY 2.0 license.\\
 }
 \newpage
 
@@ -108,6 +90,6 @@ The front cover image is taken from the Flickr stream of user \texttt{aiko vanhu
 	{\Large \textsc{\jPublicationYear}
 		\\}
 }
-\newpage
 
-10}
+
+

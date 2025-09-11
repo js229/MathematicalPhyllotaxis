@@ -2,7 +2,9 @@
  
 \chapter{Placement models}
 \label{ch:placement}
-\abstract{Up to now we have studied only static lattices, which fix the location of every node simultaneously, and then we smoothly transformed the lattice as a whole. This approach cannot represent the one-by-one developmental choices for node commitment, so now we will consider more general node-placement models. This Chapter, and the next, provide a taste of a range of models that have usefully been deployed to understand Fibonacci phyllotaxis in this way. 
+%\abstract%
+\section*{Summary}
+{Up to now we have studied only static lattices, which fix the location of every node simultaneously, and then we smoothly transformed the lattice as a whole. This approach cannot represent the one-by-one developmental choices for node commitment, so now we will consider more general node-placement models. This Chapter, and the next, provide a taste of a range of models that have usefully been deployed to understand Fibonacci phyllotaxis in this way. 
 }
 
  
@@ -40,7 +42,7 @@ A model of this spiral generation-phenomenon  can be built by assuming that the 
 \section{Energy based models}
 \label{sec:energy}
 \index{placement model!energy-based}
-The Douady-Couder model of section~\ref{sec:DouadyCouderModel} imposed a time delay between new nodes and a centrifugal movement, which together ensured that new nodes could not be placed too closely to old ones. It then defined an energy function for the new pattern, so that minimising the energy step-by-step then placed nodes as close as possible given the first constraint.  By contrast the stacked-coin model uses a fixed disk to keep the nodes separate, whilst using `gravity', that is the requirement that the new node is in contact with the old ones, to keep them close. Both of these models yield  a typical inter-node distance of say $D$, and can be thought of as defining a  node-node potential energy which is large before $D$, then drops off sharply to a minimum near $D$ before more smoothly re-increasing. 
+The Douady-Couder model of section~\ref{sec:DouadyCouderModel} imposed a time delay between new nodes and a centrifugal movement, which together ensured that new nodes could not be placed too closely to old ones. It then defined an energy function for the new pattern, so that minimising the energy step-by-step then placed nodes as close as possible given the first constraint.  By contrast the stacked-coin model of the next chapter will use a fixed disk to keep the nodes separate, whilst using `gravity', that is the requirement that the new node is in contact with the old ones, to keep them close. Both of these models yield  a typical inter-node distance of say $D$, and can be thought of as defining a  node-node potential energy which is large before $D$, then drops off sharply to a minimum near $D$ before more smoothly re-increasing. 
 
 Given such a potential energy representing a mixture of close-range repulsion and long-range attraction, it is possible to define an energy for cylindrical node patterns, and then to analyse the patterns which are local minima of this energy. In the notation of Chapter~\ref{ch:cylinder},such an energy is of the form 
 $E=\sum U(\left|\jpoint{n}-\jpoint{m}\right|)$ as a sum of  functions of distances over node-pairs.  {A key difference between our application and most physical ones is that there is no mechanism for \textit{global} minimisation of the energy: a pattern may be built up node-by-node, locally minimising this interaction energy, but in general the final pattern is not a global minimum of all possible patterns on the same cylinder with the same mean $D$.}
@@ -58,7 +60,7 @@ Nevertheless, this is a convenient formalism to express how the ratio of a  fixe
 \subsection{An early reaction-diffusion approach}
 \index{placement model!Turing}
  In 1951 Alan Turing wrote to a prominent British zoologist of the time that 
-\begin{quotation}
+%\begin{quotation}
 	\dots my mathematical theory of embryology\dots is yielding to 
 	treatment, and it will so far as I can see, give satisfactory 
 	explanations of\\
@@ -69,7 +71,7 @@ Nevertheless, this is a convenient formalism to express how the ratio of a  fixe
 	(iv) colour patterns on some animals, e.g. stripes, spots and \\
 	dappling\\
 	(v) pattern on nearly spherical structures such as some Radiolara \dots\jNote{Letter from AM Turing to JZ Young 8 Feb 1951, King's College Cambridge AMT K.1.78.}
-\end{quotation}
+%\end{quotation}
 By `my theory of embryology' Turing meant primarily what we now call the Turing Instability, a  pattern formation mechanism for length-scale emergence in a reaction-diffusion PDE system. 
 Turing's mechanism, which he later published in his celebrated 1952 paper~\autocite{turingChemicalBasisMorphogenesis1952} has been a mathematical blessing in its generality and a biological curse because of the same generality. With a few exceptions, biologists over the last 70 years have viewed the Turing instability as elegant but unhelpful or wrong for understanding the major questions in developmental biology. 	 Subsequent mathematical biology using the Turing Instability has been particularly rich in (iv), is probably the wrong approach for (i) and (ii), and is largely forgotten for  (v). But we are now in a position to see what Turing meant when he though it could help with (iii). 
 The previous models of this Chapter abstracted known, or guessed, details of the molecular biology of node formation, into various representations of pattern formation on a cylinder with a typical length scale of $D$. It was the availability of such a model, in the form of the Turing Instability,  that allowed Turing to develop \textit{The Outline of the Development of the Daisy}. This was an unpublished manuscript in which he used a PDE model to explore transitions through lattice space and to try to find conditions for  the Hypothesis of Geometrical Phyllotaxis to be fulfilled.
@@ -98,7 +100,7 @@ Indeed it is a significant advantage of a PDE-type formalism that it can be comb
 \index{placement model!protractor}
 All of the models above are either consequences of embracing the Standard Picture or at least not inconsistent with it. 
 An alternative  explanation for Fibonacci phyllotaxis which has been greatly loved by mathematicians is that patterns are created by
-repeated rotation by the Golden angle and that this has evolved because of an fitness arising from the resulting `close' packing. The earliest appearance of this idea was Wright's 1859 suggestion that a uniform distribution of leaves would maximise sunlight capture~\autocite{wrightMostThoroughUniform1859}, but despite being dismissed by high profile writers from D'Arcy Thompson~\cite{thompsonGrowthForm1917} to Richard Smith~\cite{straussPhyllotaxisGoldenAngle2020} it still persists; one goal of this book is to add to the chorus that these arguments really should be retired. 
+repeated rotation by the golden angle and that this has evolved because of an fitness arising from the resulting `close' packing. The earliest appearance of this idea was Wright's 1859 suggestion that a uniform distribution of leaves would maximise sunlight capture~\autocite{wrightMostThoroughUniform1859}, but despite being dismissed by high profile writers from D'Arcy Thompson~\cite{thompsonGrowthForm1917} to Smith~\cite{straussPhyllotaxisGoldenAngle2020} it still persists; one goal of this book is to add to the chorus that these arguments really should be retired. 
 
 The most challenging modern voice to the Standard Picture is Okabe, who has used a series of peer-reviewed papers to argue that phyllotaxis shows `exquisite control' of the divergence angle~\autocite{okabeRiddlePhyllotaxisExquisite2016}. Okabe's papers are better sourced and more attentive to data than many proponents of the Standard Picture, but their reasoning is often hard to follow. Their prime claim seems to be that the Fibonacci angle is so finely on display in mature plants that it must have adaptive significance and have been arrived at by natural selection. 
 
@@ -107,7 +109,7 @@ But most fundamentally, the known biology offers no evidence for any molecular p
 
 Okabe does makes one observation that is useful to highlight here. The theorem that Jean christened the `Fundamental' Theorem of Phyllotaxis says that a $(1,2)$ system can take any divergence between 128.5$^\circ$ and 180$^\circ$, while experimental evidence is that divergence angles are in a much narrower range around the Fibonacci angle than this. Okabe's claim is perhaps that this suggests the divergence is a more fundamental property than the parastichy count, but my perspective is that this observation merely underlines how non-Fundamental the Theorem actually is for Phyllotaxis: it classifies lattices, but does not describe how they have evolved from other patterns, not even nearby lattices. 
 
-\subsection{L-system models}
+\section{L-system models}
 \index{placement model!L-system}
 L-systems, which use recursive string rewriting to encode  increasingly complex morphological patterns, have long been used to generate phyllotactic patterns of great beauty~\cite{prusinkiewiczAlgorithmicBeautyPlants1991,prusinkiewiczModelingPlantDevelopment2018}. After the lattice theory, and especially the bifurcation theory, of this book, it is unsurprising that L-systems can generate Fibonacci-type phyllotaxis by placing the next node into the largest gap between existing ones,  Recently these models have been put in much closer alignment with morphological and molecular evidence  in some beautiful work on \textit{Gerbera}\cite{zhangPhyllotacticPatterningGerbera2021}. Although to my mind the link between the biological dynamics of node placement and the emergence of this structure is less clear within the L-system framework, that is a matter of taste and these models will rightly continue to see considerable use. 
 

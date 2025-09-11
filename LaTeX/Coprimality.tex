@@ -1,7 +1,9 @@
 
 		
 \chapter{Co-primality, continued fractions, and M\"obius maps}
-\abstract{%
+%\abstract{%
+	\section*{Summary}
+	{
 	It would be wise to skip, or read very glancingly, this chapter on a first reading. 
 	The material on co-prime integers and B\'ezout relations is  only needed for those who want to closely follow the proofs of Chapter~\ref{ch:cylinder}. M\"obius maps are the main language of  the renormalisation approach to the van Iterson diagram discussed at the end of Chapter~\ref{ch:classifying}, but are not at all essential to understand the biological implications of the mathematics.  The details of the matrix form of the Euclidean algorithm may only matter to those curious about the relationships between Fibonacci phyllotaxis and Escher prints.
 }
@@ -83,7 +85,7 @@ For example, consider calculating the highest common factor of $4$ and $11$:
 \end{align}
 %
 This works by successively answering the question of how many times 4 goes into 11 (ie ${\jHeadingColour 2}$), 3 into 4  (${\jHeadingColour 1}$), and 1 into 3 (${\jHeadingColour 1}$) and generates 
-a particular sequence of what we will call  $\jqi={\jHeadingColour 2, 1, 3}$ which shows the co-primality of 4 and 11. Because of the central role of the $\jqi$ they are coloured in red in what follows. It is possible to use this decomposition to compute the winding-number pair, which we can see if we rewrite the algorithm in more formally. 
+a particular sequence of what we will call  $\jqi={\jHeadingColour 2, 1, 3}$ which shows the co-primality of 4 and 11. Because of the central role of the $\jqi$ they are coloured in red in what follows. It is possible to use this decomposition to compute the winding-number pair, which we can see if we rewrite the algorithm more formally. 
 Given integers $n\geq m>0$  we set $r_{-1}=n$, $r_0=m$ and $i=0$:
 \begin{enumerate}
 	\item Set an integer $\jqi=\lfloor r_{i-1}/r_i \rfloor $, to non-negatively minimise $r_{i-1}-q r_{i}$ 
