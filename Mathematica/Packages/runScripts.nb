@@ -10,20 +10,17 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     25033,        588]
-NotebookOptionsPosition[     22102,        532]
-NotebookOutlinePosition[     22503,        548]
-CellTagsIndexPosition[     22460,        545]
+NotebookDataLength[     21162,        495]
+NotebookOptionsPosition[     18658,        446]
+NotebookOutlinePosition[     19059,        462]
+CellTagsIndexPosition[     19016,        459]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[""], "Input",
- CellChangeTimes->{{4.001418930400612*^9, 
-  4.001418932326441*^9}},ExpressionUUID->"afd1255e-df14-c04f-a24b-\
-1e67f16a7e5d"],
-
-Cell[CellGroupData[{
+ CellChangeTimes->{{4.001418930400612*^9, 4.001418932326441*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"afd1255e-df14-c04f-a24b-1e67f16a7e5d"],
 
 Cell[BoxData[
  RowBox[{"(*", " ", 
@@ -33,18 +30,8 @@ Cell[BoxData[
     "[", "\"\<persistentGitHubMathematicalPhyllotaxisRepo\>\"", "]"}], 
    "=", "\"\<C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\\
 MathematicalPhyllotaxis\>\""}], "\[IndentingNewLine]", "*)"}]], "Input",
- CellChangeTimes->{{4.001418951028887*^9, 
-  4.0014190272767944`*^9}},ExpressionUUID->"1ecaafb3-2d51-c243-bfa6-\
-3226f7060c7f"],
-
-Cell[BoxData["\<\"C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\\
-MathematicalPhyllotaxis\"\>"], "Output",
- CellChangeTimes->{{4.0014189825972385`*^9, 4.0014189856171627`*^9}, 
-   4.0014190179221096`*^9},
- CellLabel->"Out[17]=",ExpressionUUID->"6da0592d-88b9-b249-9091-9a7ca992b49e"]
-}, Open  ]],
-
-Cell[CellGroupData[{
+ CellChangeTimes->{{4.001418951028887*^9, 4.0014190272767944`*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"1ecaafb3-2d51-c243-bfa6-3226f7060c7f"],
 
 Cell[BoxData[{
  RowBox[{
@@ -54,13 +41,13 @@ Cell[BoxData[{
     "[", "\"\<persistentGitHubMathematicalPhyllotaxisRepo\>\"", "]"}]}], 
   ";"}], "\n", 
  RowBox[{
-  RowBox[{
-   RowBox[{"AppendTo", "[", 
-    RowBox[{"$Path", ",", 
-     RowBox[{"FileNameJoin", "[", 
-      RowBox[{"{", 
-       RowBox[{"repo", ",", "\"\<Mathematica\>\"", ",", "\"\<Packages\>\""}], 
-       "}"}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{"repo", ",", "\"\<Mathematica\>\"", ",", "\"\<Packages\>\""}], 
+      "}"}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"(*", " ", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"download", " ", "from", "\[IndentingNewLine]", 
@@ -74,7 +61,16 @@ Cell[BoxData[{
      RowBox[{
      "PacletManager`PacletInstall", 
       "[", "\"\<C:\\\\Users\\\\jonat\\\\Downloads\\\\GitLink-2018.07.20.01.\
-paclet\>\"", "]"}]}]}], "\n", "*)"}]}], "\[IndentingNewLine]", 
+paclet\>\"", "]"}]}]}], "\n", "*)"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.9309128009761524`*^9, 3.9309128620030937`*^9}, 
+   3.930913019235405*^9, 3.930913120870573*^9, {3.930913241475622*^9, 
+   3.9309132424766693`*^9}, {3.9309186611628284`*^9, 
+   3.9309187199815083`*^9}, {4.0014191928375053`*^9, 4.001419209341934*^9}, {
+   4.0014195519760056`*^9, 4.001419559281721*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f49d2e6f0815"],
+
+Cell[BoxData[{
  RowBox[{
   RowBox[{"figureDirectory", " ", "=", " ", 
    RowBox[{"FileNameJoin", "[", 
@@ -91,69 +87,8 @@ paclet\>\"", "]"}]}]}], "\n", "*)"}]}], "\[IndentingNewLine]",
    3.930913019235405*^9, 3.930913120870573*^9, {3.930913241475622*^9, 
    3.9309132424766693`*^9}, {3.9309186611628284`*^9, 
    3.9309187199815083`*^9}, {4.0014191928375053`*^9, 4.001419209341934*^9}, {
-   4.0014195519760056`*^9, 
-   4.0014195549091816`*^9}},ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-\
-f49d2e6f0815"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"\<\"C:\\\\Users\\\\jonat\\\\AppData\\\\Roaming\\\\Wolfram\\\\\
-DocumentationIndices\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\SystemFiles\\\\Links\"\>", 
-   ",", "\<\"C:\\\\Users\\\\jonat\\\\AppData\\\\Roaming\\\\Wolfram\\\\Kernel\"\
-\>", ",", \
-"\<\"C:\\\\Users\\\\jonat\\\\AppData\\\\Roaming\\\\Wolfram\\\\Autoload\"\>", 
-   ",", "\<\"C:\\\\Users\\\\jonat\\\\AppData\\\\Roaming\\\\Wolfram\\\\\
-Applications\"\>", ",", "\<\"C:\\\\ProgramData\\\\Wolfram\\\\Kernel\"\>", 
-   ",", "\<\"C:\\\\ProgramData\\\\Wolfram\\\\Autoload\"\>", 
-   ",", "\<\"C:\\\\ProgramData\\\\Wolfram\\\\Applications\"\>", 
-   ",", "\<\".\"\>", ",", "\<\"C:\\\\Users\\\\jonat\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\AddOns\\\\Packages\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\SystemFiles\\\\Autoload\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\AddOns\\\\Autoload\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\AddOns\\\\Applications\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\AddOns\\\\ExtraPackages\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\SystemFiles\\\\Kernel\\\\Packages\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\Documentation\\\\English\\\\System\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\SystemFiles\\\\Data\\\\ICC\"\>", 
-   ",", "\<\"C:\\\\Program Files\\\\Wolfram \
-Research\\\\Wolfram\\\\15.0\\\\Documentation\\\\ChineseSimplified\\\\System\\\
-\\\"\>", ",", \
-"\<\"C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\MathematicalPhyllotaxis\\\
-\\Mathematica\\\\Packages\"\>", 
-   ",", "\<\"C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\\
-MathematicalPhyllotaxis\\\\Mathematica\\\\Packages\"\>", 
-   ",", "\<\"C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\\
-MathematicalPhyllotaxis\\\\Mathematica\\\\Packages\"\>", 
-   ",", "\<\"C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\\
-MathematicalPhyllotaxis\\\\Mathematica\\\\Packages\"\>", 
-   ",", "\<\"C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\\
-MathematicalPhyllotaxis\\\\Mathematica\\\\Packages\"\>"}], "}"}]], "Output",
- CellChangeTimes->{
-  4.001419491240076*^9, {4.0014195346196136`*^9, 4.001419544250244*^9}},
- CellLabel->"Out[14]=",ExpressionUUID->"56026693-1cbc-2846-8ecd-b7dfb48fc811"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Syntax", "sntxi", 
-   "\"Incomplete expression; more input is needed.\\!\\(\\*RowBox[{\\\"\\\\\\\
-\"\\\\\\\"\\\"}]\\)\"", 2, 15, 7, 30366349670798258696, "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{{4.001419543333666*^9, 4.0014195442532597`*^9}},
- CellLabel->
-  "During evaluation of \
-In[13]:=",ExpressionUUID->"b5dd2572-2a65-2146-96d5-69ef5012414b"]
-}, Open  ]],
+   4.0014195519760056`*^9, 4.001419559281721*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"3eafbc47-77d6-7340-91fc-07086e9f202c"],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.9309132186271477`*^9, 3.9309132566180515`*^9}, {
@@ -166,7 +101,7 @@ Cell[BoxData[""], "Input",
    3.9384885763787384`*^9}, {3.938488622870865*^9, 3.9384886234678345`*^9}, {
    3.938488805657854*^9, 3.9384889606181774`*^9}, {3.9434347966381416`*^9, 
    3.943434802605152*^9}},
- CellLabel->"In[37]:=",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
+ CellLabel->"In[26]:=",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
 
 Cell[BoxData[{
  RowBox[{
@@ -226,7 +161,7 @@ Cell[BoxData[{
    3.9384885763787384`*^9}, {3.938488622870865*^9, 3.9384886234678345`*^9}, {
    3.938488805657854*^9, 3.9384889606181774`*^9}, {3.9434347966381416`*^9, 
    3.943434805526352*^9}},
- CellLabel->"In[3]:=",ExpressionUUID->"ea6b1b0e-09ce-9440-b08f-6c66a5cd9a09"],
+ CellLabel->"In[27]:=",ExpressionUUID->"ea6b1b0e-09ce-9440-b08f-6c66a5cd9a09"],
 
 Cell[BoxData[
  RowBox[{
@@ -279,7 +214,7 @@ Cell[BoxData[
    3.94343410720084*^9}, {3.943434523206253*^9, 3.943434666031477*^9}, {
    3.9434346975992146`*^9, 3.9434346981019*^9}, 3.9434347539911747`*^9, 
    3.943434812121172*^9, {3.943434990504793*^9, 3.943434995454714*^9}},
- CellLabel->"In[5]:=",ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-305e897a350d"],
+ CellLabel->"In[29]:=",ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-305e897a350d"],
 
 Cell[CellGroupData[{
 
@@ -299,20 +234,7 @@ Cell[BoxData[
    3.94343410720084*^9}, {3.943434523206253*^9, 3.943434666031477*^9}, {
    3.9434346975992146`*^9, 3.9434346981019*^9}, 3.9434347539911747`*^9, 
    3.943434812121172*^9},
- CellLabel->"In[6]:=",ExpressionUUID->"b75608cc-9ea6-a144-86b7-9998912bf55c"],
-
-Cell[BoxData[
- TemplateBox[{
-  "SetDirectory", "badfile", 
-   "\"The specified argument, \\!\\(\\*RowBox[{\\\"teXDirectory\\\"}]\\), \
-should be a valid string or File object.\"", 2, 6, 2, 30366349670798258696, 
-   "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{4.001419526168415*^9},
- CellLabel->
-  "During evaluation of \
-In[6]:=",ExpressionUUID->"e67867c8-0e86-4642-b112-62f64b7eaa63"],
+ CellLabel->"In[30]:=",ExpressionUUID->"b75608cc-9ea6-a144-86b7-9998912bf55c"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -336,31 +258,22 @@ Packages\\runScripts.nb\n\
 18:13:22}\n\\newcommand{\\jGithubMathematicalPhyllotaxisRepoBranch}{main}", 
    "\n\n written to ", "GithubMathematicalPhyllotaxisRepoProperties.tex"],
   Editable->False]], "Print",
- CellChangeTimes->{4.001419526204767*^9},
+ CellChangeTimes->{
+  4.001419526204767*^9, {4.001419571609022*^9, 4.0014195871930943`*^9}},
  CellLabel->
   "During evaluation of \
-In[6]:=",ExpressionUUID->"0d53d311-fe01-c24a-ac61-984e419df50b"],
-
-Cell[BoxData[
- TemplateBox[{
-  "ResetDirectory", "dtop", "\"Directory stack is empty.\"", 2, 6, 3, 
-   30366349670798258696, "Local"},
-  "MessageTemplate",
-  BaseStyle->"MSG"]], "Message",
- CellChangeTimes->{4.0014195262062855`*^9},
- CellLabel->
-  "During evaluation of \
-In[6]:=",ExpressionUUID->"9bb2501e-acad-dd45-9efa-072663aec2e7"]
+In[30]:=",ExpressionUUID->"584c37b5-f95b-0b48-8f69-3238d2306bd8"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData["repo"], "Input",
- CellLabel->"In[42]:=",ExpressionUUID->"137aa27c-e0dd-3340-87e0-c09fdd2ce500"],
+ CellLabel->"In[31]:=",ExpressionUUID->"137aa27c-e0dd-3340-87e0-c09fdd2ce500"],
 
 Cell[BoxData["\<\"C:\\\\Users\\\\jonat\\\\Documents\\\\GitHub\\\\\
 MathematicalPhyllotaxis\"\>"], "Output",
- CellLabel->"Out[42]=",ExpressionUUID->"de80d463-6593-bb41-9984-4c097d09b089"]
+ CellChangeTimes->{4.001419587208292*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"9ca4e81e-97cc-c04a-aa2c-881ff7f61ea0"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -388,7 +301,7 @@ Cell[BoxData[
        "\[IndentingNewLine]", "\[IndentingNewLine]", "}"}]}], "]"}]}], ";"}], 
   "\[IndentingNewLine]"}]], "Input",
  InitializationCell->True,
- CellLabel->"In[8]:=",ExpressionUUID->"9c117197-2bc4-3048-a8be-0f66a2cf3cb0"],
+ CellLabel->"In[32]:=",ExpressionUUID->"9c117197-2bc4-3048-a8be-0f66a2cf3cb0"],
 
 Cell[BoxData[{
  RowBox[{
@@ -452,7 +365,7 @@ Cell[BoxData[{
         " ", "\"\<\\n\\n\>\"", " ", "<>", " ", "answers"}]}]}]}], 
     "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
- CellLabel->"In[9]:=",ExpressionUUID->"acac33ec-85cd-6044-b5d5-ee6ce418cc9b"],
+ CellLabel->"In[33]:=",ExpressionUUID->"acac33ec-85cd-6044-b5d5-ee6ce418cc9b"],
 
 Cell[CellGroupData[{
 
@@ -461,12 +374,12 @@ Cell[BoxData[
   " ", "\"\<\\\\chapter{Answers to exercises}\\n\\n% This file is \
 autogenerated\\n% DO NOT EDIT\>\""}]], "Input",
  InitializationCell->True,
- CellLabel->"In[12]:=",ExpressionUUID->"42c6e748-0de8-0446-9fbc-c984096b48ea"],
+ CellLabel->"In[36]:=",ExpressionUUID->"42c6e748-0de8-0446-9fbc-c984096b48ea"],
 
 Cell[BoxData["\<\"\\\\chapter{Answers to exercises}\\n\\n% This file is \
 autogenerated\\n% DO NOT EDIT\"\>"], "Output",
- CellChangeTimes->{4.001418877590473*^9},
- CellLabel->"Out[12]=",ExpressionUUID->"d5193883-149a-6748-86cc-92e74368af73"]
+ CellChangeTimes->{4.001418877590473*^9, 4.00141958724016*^9},
+ CellLabel->"Out[36]=",ExpressionUUID->"39758ebd-25a3-ff42-897c-ecc943e46fbd"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -498,13 +411,13 @@ Cell[BoxData[
        ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
   "\[IndentingNewLine]"}]], "Input",
  InitializationCell->True,
- CellLabel->"In[13]:=",ExpressionUUID->"68f8f740-baa8-2c46-8d4b-2433493e1e21"],
+ CellLabel->"In[37]:=",ExpressionUUID->"68f8f740-baa8-2c46-8d4b-2433493e1e21"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"generateAnswers", "[", "]"}]], "Input",
- CellLabel->"In[49]:=",ExpressionUUID->"d9e32fa4-4847-d346-aed7-b9345534aafe"],
+ CellLabel->"In[38]:=",ExpressionUUID->"d9e32fa4-4847-d346-aed7-b9345534aafe"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -517,18 +430,19 @@ Cell[BoxData[
    "C:\\Users\\jonat\\Documents\\GitHub\\MathematicalPhyllotaxis\\LaTeX\\\
 Answers.tex"],
   Editable->False]], "Print",
+ CellChangeTimes->{4.001419587329031*^9},
  CellLabel->
   "During evaluation of \
-In[49]:=",ExpressionUUID->"40983831-d493-b64f-8f53-80f0cd18f71c"]
+In[38]:=",ExpressionUUID->"72ffde15-4ea4-324c-950e-5ae1d48fe3ec"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
- CellLabel->"In[50]:=",ExpressionUUID->"c367e13e-fccc-4e49-9391-a453978ce2a6"],
+ CellLabel->"In[39]:=",ExpressionUUID->"c367e13e-fccc-4e49-9391-a453978ce2a6"],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.930918886382618*^9, 3.930918928664263*^9}, {
   3.9309189659652576`*^9, 3.930919074262501*^9}},
- CellLabel->"In[51]:=",ExpressionUUID->"be1faea8-5f80-1243-96d7-3139847f3b23"]
+ CellLabel->"In[40]:=",ExpressionUUID->"be1faea8-5f80-1243-96d7-3139847f3b23"]
 },
 WindowSize->{718.5, 825},
 WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
@@ -547,49 +461,42 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 152, 3, 28, "Input",ExpressionUUID->"afd1255e-df14-c04f-a24b-1e67f16a7e5d"],
-Cell[CellGroupData[{
-Cell[731, 27, 416, 10, 66, "Input",ExpressionUUID->"1ecaafb3-2d51-c243-bfa6-3226f7060c7f"],
-Cell[1150, 39, 284, 4, 32, "Output",ExpressionUUID->"6da0592d-88b9-b249-9091-9a7ca992b49e"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1471, 48, 1852, 47, 234, "Input",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f49d2e6f0815",
+Cell[554, 20, 171, 2, 28, "Input",ExpressionUUID->"afd1255e-df14-c04f-a24b-1e67f16a7e5d"],
+Cell[728, 24, 435, 9, 66, "Input",ExpressionUUID->"1ecaafb3-2d51-c243-bfa6-3226f7060c7f"],
+Cell[1166, 35, 1438, 35, 196, "Input",ExpressionUUID->"a7dfdb43-ede7-0442-8bc0-f49d2e6f0815",
  InitializationCell->True],
-Cell[3326, 97, 2538, 45, 393, "Output",ExpressionUUID->"56026693-1cbc-2846-8ecd-b7dfb48fc811"],
-Cell[5867, 144, 422, 10, 26, "Message",ExpressionUUID->"b5dd2572-2a65-2146-96d5-69ef5012414b"]
-}, Open  ]],
-Cell[6304, 157, 812, 11, 28, "Input",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
-Cell[7119, 170, 2645, 58, 215, "Input",ExpressionUUID->"ea6b1b0e-09ce-9440-b08f-6c66a5cd9a09",
+Cell[2607, 72, 854, 18, 63, "Input",ExpressionUUID->"3eafbc47-77d6-7340-91fc-07086e9f202c",
  InitializationCell->True],
-Cell[9767, 230, 2531, 51, 291, "Input",ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-305e897a350d",
+Cell[3464, 92, 812, 11, 28, "Input",ExpressionUUID->"5410ce48-bafc-4c4a-8d21-6a889068bb50"],
+Cell[4279, 105, 2646, 58, 215, "Input",ExpressionUUID->"ea6b1b0e-09ce-9440-b08f-6c66a5cd9a09",
+ InitializationCell->True],
+Cell[6928, 165, 2532, 51, 291, "Input",ExpressionUUID->"15d23f4c-0e35-d44a-8b0e-305e897a350d",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[12323, 285, 957, 16, 28, "Input",ExpressionUUID->"b75608cc-9ea6-a144-86b7-9998912bf55c"],
-Cell[13283, 303, 424, 11, 26, "Message",ExpressionUUID->"e67867c8-0e86-4642-b112-62f64b7eaa63"],
-Cell[13710, 316, 1256, 25, 162, "Print",ExpressionUUID->"0d53d311-fe01-c24a-ac61-984e419df50b"],
-Cell[14969, 343, 336, 9, 26, "Message",ExpressionUUID->"9bb2501e-acad-dd45-9efa-072663aec2e7"]
+Cell[9485, 220, 958, 16, 28, "Input",ExpressionUUID->"b75608cc-9ea6-a144-86b7-9998912bf55c"],
+Cell[10446, 238, 1308, 26, 162, "Print",ExpressionUUID->"584c37b5-f95b-0b48-8f69-3238d2306bd8"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15342, 357, 109, 1, 28, "Input",ExpressionUUID->"137aa27c-e0dd-3340-87e0-c09fdd2ce500"],
-Cell[15454, 360, 186, 2, 32, "Output",ExpressionUUID->"de80d463-6593-bb41-9984-4c097d09b089"]
+Cell[11791, 269, 109, 1, 28, "Input",ExpressionUUID->"137aa27c-e0dd-3340-87e0-c09fdd2ce500"],
+Cell[11903, 272, 228, 3, 32, "Output",ExpressionUUID->"9ca4e81e-97cc-c04a-aa2c-881ff7f61ea0"]
 }, Open  ]],
-Cell[15655, 365, 1194, 25, 310, "Input",ExpressionUUID->"9c117197-2bc4-3048-a8be-0f66a2cf3cb0",
+Cell[12146, 278, 1195, 25, 310, "Input",ExpressionUUID->"9c117197-2bc4-3048-a8be-0f66a2cf3cb0",
  InitializationCell->True],
-Cell[16852, 392, 2484, 62, 310, "Input",ExpressionUUID->"acac33ec-85cd-6044-b5d5-ee6ce418cc9b",
+Cell[13344, 305, 2485, 62, 310, "Input",ExpressionUUID->"acac33ec-85cd-6044-b5d5-ee6ce418cc9b",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[19361, 458, 269, 5, 63, "Input",ExpressionUUID->"42c6e748-0de8-0446-9fbc-c984096b48ea",
+Cell[15854, 371, 269, 5, 63, "Input",ExpressionUUID->"42c6e748-0de8-0446-9fbc-c984096b48ea",
  InitializationCell->True],
-Cell[19633, 465, 241, 3, 89, "Output",ExpressionUUID->"d5193883-149a-6748-86cc-92e74368af73"]
+Cell[16126, 378, 262, 3, 89, "Output",ExpressionUUID->"39758ebd-25a3-ff42-897c-ecc943e46fbd"]
 }, Open  ]],
-Cell[19889, 471, 1216, 29, 177, "Input",ExpressionUUID->"68f8f740-baa8-2c46-8d4b-2433493e1e21",
+Cell[16403, 384, 1216, 29, 177, "Input",ExpressionUUID->"68f8f740-baa8-2c46-8d4b-2433493e1e21",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[21130, 504, 142, 2, 28, "Input",ExpressionUUID->"d9e32fa4-4847-d346-aed7-b9345534aafe"],
-Cell[21275, 508, 478, 13, 57, "Print",ExpressionUUID->"40983831-d493-b64f-8f53-80f0cd18f71c"]
+Cell[17644, 417, 142, 2, 28, "Input",ExpressionUUID->"d9e32fa4-4847-d346-aed7-b9345534aafe"],
+Cell[17789, 421, 520, 14, 22, "Print",ExpressionUUID->"72ffde15-4ea4-324c-950e-5ae1d48fe3ec"]
 }, Open  ]],
-Cell[21768, 524, 105, 1, 28, "Input",ExpressionUUID->"c367e13e-fccc-4e49-9391-a453978ce2a6"],
-Cell[21876, 527, 222, 3, 28, "Input",ExpressionUUID->"be1faea8-5f80-1243-96d7-3139847f3b23"]
+Cell[18324, 438, 105, 1, 28, "Input",ExpressionUUID->"c367e13e-fccc-4e49-9391-a453978ce2a6"],
+Cell[18432, 441, 222, 3, 28, "Input",ExpressionUUID->"be1faea8-5f80-1243-96d7-3139847f3b23"]
 }
 ]
 *)
