@@ -324,97 +324,107 @@ and by using $(n^2-m^2)h^2=x^2_m-x^2_n=3\cdot 4 r^4 (n^2-m^2)$ we get equation~\
 \end{align}}
 \end{sol}
 
-\begin{sol}{ex:signz}{
-For the original lattice in \gp{0,1}, we have $h_0\geq0$. Separation into real and imaginary parts  gives
-	\begin{align}
-		z_1 &= g_{mn}(d_0+ih_0) 
-		\\
-		\Re z_1 &= 
-		\frac{n v + m u| w^2|	- d_0( n u + m v)}{|m w-n|^2} 
+\begin{sol}{ex:generaldh}{
+	Using~\eqref{eq:gmnzmn1} gives the generating vector of an $(m,n)$ lattice as 
+			\begin{align}
+			 z_1 &= \frac{-i s u \sin (\theta )-s u \cos (\theta )+v}{-i m s \sin (\theta )-m s \cos (\theta )+n}
+			 \label{eq:base_z1} \\
+			 \end{align}
+which has real and imaginary parts
+			\begin{align}
+			h &= 
+		\frac{s \Delta  \sin\theta}{\Gamma} \label{eq:defz1dsign} \\
+			d &= \frac{-s \cos (\theta ) (m v+n u)+m s^2 u+n v}{\Gamma }
 			\\
-			\Im z_1 &=
-	\frac{	 h_0 \Delta_{mn}}{|m w-n|^2}
-	\label{eq:gReImA}
+		\Gamma&=m^2 s^2-2 m n s \cos (\theta )+n^2
+		\end{align}
+		where $\Gamma$ is the positive modulus of the denominator of $z_1$ and since $\pi/3\leq\theta\leq2\pi/3$,~\eqref{eq:defz1dsign} confirms that $\Im z_1$ has the sign of $\Delta s$ and so $\Im \Delta z_1$ is positive since the generating vector of the \gp{0,1} lattice is. 		
+	}
+Note that when $s=0$, $d=v/n$ when $s=0$ and $d=u/m$ when $s\rightarrow\infty$, which explains the endpoints of the van Iterson circles. We also use $z_m=m z_1-u$ to find the parastichy vectors:
+	\begin{align}
+	p_m &= \frac{1}{\Gamma}\left(n-m s \cos (\theta ),m s \sin (\theta ) \right) 
+	\label{eq:base_pm}
+	 \\
+		p_n&= \frac{1}{\Gamma}\left(-s (m s-n \cos (\theta )),n s \sin (\theta \right) 
+	\label{eq:base_pn} 
 \end{align}
-and then setting $h=\Im \Delta_{mn}z_1$ shows that $z$ has positive rise.
-}\end{sol}
 
-\begin{sol}{ex:circles}{
-	Parameterise the  $\gp{0,1}$ region of van Iterson space by setting $w=d_0+ih_0$ and choose a transformed lattice with $z=\Delta g_{mn}(w)$ in~\eqref{eq:gReImA} gives
-	\begin{align}
-		\Re z &= 
-		\Delta \frac{n v + m u| w^2|	- d_0( n u + m v)}{|m w-n|^2} 
-		\label{eq:rez}
-		\\
-		\Im z &=	h_0 
-		\frac{ 1}{|m w-n|^2} =  
-		\frac{ h_0}{n^2 + m^2 |w|^2 - 2 m n d_0}
-		\label{eq:gReIBm}
-	\end{align}
-	
-	The orthogonal lattices in \gp{0,1} are $\mathcal{L}(is)$ for $0<s<1$, so we set $d_0=0$, $h_0=s$ and $|w|^2=s^2$ to get 
-	\begin{align}
-		d(s) &= \frac{ m u +  n v s^2  }{n^2 +m^2 s^2 },
-		\\
-		h(s)  &= \frac{s}{n^2 +m^2 s^2  }.
-	\end{align}
-	They must lie on a circle because the M\"obius map takes vertical lines in the complex plane into circles and indeed
-	\begin{align}
-		\left( d(s)- \frac{1+2nu}{2mn}\right)^2 + h(s)^2 &= \frac{1}{4 m^2 n^2}.
-	\end{align}
-}
+\end{sol}
+
+\begin{sol}{ex:orthogonal}{
+		This must be true because the orthogonal \gp{0,1} lattices lie on the vertical line $w_1=si$ for $1\leq s\leq \infty$ and the  M\"obius map takes vertical lines in the complex plane into axis-circles. More explicitly, set $\theta=\pi/2$ 
+ to find $\Gamma=m^2 s^2+n^2$ and 
+		\begin{align}
+			h(s)  &=  \Delta\frac{s}{\Gamma }
+			\\
+			d(s) &= \frac{(m s^2 u + n v)}{\Gamma}
+		\end{align}
+		and note from exercise~\eqref{ex:generaldh} that the centre of the circle is at $(d_O=u/m+v/n)/2,0)$, to discover that 
+		\begin{align}
+			\left( d(s)- d_O\right)^2 + h(s)^2 &= \frac{1}{4 m^2 n^2}.
+		\end{align}
+	}
 \end{sol}
 
 \begin{sol}{ex:shcircles}{
-Touching circle lattices occur in \gp{0,1} space when $w=e^{i\theta}$, for $\pi/3\leq\theta\leq2\pi/3$ and $\theta$ is the angle between the principal vectors. 
-Equations~\eqref{eq:rez} and~\eqref{eq:gReIBm} give the divergence and rise of the lattice transformed by $\Delta g_{mn}$ as 
+
+Touching circle lattices occur in \gp{0,1} space for lattices $\mathcal{L}(w)$ with $w=e^{i\theta}$, for $\pi/3\leq\theta\leq2\pi/3$. So we set $s=1$:
 \begin{align}
-	d(\theta) &= 
-	\Delta \frac{n v + m u	- \cos\theta ( n u + m v)}{m^2-2 \cos \theta mn +n^2   } 
-	\\
-	h(\theta) &=
-	\frac{	\sin\theta}{m^2-2 \cos \theta mn +n^2   }
+	h(\theta) &=\Delta
+\frac{	\sin\theta}{\Gamma}
+\\
+	d(\theta) &=\frac{-\cos (\theta ) (m v+n u)+m u+n v}{\Gamma }
+\\
+\Gamma&=m^2-2 m n \cos (\theta )+n^2
 	\label{eq:tchd}
 \end{align}
+}\end{sol}
 
-For a square touching circle lattice, $\theta=\pi/2$ and 
-\begin{align}
-	d &= \Delta \frac{ m u +  n v   }{m^2 +  n^2},
-	\\
-	h  &= \frac{1}{m^2 + n^2}.
-\end{align}
-
+\begin{sol}{ex:shshex}{
 There are two hexagonal lattice points in \gp{0,1} at $e^{i\pi/3}$ and $e^{2i\pi/3}$ which map to different hexagonal lattices corresponding to principal parastichies  $(m,n,n+m)$ or  $(m,n-m,n)$. For $w= e^{i\pi/3}$ we get
 	\begin{align}
-	d &= \Delta \frac{ m u +  n v- (n u + mv)/2   }{m^2 + m n + n^2},
+	h  &= \Delta\frac{\sqrt{3}}{2} \frac{1}{\Gamma} 
+\\
+	d &=  \frac{ m u +  n v- (n u + mv)/2   }{\Gamma}
 	\\
-	h  &= \frac{\sqrt{3}}{2} \frac{1}{\left(m^2 -  mn +n^2 \right)}  .
+	\Gamma &= m^2-m n+n^2
 	\end{align}
+	and for  $w= e^{i\pi/3}$  we get 
+		\begin{align}
+		h  &= \Delta\frac{\sqrt{3}}{2} \frac{1}{\Gamma} 
+		\\
+		d &=  \frac{ m u +  n v+ (n u + mv)/2   }{\Gamma}
+		\\
+		\Gamma &= m^2+m n+n^2
+	\end{align}
+	
 }
 \end{sol}
 
 \begin{sol}{ex:calcprinciplay}{
-The angle  $\theta$ between the principal parastichy vectors is the same in the $\gp{0,1}$ lattice and in the rotated and scaled lattice, and  $w=|w_0|e^{i\theta}$.  Inserting this into in~\eqref{eq:gReImA} and taking real and imaginary parts allows the calculation of $\pvec{m}=m z_1 -u$ and $|\pvec{m}|^2$: 
+	Setting $s=1$:
 	\begin{align}
-	|\pvec{m}|^2 &=\frac{1}{m^2 w_0^2-2 m n w_0 \cos (\theta )+n^2}.
-		\end{align}
-	
-		
-For a touching circle lattice, $w_0=1$ and $4r^2=	|\pvec{m}|^2$ so the radius of the touching circles (not the radius of the circle in van Iterson space where lattices are touching circles!) is
-\begin{align}
-4 r^{2}  &=\frac{1}{ m^2-2 m n \cos (\theta )+n^2}.
-\\
-&= \frac{h(\theta)}{\sin \theta}
+		p_m &= \frac{1}{\Gamma}\left(n-m  \cos (\theta ),m  \sin (\theta ) \right) 
+		\label{eq:tcpm}
+		\\
+		p_n&= \frac{1}{\Gamma}\left(- (m -n \cos (\theta )),n  \sin (\theta) \right) 
+	\label{eq:tcpn} 
+	\end{align}
+	so the radius $2r=|p_m|$ is 
+		\begin{align}
+	4r^2=	|p_m|^2=|p_n|^2= \frac{1}{\Gamma}=\frac{1}{m^2 -2 m n  \cos (\theta )+n^2}
+		\label{eq:tcmod}
+			\end{align}
+If $p_m$ makes an angle $\alpha_m$ with the horizontal axis and $p_n$ makes an angle $\alpha_n$
+we have
+	\begin{align}
+	\tan \alpha_m &= \frac{m  \sin \theta }{n-m  \cos \theta } 
+	\label{eq:tcpm}
+	\\
+	\tan \alpha_n&= \frac{n  \sin \theta}{- m +n \cos \theta }
+	\label{eq:tcpn} 
 \end{align}
-Eliminating $\cos\theta$ between this and~\eqref{eq:tchd} gives
-\begin{align}
-d&=		\jhalf
-\left(\frac{u}{m}+\frac{v}{n}\right)
-+ 2\Delta  \left(\frac{n}{m}-\frac{m}{n}\right)r^2
-\end{align}
-
-As $w_1$ rotates around the unit circle from $e^{2i\pi/3}$ to $e^{i\pi/2}$ to $e^{i\pi/3}$, the inverse square diameter of the transformed lattice increases from $m^2-mn+n^2$at the top triple point on the $m=n$ branch, through  $m^2+n^2$ at the square lattice point, down to $m^2+mn+n^2$  at the lower triple point.
-}
+	}
 \end{sol}
 
 \begin{sol}{ex:fibthresholds}{
